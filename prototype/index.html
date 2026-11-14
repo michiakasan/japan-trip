@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Japan Places</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: sticky filter bar on top, a grid of place cards, a bottom sheet for details. Ocean ink, sand paper, hibiscus accent. */
+:root {
+  --ink: #12323b;
+  --muted: #5d7177;
+  --paper: #f6f3ec;
+  --card: #ffffff;
+  --line: #e2ddd1;
+  --accent: #d6455d;
+  --sea: #1c8a99;
+  --good: #2f8f5b;
+  --warn: #b7791f;
+  --cold: #3d6fb6;
+  --font-display: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", system-ui, sans-serif;
+  --font-body: "Noto Sans JP", "Hiragino Sans", system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #e6efef; --muted: #9db1b4; --paper: #0f1d21; --card: #172a30; --line: #27414a;
+    --accent: #f06c82; --sea: #4fc0cf; --good: #5cc48a; --warn: #e2a64b; --cold: #7ea6e6;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #e6efef; --muted: #9db1b4; --paper: #0f1d21; --card: #172a30; --line: #27414a;
+  --accent: #f06c82; --sea: #4fc0cf; --good: #5cc48a; --warn: #e2a64b; --cold: #7ea6e6;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--sea); outline-offset: 2px; }
+
+header { padding: 20px 16px 8px; max-width: 1100px; margin: 0 auto; }
+h1 { font-family: var(--font-display); font-size: 26px; margin: 0; text-wrap: balance; }
+.sub { color: var(--muted); margin: 2px 0 0; font-size: 14px; }
+.stats { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.stat { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; font-variant-numeric: tabular-nums; }
+.stat b { font-weight: 700; }
+
+.bar { position: sticky; top: 0; z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line); }
+.bar-in { max-width: 1100px; margin: 0 auto; padding: 10px 16px; display: grid; gap: 8px; }
+.row { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.row::-webkit-scrollbar { display: none; }
+.seg { display: inline-flex; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 2px; flex: none; }
+.seg button { border: 0; background: none; padding: 6px 12px; border-radius: 8px; font-size: 14px; white-space: nowrap; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.chip { flex: none; border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 5px 12px; font-size: 13px; white-space: nowrap; }
+.chip[aria-pressed="true"] { border-color: var(--sea); background: var(--sea); color: #fff; }
+#q { width: 100%; padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+
+main { max-width: 1100px; margin: 0 auto; padding: 14px 16px 60px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; text-align: left; padding: 0; }
+.cover { position: relative; aspect-ratio: 16 / 9; background: var(--line); }
+.cover img, .cover canvas { width: 100%; height: 100%; object-fit: cover; display: block; }
+.badge { position: absolute; top: 8px; left: 8px; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: rgba(255,255,255,.92); color: #12323b; }
+.badge.want { background: var(--accent); color: #fff; }
+.badge.visited { background: var(--good); color: #fff; }
+.gem { position: absolute; top: 8px; right: 8px; font-size: 11px; padding: 3px 8px; border-radius: 999px; background: rgba(18,50,59,.78); color: #fff; }
+.body { padding: 10px 12px 12px; display: grid; gap: 4px; }
+.name { font-family: var(--font-display); font-weight: 700; font-size: 17px; }
+.jp { color: var(--muted); font-size: 13px; font-weight: 400; margin-left: 4px; }
+.meta { color: var(--muted); font-size: 13px; }
+.temps { display: flex; gap: 10px; font-size: 13px; font-variant-numeric: tabular-nums; flex-wrap: wrap; }
+.pill { display: inline-block; font-size: 12px; font-weight: 500; border-radius: 999px; padding: 1px 8px; border: 1px solid currentColor; }
+.s-good { color: var(--good); } .s-ok { color: var(--sea); } .s-wet { color: var(--warn); } .s-cold { color: var(--cold); } .s-city { color: var(--muted); }
+.see { font-size: 13px; color: var(--ink); }
+.tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 2px; }
+.tags span { font-size: 11px; color: var(--muted); background: var(--paper); border-radius: 6px; padding: 1px 6px; }
+select.chip { appearance: auto; }
+.empty { color: var(--muted); padding: 40px 0; text-align: center; }
+
+.sheet-bg { position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 20; display: none; }
+.sheet-bg.open { display: block; }
+.sheet { position: fixed; left: 0; right: 0; bottom: 0; max-height: 92%; overflow-y: auto; background: var(--paper); border-radius: 18px 18px 0 0; z-index: 21; transform: translateY(105%); transition: transform .25s ease; max-width: 760px; margin: 0 auto; }
+.sheet.open { transform: none; }
+@media (prefers-reduced-motion: reduce) { .sheet { transition: none; } }
+.sheet .cover { aspect-ratio: 16 / 8; }
+.close { position: absolute; top: 10px; right: 10px; border: 0; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.92); color: #12323b; font-size: 18px; line-height: 1; z-index: 2; }
+.sheet-in { padding: 14px 16px 30px; display: grid; gap: 14px; }
+.sheet h2 { font-family: var(--font-display); margin: 0; font-size: 22px; }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn { border: 1px solid var(--line); background: var(--card); border-radius: 10px; padding: 8px 14px; font-weight: 500; }
+.btn.on-want { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.on-visited { background: var(--good); border-color: var(--good); color: #fff; }
+.btn.link { text-decoration: none; display: inline-block; }
+.months { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 480px) { .months { grid-template-columns: 1fr; } }
+.box { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px 12px; }
+.box h3 { margin: 0 0 4px; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.box p { margin: 0; }
+.nums { display: flex; gap: 14px; font-variant-numeric: tabular-nums; font-size: 14px; margin-bottom: 4px; flex-wrap: wrap; }
+.years { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.year { border: 1px solid var(--good); color: var(--good); border-radius: 999px; padding: 2px 10px; font-size: 13px; background: none; }
+.add-year { display: flex; gap: 6px; }
+.add-year input { width: 90px; padding: 5px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+textarea { width: 100%; min-height: 80px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); resize: vertical; }
+.photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 6px; }
+.photos figure { margin: 0; position: relative; }
+.photos img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; display: block; }
+.photos .mini { position: absolute; bottom: 4px; left: 4px; right: 4px; display: flex; gap: 4px; }
+.photos .mini button { flex: 1; font-size: 11px; border: 0; border-radius: 6px; padding: 2px 0; background: rgba(255,255,255,.9); color: #12323b; }
+.small { font-size: 12px; color: var(--muted); }
+.note { font-size: 13px; color: var(--muted); }
+.fab { position: fixed; right: 16px; bottom: 16px; z-index: 6; border: 0; background: var(--accent); color: #fff; border-radius: 999px; padding: 12px 18px; font-weight: 700; box-shadow: 0 4px 14px rgba(0,0,0,.2); }
+form.add { display: grid; gap: 8px; }
+form.add input, form.add select { padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); width: 100%; }
+.toast { position: fixed; left: 50%; bottom: 76px; transform: translateX(-50%); background: var(--ink); color: var(--paper); padding: 8px 14px; border-radius: 10px; font-size: 13px; z-index: 30; display: none; max-width: 90%; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Our Japan Places</h1>
+  <p class="sub">Islands and cities for our trips. Tap a place to mark it, add years, notes and photos.</p>
+  <div class="stats" id="stats"></div>
+  <p class="note" id="syncNote"></p>
+</header>
+
+<div class="bar"><div class="bar-in">
+  <div class="row">
+    <div class="seg" role="group" aria-label="List">
+      <button data-list="all" aria-pressed="true">All</button>
+      <button data-list="want" aria-pressed="false">Want to go</button>
+      <button data-list="visited" aria-pressed="false">Visited</button>
+    </div>
+    <div class="seg" role="group" aria-label="Month">
+      <button data-month="apr" aria-pressed="true">April</button>
+      <button data-month="may" aria-pressed="false">May</button>
+    </div>
+  </div>
+  <div class="row" id="types"></div>
+  <div class="row" id="feats"></div>
+  <input id="q" type="search" placeholder="Search places, e.g. beach, dolphins, onsen" aria-label="Search places">
+</div></div>
+
+<main>
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty" hidden>No places match. Try another filter.</p>
+</main>
+
+<button class="fab" id="addBtn">+ Add place</button>
+
+<div class="sheet-bg" id="sheetBg"></div>
+<section class="sheet" id="sheet" aria-modal="true" role="dialog" aria-label="Place details"></section>
+<div class="toast" id="toast"></div>
+
+<script>
+const AREAS = ["Yaeyama", "Miyako", "Okinawa", "Amami", "Kagoshima", "Ogasawara", "Izu", "Cities"];
+const SWIM = {
+  good: ["Swim: good in April", "s-good"],
+  ok: ["Swim: OK late April", "s-ok"],
+  wet: ["Swim: wetsuit", "s-wet"],
+  cold: ["Too cold to swim", "s-cold"],
+  city: ["City", "s-city"]
+};
+// Climate: JMA normals 1991-2020 where known; "~" marks estimates. Sea temps mostly estimates.
+const BASE = [
+ {id:"ishigaki",name:"Ishigaki",jp:"石垣島",area:"Yaeyama",kind:"beach",swim:"good",airA:"23.4",airM:"25.9",seaA:"23-24",seaM:"25-27",seeA:"Yaeyama fireflies at night (about March to May), Kabira Bay viewpoint, beaches open",seeM:"Warmest sea of the easy islands; rainy season usually starts mid-May",desc:"Hub of the Yaeyama islands with ferries to Taketomi, Iriomote, Kohama, Kuroshima and Hateruma. No swimming in Kabira Bay itself.",gem:false,go:"Direct flights from Tokyo and Osaka"},
+ {id:"taketomi",name:"Taketomi",jp:"竹富島",area:"Yaeyama",kind:"village",swim:"good",airA:"23.4",airM:"25.9",seaA:"23-24",seaM:"25-27",seeA:"Kondoi Beach lagoon, star sand at Kaiji Beach, water buffalo cart",seeM:"Same, quieter after Golden Week",desc:"Tiny island with a preserved red-tile village and coral-sand roads. Stay a night to see it after the day-trippers leave.",gem:false,go:"15 min ferry from Ishigaki"},
+ {id:"iriomote",name:"Iriomote",jp:"西表島",area:"Yaeyama",kind:"jungle",swim:"good",airA:"22.8",airM:"25.5",seaA:"23-24",seaM:"25-27",seeA:"Mangrove kayaking, Pinaisara Falls hike, fireflies",seeM:"Greenest jungle, snorkelling at Barasu coral island",desc:"About 90% jungle, UNESCO natural heritage, home of the Iriomote wildcat. Best for nature and sea together.",gem:false,go:"40-50 min ferry from Ishigaki"},
+ {id:"kohama",name:"Kohama",jp:"小浜島",area:"Yaeyama",kind:"beach",swim:"good",airA:"22.8",airM:"25.5",seaA:"23-24",seaM:"25-27",seeA:"Boat tour to Hamajima, a sandbar in the sea",seeM:"Manta rays at Manta Scramble nearby",desc:"Hilly island with sugar cane fields and big sea views. Setting of the drama 'Churasan'.",gem:true,go:"25 min ferry from Ishigaki"},
+ {id:"kuroshima",name:"Kuroshima",jp:"黒島",area:"Yaeyama",kind:"beach",swim:"good",airA:"23.4",airM:"25.9",seaA:"23-24",seaM:"25-27",seeA:"Sea turtles while snorkelling at Nakamoto Beach",seeM:"Sea turtle nesting season begins",desc:"Flat heart-shaped island with more cows than people. Very quiet, best by bicycle.",gem:true,go:"30 min ferry from Ishigaki"},
+ {id:"hateruma",name:"Hateruma",jp:"波照間島",area:"Yaeyama",kind:"beach",swim:"good",airA:"23.2",airM:"25.7",seaA:"23-24",seaM:"25-27",seeA:"Nishihama Beach, Southern Cross in the night sky (about January to June)",seeM:"Nishihama Beach, Southern Cross still visible",desc:"Japan's southernmost inhabited island. The ferry is often cancelled in rough seas, so keep a spare day.",gem:true,go:"60-80 min ferry from Ishigaki"},
+ {id:"yonaguni",name:"Yonaguni",jp:"与那国島",area:"Yaeyama",kind:"cliff",swim:"good",airA:"23.0",airM:"25.4",seaA:"23-24",seaM:"25-27",seeA:"Cape Irizaki (westernmost point, Taiwan on clear days), wild horses",seeM:"Underwater 'ruins' by glass-bottom boat, Atlas moth season",desc:"Wild, windy island with cliffs. Better for scenery and diving than lying on a beach.",gem:true,go:"Flights from Ishigaki or Naha"},
+ {id:"miyakojima",name:"Miyakojima",jp:"宮古島",area:"Miyako",kind:"beach",swim:"good",airA:"22.5",airM:"25.0",seaA:"22-24",seaM:"24-26",seeA:"Yonaha Maehama Beach, Yabiji reef at big spring low tides",seeM:"Sunayama Beach, Imgya Marine Garden, Irabu Bridge",desc:"Some of the clearest water and whitest beaches in Japan. A triathlon in mid-April fills the hotels.",gem:false,go:"Direct flights from Tokyo and Osaka"},
+ {id:"irabu",name:"Irabu & Shimoji",jp:"伊良部島・下地島",area:"Miyako",kind:"beach",swim:"good",airA:"22.4",airM:"25.2",seaA:"22-24",seaM:"24-26",seeA:"17END runway lagoon, Toriike twin ponds",seeM:"Sunset at Sawada-no-hama, snorkelling at Nakanoshima",desc:"Joined to Miyakojima by the free 3.5 km Irabu Bridge.",gem:true,go:"Drive from Miyakojima"},
+ {id:"tarama",name:"Tarama",jp:"多良間島",area:"Miyako",kind:"village",swim:"good",airA:"22.8",airM:"25.6",seaA:"22-24",seaM:"24-26",seeA:"Empty beaches, slow village life, stars",seeM:"Same, almost no tourists",desc:"Flat island between Miyako and Ishigaki. Few visitors, even among Japanese.",gem:true,go:"Flight or ferry from Miyakojima"},
+ {id:"kerama",name:"Kerama Islands",jp:"慶良間諸島",area:"Okinawa",kind:"beach",swim:"ok",airA:"21.5",airM:"24.2",seaA:"20-23",seaM:"23-25",seeA:"End of whale season (early April), Furuzamami Beach",seeM:"Sea turtles while snorkelling, 'Kerama blue'",desc:"Zamami, Aka and Tokashiki. National park with some of the clearest water anywhere. Easy from Naha.",gem:false,go:"35-50 min fast ferry from Naha"},
+ {id:"kumejima",name:"Kumejima",jp:"久米島",area:"Okinawa",kind:"beach",swim:"ok",airA:"21.5",airM:"24.2",seaA:"20-23",seaM:"23-25",seeA:"Hatenohama, a 7 km white sandbar (boat tour)",seeM:"Hatenohama, Tatami-ishi turtle-shell rocks",desc:"Quiet island Japanese people know as a 'hidden' Okinawa island.",gem:true,go:"30 min flight from Naha"},
+ {id:"minnajima",name:"Minnajima",jp:"水納島",area:"Okinawa",kind:"beach",swim:"ok",airA:"20.9",airM:"23.8",seaA:"20-23",seaM:"23-25",seeA:"Croissant-shaped island, shallow coral beach",seeM:"Beach day plus Churaumi Aquarium",desc:"Tiny island off the Motobu Peninsula. Some facilities only open in the warm season.",gem:true,go:"15 min boat from Motobu Port"},
+ {id:"iheya",name:"Iheya & Izena",jp:"伊平屋島・伊是名島",area:"Okinawa",kind:"village",swim:"ok",airA:"20.7",airM:"23.4",seaA:"20-23",seaM:"23-25",seeA:"Empty beaches, villages with stone walls",seeM:"Same, very quiet",desc:"Remote islands north of Okinawa's main island with very few foreign visitors.",gem:true,go:"Ferry from Unten Port"},
+ {id:"yoron",name:"Yoron",jp:"与論島",area:"Amami",kind:"beach",swim:"ok",airA:"20.6",airM:"23.3",seaA:"21-22",seaM:"23-24",seeA:"Yurigahama sandbar at low tide",seeM:"Yurigahama, sea turtles",desc:"Small coral island with Okinawa-like water. A 1970s honeymoon favourite.",gem:true,go:"Flights from Kagoshima or Naha"},
+ {id:"okinoerabu",name:"Okinoerabu",jp:"沖永良部島",area:"Amami",kind:"cliff",swim:"ok",airA:"20.5",airM:"23.1",seaA:"21-22",seaM:"23-24",seeA:"White Erabu lilies in bloom",seeM:"Shoryudo cave, Fucha blowhole",desc:"Raised coral island with hundreds of limestone caves.",gem:true,go:"Flights from Kagoshima or Naha"},
+ {id:"tokunoshima",name:"Tokunoshima",jp:"徳之島",area:"Amami",kind:"jungle",swim:"wet",airA:"19.7",airM:"22.6",seaA:"20-22",seaM:"22-24",seeA:"Amami rabbit night tour, Inutabu Cape",seeM:"Togyu bullfighting tournament, usually early May",desc:"UNESCO natural heritage island, famous for bull-vs-bull fighting.",gem:true,go:"Flights from Kagoshima or Amami"},
+ {id:"amami",name:"Amami Oshima",jp:"奄美大島",area:"Amami",kind:"jungle",swim:"wet",airA:"19.8",airM:"22.8",seaA:"20-22",seaM:"22-24",seeA:"Mangrove kayaking, Ohama Beach, Amami rabbit tours",seeM:"Greenest jungle; rainy season from mid-May",desc:"Large, green UNESCO island. Slower and less touristy than Okinawa.",gem:false,go:"Direct flights from Tokyo and Osaka"},
+ {id:"kakeroma",name:"Kakeroma",jp:"加計呂麻島",area:"Amami",kind:"village",swim:"wet",airA:"19.9",airM:"22.8",seaA:"20-22",seaM:"22-24",seeA:"Empty coves, tiny villages, Shodon beach",seeM:"Red deigo (coral tree) flowers",desc:"Very quiet island south of Amami. The last Tora-san film was shot here.",gem:true,go:"20 min ferry from Koniya"},
+ {id:"yakushima",name:"Yakushima",jp:"屋久島",area:"Kagoshima",kind:"forest",swim:"cold",airA:"17.8",airM:"21.0",seaA:"19-20",seaM:"21-22",seeA:"Jomon Sugi hike (about 10 h), Shiratani moss forest",seeM:"Rhododendrons on the peaks (late May to June), turtles nesting at Nagata",desc:"UNESCO ancient cedar forest. Hiking island, rains a lot.",gem:false,go:"Flights from Kagoshima or Osaka; fast ferry"},
+ {id:"chichijima",name:"Chichijima",jp:"父島",area:"Ogasawara",kind:"beach",swim:"ok",airA:"21.1",airM:"23.4",seaA:"21-22",seaM:"23-24",seeA:"Last of the humpback whales, dolphins",seeM:"Swimming with dolphins, sea turtles, 'Bonin blue'",desc:"No airport: 24 h ferry from Tokyo about once a week, so plan about 6 days.",gem:false,go:"24 h ferry from Takeshiba, Tokyo"},
+ {id:"miyakejima",name:"Miyakejima",jp:"三宅島",area:"Izu",kind:"volcano",swim:"cold",airA:"16.4",airM:"20.0",seaA:"18-20",seaM:"20-22",seeA:"Birdwatching (akakokko), volcanic landscapes",seeM:"Tairo-ike lake trail, birds",desc:"Active volcano island. Overnight ferry, sometimes cancelled in rough seas.",gem:true,go:"6.5 h overnight ferry from Tokyo"},
+ {id:"mikurajima",name:"Mikurajima",jp:"御蔵島",area:"Izu",kind:"forest",swim:"cold",airA:"~16",airM:"~20",seaA:"18-20",seaM:"20-22",seeA:"Swimming with wild dolphins (wetsuit)",seeM:"Dolphins, old-growth forest walks",desc:"Book a place to stay before going; the ferry often cannot dock.",gem:true,go:"Ferry from Tokyo via Miyakejima"},
+ {id:"hachijojima",name:"Hachijojima",jp:"八丈島",area:"Izu",kind:"volcano",swim:"cold",airA:"16.5",airM:"~19.5",seaA:"19-20",seaM:"21-22",seeA:"Freesia festival (late March to early April), Hachijo-Fuji hike",seeM:"Waterfalls, hot springs, cold snorkelling",desc:"Lush island with a tropical feel, 55 min by plane from Haneda.",gem:false,go:"55 min flight from Haneda"},
+ {id:"shikinejima",name:"Shikinejima",jp:"式根島",area:"Izu",kind:"onsen",swim:"cold",airA:"~16",airM:"~19.5",seaA:"18-19",seaM:"21-22",seeA:"Free seaside hot springs in rock pools",seeM:"Tomari Beach cove, hot springs",desc:"Tiny island you can cycle around.",gem:true,go:"3 h jet boat from Tokyo"},
+ {id:"kozushima",name:"Kozushima",jp:"神津島",area:"Izu",kind:"cliff",swim:"cold",airA:"~16",airM:"~19.5",seaA:"18-19",seaM:"20-22",seeA:"Mt Tenjo hike, clear water at Akazaki",seeM:"Mt Tenjo, stargazing (dark-sky place)",desc:"Some of the clearest water near Tokyo.",gem:true,go:"3.5 h jet boat from Tokyo"},
+ {id:"niijima",name:"Niijima",jp:"新島",area:"Izu",kind:"beach",swim:"cold",airA:"~16",airM:"~19.5",seaA:"17-18",seaM:"20-21",seeA:"Habushiura white beach, surfing, glass art",seeM:"Surfing, free hot spring at Yunohama",desc:"Surfer island with a 6.5 km white beach.",gem:true,go:"2.5 h jet boat from Tokyo"},
+ {id:"tokyo",name:"Tokyo",jp:"東京",area:"Cities",kind:"city",swim:"city",airA:"~15",airM:"~20",seaA:"",seaM:"",seeA:"Late cherry blossoms in early April, Shinjuku Gyoen, Asakusa",seeM:"Fresh green parks, azaleas at Nezu Shrine; avoid Golden Week crowds",desc:"Start and end point. Easy base for the Izu islands and day trips.",gem:false,go:"Flights to Haneda or Narita"},
+ {id:"kyoto",name:"Kyoto",jp:"京都",area:"Cities",kind:"city",swim:"city",airA:"~16",airM:"~21",seaA:"",seaM:"",seeA:"Cherry blossoms early April, temples, Philosopher's Path",seeM:"Fresh maple green, Aoi Matsuri festival (15 May)",desc:"Temples and old streets. Go early in the morning to beat the crowds.",gem:false,go:"2 h 15 min by shinkansen from Tokyo"},
+ {id:"osaka",name:"Osaka",jp:"大阪",area:"Cities",kind:"city",swim:"city",airA:"~16",airM:"20.1",seaA:"",seaM:"",seeA:"Osaka Castle park, Mint Bureau cherry tunnel (mid-April)",seeM:"Street food in Dotonbori, day trip to Nara",desc:"Food city and a good base for Nara and Kobe. Kansai airport has flights to Okinawa.",gem:false,go:"15 min from Kyoto by train"},
+ {id:"karuizawa",name:"Karuizawa",jp:"軽井沢",area:"Cities",kind:"mountain",swim:"city",airA:"~8",airM:"~13",seaA:"",seaM:"",seeA:"Still cold, trees mostly bare; quiet",seeM:"Fresh green forest, best from mid-May",desc:"Cool mountain resort town with forest walks and Kumoba Pond.",gem:false,go:"1 h by shinkansen from Tokyo"}
+];
+
+const FEATURES = [["beach","Beach"],["snorkel","Snorkel & sea life"],["nature","Nature"],["hiking","Hiking"],["onsen","Hot springs"],["culture","Culture & villages"],["food","Food"]];
+const TAGS = {ishigaki:"beach snorkel nature food",taketomi:"beach culture",iriomote:"nature hiking snorkel",kohama:"beach snorkel",kuroshima:"beach snorkel",hateruma:"beach nature",yonaguni:"nature snorkel",miyakojima:"beach snorkel food",irabu:"beach snorkel",tarama:"beach culture",kerama:"beach snorkel",kumejima:"beach nature",minnajima:"beach snorkel",iheya:"beach culture",yoron:"beach snorkel",okinoerabu:"nature hiking",tokunoshima:"nature culture",amami:"nature beach",kakeroma:"beach culture",yakushima:"hiking nature onsen",chichijima:"snorkel beach nature",miyakejima:"nature hiking",mikurajima:"snorkel nature",hachijojima:"onsen hiking nature",shikinejima:"onsen beach",kozushima:"hiking beach nature",niijima:"beach onsen",tokyo:"culture food",kyoto:"culture food",osaka:"food culture",karuizawa:"nature hiking onsen"};
+const KIND_TAGS = {beach:"beach",forest:"nature hiking",mountain:"nature hiking",village:"culture",onsen:"onsen",volcano:"nature hiking",city:"culture food",jungle:"nature",cliff:"nature"};
+function tagsOf(p) { return (TAGS[p.id] || KIND_TAGS[p.kind] || "").split(" ").filter(Boolean); }
+function isCity(p) { return p.area === "Cities" || p.kind === "city"; }
+let ptype = "all", feats = new Set(), areaSel = "";
+let custom = {};   // id -> place info added by us
+let states = {};   // id -> {status, years, notes, photos, cover}
+let list = "all", month = "apr", area = null, query = "";
+let db = null, assets = null, canWrite = true;
+const writeChains = {};
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function places() { return BASE.concat(Object.values(custom)); }
+function st(id) { return states[id] || {status:"", years:[], notes:"", photos:[], cover:null}; }
+function toast(msg) { const t = $("#toast"); t.textContent = msg; t.style.display = "block"; clearTimeout(t._h); t._h = setTimeout(() => t.style.display = "none", 2600); }
+
+// ---------- automatic cover pictures (drawn per place type) ----------
+function hash(s) { let h = 2166136261; for (const c of s) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
+function rng(seed) { let s = seed || 1; return () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296; }
+function drawCover(canvas, p) {
+  const w = canvas.width = 640, h = canvas.height = 360, c = canvas.getContext("2d"), r = rng(hash(p.id));
+  const sky = c.createLinearGradient(0, 0, 0, h * .6);
+  const k = p.kind;
+  const evening = r() < .25;
+  sky.addColorStop(0, evening ? "#f2a07b" : "#7cc4e6"); sky.addColorStop(1, evening ? "#ffd9a8" : "#d9f1f7");
+  c.fillStyle = sky; c.fillRect(0, 0, w, h);
+  // sun
+  c.fillStyle = evening ? "rgba(255,240,200,.95)" : "rgba(255,255,240,.9)";
+  c.beginPath(); c.arc(80 + r() * 480, 50 + r() * 50, 22 + r() * 10, 0, 7); c.fill();
+  // clouds
+  c.fillStyle = "rgba(255,255,255,.85)";
+  for (let i = 0; i < 3; i++) { const x = r() * w, y = 30 + r() * 70; for (let j = 0; j < 4; j++) { c.beginPath(); c.arc(x + j * 18, y + (j % 2) * 6, 14 + r() * 8, 0, 7); c.fill(); } }
+  const horizon = h * (k === "city" || k === "mountain" ? .62 : .5);
+  if (k === "city") {
+    c.fillStyle = "#9fb8c4";
+    for (let x = 0; x < w; x += 28 + r() * 20) { const bh = 40 + r() * 120; c.fillRect(x, horizon - bh, 24 + r() * 16, bh); }
+    c.fillStyle = "#6f8a96";
+    for (let x = 10; x < w; x += 40 + r() * 30) { const bh = 30 + r() * 80; c.fillRect(x, horizon - bh, 18 + r() * 14, bh); }
+    c.fillStyle = "#c9b79a"; c.fillRect(0, horizon, w, h - horizon);
+    // sakura / green trees
+    const blossom = r() < .6;
+    for (let i = 0; i < 9; i++) { const x = r() * w, y = horizon + 10 + r() * 60;
+      c.fillStyle = "#6b4a3a"; c.fillRect(x - 3, y, 6, 40);
+      c.fillStyle = blossom ? "#f5b8c8" : "#7fbf6a"; for (let j = 0; j < 6; j++) { c.beginPath(); c.arc(x + (r() - .5) * 50, y - 8 + (r() - .5) * 30, 16 + r() * 8, 0, 7); c.fill(); } }
+    return;
+  }
+  if (k === "mountain") {
+    c.fillStyle = "#8aa9b5"; c.beginPath(); c.moveTo(0, horizon); c.lineTo(w * .45, horizon - 160); c.lineTo(w * .9, horizon); c.fill();
+    c.fillStyle = "#fff"; c.beginPath(); c.moveTo(w * .45 - 40, horizon - 120); c.lineTo(w * .45, horizon - 160); c.lineTo(w * .45 + 40, horizon - 120); c.fill();
+    c.fillStyle = "#4f8a55"; c.fillRect(0, horizon, w, h - horizon);
+    for (let i = 0; i < 40; i++) { const x = r() * w, y = horizon + r() * (h - horizon); c.fillStyle = r() < .5 ? "#356b3c" : "#5c9a52"; c.beginPath(); c.moveTo(x, y - 34); c.lineTo(x - 12, y); c.lineTo(x + 12, y); c.fill(); }
+    return;
+  }
+  // sea
+  const sea = c.createLinearGradient(0, horizon, 0, h);
+  const deep = k === "volcano" || k === "cliff" ? "#1f5f8b" : "#1590a8";
+  sea.addColorStop(0, deep); sea.addColorStop(1, k === "volcano" ? "#2a7fa8" : "#3fd0d4");
+  c.fillStyle = sea; c.fillRect(0, horizon, w, h - horizon);
+  c.strokeStyle = "rgba(255,255,255,.35)"; c.lineWidth = 2;
+  for (let i = 0; i < 12; i++) { const y = horizon + 8 + r() * (h - horizon - 20), x = r() * w; c.beginPath(); c.moveTo(x, y); c.quadraticCurveTo(x + 15, y - 4, x + 30, y); c.stroke(); }
+  // land shape
+  if (k === "volcano") {
+    c.fillStyle = "#4a5a4f"; c.beginPath(); c.moveTo(w * .15, horizon + 4); c.lineTo(w * .45, horizon - 130); c.lineTo(w * .52, horizon - 130); c.lineTo(w * .85, horizon + 4); c.fill();
+    c.fillStyle = "#5f8a59"; c.beginPath(); c.moveTo(w * .15, horizon + 4); c.lineTo(w * .3, horizon - 60); c.lineTo(w * .7, horizon - 60); c.lineTo(w * .85, horizon + 4); c.fill();
+    c.fillStyle = "rgba(230,230,230,.75)"; for (let i = 0; i < 5; i++) { c.beginPath(); c.arc(w * .49 + i * 12, horizon - 145 - i * 16, 12 + i * 3, 0, 7); c.fill(); }
+  } else if (k === "cliff") {
+    c.fillStyle = "#5d8b5a"; c.beginPath(); c.moveTo(w * .5, horizon + 2); c.lineTo(w * .62, horizon - 70); c.lineTo(w, horizon - 90); c.lineTo(w, h * .8); c.lineTo(w * .7, h * .8); c.fill();
+    c.fillStyle = "#b8a68a"; c.beginPath(); c.moveTo(w * .62, horizon - 70); c.lineTo(w * .7, h * .8); c.lineTo(w * .6, h * .8); c.lineTo(w * .5, horizon + 2); c.fill();
+  } else if (k === "jungle" || k === "forest") {
+    c.fillStyle = k === "forest" ? "#2f5d3a" : "#2f7a45";
+    c.beginPath(); c.moveTo(0, horizon + 2); for (let x = 0; x <= w; x += 40) c.lineTo(x, horizon - 50 - r() * 60); c.lineTo(w, horizon + 2); c.fill();
+    c.fillStyle = k === "forest" ? "#3f7449" : "#43a05a";
+    for (let i = 0; i < 26; i++) { c.beginPath(); c.arc(r() * w, horizon - 20 - r() * 30, 18 + r() * 14, 0, 7); c.fill(); }
+    if (k === "forest") { c.fillStyle = "rgba(255,255,255,.35)"; c.fillRect(0, horizon - 70, w, 18); }
+  } else {
+    // low island on the horizon
+    c.fillStyle = "#4f9a5a"; c.beginPath(); c.ellipse(w * (.25 + r() * .5), horizon + 2, 90 + r() * 60, 16, 0, Math.PI, 0); c.fill();
+  }
+  // foreground beach
+  if (k !== "volcano" && k !== "cliff") {
+    c.fillStyle = "#f1e3c2"; c.beginPath(); c.moveTo(0, h); c.lineTo(0, h * .8); c.quadraticCurveTo(w * .4, h * .74, w, h * .86); c.lineTo(w, h); c.fill();
+    c.fillStyle = "rgba(255,255,255,.6)"; c.beginPath(); c.moveTo(0, h * .8); c.quadraticCurveTo(w * .4, h * .74, w, h * .86); c.lineTo(w, h * .87); c.quadraticCurveTo(w * .4, h * .76, 0, h * .815); c.fill();
+  }
+  if (k === "village" || k === "onsen") {
+    for (let i = 0; i < 4; i++) { const x = 40 + i * 70 + r() * 20, y = h * .78;
+      c.fillStyle = "#f4efe6"; c.fillRect(x, y - 26, 46, 26);
+      c.fillStyle = k === "onsen" ? "#6a7f88" : "#c4553f"; c.beginPath(); c.moveTo(x - 6, y - 26); c.lineTo(x + 23, y - 44); c.lineTo(x + 52, y - 26); c.fill(); }
+    if (k === "onsen") { c.fillStyle = "rgba(255,255,255,.7)"; for (let i = 0; i < 6; i++) { c.beginPath(); c.arc(w * .75 + (r() - .5) * 40, h * .78 - i * 12, 8 + i * 2, 0, 7); c.fill(); } }
+  }
+  if (k === "beach" || k === "jungle") {
+    const px = w * (.72 + r() * .2), py = h * .86;
+    c.strokeStyle = "#7a5638"; c.lineWidth = 7; c.beginPath(); c.moveTo(px, py); c.quadraticCurveTo(px - 10, py - 60, px + 8, py - 120); c.stroke();
+    c.strokeStyle = "#2f8a4a"; c.lineWidth = 6;
+    for (let a = 0; a < 6; a++) { const ang = -Math.PI / 2 + (a - 2.5) * .55; c.beginPath(); c.moveTo(px + 8, py - 120); c.quadraticCurveTo(px + 8 + Math.cos(ang) * 40, py - 130 + Math.sin(ang) * 30, px + 8 + Math.cos(ang) * 70, py - 110 + Math.sin(ang) * 40 + 20); c.stroke(); }
+  }
+}
+function coverHtml(p, s) {
+  const id = s.cover || (s.photos && s.photos[0]);
+  return id ? `<img src="/_blob/${esc(id)}" alt="${esc(p.name)} photo" loading="lazy">` : `<canvas data-cover="${esc(p.id)}" aria-label="${esc(p.name)} picture"></canvas>`;
+}
+function paintCovers(root) {
+  root.querySelectorAll("canvas[data-cover]").forEach(cv => { const p = places().find(x => x.id === cv.dataset.cover); if (p) drawCover(cv, p); });
+}
+
+// ---------- rendering ----------
+function renderAreas() {
+  const types = [["all","All"],["island","Islands"],["city","Cities"],["gem","Hidden gems"],["swim","Swim in April"]];
+  $("#types").innerHTML = types.map(([k, l]) => `<button class="chip" data-type="${k}" aria-pressed="${ptype === k}">${l}</button>`).join("") +
+    `<select id="areaSel" class="chip" aria-label="Area"><option value="">All areas</option>${AREAS.filter(a => a !== "Cities").map(a => `<option ${areaSel === a ? "selected" : ""}>${a}</option>`).join("")}</select>`;
+  $("#feats").innerHTML = FEATURES.map(([k, l]) => `<button class="chip" data-feat="${k}" aria-pressed="${feats.has(k)}">${l}</button>`).join("") +
+    (feats.size ? `<button class="chip" data-feat="__clear" aria-pressed="false">Clear</button>` : "");
+}
+function renderStats() {
+  const all = places(); let w = 0, v = 0;
+  all.forEach(p => { const s = st(p.id).status; if (s === "want") w++; if (s === "visited") v++; });
+  $("#stats").innerHTML = `<span class="stat"><b>${all.length}</b> places</span><span class="stat"><b>${w}</b> want to go</span><span class="stat"><b>${v}</b> visited</span>`;
+}
+function matches(p) {
+  const s = st(p.id);
+  if (list === "want" && s.status !== "want") return false;
+  if (list === "visited" && s.status !== "visited") return false;
+  if (ptype === "island" && isCity(p)) return false;
+  if (ptype === "city" && !isCity(p)) return false;
+  if (ptype === "gem" && !p.gem) return false;
+  if (ptype === "swim" && !(p.swim === "good" || p.swim === "ok")) return false;
+  if (areaSel && p.area !== areaSel) return false;
+  if (feats.size) { const t = tagsOf(p); for (const f of feats) if (!t.includes(f)) return false; }
+  if (query) {
+    const hay = [p.name, p.jp, p.area, p.desc, p.seeA, p.seeM, s.notes].join(" ").toLowerCase();
+    if (!hay.includes(query)) return false;
+  }
+  return true;
+}
+function render() {
+  renderStats();
+  const items = places().filter(matches);
+  const grid = $("#grid");
+  grid.innerHTML = items.map(p => {
+    const s = st(p.id), sw = SWIM[p.swim] || SWIM.city;
+    const air = month === "apr" ? p.airA : p.airM, sea = month === "apr" ? p.seaA : p.seaM, see = month === "apr" ? p.seeA : p.seeM;
+    const badge = s.status === "want" ? `<span class="badge want">Want to go</span>` : s.status === "visited" ? `<span class="badge visited">Visited${s.years && s.years.length ? " " + esc(s.years.join(", ")) : ""}</span>` : "";
+    return `<button class="card" data-open="${esc(p.id)}">
+      <div class="cover">${coverHtml(p, s)}${badge}${p.gem ? `<span class="gem">Hidden gem</span>` : ""}</div>
+      <div class="body">
+        <div class="name">${esc(p.name)}<span class="jp">${esc(p.jp)}</span></div>
+        <div class="meta">${esc(p.area)}</div>
+        <div class="temps">${air ? `<span>Air ${esc(air)}°C</span>` : ""}${sea ? `<span>Sea ${esc(sea)}°C</span>` : ""}<span class="pill ${sw[1]}">${sw[0]}</span></div>
+        <div class="see">${esc(see)}</div>
+        <div class="tags">${tagsOf(p).map(k => `<span>${esc((FEATURES.find(f => f[0] === k) || [k, k])[1])}</span>`).join("")}</div>
+      </div></button>`;
+  }).join("");
+  $("#empty").hidden = items.length > 0;
+  paintCovers(grid);
+}
+
+// ---------- detail sheet ----------
+let openId = null;
+function openSheet(id) { openId = id; renderSheet(); $("#sheet").classList.add("open"); $("#sheetBg").classList.add("open"); $("#sheet").scrollTop = 0; }
+function closeSheet() { openId = null; $("#sheet").classList.remove("open"); $("#sheetBg").classList.remove("open"); }
+function renderSheet() {
+  if (!openId) return;
+  if (openId === "__add") return renderAddForm();
+  const p = places().find(x => x.id === openId); if (!p) return closeSheet();
+  const s = st(p.id), sw = SWIM[p.swim] || SWIM.city;
+  const photoQ = encodeURIComponent(p.jp + " " + p.name);
+  const photos = (s.photos || []).map(id => `<figure><img src="/_blob/${esc(id)}" alt="Our photo of ${esc(p.name)}" loading="lazy"><div class="mini"><button data-cover-set="${esc(id)}">${s.cover === id ? "Cover ✓" : "Cover"}</button><button data-photo-del="${esc(id)}">Remove</button></div></figure>`).join("");
+  $("#sheet").innerHTML = `
+    <button class="close" id="closeBtn" aria-label="Close">×</button>
+    <div class="cover">${coverHtml(p, s)}</div>
+    <div class="sheet-in">
+      <div><h2>${esc(p.name)} <span class="jp">${esc(p.jp)}</span></h2>
+        <div class="meta">${esc(p.area)}${p.gem ? " · hidden gem" : ""} · <span class="pill ${sw[1]}">${sw[0]}</span></div></div>
+      <div class="actions">
+        <button class="btn ${s.status === "want" ? "on-want" : ""}" data-status="want">${s.status === "want" ? "♥ Want to go" : "♡ Want to go"}</button>
+        <button class="btn ${s.status === "visited" ? "on-visited" : ""}" data-status="visited">${s.status === "visited" ? "✓ Visited" : "Mark visited"}</button>
+        <a class="btn link" href="https://www.google.com/search?tbm=isch&q=${photoQ}" target="_blank" rel="noopener">See real photos ↗</a>
+      </div>
+      <div class="months">
+        <div class="box"><h3>April</h3><div class="nums">${p.airA ? `<span>Air ${esc(p.airA)}°C</span>` : ""}${p.seaA ? `<span>Sea ${esc(p.seaA)}°C</span>` : ""}</div><p>${esc(p.seeA)}</p></div>
+        <div class="box"><h3>May</h3><div class="nums">${p.airM ? `<span>Air ${esc(p.airM)}°C</span>` : ""}${p.seaM ? `<span>Sea ${esc(p.seaM)}°C</span>` : ""}</div><p>${esc(p.seeM)}</p></div>
+      </div>
+      <div class="box"><h3>About</h3><p>${esc(p.desc)}</p><p class="small" style="margin-top:6px">Getting there: ${esc(p.go)}</p></div>
+      <div class="box"><h3>Years we went</h3>
+        <div class="years">${(s.years || []).map(y => `<button class="year" data-year-del="${esc(y)}" title="Remove ${esc(y)}">${esc(y)} ×</button>`).join("")}
+          <form class="add-year" id="yearForm"><input id="yearIn" inputmode="numeric" maxlength="4" placeholder="2027" aria-label="Year"><button class="btn" type="submit">Add</button></form></div>
+      </div>
+      <div class="box"><h3>Our notes</h3><textarea id="notes" placeholder="Hotel we liked, best beach, restaurant, things for next time...">${esc(s.notes || "")}</textarea><p class="small">Saves when you tap outside the box.</p></div>
+      <div class="box"><h3>Our photos</h3>
+        ${photos ? `<div class="photos">${photos}</div>` : `<p class="small">No photos yet. The picture on top is drawn automatically until you add your own.</p>`}
+        <p style="margin:8px 0 0">${assets ? `<label class="btn" for="photoIn" style="display:inline-block">+ Add photos</label><input id="photoIn" type="file" accept="image/*" multiple hidden>` : `<span class="small">Photo upload is available to people who can edit this page.</span>`}</p>
+      </div>
+      ${p.custom ? `<button class="btn" id="delPlace">Delete this place</button>` : ""}
+      <p class="small">Air: Japan Meteorological Agency averages 1991-2020 (~ = estimate). Sea: mostly estimates. Check dates and ferries before booking.</p>
+    </div>`;
+  paintCovers($("#sheet"));
+}
+function renderAddForm() {
+  $("#sheet").innerHTML = `
+    <button class="close" id="closeBtn" aria-label="Close">×</button>
+    <div class="sheet-in" style="padding-top:20px">
+      <h2>Add a place</h2>
+      <form class="add" id="addForm">
+        <label class="small" for="fName">Name</label><input id="fName" required placeholder="e.g. Nara, Hakone, a ramen shop">
+        <label class="small" for="fJp">Japanese name (optional)</label><input id="fJp" placeholder="奈良">
+        <label class="small" for="fArea">Area</label><select id="fArea">${AREAS.map(a => `<option>${a}</option>`).join("")}<option>Other</option></select>
+        <label class="small" for="fKind">Picture style</label><select id="fKind"><option value="city">City</option><option value="beach">Beach</option><option value="mountain">Mountain</option><option value="forest">Forest</option><option value="village">Village</option><option value="onsen">Hot spring</option><option value="volcano">Volcano</option></select>
+        <label class="small" for="fDesc">Why we want to go</label><input id="fDesc">
+        <button class="btn on-want" type="submit">Add to Want to go</button>
+      </form>
+    </div>`;
+}
+
+// ---------- saving ----------
+function saveState(id, next) {
+  states[id] = next; render(); renderSheet();
+  if (!db || !canWrite) return;
+  const body = { status: next.status || "", years: next.years || [], notes: next.notes || "", photos: next.photos || [], cover: next.cover || null, updatedAt: new Date().toISOString() };
+  writeChains[id] = (writeChains[id] || Promise.resolve()).then(() => db.doc("places/" + id).set(body)).catch(e => {
+    if (e && e.code === "invalid_argument") { canWrite = false; toast("You can view this page but not save changes."); }
+    else toast("Couldn't save. Check your connection and try again.");
+  });
+}
+function setStatus(id, status) {
+  const s = { ...st(id) };
+  s.status = s.status === status ? "" : status;
+  if (s.status === "visited" && !(s.years || []).length) s.years = [String(new Date().getFullYear())];
+  saveState(id, s);
+}
+
+// ---------- events ----------
+document.addEventListener("click", e => {
+  const t = e.target.closest("button, a"); if (!t) return;
+  if (t.dataset.list) { list = t.dataset.list; document.querySelectorAll("[data-list]").forEach(b => b.setAttribute("aria-pressed", b === t)); render(); }
+  else if (t.dataset.month) { month = t.dataset.month; document.querySelectorAll("[data-month]").forEach(b => b.setAttribute("aria-pressed", b === t)); render(); }
+  else if (t.dataset.type) { ptype = t.dataset.type; renderAreas(); render(); }
+  else if (t.dataset.feat) { const f = t.dataset.feat; if (f === "__clear") feats.clear(); else if (feats.has(f)) feats.delete(f); else feats.add(f); renderAreas(); render(); }
+  else if (t.dataset.open) openSheet(t.dataset.open);
+  else if (t.id === "closeBtn") closeSheet();
+  else if (t.id === "addBtn") { openSheet("__add"); }
+  else if (t.dataset.status) setStatus(openId, t.dataset.status);
+  else if (t.dataset.yearDel) { const s = { ...st(openId) }; s.years = (s.years || []).filter(y => y !== t.dataset.yearDel); saveState(openId, s); }
+  else if (t.dataset.coverSet) { const s = { ...st(openId) }; s.cover = s.cover === t.dataset.coverSet ? null : t.dataset.coverSet; saveState(openId, s); }
+  else if (t.dataset.photoDel) { removePhoto(openId, t.dataset.photoDel); }
+  else if (t.id === "delPlace") { deletePlace(openId); }
+});
+$("#sheetBg").addEventListener("click", closeSheet);
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeSheet(); });
+document.addEventListener("change", e => { if (e.target.id === "areaSel") { areaSel = e.target.value; render(); } });
+$("#q").addEventListener("input", e => { query = e.target.value.trim().toLowerCase(); render(); });
+document.addEventListener("submit", e => {
+  e.preventDefault();
+  if (e.target.id === "yearForm") {
+    const y = $("#yearIn").value.trim();
+    if (!/^\d{4}$/.test(y)) { toast("Enter a year like 2027."); return; }
+    const s = { ...st(openId) }; s.years = Array.from(new Set([...(s.years || []), y])).sort();
+    if (!s.status) s.status = "visited";
+    saveState(openId, s);
+  } else if (e.target.id === "addForm") addPlace();
+});
+document.addEventListener("focusout", e => {
+  if (e.target.id === "notes" && openId) { const v = e.target.value; if (v !== (st(openId).notes || "")) { const s = { ...st(openId) }; s.notes = v; states[openId] = s; saveState(openId, s); } }
+});
+document.addEventListener("change", async e => {
+  if (e.target.id !== "photoIn" || !assets) return;
+  const files = Array.from(e.target.files || []); const id = openId; if (!files.length) return;
+  toast("Uploading " + files.length + " photo" + (files.length > 1 ? "s" : "") + "...");
+  const added = [];
+  for (const f of files) {
+    try { const blob = await shrink(f); const r = await assets.upload(blob, { type: "image/jpeg" }); added.push(r.id); }
+    catch (err) { toast(err && err.code === "too_large" ? "One photo is too big (max 20 MB)." : err && err.code === "quota_or_state" ? "Photo storage is full." : "A photo couldn't be uploaded."); }
+  }
+  if (added.length) { const s = { ...st(id) }; s.photos = [...(s.photos || []), ...added]; saveState(id, s); toast("Photos added."); }
+});
+async function shrink(file) {
+  try {
+    const bmp = await createImageBitmap(file); const max = 1600, sc = Math.min(1, max / Math.max(bmp.width, bmp.height));
+    const cv = document.createElement("canvas"); cv.width = Math.round(bmp.width * sc); cv.height = Math.round(bmp.height * sc);
+    cv.getContext("2d").drawImage(bmp, 0, 0, cv.width, cv.height);
+    return await new Promise(res => cv.toBlob(b => res(b || file), "image/jpeg", .85));
+  } catch { return file; }
+}
+async function removePhoto(id, assetId) {
+  const s = { ...st(id) }; s.photos = (s.photos || []).filter(x => x !== assetId); if (s.cover === assetId) s.cover = null;
+  saveState(id, s);
+  try { if (assets) await assets.delete(assetId); } catch {}
+}
+async function addPlace() {
+  const name = $("#fName").value.trim(); if (!name) return;
+  const id = "c-" + Date.now().toString(36);
+  const p = { id, custom: true, name, jp: $("#fJp").value.trim(), area: $("#fArea").value, kind: $("#fKind").value, swim: $("#fKind").value === "beach" ? "ok" : "city", airA: "", airM: "", seaA: "", seaM: "", seeA: "", seeM: "", desc: $("#fDesc").value.trim(), gem: false, go: "" };
+  custom[id] = p; states[id] = { status: "want", years: [], notes: "", photos: [], cover: null };
+  closeSheet(); render(); openSheet(id);
+  if (db && canWrite) {
+    try { await db.doc("custom/" + id).set(p); } catch { toast("Couldn't save the new place."); }
+    saveState(id, states[id]);
+  }
+}
+async function deletePlace(id) {
+  delete custom[id]; delete states[id]; closeSheet(); render();
+  if (db && canWrite) { try { await db.doc("custom/" + id).delete(); await db.doc("places/" + id).delete(); } catch { toast("Couldn't delete it. Try again."); } }
+}
+
+// ---------- start ----------
+renderAreas(); render();
+(async () => {
+  if (!window.claude || !window.claude.use) { $("#syncNote").textContent = "Saving is off in this preview. Open the shared page to save."; return; }
+  try {
+    const [d, a, u] = await Promise.all([claude.use("db"), claude.use("assets"), claude.use("user")]);
+    db = d; assets = a;
+    if (u && u.can) { try { const w = await u.can("data.write"); if (w === false) canWrite = false; } catch {} }
+  } catch {}
+  if (!db) { $("#syncNote").textContent = "Saving is off here. Sign in to claude.ai to save your list."; return; }
+  if (!canWrite) $("#syncNote").textContent = "You can look, but saving needs edit access to this page.";
+  const timer = setTimeout(() => { $("#syncNote").textContent = "Can't reach saved data yet. Changes may not be up to date."; }, 10000);
+  const clear = snap => { if (!snap.metadata.fromCache) { clearTimeout(timer); if ($("#syncNote").textContent.startsWith("Can't reach")) $("#syncNote").textContent = ""; } };
+  db.collection("places").onSnapshot(snap => {
+    clear(snap);
+    const next = {}; snap.docs.forEach(d => { const v = d.data() || {}; next[d.id] = { status: v.status || "", years: Array.isArray(v.years) ? v.years.map(String) : [], notes: typeof v.notes === "string" ? v.notes : "", photos: Array.isArray(v.photos) ? v.photos.filter(x => typeof x === "string") : [], cover: typeof v.cover === "string" ? v.cover : null }; });
+    const editing = document.activeElement && document.activeElement.id === "notes";
+    states = next; render(); if (!editing) renderSheet();
+  }, () => { clearTimeout(timer); $("#syncNote").textContent = "Saved data couldn't load. Reload the page to try again."; });
+  db.collection("custom").onSnapshot(snap => {
+    const next = {}; snap.docs.forEach(d => { const v = d.data() || {}; if (typeof v.name === "string") next[d.id] = { id: d.id, custom: true, name: v.name, jp: String(v.jp || ""), area: String(v.area || "Other"), kind: String(v.kind || "city"), swim: String(v.swim || "city"), airA: "", airM: "", seaA: "", seaM: "", seeA: "", seeM: "", desc: String(v.desc || ""), gem: false, go: String(v.go || "") }; });
+    custom = next; render();
+  }, () => {});
+})();
+</script>
+</body>
+</html>

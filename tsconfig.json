@@ -1,0 +1,18 @@
+{
+  // TypeScript settings. "strict" makes TypeScript catch more mistakes for us.
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["vite/client", "node"],
+    "strict": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    // lets server/*.ts import each other with ".ts" endings, which Node needs to run them directly
+    "allowImportingTsExtensions": true
+  },
+  "include": ["src", "scripts", "server", "vite.config.ts"]
+}

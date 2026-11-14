@@ -1,0 +1,30 @@
+{
+  "name": "japan-trip",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "climate": "tsx scripts/fetch-climate.ts",
+    "photos": "tsx scripts/fetch-photos.ts",
+    "deploy": "npm run build && rsync -avz --delete dist/ Hertz:/var/www/html/akari-japan-place/",
+    "icons": "python3 scripts/make-icons.py",
+    "server": "COOKIE_SECURE=false DATA_DIR=./server/data node --experimental-strip-types server/server.ts",
+    "server:set-code": "DATA_DIR=./server/data node --experimental-strip-types server/set-code.ts",
+    "deploy:server": "rsync -az server/server.ts server/db.ts server/set-code.ts Hertz:/var/www/japanchansky-api/ && ssh Hertz systemctl restart japanchansky-api",
+    "hertz:set-code": "ssh -t Hertz \"cd /var/www/japanchansky-api && sudo -u www-data DATA_DIR=/var/lib/japanchansky node --experimental-strip-types --no-warnings set-code.ts\""
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.22",
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vite-plugin-pwa": "^2.0.0"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  }
+}

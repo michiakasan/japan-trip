@@ -1,0 +1,73 @@
+/*
+  Design tokens: every colour and font the app uses, in one place.
+  Design: "Washi & Ink" — washi paper, sumi ink, a vermilion (朱) accent, serif Japanese names.
+
+  <html data-mode="light|dark"> is set by applyTheme() in main.ts
+  (it follows the phone's setting unless you pick light or dark in the app).
+
+  Rating colours:
+    --great / --ok / --avoid   colour of the ◎ ○ ✕ marks
+    --bar-*                    colour of the temperature bars on the place page
+*/
+
+:root {
+  --font-body: "Noto Sans JP", system-ui, sans-serif;
+  --font-display: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-jp: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --radius: 6px;
+  --radius-sm: 4px;
+}
+
+/* ---------- light ---------- */
+:root[data-mode="light"] {
+  color-scheme: light;
+  --bg: #f7f3ea;        /* washi paper */
+  --surface: #fbf8f2;   /* cards, panels */
+  --ink: #1e1b18;       /* main text */
+  --muted: #6b635a;     /* secondary text (5.6:1 on --bg) */
+  --line: #ddd4c4;      /* borders */
+  --accent: #b3361f;    /* vermilion */
+  --accent-fg: #ffffff; /* text on vermilion */
+  --chip-on-bg: #1e1b18;
+  --chip-on-fg: #f7f3ea;
+
+  --great: #b3361f;
+  --ok: #1e1b18;
+  --avoid: #8a8178;
+
+  --bar-great: #c8452c;
+  --bar-ok: #cbbfac;
+  --bar-avoid: #efe9de;
+  --bar-avoid-border: #b5ab9c;
+
+  --want: #b3361f;
+  --visited: #3f6b47;
+  --sea: #2f5f7a;
+}
+
+/* ---------- dark ---------- */
+:root[data-mode="dark"] {
+  color-scheme: dark;
+  --bg: #16130f;
+  --surface: #211d18;
+  --ink: #ede6da;
+  --muted: #a89e90;
+  --line: #3a332b;
+  --accent: #e8705a;
+  --accent-fg: #16130f;
+  --chip-on-bg: #ede6da;
+  --chip-on-fg: #16130f;
+
+  --great: #e8705a;
+  --ok: #ede6da;
+  --avoid: #8a8073;
+
+  --bar-great: #e8705a;
+  --bar-ok: #5c5349;
+  --bar-avoid: #2a251f;
+  --bar-avoid-border: #5c5349;
+
+  --want: #e8705a;
+  --visited: #9cc7a3;
+  --sea: #8fbcd6;
+}

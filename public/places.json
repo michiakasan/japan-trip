@@ -1,0 +1,3678 @@
+{
+  "$comment": "Built-in places. Edit freely. Air temperatures come from scripts/fetch-climate.ts (JMA 1991-2020 normals); photos from scripts/fetch-photos.ts. Sea temperatures are estimates.",
+  "areas": [
+    {
+      "name": "Yaeyama",
+      "jp": "八重山"
+    },
+    {
+      "name": "Miyako",
+      "jp": "宮古"
+    },
+    {
+      "name": "Okinawa",
+      "jp": "沖縄"
+    },
+    {
+      "name": "Amami",
+      "jp": "奄美"
+    },
+    {
+      "name": "Kagoshima",
+      "jp": "鹿児島"
+    },
+    {
+      "name": "Ogasawara",
+      "jp": "小笠原"
+    },
+    {
+      "name": "Izu",
+      "jp": "伊豆諸島"
+    },
+    {
+      "name": "Kanto",
+      "jp": "関東"
+    },
+    {
+      "name": "Kansai",
+      "jp": "関西"
+    },
+    {
+      "name": "Nagano",
+      "jp": "長野"
+    }
+  ],
+  "features": [
+    {
+      "id": "beach",
+      "name": "Beach",
+      "jp": "ビーチ"
+    },
+    {
+      "id": "snorkel",
+      "name": "Snorkel & sea life",
+      "jp": "シュノーケル"
+    },
+    {
+      "id": "nature",
+      "name": "Nature",
+      "jp": "自然"
+    },
+    {
+      "id": "hiking",
+      "name": "Hiking",
+      "jp": "ハイキング"
+    },
+    {
+      "id": "onsen",
+      "name": "Hot springs",
+      "jp": "温泉"
+    },
+    {
+      "id": "culture",
+      "name": "Culture & villages",
+      "jp": "文化・集落"
+    },
+    {
+      "id": "food",
+      "name": "Food",
+      "jp": "グルメ"
+    }
+  ],
+  "places": [
+    {
+      "id": "ishigaki",
+      "name": "Ishigaki",
+      "jp": "石垣島",
+      "kind": "island",
+      "scene": "beach",
+      "area": "Yaeyama",
+      "lat": 24.4,
+      "lng": 124.18,
+      "gem": false,
+      "features": [
+        "beach",
+        "snorkel",
+        "nature",
+        "food"
+      ],
+      "desc": "Hub of the Yaeyama islands with ferries to Taketomi, Iriomote, Kohama, Kuroshima and Hateruma. No swimming in Kabira Bay itself.",
+      "access": "Direct flights from Tokyo and Osaka",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Mild (about 19°C) but cloudy and windy; too cool to swim",
+          "air": 18.9,
+          "sea": 23
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild and windy; quiet season",
+          "air": 19.4,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Warming up; Japan's earliest beach openings, few crowds",
+          "air": 20.9,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Warm and sunny; Yaeyama fireflies at night",
+          "air": 23.4,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season starts around mid-May",
+          "air": 25.9,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until about 20 June, then hot and clear",
+          "air": 28.4,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Clear skies after the rains; typhoon risk begins",
+          "air": 29.6,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot, summer crowds",
+          "air": 29.4,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 28.2,
+          "sea": 29
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea, typhoons fading, fewer crowds",
+          "air": 26,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Dry and comfortable; sea still warm",
+          "air": 23.6,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and windy; quiet season",
+          "air": 20.5,
+          "sea": 24
+        }
+      ],
+      "climate": {
+        "station": "石垣島 Ishigakijima",
+        "stationRef": {
+          "type": "s",
+          "prec": 91,
+          "block": 47918
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Fireflies at night, Kabira Bay viewpoint, beaches open",
+        "summer": "Snorkelling and Yaeyama festivals; watch for typhoons",
+        "autumn": "Warm sea with fewer crowds; harvest festivals",
+        "winter": "Mild days, fewer visitors, good base for island hopping"
+      },
+      "photo": {
+        "file": "Kabira Bay Ishigaki Island40bs3s4592.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Kabira_Bay_Ishigaki_Island40bs3s4592.jpg/1280px-Kabira_Bay_Ishigaki_Island40bs3s4592.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Kabira_Bay_Ishigaki_Island40bs3s4592.jpg/500px-Kabira_Bay_Ishigaki_Island40bs3s4592.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Kabira_Bay_Ishigaki_Island40bs3s4592.jpg"
+      }
+    },
+    {
+      "id": "taketomi",
+      "name": "Taketomi",
+      "jp": "竹富島",
+      "kind": "island",
+      "scene": "village",
+      "area": "Yaeyama",
+      "lat": 24.33,
+      "lng": 124.09,
+      "gem": false,
+      "features": [
+        "beach",
+        "culture"
+      ],
+      "desc": "Tiny island with a preserved red-tile village and coral-sand roads. Stay a night to see it after the day-trippers leave.",
+      "access": "15 min ferry from Ishigaki",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Mild (about 19°C) but cloudy and windy; too cool to swim",
+          "air": 18.9,
+          "sea": 23
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild and windy; quiet season",
+          "air": 19.4,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Warming up; Japan's earliest beach openings, few crowds",
+          "air": 20.9,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Warm and sunny before the rainy season",
+          "air": 23.4,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season from mid-May; quieter after Golden Week",
+          "air": 25.9,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until about 20 June, then hot and clear",
+          "air": 28.4,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Clear skies after the rains; typhoon risk begins",
+          "air": 29.6,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot, summer crowds",
+          "air": 29.4,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 28.2,
+          "sea": 29
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea, typhoons fading, fewer crowds",
+          "air": 26,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Dry and comfortable; sea still warm",
+          "air": 23.6,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and windy; quiet season",
+          "air": 20.5,
+          "sea": 24
+        }
+      ],
+      "climate": {
+        "station": "石垣島 Ishigakijima",
+        "stationRef": {
+          "type": "s",
+          "prec": 91,
+          "block": 47918
+        },
+        "airSource": "nearby",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Kondoi Beach lagoon, star sand at Kaiji Beach",
+        "summer": "Hot white-sand roads, swimming at Kondoi",
+        "autumn": "Tanadui, a 600-year-old harvest festival",
+        "winter": "Quiet village, water buffalo carts, few day-trippers"
+      },
+      "photo": {
+        "file": "Hoshinoya Okinawa.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Hoshinoya_Okinawa.jpg/1280px-Hoshinoya_Okinawa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Hoshinoya_Okinawa.jpg/500px-Hoshinoya_Okinawa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Hoshino Resorts",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Hoshinoya_Okinawa.jpg"
+      }
+    },
+    {
+      "id": "iriomote",
+      "name": "Iriomote",
+      "jp": "西表島",
+      "kind": "island",
+      "scene": "jungle",
+      "area": "Yaeyama",
+      "lat": 24.33,
+      "lng": 123.82,
+      "gem": false,
+      "features": [
+        "nature",
+        "hiking",
+        "snorkel"
+      ],
+      "desc": "About 90% jungle, UNESCO natural heritage, home of the Iriomote wildcat. Best for nature and sea together.",
+      "access": "40-50 min ferry from Ishigaki",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Mild (about 19°C) but cloudy and windy; too cool to swim",
+          "air": 18.3,
+          "sea": 23
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild and windy; quiet season",
+          "air": 18.8,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Warming up; Japan's earliest beach openings, few crowds",
+          "air": 20.4,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Fireflies at night, good hiking weather",
+          "air": 22.9,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season starts around mid-May",
+          "air": 25.4,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until about 20 June; waterfalls at their fullest",
+          "air": 27.9,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Clear skies after the rains; typhoon risk begins",
+          "air": 29,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot, summer crowds",
+          "air": 28.6,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 27.3,
+          "sea": 29
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea, typhoons fading, fewer crowds",
+          "air": 25.3,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Dry and comfortable; sea still warm",
+          "air": 22.9,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and windy; quiet season",
+          "air": 19.9,
+          "sea": 24
+        }
+      ],
+      "climate": {
+        "station": "大原 Ohara",
+        "stationRef": {
+          "type": "a",
+          "prec": 91,
+          "block": 1251
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Mangrove kayaking, Pinaisara Falls hike, fireflies",
+        "summer": "Snorkelling at Barasu coral island, canyoning",
+        "autumn": "Jungle treks in cooler air, warm sea",
+        "winter": "Trekking without the heat; fewer bugs"
+      },
+      "photo": {
+        "file": "Iriomote mangrove 2007-04-04.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Iriomote_mangrove_2007-04-04.jpg/1280px-Iriomote_mangrove_2007-04-04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Iriomote_mangrove_2007-04-04.jpg/500px-Iriomote_mangrove_2007-04-04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Geomr",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Iriomote_mangrove_2007-04-04.jpg"
+      }
+    },
+    {
+      "id": "kohama",
+      "name": "Kohama",
+      "jp": "小浜島",
+      "kind": "island",
+      "scene": "beach",
+      "area": "Yaeyama",
+      "lat": 24.34,
+      "lng": 123.98,
+      "gem": true,
+      "features": [
+        "beach",
+        "snorkel"
+      ],
+      "desc": "Hilly island with sugar cane fields and big sea views. Setting of the drama 'Churasan'.",
+      "access": "25 min ferry from Ishigaki",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Mild (about 19°C) but cloudy and windy; too cool to swim",
+          "air": 18.3,
+          "sea": 23
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild and windy; quiet season",
+          "air": 18.8,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Warming up; Japan's earliest beach openings, few crowds",
+          "air": 20.4,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Warm and sunny before the rainy season",
+          "air": 22.9,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season from mid-May; manta season starts nearby",
+          "air": 25.4,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until about 20 June, then hot and clear",
+          "air": 27.9,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Clear skies after the rains; typhoon risk begins",
+          "air": 29,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot, summer crowds",
+          "air": 28.6,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 27.3,
+          "sea": 29
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea, typhoons fading, fewer crowds",
+          "air": 25.3,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Dry and comfortable; sea still warm",
+          "air": 22.9,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and windy; quiet season",
+          "air": 19.9,
+          "sea": 24
+        }
+      ],
+      "climate": {
+        "station": "大原 Ohara (Iriomote)",
+        "stationRef": {
+          "type": "a",
+          "prec": 91,
+          "block": 1251
+        },
+        "airSource": "nearby",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Boat tour to the Hamajima sandbar",
+        "summer": "Manta rays at Manta Scramble nearby",
+        "autumn": "Warm sea, sugar cane fields",
+        "winter": "Quiet hills and sea views"
+      },
+      "photo": {
+        "file": "Aerial view of Ishigaki island Taketomi and Kohama 2014.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Aerial_view_of_Ishigaki_island_Taketomi_and_Kohama_2014.jpg/1280px-Aerial_view_of_Ishigaki_island_Taketomi_and_Kohama_2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Aerial_view_of_Ishigaki_island_Taketomi_and_Kohama_2014.jpg/500px-Aerial_view_of_Ishigaki_island_Taketomi_and_Kohama_2014.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Junpei Abe",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Ishigaki_island_Taketomi_and_Kohama_2014.jpg"
+      }
+    },
+    {
+      "id": "kuroshima",
+      "name": "Kuroshima",
+      "jp": "黒島",
+      "kind": "island",
+      "scene": "beach",
+      "area": "Yaeyama",
+      "lat": 24.24,
+      "lng": 123.99,
+      "gem": true,
+      "features": [
+        "beach",
+        "snorkel"
+      ],
+      "desc": "Flat heart-shaped island with more cows than people. Very quiet, best by bicycle.",
+      "access": "30 min ferry from Ishigaki",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Mild (about 19°C) but cloudy and windy; too cool to swim",
+          "air": 18.3,
+          "sea": 23
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild and windy; quiet season",
+          "air": 18.8,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Warming up; Japan's earliest beach openings, few crowds",
+          "air": 20.4,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Sea turtles while snorkelling, before the rains",
+          "air": 22.9,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season from mid-May; turtle nesting begins",
+          "air": 25.4,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until about 20 June, then hot and clear",
+          "air": 27.9,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Clear skies after the rains; typhoon risk begins",
+          "air": 29,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot, summer crowds",
+          "air": 28.6,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 27.3,
+          "sea": 29
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea, typhoons fading, fewer crowds",
+          "air": 25.3,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Dry and comfortable; sea still warm",
+          "air": 22.9,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and windy; quiet season",
+          "air": 19.9,
+          "sea": 24
+        }
+      ],
+      "climate": {
+        "station": "大原 Ohara (Iriomote)",
+        "stationRef": {
+          "type": "a",
+          "prec": 91,
+          "block": 1251
+        },
+        "airSource": "nearby",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Sea turtles at Nakamoto Beach",
+        "summer": "Sea turtle nesting, snorkelling",
+        "autumn": "Cycling the flat island, warm sea",
+        "winter": "Kuroshima Ushi-matsuri cattle festival (late February)"
+      },
+      "photoFile": "Kuroshima beach.jpg",
+      "photo": {
+        "file": "Kuroshima beach.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Kuroshima_beach.jpg/1280px-Kuroshima_beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Kuroshima_beach.jpg/500px-Kuroshima_beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "VKaeru",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Kuroshima_beach.jpg"
+      }
+    },
+    {
+      "id": "hateruma",
+      "name": "Hateruma",
+      "jp": "波照間島",
+      "kind": "island",
+      "scene": "beach",
+      "area": "Yaeyama",
+      "lat": 24.06,
+      "lng": 123.78,
+      "gem": true,
+      "features": [
+        "beach",
+        "nature"
+      ],
+      "desc": "Japan's southernmost inhabited island. The ferry is often cancelled in rough seas, so keep a spare day.",
+      "access": "60-80 min ferry from Ishigaki",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Southern Cross visible from January, but ferries often cancelled",
+          "air": 19,
+          "sea": 23
+        },
+        {
+          "rating": "ok",
+          "reason": "Rough seas, ferries often cancelled; Southern Cross",
+          "air": 19.5,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Warming up; Japan's earliest beach openings, few crowds",
+          "air": 20.9,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Warm and sunny before the rainy season",
+          "air": 23.2,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season starts around mid-May",
+          "air": 25.7,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until about 20 June, then hot and clear",
+          "air": 28.1,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Clear skies after the rains; typhoon risk begins",
+          "air": 29.1,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot, summer crowds",
+          "air": 28.8,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak: ferries can stop for days",
+          "air": 27.7,
+          "sea": 29
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea, typhoons fading, fewer crowds",
+          "air": 25.7,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Dry and comfortable; sea still warm",
+          "air": 23.5,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Rough seas, ferries often cancelled",
+          "air": 20.5,
+          "sea": 24
+        }
+      ],
+      "climate": {
+        "station": "波照間 Hateruma",
+        "stationRef": {
+          "type": "a",
+          "prec": 91,
+          "block": 1354
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Nishihama Beach, Southern Cross in the night sky",
+        "summer": "Nishihama Beach at its brightest",
+        "autumn": "Warm sea, star-watching tower",
+        "winter": "Southern Cross from January; rough crossings"
+      },
+      "photoFile": "HaterumaNorthCoast.jpg",
+      "photo": {
+        "file": "HaterumaNorthCoast.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/HaterumaNorthCoast.jpg/1280px-HaterumaNorthCoast.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/HaterumaNorthCoast.jpg/500px-HaterumaNorthCoast.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Torbenbrinker",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:HaterumaNorthCoast.jpg"
+      }
+    },
+    {
+      "id": "yonaguni",
+      "name": "Yonaguni",
+      "jp": "与那国島",
+      "kind": "island",
+      "scene": "cliff",
+      "area": "Yaeyama",
+      "lat": 24.46,
+      "lng": 122.99,
+      "gem": true,
+      "features": [
+        "nature",
+        "snorkel"
+      ],
+      "desc": "Wild, windy island with cliffs. Better for scenery and diving than lying on a beach.",
+      "access": "Flights from Ishigaki or Naha",
+      "months": [
+        {
+          "rating": "great",
+          "reason": "Hammerhead shark diving season (December to March)",
+          "air": 18.5,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Hammerhead shark diving season",
+          "air": 19,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Warming up; Japan's earliest beach openings, few crowds",
+          "air": 20.5,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Warm and sunny before the rainy season",
+          "air": 23,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season from mid-May; Atlas moth season",
+          "air": 25.4,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until about 20 June, then hot and clear",
+          "air": 27.9,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Clear skies after the rains; typhoon risk begins",
+          "air": 28.9,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot, summer crowds",
+          "air": 28.7,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 27.5,
+          "sea": 29
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea, typhoons fading, fewer crowds",
+          "air": 25.4,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Dry and comfortable; sea still warm",
+          "air": 23.1,
+          "sea": 26
+        },
+        {
+          "rating": "great",
+          "reason": "Hammerhead diving starts; windy and rough",
+          "air": 20.1,
+          "sea": 24
+        }
+      ],
+      "climate": {
+        "station": "与那国島 Yonagunijima",
+        "stationRef": {
+          "type": "s",
+          "prec": 91,
+          "block": 47912
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Cape Irizaki sunsets, wild horses",
+        "summer": "Underwater 'ruins' by glass-bottom boat",
+        "autumn": "Calmer seas for the 'ruins' tours",
+        "winter": "Hammerhead shark dives (December to March)"
+      },
+      "photo": {
+        "file": "Yonaguni irizaki.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Yonaguni_irizaki.jpg/1280px-Yonaguni_irizaki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Yonaguni_irizaki.jpg/500px-Yonaguni_irizaki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Metatron",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Yonaguni_irizaki.jpg"
+      }
+    },
+    {
+      "id": "miyakojima",
+      "name": "Miyakojima",
+      "jp": "宮古島",
+      "kind": "island",
+      "scene": "beach",
+      "area": "Miyako",
+      "lat": 24.76,
+      "lng": 125.33,
+      "gem": false,
+      "features": [
+        "beach",
+        "snorkel",
+        "food"
+      ],
+      "desc": "Some of the clearest water and whitest beaches in Japan. A triathlon in mid-April fills the hotels.",
+      "access": "Direct flights from Tokyo and Osaka",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Mild (about 19°C) but cloudy and windy; too cool to swim",
+          "air": 18.3,
+          "sea": 22
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild and windy; quiet season",
+          "air": 18.6,
+          "sea": 22
+        },
+        {
+          "rating": "great",
+          "reason": "Warming up; Yabiji reef at big spring low tides",
+          "air": 20.1,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Warm and sunny; triathlon mid-April fills hotels",
+          "air": 22.5,
+          "sea": 24
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season starts around mid-May",
+          "air": 25,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until about 20 June, then hot and clear",
+          "air": 27.7,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Clear skies after the rains; typhoon risk begins",
+          "air": 28.9,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot, summer crowds",
+          "air": 28.6,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 27.6,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea, typhoons fading, fewer crowds",
+          "air": 25.5,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Dry and comfortable; sea still warm",
+          "air": 23.1,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and windy; quiet season",
+          "air": 20,
+          "sea": 23
+        }
+      ],
+      "climate": {
+        "station": "宮古島 Miyakojima",
+        "stationRef": {
+          "type": "s",
+          "prec": 91,
+          "block": 47927
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Yonaha Maehama Beach, Yabiji reef at big low tides",
+        "summer": "Sunayama Beach, Imgya Marine Garden",
+        "autumn": "Warm sea, Irabu Bridge drives",
+        "winter": "Mild, quiet; Miyako's whitest beaches without the crowds"
+      },
+      "photo": {
+        "file": "Miyakojima sky view.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Miyakojima_sky_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Miyakojima_sky_view.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Paipateroma",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Miyakojima_sky_view.jpg"
+      }
+    },
+    {
+      "id": "irabu",
+      "name": "Irabu & Shimoji",
+      "jp": "伊良部島・下地島",
+      "kind": "island",
+      "scene": "beach",
+      "area": "Miyako",
+      "lat": 24.83,
+      "lng": 125.19,
+      "gem": true,
+      "features": [
+        "beach",
+        "snorkel"
+      ],
+      "desc": "Joined to Miyakojima by the free 3.5 km Irabu Bridge.",
+      "access": "Drive from Miyakojima",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Mild (about 19°C) but cloudy and windy; too cool to swim",
+          "air": 18.4,
+          "sea": 22
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild and windy; quiet season",
+          "air": 19.1,
+          "sea": 22
+        },
+        {
+          "rating": "great",
+          "reason": "Warming up; Japan's earliest beach openings, few crowds",
+          "air": 20.1,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Warm and sunny before the rainy season",
+          "air": 22.4,
+          "sea": 24
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season starts around mid-May",
+          "air": 25.2,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until about 20 June, then hot and clear",
+          "air": 27.8,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Clear skies after the rains; typhoon risk begins",
+          "air": 29.1,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot, summer crowds",
+          "air": 28.8,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 27.9,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea, typhoons fading, fewer crowds",
+          "air": 25.8,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Dry and comfortable; sea still warm",
+          "air": 23.4,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and windy; quiet season",
+          "air": 20,
+          "sea": 23
+        }
+      ],
+      "climate": {
+        "station": "下地島 Shimojishima",
+        "stationRef": {
+          "type": "a",
+          "prec": 91,
+          "block": 1490
+        },
+        "airSource": "jma",
+        "period": "2003～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "17END runway lagoon, Toriike twin ponds",
+        "summer": "Snorkelling at Nakanoshima, sunset at Sawada-no-hama",
+        "autumn": "Warm sea, quiet cafes",
+        "winter": "Dramatic waves at Toriike, quiet roads"
+      },
+      "photo": {
+        "file": "Miyako irabu ohashi 2014 1.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Miyako_irabu_ohashi_2014_1.jpg/1280px-Miyako_irabu_ohashi_2014_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Miyako_irabu_ohashi_2014_1.jpg/500px-Miyako_irabu_ohashi_2014_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Paipateroma",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Miyako_irabu_ohashi_2014_1.jpg"
+      }
+    },
+    {
+      "id": "tarama",
+      "name": "Tarama",
+      "jp": "多良間島",
+      "kind": "island",
+      "scene": "village",
+      "area": "Miyako",
+      "lat": 24.66,
+      "lng": 124.7,
+      "gem": true,
+      "features": [
+        "beach",
+        "culture"
+      ],
+      "desc": "Flat island between Miyako and Ishigaki. Few visitors, even among Japanese.",
+      "access": "Flight or ferry from Miyakojima",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Mild but windy; boats can be cancelled",
+          "air": 18.7,
+          "sea": 22
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild and windy; quiet season",
+          "air": 19.5,
+          "sea": 22
+        },
+        {
+          "rating": "great",
+          "reason": "Warming up; Japan's earliest beach openings, few crowds",
+          "air": 20.4,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Warm and sunny before the rainy season",
+          "air": 22.8,
+          "sea": 24
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season starts around mid-May",
+          "air": 25.6,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until about 20 June, then hot and clear",
+          "air": 28.2,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Clear skies after the rains; typhoon risk begins",
+          "air": 29.5,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot, summer crowds",
+          "air": 29.1,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 28.1,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea, typhoons fading, fewer crowds",
+          "air": 26,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Dry and comfortable; sea still warm",
+          "air": 23.6,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Windy; boats can be cancelled",
+          "air": 20.2,
+          "sea": 23
+        }
+      ],
+      "climate": {
+        "station": "仲筋 Nakasuji (Tarama)",
+        "stationRef": {
+          "type": "a",
+          "prec": 91,
+          "block": 1491
+        },
+        "airSource": "jma",
+        "period": "2003～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Empty beaches, slow village life",
+        "summer": "Stars, empty beaches",
+        "autumn": "Hachigatsu Odori traditional dance festival (around Sep/Oct)",
+        "winter": "Very quiet; windy"
+      },
+      "photoFile": "Tarama Island beach front.jpg",
+      "photo": {
+        "file": "Tarama Island beach front.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Tarama_Island_beach_front.jpg/1280px-Tarama_Island_beach_front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Tarama_Island_beach_front.jpg/500px-Tarama_Island_beach_front.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kzaral",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Tarama_Island_beach_front.jpg"
+      }
+    },
+    {
+      "id": "kerama",
+      "name": "Kerama Islands",
+      "jp": "慶良間諸島",
+      "kind": "island",
+      "scene": "beach",
+      "area": "Okinawa",
+      "lat": 26.21,
+      "lng": 127.31,
+      "gem": false,
+      "features": [
+        "beach",
+        "snorkel"
+      ],
+      "desc": "Zamami, Aka and Tokashiki. National park with some of the clearest water anywhere. Easy from Naha.",
+      "access": "35-50 min fast ferry from Naha",
+      "months": [
+        {
+          "rating": "great",
+          "reason": "Humpback whale watching season starts",
+          "air": 17.3,
+          "sea": 21
+        },
+        {
+          "rating": "great",
+          "reason": "Humpback whale watching peak",
+          "air": 17.5,
+          "sea": 21
+        },
+        {
+          "rating": "great",
+          "reason": "Whale watching until early April; sea still cool",
+          "air": 19.1,
+          "sea": 22
+        },
+        {
+          "rating": "great",
+          "reason": "Warm and sunny before the rainy season",
+          "air": 21.5,
+          "sea": 23
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season starts around mid-May",
+          "air": 24.2,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until about 20 June, then hot and clear",
+          "air": 27.2,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Clear skies after the rains; typhoon risk begins",
+          "air": 29.1,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot, summer crowds",
+          "air": 29,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 27.9,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea, typhoons fading, fewer crowds",
+          "air": 25.5,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Dry and comfortable; sea still warm enough",
+          "air": 22.5,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and windy; quiet season",
+          "air": 19,
+          "sea": 23
+        }
+      ],
+      "climate": {
+        "station": "那覇 Naha",
+        "stationRef": {
+          "type": "s",
+          "prec": 91,
+          "block": 47936
+        },
+        "airSource": "nearby",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Whale watching until early April, Furuzamami Beach",
+        "summer": "Sea turtles while snorkelling, 'Kerama blue' water",
+        "autumn": "Warm sea, fewer crowds",
+        "winter": "Humpback whale watching (January to March)"
+      },
+      "photo": {
+        "file": "Okinawa kerama islands.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Okinawa_kerama_islands.jpg/1280px-Okinawa_kerama_islands.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Okinawa_kerama_islands.jpg/500px-Okinawa_kerama_islands.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Paipateroma",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Okinawa_kerama_islands.jpg"
+      }
+    },
+    {
+      "id": "kumejima",
+      "name": "Kumejima",
+      "jp": "久米島",
+      "kind": "island",
+      "scene": "beach",
+      "area": "Okinawa",
+      "lat": 26.34,
+      "lng": 126.79,
+      "gem": true,
+      "features": [
+        "beach",
+        "nature"
+      ],
+      "desc": "Quiet island Japanese people know as a 'hidden' Okinawa island.",
+      "access": "30 min flight from Naha",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cool (about 17°C) and cloudy; Okinawa cherry blossoms late January",
+          "air": 17,
+          "sea": 21
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and windy; humpback whale season",
+          "air": 17.3,
+          "sea": 21
+        },
+        {
+          "rating": "ok",
+          "reason": "Warming up; beaches open late March, sea still cool",
+          "air": 19,
+          "sea": 22
+        },
+        {
+          "rating": "great",
+          "reason": "Warm and sunny before the rainy season",
+          "air": 21.5,
+          "sea": 23
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season starts around mid-May",
+          "air": 24.2,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until about 20 June, then hot and clear",
+          "air": 27.2,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Clear skies after the rains; typhoon risk begins",
+          "air": 29,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot, summer crowds",
+          "air": 28.9,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 27.7,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea, typhoons fading, fewer crowds",
+          "air": 25.3,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Dry and comfortable; sea still warm enough",
+          "air": 22.4,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and windy; quiet season",
+          "air": 19,
+          "sea": 23
+        }
+      ],
+      "climate": {
+        "station": "久米島 Kumejima",
+        "stationRef": {
+          "type": "s",
+          "prec": 91,
+          "block": 47929
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Hatenohama, a 7 km white sandbar (boat tour)",
+        "summer": "Hatenohama, snorkelling, Tatami-ishi rocks",
+        "autumn": "Warm sea, Kumejima Firefly Hall area walks",
+        "winter": "Quiet; island sake (awamori) distillery"
+      },
+      "photo": {
+        "file": "Kumejima.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Kumejima.jpg/1280px-Kumejima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Kumejima.jpg/500px-Kumejima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Paipateroma",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Kumejima.jpg"
+      }
+    },
+    {
+      "id": "minnajima",
+      "name": "Minnajima",
+      "jp": "水納島",
+      "kind": "island",
+      "scene": "beach",
+      "area": "Okinawa",
+      "lat": 26.65,
+      "lng": 127.82,
+      "gem": true,
+      "features": [
+        "beach",
+        "snorkel"
+      ],
+      "desc": "Tiny island off the Motobu Peninsula. Some facilities only open in the warm season.",
+      "access": "15 min boat from Motobu Port",
+      "months": [
+        {
+          "rating": "avoid",
+          "reason": "Most beach facilities closed, few boats",
+          "air": 16.5,
+          "sea": 21
+        },
+        {
+          "rating": "avoid",
+          "reason": "Most beach facilities closed, few boats",
+          "air": 16.8,
+          "sea": 21
+        },
+        {
+          "rating": "ok",
+          "reason": "Warming up; beaches open late March, sea still cool",
+          "air": 18.5,
+          "sea": 22
+        },
+        {
+          "rating": "great",
+          "reason": "Warm and sunny before the rainy season",
+          "air": 20.9,
+          "sea": 23
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season starts around mid-May",
+          "air": 23.8,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until about 20 June, then hot and clear",
+          "air": 26.9,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Clear skies after the rains; typhoon risk begins",
+          "air": 28.9,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot, summer crowds",
+          "air": 28.8,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 27.6,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea, typhoons fading, fewer crowds",
+          "air": 25,
+          "sea": 27
+        },
+        {
+          "rating": "ok",
+          "reason": "Facilities start closing for winter",
+          "air": 21.9,
+          "sea": 25
+        },
+        {
+          "rating": "avoid",
+          "reason": "Most beach facilities closed, few boats",
+          "air": 18.2,
+          "sea": 23
+        }
+      ],
+      "climate": {
+        "station": "名護 Nago",
+        "stationRef": {
+          "type": "s",
+          "prec": 91,
+          "block": 47940
+        },
+        "airSource": "nearby",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Croissant-shaped island, shallow coral beach",
+        "summer": "Beach day plus Churaumi Aquarium",
+        "autumn": "Warm sea, fewer boats",
+        "winter": "Most facilities closed"
+      },
+      "photoFile": "Minna Island beach.jpg",
+      "photo": {
+        "file": "Minna Island beach.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Minna_Island_beach.jpg/1280px-Minna_Island_beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Minna_Island_beach.jpg/500px-Minna_Island_beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ブルーノ・プラス",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Minna_Island_beach.jpg"
+      }
+    },
+    {
+      "id": "iheya",
+      "name": "Iheya & Izena",
+      "jp": "伊平屋島・伊是名島",
+      "kind": "island",
+      "scene": "village",
+      "area": "Okinawa",
+      "lat": 27,
+      "lng": 127.95,
+      "gem": true,
+      "features": [
+        "beach",
+        "culture"
+      ],
+      "desc": "Remote islands north of Okinawa's main island with very few foreign visitors.",
+      "access": "Ferry from Unten Port",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cool; northerly winds can cancel the ferry",
+          "air": 16.6,
+          "sea": 21
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and windy; humpback whale season",
+          "air": 16.7,
+          "sea": 21
+        },
+        {
+          "rating": "ok",
+          "reason": "Warming up; beaches open late March, sea still cool",
+          "air": 18.3,
+          "sea": 22
+        },
+        {
+          "rating": "great",
+          "reason": "Warm and sunny before the rainy season",
+          "air": 20.7,
+          "sea": 23
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season starts around mid-May",
+          "air": 23.4,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until about 20 June, then hot and clear",
+          "air": 26.4,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Clear skies after the rains; typhoon risk begins",
+          "air": 28.6,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot, summer crowds",
+          "air": 28.6,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 27.5,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea, typhoons fading, fewer crowds",
+          "air": 25.1,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Dry and comfortable; sea still warm enough",
+          "air": 22,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool; northerly winds can cancel the ferry",
+          "air": 18.5,
+          "sea": 23
+        }
+      ],
+      "climate": {
+        "station": "伊是名 Izena",
+        "stationRef": {
+          "type": "a",
+          "prec": 91,
+          "block": 1147
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Empty beaches, stone-wall villages",
+        "summer": "Snorkelling, very few visitors",
+        "autumn": "Warm sea, quiet roads",
+        "winter": "Rough seas; very quiet"
+      },
+      "photo": {
+        "file": "Gakiya, Iheya Island 202211 02.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Gakiya%2C_Iheya_Island_202211_02.jpg/1280px-Gakiya%2C_Iheya_Island_202211_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bc/Gakiya%2C_Iheya_Island_202211_02.jpg/500px-Gakiya%2C_Iheya_Island_202211_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Kugel",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Gakiya,_Iheya_Island_202211_02.jpg"
+      }
+    },
+    {
+      "id": "yoron",
+      "name": "Yoron",
+      "jp": "与論島",
+      "kind": "island",
+      "scene": "beach",
+      "area": "Amami",
+      "lat": 27.04,
+      "lng": 128.42,
+      "gem": true,
+      "features": [
+        "beach",
+        "snorkel"
+      ],
+      "desc": "Small coral island with Okinawa-like water. A 1970s honeymoon favourite.",
+      "access": "Flights from Kagoshima or Naha",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cool (about 15°C), grey and showery",
+          "air": 16.8,
+          "sea": 21
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool; Amami cherry blossoms in early February",
+          "air": 17.3,
+          "sea": 20
+        },
+        {
+          "rating": "ok",
+          "reason": "Warming up, still too cool to swim",
+          "air": 18.3,
+          "sea": 21
+        },
+        {
+          "rating": "great",
+          "reason": "Pleasant and green before the rains",
+          "air": 20.6,
+          "sea": 22
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season from mid-May; Yurigahama sandbar at low tide",
+          "air": 23.3,
+          "sea": 24
+        },
+        {
+          "rating": "avoid",
+          "reason": "Rainy season: one of the wettest places in Japan",
+          "air": 26.3,
+          "sea": 26
+        },
+        {
+          "rating": "great",
+          "reason": "Clear and hot after the rains; best beach weather",
+          "air": 28.7,
+          "sea": 28
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot",
+          "air": 28.9,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 27.8,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea and calmer weather",
+          "air": 25.4,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Cooler; sea still about 24°C",
+          "air": 22.2,
+          "sea": 24
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and cloudy; quiet season",
+          "air": 18.6,
+          "sea": 22
+        }
+      ],
+      "climate": {
+        "station": "与論島 Yoronjima",
+        "stationRef": {
+          "type": "a",
+          "prec": 88,
+          "block": 1277
+        },
+        "airSource": "jma",
+        "period": "2000～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Yurigahama sandbar at low tide",
+        "summer": "Yurigahama, sea turtles",
+        "autumn": "Warm sea, quieter beaches",
+        "winter": "Quiet, cool; local shochu 'Yoron kenpo' toasts"
+      },
+      "photoFile": "与論島のビーチ.jpg",
+      "photo": {
+        "file": "与論島のビーチ.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/%E4%B8%8E%E8%AB%96%E5%B3%B6%E3%81%AE%E3%83%93%E3%83%BC%E3%83%81.jpg/1280px-%E4%B8%8E%E8%AB%96%E5%B3%B6%E3%81%AE%E3%83%93%E3%83%BC%E3%83%81.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/%E4%B8%8E%E8%AB%96%E5%B3%B6%E3%81%AE%E3%83%93%E3%83%BC%E3%83%81.jpg/500px-%E4%B8%8E%E8%AB%96%E5%B3%B6%E3%81%AE%E3%83%93%E3%83%BC%E3%83%81.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "ジャッキ―",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:%E4%B8%8E%E8%AB%96%E5%B3%B6%E3%81%AE%E3%83%93%E3%83%BC%E3%83%81.jpg"
+      }
+    },
+    {
+      "id": "okinoerabu",
+      "name": "Okinoerabu",
+      "jp": "沖永良部島",
+      "kind": "island",
+      "scene": "cliff",
+      "area": "Amami",
+      "lat": 27.37,
+      "lng": 128.57,
+      "gem": true,
+      "features": [
+        "nature",
+        "hiking"
+      ],
+      "desc": "Raised coral island with hundreds of limestone caves.",
+      "access": "Flights from Kagoshima or Naha",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cool (about 15°C), grey and showery",
+          "air": 16.5,
+          "sea": 21
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool; Amami cherry blossoms in early February",
+          "air": 16.6,
+          "sea": 20
+        },
+        {
+          "rating": "ok",
+          "reason": "Warming up, still too cool to swim",
+          "air": 18.2,
+          "sea": 21
+        },
+        {
+          "rating": "great",
+          "reason": "White Erabu lilies in bloom",
+          "air": 20.5,
+          "sea": 22
+        },
+        {
+          "rating": "ok",
+          "reason": "Lilies until early May, then rainy season",
+          "air": 23.1,
+          "sea": 24
+        },
+        {
+          "rating": "avoid",
+          "reason": "Rainy season: one of the wettest places in Japan",
+          "air": 25.9,
+          "sea": 26
+        },
+        {
+          "rating": "great",
+          "reason": "Clear and hot after the rains; best beach weather",
+          "air": 28.5,
+          "sea": 28
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot",
+          "air": 28.6,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 27.6,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea and calmer weather",
+          "air": 25.1,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Cooler; sea still about 24°C",
+          "air": 21.9,
+          "sea": 24
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and cloudy; quiet season",
+          "air": 18.4,
+          "sea": 22
+        }
+      ],
+      "climate": {
+        "station": "沖永良部 Okinoerabu",
+        "stationRef": {
+          "type": "s",
+          "prec": 88,
+          "block": 47942
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "White Erabu lilies in bloom",
+        "summer": "Shoryudo cave, Fucha blowhole, beaches",
+        "autumn": "Caving, warm sea",
+        "winter": "Caves stay the same temperature all year"
+      },
+      "photo": {
+        "file": "Amami okinoerabu.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Amami_okinoerabu.jpg/1280px-Amami_okinoerabu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Amami_okinoerabu.jpg/500px-Amami_okinoerabu.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Paipateroma",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Amami_okinoerabu.jpg"
+      }
+    },
+    {
+      "id": "tokunoshima",
+      "name": "Tokunoshima",
+      "jp": "徳之島",
+      "kind": "island",
+      "scene": "jungle",
+      "area": "Amami",
+      "lat": 27.78,
+      "lng": 128.96,
+      "gem": true,
+      "features": [
+        "nature",
+        "culture"
+      ],
+      "desc": "UNESCO natural heritage island, famous for bull-vs-bull fighting.",
+      "access": "Flights from Kagoshima or Amami",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cool (about 15°C), grey and showery",
+          "air": 15.2,
+          "sea": 21
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool; Amami cherry blossoms in early February",
+          "air": 15.5,
+          "sea": 20
+        },
+        {
+          "rating": "ok",
+          "reason": "Warming up, still too cool to swim",
+          "air": 17.3,
+          "sea": 21
+        },
+        {
+          "rating": "great",
+          "reason": "Pleasant and green before the rains",
+          "air": 19.7,
+          "sea": 22
+        },
+        {
+          "rating": "ok",
+          "reason": "Bullfighting tournament early May, then rainy season",
+          "air": 22.6,
+          "sea": 24
+        },
+        {
+          "rating": "avoid",
+          "reason": "Rainy season: one of the wettest places in Japan",
+          "air": 25.5,
+          "sea": 26
+        },
+        {
+          "rating": "great",
+          "reason": "Clear and hot after the rains; best beach weather",
+          "air": 28.3,
+          "sea": 28
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot",
+          "air": 28.4,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 27.1,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea and calmer weather",
+          "air": 24.3,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Cooler; sea still about 24°C",
+          "air": 20.9,
+          "sea": 24
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and cloudy; quiet season",
+          "air": 17,
+          "sea": 22
+        }
+      ],
+      "climate": {
+        "station": "伊仙 Isen",
+        "stationRef": {
+          "type": "a",
+          "prec": 88,
+          "block": 1139
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Amami rabbit night tours, Inutabu Cape",
+        "summer": "Beaches, night wildlife tours",
+        "autumn": "Bullfighting tournament (October)",
+        "winter": "Bullfighting tournament (January), rabbit tours"
+      },
+      "photo": {
+        "file": "Tokunoshima zenkei.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Tokunoshima_zenkei.jpg/1280px-Tokunoshima_zenkei.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Tokunoshima_zenkei.jpg/500px-Tokunoshima_zenkei.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Opqr",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Tokunoshima_zenkei.jpg"
+      }
+    },
+    {
+      "id": "amami",
+      "name": "Amami Oshima",
+      "jp": "奄美大島",
+      "kind": "island",
+      "scene": "jungle",
+      "area": "Amami",
+      "lat": 28.38,
+      "lng": 129.49,
+      "gem": false,
+      "features": [
+        "nature",
+        "beach"
+      ],
+      "desc": "Large, green UNESCO island. Slower and less touristy than Okinawa.",
+      "access": "Direct flights from Tokyo and Osaka",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cool (about 15°C), grey and showery",
+          "air": 15,
+          "sea": 21
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool; Amami cherry blossoms in early February",
+          "air": 15.3,
+          "sea": 20
+        },
+        {
+          "rating": "ok",
+          "reason": "Warming up, still too cool to swim",
+          "air": 17.1,
+          "sea": 21
+        },
+        {
+          "rating": "great",
+          "reason": "Pleasant and green before the rains",
+          "air": 19.8,
+          "sea": 22
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season starts around mid-May",
+          "air": 22.8,
+          "sea": 24
+        },
+        {
+          "rating": "avoid",
+          "reason": "Rainy season: one of the wettest places in Japan",
+          "air": 26.2,
+          "sea": 26
+        },
+        {
+          "rating": "great",
+          "reason": "Clear and hot after the rains; best beach weather",
+          "air": 28.8,
+          "sea": 28
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot",
+          "air": 28.5,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 27,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea and calmer weather",
+          "air": 23.9,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Cooler; sea still about 24°C",
+          "air": 20.4,
+          "sea": 24
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and cloudy; quiet season",
+          "air": 16.7,
+          "sea": 22
+        }
+      ],
+      "climate": {
+        "station": "名瀬 Naze",
+        "stationRef": {
+          "type": "s",
+          "prec": 88,
+          "block": 47909
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Mangrove kayaking, Ohama Beach, Amami rabbit tours",
+        "summer": "Beaches after the rains, Oshima tsumugi weaving",
+        "autumn": "Warm sea, quieter roads",
+        "winter": "Cherry blossoms in early February, rabbit tours"
+      },
+      "photo": {
+        "file": "Amami-Tomori beach 20040712.JPG",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Amami-Tomori_beach_20040712.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "thumb": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Amami-Tomori_beach_20040712.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "投稿者自身による撮影",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Amami-Tomori_beach_20040712.JPG"
+      }
+    },
+    {
+      "id": "kakeroma",
+      "name": "Kakeroma",
+      "jp": "加計呂麻島",
+      "kind": "island",
+      "scene": "village",
+      "area": "Amami",
+      "lat": 28.12,
+      "lng": 129.25,
+      "gem": true,
+      "features": [
+        "beach",
+        "culture"
+      ],
+      "desc": "Very quiet island south of Amami. The last Tora-san film was shot here.",
+      "access": "20 min ferry from Koniya",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cool (about 15°C), grey and showery",
+          "air": 15.3,
+          "sea": 21
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool; Amami cherry blossoms in early February",
+          "air": 15.6,
+          "sea": 20
+        },
+        {
+          "rating": "ok",
+          "reason": "Warming up, still too cool to swim",
+          "air": 17.4,
+          "sea": 21
+        },
+        {
+          "rating": "great",
+          "reason": "Quiet coves; red deigo flowers",
+          "air": 19.9,
+          "sea": 22
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season starts around mid-May",
+          "air": 22.8,
+          "sea": 24
+        },
+        {
+          "rating": "avoid",
+          "reason": "Rainy season: one of the wettest places in Japan",
+          "air": 25.8,
+          "sea": 26
+        },
+        {
+          "rating": "great",
+          "reason": "Clear and hot after the rains; best beach weather",
+          "air": 28.4,
+          "sea": 28
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak, very hot",
+          "air": 28.5,
+          "sea": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons still likely; warmest sea",
+          "air": 27.3,
+          "sea": 28
+        },
+        {
+          "rating": "great",
+          "reason": "Warm sea and calmer weather",
+          "air": 24.4,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Cooler; sea still about 24°C",
+          "air": 21,
+          "sea": 24
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and cloudy; quiet season",
+          "air": 17.2,
+          "sea": 22
+        }
+      ],
+      "climate": {
+        "station": "古仁屋 Koniya (Amami)",
+        "stationRef": {
+          "type": "a",
+          "prec": 88,
+          "block": 980
+        },
+        "airSource": "nearby",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Empty coves, tiny villages, Shodon beach",
+        "summer": "Swimming in calm bays",
+        "autumn": "Quiet villages, warm sea",
+        "winter": "Very quiet; red deigo trees bare"
+      },
+      "photoFile": "Takakura at Nomiyama, Kakeroma.jpg",
+      "photo": {
+        "file": "Takakura at Nomiyama, Kakeroma.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Takakura_at_Nomiyama%2C_Kakeroma.jpg/1280px-Takakura_at_Nomiyama%2C_Kakeroma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Takakura_at_Nomiyama%2C_Kakeroma.jpg/500px-Takakura_at_Nomiyama%2C_Kakeroma.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Suikotei",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Takakura_at_Nomiyama,_Kakeroma.jpg"
+      }
+    },
+    {
+      "id": "yakushima",
+      "name": "Yakushima",
+      "jp": "屋久島",
+      "kind": "island",
+      "scene": "forest",
+      "area": "Kagoshima",
+      "lat": 30.34,
+      "lng": 130.52,
+      "gem": false,
+      "features": [
+        "hiking",
+        "nature",
+        "onsen"
+      ],
+      "desc": "UNESCO ancient cedar forest. Hiking island, rains a lot.",
+      "access": "Flights from Kagoshima or Osaka; fast ferry",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Snow on the peaks; high trails hard",
+          "air": 11.8,
+          "sea": 19
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold on the mountains, mild by the sea",
+          "air": 12.3,
+          "sea": 18
+        },
+        {
+          "rating": "ok",
+          "reason": "Warming up; high trails can still have snow",
+          "air": 14.6,
+          "sea": 19
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green, good hiking weather",
+          "air": 17.8,
+          "sea": 20
+        },
+        {
+          "rating": "great",
+          "reason": "Rhododendrons late May; busy at Golden Week",
+          "air": 21,
+          "sea": 22
+        },
+        {
+          "rating": "avoid",
+          "reason": "Rainy season: heavy rain closes trails",
+          "air": 23.7,
+          "sea": 24
+        },
+        {
+          "rating": "ok",
+          "reason": "Hot; sea turtles nesting at Nagata",
+          "air": 27,
+          "sea": 27
+        },
+        {
+          "rating": "ok",
+          "reason": "Hot; typhoons possible",
+          "air": 27.5,
+          "sea": 28
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon peak",
+          "air": 25.7,
+          "sea": 27
+        },
+        {
+          "rating": "great",
+          "reason": "Drier, clear, good hiking",
+          "air": 22.2,
+          "sea": 25
+        },
+        {
+          "rating": "great",
+          "reason": "Cool hiking, autumn colours up high",
+          "air": 18.2,
+          "sea": 22
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold on the mountains",
+          "air": 13.9,
+          "sea": 20
+        }
+      ],
+      "climate": {
+        "station": "屋久島 Yakushima",
+        "stationRef": {
+          "type": "s",
+          "prec": 88,
+          "block": 47836
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Jomon Sugi hike (about 10 h), Shiratani moss forest",
+        "summer": "Sea turtles nesting at Nagata, river swimming",
+        "autumn": "Clear hiking days, autumn colours up high",
+        "winter": "Snow on the peaks, hot springs by the sea"
+      },
+      "photo": {
+        "file": "Forest on Yakushima from Route 592.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Forest_on_Yakushima_from_Route_592.jpg/1280px-Forest_on_Yakushima_from_Route_592.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Forest_on_Yakushima_from_Route_592.jpg/500px-Forest_on_Yakushima_from_Route_592.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Grendelkhan",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Forest_on_Yakushima_from_Route_592.jpg"
+      }
+    },
+    {
+      "id": "chichijima",
+      "name": "Chichijima",
+      "jp": "父島",
+      "kind": "island",
+      "scene": "beach",
+      "area": "Ogasawara",
+      "lat": 27.08,
+      "lng": 142.21,
+      "gem": false,
+      "features": [
+        "snorkel",
+        "beach",
+        "nature"
+      ],
+      "desc": "No airport: 24 h ferry from Tokyo about once a week, so plan about 6 days.",
+      "access": "24 h ferry from Takeshiba, Tokyo",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Humpback whale season; too cool for most swimming",
+          "air": 18.5,
+          "sea": 21
+        },
+        {
+          "rating": "great",
+          "reason": "Humpback whale peak",
+          "air": 18.1,
+          "sea": 21
+        },
+        {
+          "rating": "great",
+          "reason": "Whales, warming up",
+          "air": 19.3,
+          "sea": 21
+        },
+        {
+          "rating": "great",
+          "reason": "Last whales, comfortable weather",
+          "air": 21.1,
+          "sea": 22
+        },
+        {
+          "rating": "great",
+          "reason": "Calm seas, swimming season starts",
+          "air": 23.4,
+          "sea": 23
+        },
+        {
+          "rating": "great",
+          "reason": "Little rain here, warm sea",
+          "air": 26.2,
+          "sea": 25
+        },
+        {
+          "rating": "great",
+          "reason": "Best sea; book the ferry early",
+          "air": 27.7,
+          "sea": 27
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons can cancel the ferry; busy",
+          "air": 28,
+          "sea": 28
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon season",
+          "air": 27.7,
+          "sea": 28
+        },
+        {
+          "rating": "ok",
+          "reason": "Still warm; typhoons fading",
+          "air": 26.4,
+          "sea": 27
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild and quiet",
+          "air": 23.8,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "New Year ferries fill up; cool",
+          "air": 20.6,
+          "sea": 23
+        }
+      ],
+      "climate": {
+        "station": "父島 Chichijima",
+        "stationRef": {
+          "type": "s",
+          "prec": 44,
+          "block": 47971
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Last of the humpback whales, dolphins",
+        "summer": "Swimming with dolphins, sea turtles, 'Bonin blue'",
+        "autumn": "Warm sea, star-watching, fewer visitors",
+        "winter": "Humpback whales; New Year 'first swim'"
+      },
+      "photo": {
+        "file": "Kominato Beach that I looked at from the Nakayama Pass in Chichijima Island,Ogasawara,Tokyo,Japan.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Kominato_Beach_that_I_looked_at_from_the_Nakayama_Pass_in_Chichijima_Island%2COgasawara%2CTokyo%2CJapan.jpg/1280px-Kominato_Beach_that_I_looked_at_from_the_Nakayama_Pass_in_Chichijima_Island%2COgasawara%2CTokyo%2CJapan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Kominato_Beach_that_I_looked_at_from_the_Nakayama_Pass_in_Chichijima_Island%2COgasawara%2CTokyo%2CJapan.jpg/500px-Kominato_Beach_that_I_looked_at_from_the_Nakayama_Pass_in_Chichijima_Island%2COgasawara%2CTokyo%2CJapan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Ootahara",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Kominato_Beach_that_I_looked_at_from_the_Nakayama_Pass_in_Chichijima_Island,Ogasawara,Tokyo,Japan.jpg"
+      }
+    },
+    {
+      "id": "miyakejima",
+      "name": "Miyakejima",
+      "jp": "三宅島",
+      "kind": "island",
+      "scene": "volcano",
+      "area": "Izu",
+      "lat": 34.08,
+      "lng": 139.53,
+      "gem": true,
+      "features": [
+        "nature",
+        "hiking"
+      ],
+      "desc": "Active volcano island. Overnight ferry, sometimes cancelled in rough seas.",
+      "access": "6.5 h overnight ferry from Tokyo",
+      "months": [
+        {
+          "rating": "avoid",
+          "reason": "Cold, strong westerly winds; ferries often cancelled",
+          "air": 9.9,
+          "sea": 16
+        },
+        {
+          "rating": "avoid",
+          "reason": "Cold, strong winds; ferries often cancelled",
+          "air": 10.5,
+          "sea": 15
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and quiet; spring winds can still cancel boats",
+          "air": 12.8,
+          "sea": 15
+        },
+        {
+          "rating": "great",
+          "reason": "Birdwatching season (akakokko)",
+          "air": 16.4,
+          "sea": 17
+        },
+        {
+          "rating": "great",
+          "reason": "Birds, Tairo-ike trail, calm seas",
+          "air": 20,
+          "sea": 19
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season",
+          "air": 22.5,
+          "sea": 21
+        },
+        {
+          "rating": "great",
+          "reason": "Beach season starts after the rains end in mid-July",
+          "air": 26.2,
+          "sea": 24
+        },
+        {
+          "rating": "great",
+          "reason": "Peak beach season; busy, book boats early",
+          "air": 27.6,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons can cancel boats; sea still warm",
+          "air": 25.3,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild and quiet",
+          "air": 21.4,
+          "sea": 23
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool, clear skies, empty beaches",
+          "air": 17.3,
+          "sea": 20
+        },
+        {
+          "rating": "avoid",
+          "reason": "Cold winds; ferries often cancelled",
+          "air": 12.6,
+          "sea": 18
+        }
+      ],
+      "climate": {
+        "station": "三宅坪田 Miyake-Tsubota",
+        "stationRef": {
+          "type": "a",
+          "prec": 44,
+          "block": 1506
+        },
+        "airSource": "jma",
+        "period": "2001～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Birdwatching (akakokko), volcanic landscapes",
+        "summer": "Snorkelling with sea turtles, Tairo-ike lake trail",
+        "autumn": "Quiet, volcanic hikes",
+        "winter": "Rough seas; very quiet"
+      },
+      "photo": {
+        "file": "20140516三宅島.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/20140516%E4%B8%89%E5%AE%85%E5%B3%B6.jpg/1280px-20140516%E4%B8%89%E5%AE%85%E5%B3%B6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/20140516%E4%B8%89%E5%AE%85%E5%B3%B6.jpg/500px-20140516%E4%B8%89%E5%AE%85%E5%B3%B6.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Sonata",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:20140516%E4%B8%89%E5%AE%85%E5%B3%B6.jpg"
+      }
+    },
+    {
+      "id": "mikurajima",
+      "name": "Mikurajima",
+      "jp": "御蔵島",
+      "kind": "island",
+      "scene": "forest",
+      "area": "Izu",
+      "lat": 33.88,
+      "lng": 139.6,
+      "gem": true,
+      "features": [
+        "snorkel",
+        "nature"
+      ],
+      "desc": "Book a place to stay before going; the ferry often cannot dock.",
+      "access": "Ferry from Tokyo via Miyakejima",
+      "months": [
+        {
+          "rating": "avoid",
+          "reason": "Dolphin swimming closed; ferry rarely docks",
+          "air": 9.9,
+          "sea": 16
+        },
+        {
+          "rating": "avoid",
+          "reason": "Dolphin swimming closed; ferry rarely docks",
+          "air": 10.5,
+          "sea": 15
+        },
+        {
+          "rating": "avoid",
+          "reason": "Dolphin swimming closed until late March",
+          "air": 12.8,
+          "sea": 15
+        },
+        {
+          "rating": "ok",
+          "reason": "Dolphin season starts; cold water (wetsuit)",
+          "air": 16.4,
+          "sea": 17
+        },
+        {
+          "rating": "great",
+          "reason": "Dolphin swimming, old-growth forest walks",
+          "air": 20,
+          "sea": 19
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season; ferry may not dock",
+          "air": 22.5,
+          "sea": 21
+        },
+        {
+          "rating": "great",
+          "reason": "Dolphin swimming in warmer water",
+          "air": 26.2,
+          "sea": 24
+        },
+        {
+          "rating": "great",
+          "reason": "Dolphin peak season; book early",
+          "air": 27.6,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons: ferry may not dock",
+          "air": 25.3,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Dolphins, cooling sea",
+          "air": 21.4,
+          "sea": 23
+        },
+        {
+          "rating": "ok",
+          "reason": "Last dolphin swims (season ends mid-November)",
+          "air": 17.3,
+          "sea": 20
+        },
+        {
+          "rating": "avoid",
+          "reason": "Dolphin swimming closed; ferry rarely docks",
+          "air": 12.6,
+          "sea": 18
+        }
+      ],
+      "climate": {
+        "station": "三宅坪田 Miyake-Tsubota",
+        "stationRef": {
+          "type": "a",
+          "prec": 44,
+          "block": 1506
+        },
+        "airSource": "nearby",
+        "period": "2001～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Dolphin season starts (wetsuit)",
+        "summer": "Swimming with wild dolphins",
+        "autumn": "Last dolphin swims; old-growth forest",
+        "winter": "Dolphin swims closed"
+      },
+      "photo": {
+        "file": "View of Mikurajima from aircraft.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/View_of_Mikurajima_from_aircraft.jpg/1280px-View_of_Mikurajima_from_aircraft.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/View_of_Mikurajima_from_aircraft.jpg/500px-View_of_Mikurajima_from_aircraft.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "さかおり",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:View_of_Mikurajima_from_aircraft.jpg"
+      }
+    },
+    {
+      "id": "hachijojima",
+      "name": "Hachijojima",
+      "jp": "八丈島",
+      "kind": "island",
+      "scene": "volcano",
+      "area": "Izu",
+      "lat": 33.11,
+      "lng": 139.79,
+      "gem": false,
+      "features": [
+        "onsen",
+        "hiking",
+        "nature"
+      ],
+      "desc": "Lush island with a tropical feel, 55 min by plane from Haneda.",
+      "access": "55 min flight from Haneda",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Mild for Tokyo but windy; flights are reliable",
+          "air": 10.1,
+          "sea": 18
+        },
+        {
+          "rating": "ok",
+          "reason": "Freesias start; mild",
+          "air": 10.4,
+          "sea": 17
+        },
+        {
+          "rating": "great",
+          "reason": "Freesia festival from late March",
+          "air": 12.5,
+          "sea": 17
+        },
+        {
+          "rating": "great",
+          "reason": "Freesias, green hikes up Hachijo-Fuji",
+          "air": 15.8,
+          "sea": 19
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green, waterfalls, hot springs",
+          "air": 18.8,
+          "sea": 20
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season",
+          "air": 21.3,
+          "sea": 22
+        },
+        {
+          "rating": "great",
+          "reason": "Snorkelling season after the rains",
+          "air": 25.2,
+          "sea": 25
+        },
+        {
+          "rating": "great",
+          "reason": "Warmest sea; summer season",
+          "air": 26.5,
+          "sea": 27
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons",
+          "air": 24.5,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild and quiet",
+          "air": 21,
+          "sea": 24
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild, clear",
+          "air": 16.9,
+          "sea": 22
+        },
+        {
+          "rating": "ok",
+          "reason": "Windy, hot springs season",
+          "air": 12.7,
+          "sea": 19
+        }
+      ],
+      "climate": {
+        "station": "八丈島 Hachijojima",
+        "stationRef": {
+          "type": "s",
+          "prec": 44,
+          "block": 47678
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Freesia festival, Hachijo-Fuji hike",
+        "summer": "Snorkelling, waterfalls",
+        "autumn": "Mild hikes, hot springs",
+        "winter": "Hot springs; mild for the Tokyo area"
+      },
+      "photo": {
+        "file": "Hachijojimaview-fromosakahill-2018-5-7.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Hachijojimaview-fromosakahill-2018-5-7.jpg/1280px-Hachijojimaview-fromosakahill-2018-5-7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Hachijojimaview-fromosakahill-2018-5-7.jpg/500px-Hachijojimaview-fromosakahill-2018-5-7.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Nesnad",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Hachijojimaview-fromosakahill-2018-5-7.jpg"
+      }
+    },
+    {
+      "id": "shikinejima",
+      "name": "Shikinejima",
+      "jp": "式根島",
+      "kind": "island",
+      "scene": "onsen",
+      "area": "Izu",
+      "lat": 34.33,
+      "lng": 139.21,
+      "gem": true,
+      "features": [
+        "onsen",
+        "beach"
+      ],
+      "desc": "Tiny island you can cycle around.",
+      "access": "3 h jet boat from Tokyo",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cold, but best for the seaside hot springs; ferries can cancel",
+          "air": 8.9,
+          "sea": 16
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold, seaside hot springs; ferries can cancel",
+          "air": 9.5,
+          "sea": 15
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and quiet; spring winds can still cancel boats",
+          "air": 11.8,
+          "sea": 15
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild and green, too cold to swim",
+          "air": 15.5,
+          "sea": 17
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green, warm days, calm seas",
+          "air": 19.1,
+          "sea": 19
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season",
+          "air": 21.8,
+          "sea": 21
+        },
+        {
+          "rating": "great",
+          "reason": "Beach season starts after the rains end in mid-July",
+          "air": 25.3,
+          "sea": 24
+        },
+        {
+          "rating": "great",
+          "reason": "Peak beach season; busy, book boats early",
+          "air": 26.8,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons can cancel boats; sea still warm",
+          "air": 24.5,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild and quiet",
+          "air": 20.4,
+          "sea": 23
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool, clear skies, empty beaches",
+          "air": 16.3,
+          "sea": 20
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold, seaside hot springs; ferries can cancel",
+          "air": 11.6,
+          "sea": 18
+        }
+      ],
+      "climate": {
+        "station": "新島 Niijima",
+        "stationRef": {
+          "type": "a",
+          "prec": 44,
+          "block": 1522
+        },
+        "airSource": "nearby",
+        "period": "2003～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Cycling around the tiny island",
+        "summer": "Tomari Beach cove, swimming",
+        "autumn": "Seaside hot springs, quiet roads",
+        "winter": "Free seaside hot springs in rock pools"
+      },
+      "photo": {
+        "file": "Shikine-jima 2023 Jan 29 01-11PM.jpeg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Shikine-jima_2023_Jan_29_01-11PM.jpeg/1280px-Shikine-jima_2023_Jan_29_01-11PM.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Shikine-jima_2023_Jan_29_01-11PM.jpeg/500px-Shikine-jima_2023_Jan_29_01-11PM.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Nesnad",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Shikine-jima_2023_Jan_29_01-11PM.jpeg"
+      }
+    },
+    {
+      "id": "kozushima",
+      "name": "Kozushima",
+      "jp": "神津島",
+      "kind": "island",
+      "scene": "cliff",
+      "area": "Izu",
+      "lat": 34.21,
+      "lng": 139.14,
+      "gem": true,
+      "features": [
+        "hiking",
+        "beach",
+        "nature"
+      ],
+      "desc": "Some of the clearest water near Tokyo.",
+      "access": "3.5 h jet boat from Tokyo",
+      "months": [
+        {
+          "rating": "avoid",
+          "reason": "Cold, strong westerly winds; ferries often cancelled",
+          "air": 8.5,
+          "sea": 16
+        },
+        {
+          "rating": "avoid",
+          "reason": "Cold, strong winds; ferries often cancelled",
+          "air": 9.1,
+          "sea": 15
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and quiet; spring winds can still cancel boats",
+          "air": 11.4,
+          "sea": 15
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild and green, too cold to swim",
+          "air": 15,
+          "sea": 17
+        },
+        {
+          "rating": "great",
+          "reason": "Mt Tenjo hike, calm seas, starry nights",
+          "air": 18.6,
+          "sea": 19
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season",
+          "air": 21.2,
+          "sea": 21
+        },
+        {
+          "rating": "great",
+          "reason": "Beach season starts after the rains end in mid-July",
+          "air": 24.6,
+          "sea": 24
+        },
+        {
+          "rating": "great",
+          "reason": "Peak beach season; busy, book boats early",
+          "air": 26.3,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons can cancel boats; sea still warm",
+          "air": 24.1,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild and quiet",
+          "air": 20,
+          "sea": 23
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool, clear skies, empty beaches",
+          "air": 16.1,
+          "sea": 20
+        },
+        {
+          "rating": "avoid",
+          "reason": "Cold winds; ferries often cancelled",
+          "air": 11.2,
+          "sea": 18
+        }
+      ],
+      "climate": {
+        "station": "神津島 Kozushima",
+        "stationRef": {
+          "type": "a",
+          "prec": 44,
+          "block": 1523
+        },
+        "airSource": "jma",
+        "period": "2003～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Mt Tenjo hike, clear water at Akazaki",
+        "summer": "Akazaki boardwalk jumping, swimming",
+        "autumn": "Stargazing (dark-sky place)",
+        "winter": "Rough seas; very quiet"
+      },
+      "photo": {
+        "file": "Kozushima Tako Bay 2005.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Kozushima_Tako_Bay_2005.jpg/1280px-Kozushima_Tako_Bay_2005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Kozushima_Tako_Bay_2005.jpg/500px-Kozushima_Tako_Bay_2005.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Mkill",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Kozushima_Tako_Bay_2005.jpg"
+      }
+    },
+    {
+      "id": "niijima",
+      "name": "Niijima",
+      "jp": "新島",
+      "kind": "island",
+      "scene": "beach",
+      "area": "Izu",
+      "lat": 34.38,
+      "lng": 139.26,
+      "gem": true,
+      "features": [
+        "beach",
+        "onsen"
+      ],
+      "desc": "Surfer island with a 6.5 km white beach.",
+      "access": "2.5 h jet boat from Tokyo",
+      "months": [
+        {
+          "rating": "avoid",
+          "reason": "Cold, strong westerly winds; ferries often cancelled",
+          "air": 8.9,
+          "sea": 16
+        },
+        {
+          "rating": "avoid",
+          "reason": "Cold, strong winds; ferries often cancelled",
+          "air": 9.5,
+          "sea": 15
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool and quiet; spring winds can still cancel boats",
+          "air": 11.8,
+          "sea": 15
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild, surfing; too cold to swim",
+          "air": 15.5,
+          "sea": 17
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green, warm days, calm seas",
+          "air": 19.1,
+          "sea": 19
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season",
+          "air": 21.8,
+          "sea": 21
+        },
+        {
+          "rating": "great",
+          "reason": "Beach season starts after the rains end in mid-July",
+          "air": 25.3,
+          "sea": 24
+        },
+        {
+          "rating": "great",
+          "reason": "Peak beach season; busy, book boats early",
+          "air": 26.8,
+          "sea": 26
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoons can cancel boats; sea still warm",
+          "air": 24.5,
+          "sea": 25
+        },
+        {
+          "rating": "ok",
+          "reason": "Mild and quiet",
+          "air": 20.4,
+          "sea": 23
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool, clear skies, empty beaches",
+          "air": 16.3,
+          "sea": 20
+        },
+        {
+          "rating": "avoid",
+          "reason": "Cold winds; ferries often cancelled",
+          "air": 11.6,
+          "sea": 18
+        }
+      ],
+      "climate": {
+        "station": "新島 Niijima",
+        "stationRef": {
+          "type": "a",
+          "prec": 44,
+          "block": 1522
+        },
+        "airSource": "jma",
+        "period": "2003～2020",
+        "seaSource": "estimate"
+      },
+      "seasons": {
+        "spring": "Glass art, surfing at Habushiura",
+        "summer": "6.5 km white Habushiura beach, surfing",
+        "autumn": "Free hot spring at Yunohama",
+        "winter": "Windy; surf only for the brave"
+      },
+      "photo": {
+        "file": "Niijima Habushiura Beach.jpg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Niijima_Habushiura_Beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "thumb": "https://upload.wikimedia.org/wikipedia/commons/7/74/Niijima_Habushiura_Beach.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+        "author": "Soica2001 (talk)",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Niijima_Habushiura_Beach.jpg"
+      }
+    },
+    {
+      "id": "tokyo",
+      "name": "Tokyo",
+      "jp": "東京",
+      "kind": "city",
+      "scene": "city",
+      "area": "Kanto",
+      "lat": 35.68,
+      "lng": 139.76,
+      "gem": false,
+      "features": [
+        "culture",
+        "food"
+      ],
+      "desc": "Start and end point. Easy base for the Izu islands and day trips.",
+      "access": "Flights to Haneda or Narita",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cold, dry and sunny; Mt Fuji views",
+          "air": 5.4
+        },
+        {
+          "rating": "ok",
+          "reason": "Coldest month; plum blossoms late February",
+          "air": 6.1
+        },
+        {
+          "rating": "great",
+          "reason": "Cherry blossoms from late March",
+          "air": 9.4
+        },
+        {
+          "rating": "great",
+          "reason": "Cherry blossoms in early April, mild",
+          "air": 14.3
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green, comfortable; avoid Golden Week (29 Apr to 5 May)",
+          "air": 18.8
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season",
+          "air": 21.9
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until mid-July, then hot and humid",
+          "air": 25.7
+        },
+        {
+          "rating": "avoid",
+          "reason": "Hot and humid, often 35°C",
+          "air": 26.9
+        },
+        {
+          "rating": "ok",
+          "reason": "Still hot early on; typhoons",
+          "air": 23.3
+        },
+        {
+          "rating": "great",
+          "reason": "Comfortable and clear",
+          "air": 18
+        },
+        {
+          "rating": "great",
+          "reason": "Ginkgo avenues turn gold",
+          "air": 12.5
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold; ginkgo leaves early December, illuminations",
+          "air": 7.7
+        }
+      ],
+      "climate": {
+        "station": "東京 Tokyo",
+        "stationRef": {
+          "type": "s",
+          "prec": 44,
+          "block": 47662
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": null
+      },
+      "seasons": {
+        "spring": "Cherry blossoms, Shinjuku Gyoen, Asakusa",
+        "summer": "Fireworks and summer festivals (hot)",
+        "autumn": "Ginkgo avenues, autumn gardens",
+        "winter": "Clear skies, Mt Fuji views, illuminations"
+      },
+      "photo": {
+        "file": "Skyscrapers of Shinjuku 2009 January.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscrapers_of_Shinjuku_2009_January.jpg/1280px-Skyscrapers_of_Shinjuku_2009_January.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscrapers_of_Shinjuku_2009_January.jpg/500px-Skyscrapers_of_Shinjuku_2009_January.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Morio",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Skyscrapers_of_Shinjuku_2009_January.jpg"
+      }
+    },
+    {
+      "id": "kyoto",
+      "name": "Kyoto",
+      "jp": "京都",
+      "kind": "city",
+      "scene": "city",
+      "area": "Kansai",
+      "lat": 35.01,
+      "lng": 135.77,
+      "gem": false,
+      "features": [
+        "culture",
+        "food"
+      ],
+      "desc": "Temples and old streets. Go early in the morning to beat the crowds.",
+      "access": "2 h 15 min by shinkansen from Tokyo",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cold; quiet temples",
+          "air": 4.8
+        },
+        {
+          "rating": "ok",
+          "reason": "Coldest month; plum blossoms late February",
+          "air": 5.4
+        },
+        {
+          "rating": "great",
+          "reason": "Cherry blossoms from late March",
+          "air": 8.8
+        },
+        {
+          "rating": "great",
+          "reason": "Cherry blossoms in early April, mild",
+          "air": 14.4
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh maple green; Aoi Matsuri (15 May)",
+          "air": 19.5
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season",
+          "air": 23.3
+        },
+        {
+          "rating": "avoid",
+          "reason": "Very hot and humid; Gion Matsuri crowds",
+          "air": 27.3
+        },
+        {
+          "rating": "avoid",
+          "reason": "Hottest month, often above 35°C",
+          "air": 28.5
+        },
+        {
+          "rating": "ok",
+          "reason": "Still hot early on; typhoons",
+          "air": 24.4
+        },
+        {
+          "rating": "great",
+          "reason": "Comfortable and clear",
+          "air": 18.4
+        },
+        {
+          "rating": "great",
+          "reason": "Autumn leaves peak late November",
+          "air": 12.5
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold; last autumn leaves early December",
+          "air": 7.2
+        }
+      ],
+      "climate": {
+        "station": "京都 Kyoto",
+        "stationRef": {
+          "type": "s",
+          "prec": 61,
+          "block": 47759
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": null
+      },
+      "seasons": {
+        "spring": "Cherry blossoms, Philosopher's Path",
+        "summer": "Gion Matsuri (July), riverside dining platforms",
+        "autumn": "Maple leaves at Eikando and Tofukuji",
+        "winter": "Quiet temples, rare snow on Kinkakuji"
+      },
+      "photo": {
+        "file": "Kiyomizu-dera, Kyoto, November 2016 -02.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Kiyomizu-dera%2C_Kyoto%2C_November_2016_-02.jpg/1280px-Kiyomizu-dera%2C_Kyoto%2C_November_2016_-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Kiyomizu-dera%2C_Kyoto%2C_November_2016_-02.jpg/500px-Kiyomizu-dera%2C_Kyoto%2C_November_2016_-02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Martin Falbisoner",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Kiyomizu-dera,_Kyoto,_November_2016_-02.jpg"
+      }
+    },
+    {
+      "id": "osaka",
+      "name": "Osaka",
+      "jp": "大阪",
+      "kind": "city",
+      "scene": "city",
+      "area": "Kansai",
+      "lat": 34.69,
+      "lng": 135.5,
+      "gem": false,
+      "features": [
+        "food",
+        "culture"
+      ],
+      "desc": "Food city and a good base for Nara and Kobe. Kansai airport has flights to Okinawa.",
+      "access": "15 min from Kyoto by train",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cold, dry and sunny",
+          "air": 6.2
+        },
+        {
+          "rating": "ok",
+          "reason": "Coldest month; plum blossoms late February",
+          "air": 6.6
+        },
+        {
+          "rating": "great",
+          "reason": "Cherry blossoms from late March; sumo tournament",
+          "air": 9.9
+        },
+        {
+          "rating": "great",
+          "reason": "Cherry blossoms in early April, mild",
+          "air": 15.2
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green, comfortable; avoid Golden Week (29 Apr to 5 May)",
+          "air": 20.1
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season",
+          "air": 23.6
+        },
+        {
+          "rating": "ok",
+          "reason": "Hot and humid; Tenjin Matsuri (24 to 25 July)",
+          "air": 27.7
+        },
+        {
+          "rating": "avoid",
+          "reason": "Hot and humid, often 35°C",
+          "air": 29
+        },
+        {
+          "rating": "ok",
+          "reason": "Still hot early on; typhoons",
+          "air": 25.2
+        },
+        {
+          "rating": "great",
+          "reason": "Comfortable and clear",
+          "air": 19.5
+        },
+        {
+          "rating": "great",
+          "reason": "Autumn leaves",
+          "air": 13.8
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold; winter illuminations",
+          "air": 8.7
+        }
+      ],
+      "climate": {
+        "station": "大阪 Osaka",
+        "stationRef": {
+          "type": "s",
+          "prec": 62,
+          "block": 47772
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": null
+      },
+      "seasons": {
+        "spring": "Osaka Castle park, Mint Bureau cherry tunnel",
+        "summer": "Tenjin Matsuri (July), street food",
+        "autumn": "Comfortable food walks, day trips to Nara",
+        "winter": "Street food, winter illuminations"
+      },
+      "photo": {
+        "file": "Osaka Castle 03bs3200.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Osaka_Castle_03bs3200.jpg/1280px-Osaka_Castle_03bs3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Osaka_Castle_03bs3200.jpg/500px-Osaka_Castle_03bs3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Osaka_Castle_03bs3200.jpg"
+      }
+    },
+    {
+      "id": "karuizawa",
+      "name": "Karuizawa",
+      "jp": "軽井沢",
+      "kind": "city",
+      "scene": "mountain",
+      "area": "Nagano",
+      "lat": 36.35,
+      "lng": 138.6,
+      "gem": false,
+      "features": [
+        "nature",
+        "hiking",
+        "onsen"
+      ],
+      "desc": "Cool mountain resort town with forest walks and Kumoba Pond.",
+      "access": "1 h by shinkansen from Tokyo",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Very cold (often below -5°C at night), snow",
+          "air": -3.3
+        },
+        {
+          "rating": "ok",
+          "reason": "Very cold; skiing nearby",
+          "air": -2.6
+        },
+        {
+          "rating": "avoid",
+          "reason": "Cold, bare trees, many places closed",
+          "air": 1.1
+        },
+        {
+          "rating": "ok",
+          "reason": "Still cold, trees mostly bare",
+          "air": 7
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green forest from mid-May",
+          "air": 12.3
+        },
+        {
+          "rating": "great",
+          "reason": "Cool, green, some rain",
+          "air": 16
+        },
+        {
+          "rating": "great",
+          "reason": "Cool escape from the summer heat",
+          "air": 20.1
+        },
+        {
+          "rating": "ok",
+          "reason": "Peak crowds and traffic, but cool",
+          "air": 20.8
+        },
+        {
+          "rating": "great",
+          "reason": "Quiet and cool",
+          "air": 16.7
+        },
+        {
+          "rating": "great",
+          "reason": "Autumn leaves late October",
+          "air": 10.5
+        },
+        {
+          "rating": "ok",
+          "reason": "Early November leaves, then cold",
+          "air": 4.8
+        },
+        {
+          "rating": "ok",
+          "reason": "Christmas illuminations; cold",
+          "air": -0.5
+        }
+      ],
+      "climate": {
+        "station": "軽井沢 Karuizawa",
+        "stationRef": {
+          "type": "s",
+          "prec": 48,
+          "block": 47622
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": null
+      },
+      "seasons": {
+        "spring": "Fresh green forest from mid-May",
+        "summer": "Cool forest walks, Kumoba Pond",
+        "autumn": "Autumn leaves in late October",
+        "winter": "Snow, skiing nearby, outlet mall"
+      },
+      "photo": {
+        "file": "Karuizawa - Karuizawa6413.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Karuizawa_-_Karuizawa6413.jpg/1280px-Karuizawa_-_Karuizawa6413.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Karuizawa_-_Karuizawa6413.jpg/500px-Karuizawa_-_Karuizawa6413.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "lumoplank",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Karuizawa_-_Karuizawa6413.jpg"
+      }
+    }
+  ]
+}
