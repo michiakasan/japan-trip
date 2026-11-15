@@ -44,6 +44,14 @@
     {
       "name": "Gifu",
       "jp": "岐阜"
+    },
+    {
+      "name": "Mie",
+      "jp": "三重"
+    },
+    {
+      "name": "Hiroshima",
+      "jp": "広島"
     }
   ],
   "features": [
@@ -3783,6 +3791,324 @@
         "license": "CC BY-SA 3.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Takayama%27s_Early_Winter_Welcome_(NE).jpg"
+      }
+    },
+    {
+      "id": "suzuka",
+      "name": "Suzuka",
+      "jp": "鈴鹿",
+      "kind": "city",
+      "scene": "city",
+      "area": "Mie",
+      "lat": 34.8431,
+      "lng": 136.541,
+      "gem": false,
+      "features": [
+        "culture"
+      ],
+      "desc": "Home of Suzuka Circuit (F1 Japanese Grand Prix) with its amusement park; Ise Grand Shrine is about an hour away.",
+      "access": "About 1 h from Nagoya by Kintetsu or JR",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cold but mostly dry and sunny",
+          "air": 5.7
+        },
+        {
+          "rating": "ok",
+          "reason": "Coldest month; plum blossoms late February",
+          "air": 5.9
+        },
+        {
+          "rating": "great",
+          "reason": "Mild; F1 Japanese Grand Prix in some years (late March)",
+          "air": 9
+        },
+        {
+          "rating": "great",
+          "reason": "F1 Japanese Grand Prix in some years, cherry blossoms early April",
+          "air": 14.2
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green, comfortable; avoid Golden Week crowds",
+          "air": 19
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season",
+          "air": 22.7
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until mid-July, then hot and humid",
+          "air": 26.8
+        },
+        {
+          "rating": "avoid",
+          "reason": "Hot and humid, often 35°C",
+          "air": 27.9
+        },
+        {
+          "rating": "ok",
+          "reason": "Still hot early on; typhoons",
+          "air": 24.4
+        },
+        {
+          "rating": "great",
+          "reason": "Comfortable and clear",
+          "air": 18.8
+        },
+        {
+          "rating": "great",
+          "reason": "Pleasant; autumn leaves late November",
+          "air": 13.2
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold; Nabana no Sato illuminations nearby",
+          "air": 8.1
+        }
+      ],
+      "climate": {
+        "station": "津 Tsu",
+        "stationRef": {
+          "type": "s",
+          "prec": 53,
+          "block": 47651
+        },
+        "airSource": "nearby",
+        "period": "1991～2020",
+        "seaSource": null
+      },
+      "seasons": {
+        "spring": "F1 Japanese Grand Prix, cherry blossoms",
+        "summer": "Circuit park water rides; hot, so start early",
+        "autumn": "Comfortable days, Ise Grand Shrine trip",
+        "winter": "Nabana no Sato light show nearby"
+      },
+      "photo": {
+        "file": "Suzuka 300km Endurance - Qualifying 2010.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Suzuka_300km_Endurance_-_Qualifying_2010.jpg/1280px-Suzuka_300km_Endurance_-_Qualifying_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Suzuka_300km_Endurance_-_Qualifying_2010.jpg/500px-Suzuka_300km_Endurance_-_Qualifying_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Laitche",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Suzuka_300km_Endurance_-_Qualifying_2010.jpg"
+      }
+    },
+    {
+      "id": "hiroshima",
+      "name": "Hiroshima",
+      "jp": "広島",
+      "kind": "city",
+      "scene": "city",
+      "area": "Hiroshima",
+      "lat": 34.3853,
+      "lng": 132.4553,
+      "gem": false,
+      "features": [
+        "culture",
+        "food",
+        "hiking",
+        "nature"
+      ],
+      "desc": "Peace Memorial Park and okonomiyaki, with a ferry to Miyajima's floating torii and Mt Misen.",
+      "access": "About 4 h by shinkansen from Tokyo, 1.5 h from Osaka",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cold; oyster season",
+          "air": 5.4
+        },
+        {
+          "rating": "ok",
+          "reason": "Coldest month; Miyajima oyster festival",
+          "air": 6.2
+        },
+        {
+          "rating": "great",
+          "reason": "Mild; cherry blossoms from late March",
+          "air": 9.5
+        },
+        {
+          "rating": "great",
+          "reason": "Cherry blossoms early April, mild",
+          "air": 14.8
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green, good for Mt Misen; avoid Golden Week",
+          "air": 19.6
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season",
+          "air": 23.2
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy until mid-July, then hot and humid",
+          "air": 27.2
+        },
+        {
+          "rating": "ok",
+          "reason": "Very hot; Peace Memorial Ceremony on 6 August",
+          "air": 28.5
+        },
+        {
+          "rating": "ok",
+          "reason": "Still hot early on; typhoons",
+          "air": 24.7
+        },
+        {
+          "rating": "great",
+          "reason": "Comfortable and clear",
+          "air": 18.8
+        },
+        {
+          "rating": "great",
+          "reason": "Autumn leaves at Momijidani, Miyajima (mid to late November)",
+          "air": 12.9
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold; Dreamination lights, oysters",
+          "air": 7.5
+        }
+      ],
+      "climate": {
+        "station": "広島 Hiroshima",
+        "stationRef": {
+          "type": "s",
+          "prec": 67,
+          "block": 47765
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": null
+      },
+      "seasons": {
+        "spring": "Cherry blossoms in Peace Park and at Hiroshima Castle",
+        "summer": "Peace Memorial Ceremony (6 Aug), Miyajima fireworks some years",
+        "autumn": "Red maples in Momijidani Park on Miyajima",
+        "winter": "Oysters, Dreamination illuminations"
+      },
+      "photo": {
+        "file": "Atomic Bomb Dome and Motoyaso River, Hiroshima, Northwest view 20190417 1.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Atomic_Bomb_Dome_and_Motoyaso_River%2C_Hiroshima%2C_Northwest_view_20190417_1.jpg/1280px-Atomic_Bomb_Dome_and_Motoyaso_River%2C_Hiroshima%2C_Northwest_view_20190417_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Atomic_Bomb_Dome_and_Motoyaso_River%2C_Hiroshima%2C_Northwest_view_20190417_1.jpg/500px-Atomic_Bomb_Dome_and_Motoyaso_River%2C_Hiroshima%2C_Northwest_view_20190417_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "DXR",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Atomic_Bomb_Dome_and_Motoyaso_River,_Hiroshima,_Northwest_view_20190417_1.jpg"
+      }
+    },
+    {
+      "id": "hakone",
+      "name": "Hakone",
+      "jp": "箱根",
+      "kind": "city",
+      "scene": "mountain",
+      "area": "Kanto",
+      "lat": 35.2329,
+      "lng": 139.1069,
+      "gem": false,
+      "features": [
+        "onsen",
+        "nature",
+        "hiking",
+        "culture"
+      ],
+      "desc": "Onsen town in the hills near Mt Fuji: Lake Ashi boats, the Owakudani ropeway and open-air art museums.",
+      "access": "About 1.5 h from Shinjuku by Romancecar",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cold, clear Mt Fuji views, good onsen weather",
+          "air": 2.7
+        },
+        {
+          "rating": "ok",
+          "reason": "Coldest month; clearest Fuji views, sometimes snow",
+          "air": 3.5
+        },
+        {
+          "rating": "ok",
+          "reason": "Still cool; plum blossoms",
+          "air": 6.6
+        },
+        {
+          "rating": "great",
+          "reason": "Cherry blossoms early to mid April",
+          "air": 11.5
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green, azaleas; avoid Golden Week",
+          "air": 15.9
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season; hydrangeas start late June",
+          "air": 19.2
+        },
+        {
+          "rating": "ok",
+          "reason": "Hydrangeas along the mountain railway; misty, Fuji often hidden",
+          "air": 22.9
+        },
+        {
+          "rating": "ok",
+          "reason": "Cooler than Tokyo, but crowded and Fuji often hidden",
+          "air": 24.1
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon season, humid",
+          "air": 20.9
+        },
+        {
+          "rating": "great",
+          "reason": "Silver pampas grass at Sengokuhara",
+          "air": 15.6
+        },
+        {
+          "rating": "great",
+          "reason": "Autumn leaves early to mid November",
+          "air": 10.3
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold, clear Fuji views, onsen weather",
+          "air": 5.2
+        }
+      ],
+      "climate": {
+        "station": "御殿場 Gotemba",
+        "stationRef": {
+          "type": "a",
+          "prec": 50,
+          "block": 441
+        },
+        "airSource": "nearby",
+        "period": "1991～2020",
+        "seaSource": null
+      },
+      "seasons": {
+        "spring": "Cherry blossoms, then fresh green and azaleas",
+        "summer": "Hydrangea train on the Hakone Tozan line",
+        "autumn": "Sengokuhara pampas grass, red leaves",
+        "winter": "Clear Mt Fuji views and hot springs"
+      },
+      "photo": {
+        "file": "View of Mount Fuji from Lake Ashi.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/View_of_Mount_Fuji_from_Lake_Ashi.jpg/1280px-View_of_Mount_Fuji_from_Lake_Ashi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/View_of_Mount_Fuji_from_Lake_Ashi.jpg/500px-View_of_Mount_Fuji_from_Lake_Ashi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Quercus acuta",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:View_of_Mount_Fuji_from_Lake_Ashi.jpg"
       }
     }
   ]

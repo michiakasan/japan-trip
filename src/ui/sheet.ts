@@ -77,7 +77,11 @@ export function selectSheetMonth(i: number, data: PlacesFile) {
 function builtInSections(p: Place, data: PlacesFile) {
   const source =
     `Air: JMA climate normals ${esc(p.climate.period ?? "")}, station ${esc(p.climate.station)}` +
-    (p.climate.airSource === "nearby" ? " (on a neighbouring island, so approximate)" : "") +
+    (p.climate.airSource === "nearby"
+      ? p.kind === "island"
+        ? " (on a neighbouring island, so approximate)"
+        : " (a nearby town, so approximate)"
+      : "") +
     (p.climate.seaSource ? ". Sea temperatures are rough estimates." : ".");
   return {
     top: `<section class="panel">

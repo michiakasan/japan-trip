@@ -55,6 +55,9 @@ const SEARCH: Record<string, string> = {
   osaka: "Osaka Castle",
   karuizawa: "Karuizawa Kumoba pond",
   takayama: "Takayama Sanmachi old town",
+  suzuka: "Suzuka Circuit",
+  hiroshima: "Itsukushima torii Miyajima",
+  hakone: "Lake Ashi Hakone torii Fuji",
 };
 
 // English Wikipedia article for each place (its main image is tried first).
@@ -67,6 +70,7 @@ const WIKI: Record<string, string> = {
   chichijima: "Chichijima", miyakejima: "Miyake-jima", mikurajima: "Mikura-jima", hachijojima: "Hachijō-jima",
   shikinejima: "Shikine-jima", kozushima: "Kōzu-shima", niijima: "Nii-jima", tokyo: "Tokyo", kyoto: "Kyoto",
   osaka: "Osaka", karuizawa: "Karuizawa, Nagano", takayama: "Takayama, Gifu",
+  suzuka: "Suzuka Circuit", hiroshima: "Hiroshima", hakone: "Hakone",
 };
 
 /** File names that are almost never a nice landscape photo. */

@@ -70,7 +70,7 @@ before upload, which also strips GPS data.
 
 | Path | What |
 |---|---|
-| `public/places.json` | the 32 built-in places: months, JMA temperatures, seasons, photos |
+| `public/places.json` | the 35 built-in places: months, JMA temperatures, seasons, photos |
 | `src/main.ts` | start-up, navigation (`#/`, `#/map`, `#/trips`, `#/place/<id>` …), taps |
 | `src/data/` | `store.ts` (our data, live updates, offline copy), `api.ts` (talks to the server), `places.ts`, `photos.ts` |
 | `src/ui/` | one file per screen: `results`, `sheet` (place page), `map`, `add-place`, `trips`, `ours`, `join` |
