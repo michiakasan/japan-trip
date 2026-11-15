@@ -40,6 +40,10 @@
     {
       "name": "Nagano",
       "jp": "長野"
+    },
+    {
+      "name": "Gifu",
+      "jp": "岐阜"
     }
   ],
   "features": [
@@ -3672,6 +3676,113 @@
         "license": "CC0",
         "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Karuizawa_-_Karuizawa6413.jpg"
+      }
+    },
+    {
+      "id": "takayama",
+      "name": "Takayama",
+      "jp": "高山",
+      "kind": "city",
+      "scene": "city",
+      "area": "Gifu",
+      "lat": 36.1408,
+      "lng": 137.2522,
+      "gem": false,
+      "features": [
+        "culture",
+        "food",
+        "onsen",
+        "nature"
+      ],
+      "desc": "Mountain town with an Edo-era old quarter, morning markets, sake breweries and Hida beef.",
+      "access": "About 2.5 h by Hida limited express from Nagoya",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Snowy old town, very cold; Shirakawa-go light-up some weekends",
+          "air": -1.2
+        },
+        {
+          "rating": "ok",
+          "reason": "Snow and the coldest nights; Shirakawa-go light-up",
+          "air": -0.6
+        },
+        {
+          "rating": "ok",
+          "reason": "Still cold, snow melting, quiet streets",
+          "air": 3.4
+        },
+        {
+          "rating": "great",
+          "reason": "Spring Takayama Festival (14–15 Apr), cherry blossoms late April",
+          "air": 9.7
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green, mild days, good for walking",
+          "air": 15.6
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season, but green and quiet",
+          "air": 19.7
+        },
+        {
+          "rating": "ok",
+          "reason": "Rain early, then warm and humid",
+          "air": 23.5
+        },
+        {
+          "rating": "ok",
+          "reason": "Hot days in the basin, busy at Obon; cool up in Okuhida",
+          "air": 24.4
+        },
+        {
+          "rating": "great",
+          "reason": "Pleasant, fewer crowds",
+          "air": 20
+        },
+        {
+          "rating": "great",
+          "reason": "Autumn Takayama Festival (9–10 Oct), leaves late October",
+          "air": 13.5
+        },
+        {
+          "rating": "great",
+          "reason": "Autumn leaves early November, crisp and cold",
+          "air": 7.1
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold, first snow, quiet",
+          "air": 1.6
+        }
+      ],
+      "climate": {
+        "station": "高山 Takayama",
+        "stationRef": {
+          "type": "s",
+          "prec": 52,
+          "block": 47617
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": null
+      },
+      "seasons": {
+        "spring": "Spring Takayama Festival with its floats, cherry blossoms along the Miyagawa",
+        "summer": "Cool escapes to Okuhida onsen and the Northern Alps (Shinhotaka ropeway)",
+        "autumn": "Autumn Takayama Festival, red leaves in the old town and Okuhida",
+        "winter": "Snowy old streets, Shirakawa-go light-up, hot sake and Hida beef"
+      },
+      "photo": {
+        "file": "Takayama's Early Winter Welcome (NE).jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Takayama%27s_Early_Winter_Welcome_%28NE%29.jpg/1280px-Takayama%27s_Early_Winter_Welcome_%28NE%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Takayama%27s_Early_Winter_Welcome_%28NE%29.jpg/500px-Takayama%27s_Early_Winter_Welcome_%28NE%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Nickaura (Nick Sevarg)",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Takayama%27s_Early_Winter_Welcome_(NE).jpg"
       }
     }
   ]
