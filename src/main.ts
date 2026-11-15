@@ -7,16 +7,19 @@
 import "./styles/app.css";
 import type { FeatureId, PlacesFile } from "./types";
 import { ui, save, type ThemeChoice } from "./state";
-import { allPlaces, findPlace, loadPlaces } from "./data/places";
-import { counts, customPlaces, deleteCustomPlace, importedFromDevice, init as initStore, onChange } from "./data/store";
+import { allDestinations, allSpots, destinationOf, findPlace, loadPlaces, spotsOf } from "./data/places";
+import {
+  counts, deleteDestination, deleteSpot, importedFromDevice, init as initStore, onChange, setHidden,
+} from "./data/store";
 import { $, toast } from "./ui/dom";
 import { renderChips, renderMonths, renderResultBar } from "./ui/filters";
 import { computeResults, renderResults } from "./ui/results";
 import {
   clearCurrentPlace, closeSheet, currentPlaceId, getBackHref, openSheet, renderSheet, selectSheetMonth, setBackHref,
+  setSpotFilter, toggleHiddenSpots,
 } from "./ui/sheet";
 import { hideMap, refreshMap, showMap } from "./ui/map";
-import { destroyPicker, openPlaceForm } from "./ui/add-place";
+import { destroyPicker, isEditable, openPlaceForm } from "./ui/add-place";
 import { closeTrip, openTrip, openTripForm, openTripPage, renderTripPage, renderTripsView, setupTripEvents } from "./ui/trips";
 import { getTrip } from "./data/store";
 import { setupOursEvents } from "./ui/ours";
@@ -42,8 +45,8 @@ function renderShell() {
       <div id="chips"></div>
       <label class="search">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-        <span class="sr-only">Search places</span>
-        <input id="q" type="search" placeholder="Search: dolphins, onsen, 竹富…" autocomplete="off" />
+        <span class="sr-only">Search destinations and spots</span>
+        <input id="q" type="search" placeholder="Search: dolphins, onsen, bamboo, 竹富…" autocomplete="off" />
       </label>
       <div class="result-bar" id="resultBar"></div>
       <main id="results"></main>
@@ -80,7 +83,7 @@ function renderShell() {
 // ---------- drawing ----------
 function renderStats() {
   const c = counts();
-  $("#stats").textContent = `${allPlaces(data).length} places · ${c.want} want · ${c.visited} visited`;
+  $("#stats").textContent = `${allDestinations(data).length} places · ${allSpots(data).length} spots · ${c.want} want · ${c.visited} visited`;
 }
 
 /** Re-draw the list and the line above it. */
@@ -119,9 +122,10 @@ function applyTheme() {
 darkQuery.addEventListener("change", applyTheme);
 
 // ---------- navigation (the part of the URL after #) ----------
-//   #/              the list            #/place/<id>   a place (over the list or map)
-//   #/map           the map             #/add          form: add a place
-//   #/map/<id>      map, zoomed to one  #/edit/<id>    form: edit one of our places
+//   #/              the list            #/place/<id>   a destination or spot (over the list or map)
+//   #/map           the map             #/add          form: add a spot or destination
+//   #/map/<id>      map, zoomed to one  #/add/<id>     form: add a spot to that destination
+//                                       #/edit/<id>    form: edit one of our spots or destinations
 //   #/trips         our trips           #/trip/<id>    one trip (#/trip/<id>/edit, #/trips/new: forms)
 
 /** Highlights the right tab in the bottom bar. */
@@ -162,7 +166,14 @@ function route() {
     const place = findPlace(data, id);
     if (!place) return void (location.hash = getBackHref()); // e.g. deleted
     destroyPicker();
-    if (/^#\/trip\/[^/]+$/.test(cameFrom)) setBackHref(cameFrom); // back goes to that trip
+    // Where "back" goes: the trip we came from; else, for a spot, its destination (or the map,
+    // if opened there); for a destination, the tab underneath (list, map or trips).
+    const screen = document.body.dataset.screen;
+    const tab = screen === "map" ? "#/map" : screen === "trips" ? "#/trips" : "#/";
+    if (/^#\/trip\/[^/]+$/.test(cameFrom)) setBackHref(cameFrom);
+    else if (place.kind === "spot" && !(screen === "map" && cameFrom.startsWith("#/map"))) {
+      setBackHref(`#/place/${encodeURIComponent(destinationOf(data, place).id)}`);
+    } else setBackHref(tab);
     openSheet(place, data);
   } else if (page === "trips" && id === "new") {
     clearCurrentPlace();
@@ -181,11 +192,12 @@ function route() {
       openTripForm(getTrip(tripId));
     } else openTripPage(data, tripId);
   } else if (page === "add" || page === "edit") {
-    const existing = page === "edit" ? customPlaces().find((c) => c.id === id) : undefined;
+    const found = findPlace(data, id);
+    const existing = page === "edit" && isEditable(found) ? found : undefined;
     if (page === "edit" && !existing) return void (location.hash = getBackHref());
     clearCurrentPlace();
-    openPlaceForm(data, existing);
-    if (page === "add") markTab("add");
+    openPlaceForm(data, existing, page === "add" ? id || undefined : undefined);
+    if (page === "add" && !id) markTab("add");
   } else {
     // The list or the map, with no panel open.
     destroyPicker();
@@ -199,7 +211,7 @@ function setupEvents() {
   document.addEventListener("click", (e) => {
     // Find the nearest element with one of our data-* attributes.
     const t = (e.target as HTMLElement).closest<HTMLElement>(
-      "[data-month],[data-type],[data-feature],[data-view],[data-action],[data-strip-month]",
+      "[data-month],[data-type],[data-feature],[data-view],[data-action],[data-strip-month],[data-spot-type]",
     );
     if (!t) return;
     const d = t.dataset;
@@ -214,6 +226,18 @@ function setupEvents() {
       else ui.features = ui.features.includes(f) ? ui.features.filter((x) => x !== f) : [...ui.features, f];
     } else if (d.view) {
       ui.view = d.view as typeof ui.view;
+    } else if (d.spotType) {
+      setSpotFilter(d.spotType as Parameters<typeof setSpotFilter>[0], data);
+      return;
+    } else if (d.action === "toggle-hidden") {
+      toggleHiddenSpots(data);
+      return;
+    } else if (d.action === "hide-spot" || d.action === "unhide-spot") {
+      const id = currentPlaceId();
+      if (id) setHidden(id, d.action === "hide-spot")
+        .then(() => toast(d.action === "hide-spot" ? "Hidden. You can show it again from its destination's spots." : "Shown again"))
+        .catch((err) => toast(err.message || "Could not save"));
+      return;
     } else if (d.stripMonth !== undefined) {
       selectSheetMonth(Number(d.stripMonth), data);
       return;
@@ -231,14 +255,19 @@ function setupEvents() {
       return;
     } else if (d.action === "delete-place") {
       const id = currentPlaceId();
-      const place = id && findPlace(data, id);
-      if (!place || !confirm(`Delete "${place.name}" with its notes and photos, for both of you?`)) return;
-      deleteCustomPlace(place.id)
+      const place = id ? findPlace(data, id) : undefined;
+      if (!isEditable(place)) return;
+      // Deleting our destination also deletes the spots we added to it.
+      const ours = place.kind === "custom" ? spotsOf(data, place).filter((s) => !s.builtIn) : [];
+      const extra = ours.length ? ` and its ${ours.length} spot${ours.length > 1 ? "s" : ""}` : "";
+      if (!confirm(`Delete "${place.name}"${extra} with notes and photos, for both of you?`)) return;
+      const back = place.kind === "spot" ? `#/place/${destinationOf(data, place).id}` : getBackHref();
+      (place.kind === "spot" ? deleteSpot(place.id) : deleteDestination(place.id))
         .then(() => {
           toast(`${place.name} deleted`);
-          location.hash = getBackHref();
+          location.hash = back;
         })
-        .catch((err) => toast(err.message || "Could not delete"));
+        .catch((err: Error) => toast(err.message || "Could not delete"));
       return;
     } else {
       return;
@@ -250,10 +279,10 @@ function setupEvents() {
     renderAll();
   });
 
-  // Dropdowns (area and sort)
+  // Dropdowns (prefecture and sort)
   document.addEventListener("change", (e) => {
     const t = e.target as HTMLSelectElement;
-    if (t.matches("[data-area]")) ui.area = t.value;
+    if (t.matches("[data-prefecture]")) ui.prefecture = t.value;
     else if (t.matches("[data-sort]")) ui.sort = t.value as typeof ui.sort;
     else return;
     save();
@@ -298,7 +327,7 @@ function setupEvents() {
   // When our data changes (here or on the other phone), update the list, counts and open place page.
   onChange(() => {
     renderStats();
-    renderChips($("#chips"), data); // new areas may have been added
+    renderChips($("#chips"), data); // new prefectures may have been added
     renderList();
     refreshMap(data);
     if (document.body.dataset.screen === "trips") renderTripsView($("#tripsView"), data);

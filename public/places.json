@@ -1,5 +1,5 @@
 {
-  "$comment": "Built-in places. Edit freely. Air temperatures come from scripts/fetch-climate.ts (JMA 1991-2020 normals); photos from scripts/fetch-photos.ts. Sea temperatures are estimates.",
+  "$comment": "Built-in destinations (places) and spots. Edit freely. Each place has a prefecture (from 'prefectures', used as a filter); each spot has a destinationId (a place id) and a type (beach, temple, onsen, view, nature, sight, food, cafe, stay, shop, other). Built-in spot ids start with 'b-'. Air temperatures come from scripts/fetch-climate.ts (JMA 1991-2020 normals); photos from scripts/fetch-photos.ts. Sea temperatures are estimates.",
   "areas": [
     {
       "name": "Yaeyama",
@@ -70,6 +70,68 @@
       "jp": "石川"
     }
   ],
+  "prefectures": [
+    {
+      "name": "Okinawa",
+      "jp": "沖縄県"
+    },
+    {
+      "name": "Kagoshima",
+      "jp": "鹿児島県"
+    },
+    {
+      "name": "Hiroshima",
+      "jp": "広島県"
+    },
+    {
+      "name": "Wakayama",
+      "jp": "和歌山県"
+    },
+    {
+      "name": "Nara",
+      "jp": "奈良県"
+    },
+    {
+      "name": "Osaka",
+      "jp": "大阪府"
+    },
+    {
+      "name": "Kyoto",
+      "jp": "京都府"
+    },
+    {
+      "name": "Mie",
+      "jp": "三重県"
+    },
+    {
+      "name": "Ishikawa",
+      "jp": "石川県"
+    },
+    {
+      "name": "Gifu",
+      "jp": "岐阜県"
+    },
+    {
+      "name": "Toyama",
+      "jp": "富山県"
+    },
+    {
+      "name": "Nagano",
+      "jp": "長野県"
+    },
+    {
+      "name": "Yamanashi",
+      "jp": "山梨県"
+    },
+    {
+      "name": "Kanagawa",
+      "jp": "神奈川県"
+    },
+    {
+      "name": "Tokyo",
+      "jp": "東京都"
+    }
+  ],
   "features": [
     {
       "id": "beach",
@@ -120,6 +182,7 @@
       "kind": "island",
       "scene": "beach",
       "area": "Yaeyama",
+      "prefecture": "Okinawa",
       "lat": 24.4,
       "lng": 124.18,
       "gem": false,
@@ -268,6 +331,7 @@
       "kind": "island",
       "scene": "village",
       "area": "Yaeyama",
+      "prefecture": "Okinawa",
       "lat": 24.33,
       "lng": 124.09,
       "gem": false,
@@ -414,6 +478,7 @@
       "kind": "island",
       "scene": "jungle",
       "area": "Yaeyama",
+      "prefecture": "Okinawa",
       "lat": 24.33,
       "lng": 123.82,
       "gem": false,
@@ -561,6 +626,7 @@
       "kind": "island",
       "scene": "beach",
       "area": "Yaeyama",
+      "prefecture": "Okinawa",
       "lat": 24.34,
       "lng": 123.98,
       "gem": true,
@@ -707,6 +773,7 @@
       "kind": "island",
       "scene": "beach",
       "area": "Yaeyama",
+      "prefecture": "Okinawa",
       "lat": 24.24,
       "lng": 123.99,
       "gem": true,
@@ -854,6 +921,7 @@
       "kind": "island",
       "scene": "beach",
       "area": "Yaeyama",
+      "prefecture": "Okinawa",
       "lat": 24.06,
       "lng": 123.78,
       "gem": true,
@@ -1001,6 +1069,7 @@
       "kind": "island",
       "scene": "cliff",
       "area": "Yaeyama",
+      "prefecture": "Okinawa",
       "lat": 24.46,
       "lng": 122.99,
       "gem": true,
@@ -1147,6 +1216,7 @@
       "kind": "island",
       "scene": "beach",
       "area": "Miyako",
+      "prefecture": "Okinawa",
       "lat": 24.76,
       "lng": 125.33,
       "gem": false,
@@ -1294,6 +1364,7 @@
       "kind": "island",
       "scene": "beach",
       "area": "Miyako",
+      "prefecture": "Okinawa",
       "lat": 24.83,
       "lng": 125.19,
       "gem": true,
@@ -1440,6 +1511,7 @@
       "kind": "island",
       "scene": "village",
       "area": "Miyako",
+      "prefecture": "Okinawa",
       "lat": 24.66,
       "lng": 124.7,
       "gem": true,
@@ -1587,6 +1659,7 @@
       "kind": "island",
       "scene": "beach",
       "area": "Okinawa",
+      "prefecture": "Okinawa",
       "lat": 26.21,
       "lng": 127.31,
       "gem": false,
@@ -1733,6 +1806,7 @@
       "kind": "island",
       "scene": "beach",
       "area": "Okinawa",
+      "prefecture": "Okinawa",
       "lat": 26.34,
       "lng": 126.79,
       "gem": true,
@@ -1879,6 +1953,7 @@
       "kind": "island",
       "scene": "beach",
       "area": "Okinawa",
+      "prefecture": "Okinawa",
       "lat": 26.65,
       "lng": 127.82,
       "gem": true,
@@ -2026,6 +2101,7 @@
       "kind": "island",
       "scene": "village",
       "area": "Okinawa",
+      "prefecture": "Okinawa",
       "lat": 27,
       "lng": 127.95,
       "gem": true,
@@ -2154,6 +2230,7 @@
       "kind": "island",
       "scene": "beach",
       "area": "Amami",
+      "prefecture": "Kagoshima",
       "lat": 27.04,
       "lng": 128.42,
       "gem": true,
@@ -2301,6 +2378,7 @@
       "kind": "island",
       "scene": "cliff",
       "area": "Amami",
+      "prefecture": "Kagoshima",
       "lat": 27.37,
       "lng": 128.57,
       "gem": true,
@@ -2429,6 +2507,7 @@
       "kind": "island",
       "scene": "jungle",
       "area": "Amami",
+      "prefecture": "Kagoshima",
       "lat": 27.78,
       "lng": 128.96,
       "gem": true,
@@ -2575,6 +2654,7 @@
       "kind": "island",
       "scene": "jungle",
       "area": "Amami",
+      "prefecture": "Kagoshima",
       "lat": 28.38,
       "lng": 129.49,
       "gem": false,
@@ -2712,6 +2792,7 @@
       "kind": "island",
       "scene": "village",
       "area": "Amami",
+      "prefecture": "Kagoshima",
       "lat": 28.12,
       "lng": 129.25,
       "gem": true,
@@ -2859,6 +2940,7 @@
       "kind": "island",
       "scene": "forest",
       "area": "Kagoshima",
+      "prefecture": "Kagoshima",
       "lat": 30.34,
       "lng": 130.52,
       "gem": false,
@@ -3006,6 +3088,7 @@
       "kind": "island",
       "scene": "beach",
       "area": "Ogasawara",
+      "prefecture": "Tokyo",
       "lat": 27.08,
       "lng": 142.21,
       "gem": false,
@@ -3144,6 +3227,7 @@
       "kind": "island",
       "scene": "volcano",
       "area": "Izu",
+      "prefecture": "Tokyo",
       "lat": 34.08,
       "lng": 139.53,
       "gem": true,
@@ -3290,6 +3374,7 @@
       "kind": "island",
       "scene": "forest",
       "area": "Izu",
+      "prefecture": "Tokyo",
       "lat": 33.88,
       "lng": 139.6,
       "gem": true,
@@ -3436,6 +3521,7 @@
       "kind": "island",
       "scene": "volcano",
       "area": "Izu",
+      "prefecture": "Tokyo",
       "lat": 33.11,
       "lng": 139.79,
       "gem": false,
@@ -3574,6 +3660,7 @@
       "kind": "island",
       "scene": "onsen",
       "area": "Izu",
+      "prefecture": "Tokyo",
       "lat": 34.33,
       "lng": 139.21,
       "gem": true,
@@ -3711,6 +3798,7 @@
       "kind": "island",
       "scene": "cliff",
       "area": "Izu",
+      "prefecture": "Tokyo",
       "lat": 34.21,
       "lng": 139.14,
       "gem": true,
@@ -3858,6 +3946,7 @@
       "kind": "island",
       "scene": "beach",
       "area": "Izu",
+      "prefecture": "Tokyo",
       "lat": 34.38,
       "lng": 139.26,
       "gem": true,
@@ -4004,6 +4093,7 @@
       "kind": "city",
       "scene": "city",
       "area": "Kanto",
+      "prefecture": "Tokyo",
       "lat": 35.68,
       "lng": 139.76,
       "gem": false,
@@ -4138,6 +4228,7 @@
       "kind": "city",
       "scene": "city",
       "area": "Kansai",
+      "prefecture": "Kyoto",
       "lat": 35.01,
       "lng": 135.77,
       "gem": false,
@@ -4273,6 +4364,7 @@
       "kind": "city",
       "scene": "city",
       "area": "Kansai",
+      "prefecture": "Osaka",
       "lat": 34.69,
       "lng": 135.5,
       "gem": false,
@@ -4407,6 +4499,7 @@
       "kind": "city",
       "scene": "mountain",
       "area": "Nagano",
+      "prefecture": "Nagano",
       "lat": 36.35,
       "lng": 138.6,
       "gem": false,
@@ -4542,6 +4635,7 @@
       "kind": "city",
       "scene": "city",
       "area": "Gifu",
+      "prefecture": "Gifu",
       "lat": 36.1408,
       "lng": 137.2522,
       "gem": false,
@@ -4679,6 +4773,7 @@
       "kind": "city",
       "scene": "city",
       "area": "Mie",
+      "prefecture": "Mie",
       "lat": 34.8431,
       "lng": 136.541,
       "gem": false,
@@ -4812,6 +4907,7 @@
       "kind": "city",
       "scene": "city",
       "area": "Hiroshima",
+      "prefecture": "Hiroshima",
       "lat": 34.3853,
       "lng": 132.4553,
       "gem": false,
@@ -4948,6 +5044,7 @@
       "kind": "city",
       "scene": "mountain",
       "area": "Kanto",
+      "prefecture": "Kanagawa",
       "lat": 35.2329,
       "lng": 139.1069,
       "gem": false,
@@ -5085,6 +5182,7 @@
       "kind": "city",
       "scene": "city",
       "area": "Nagano",
+      "prefecture": "Nagano",
       "lat": 36.2381,
       "lng": 137.972,
       "gem": false,
@@ -5222,6 +5320,7 @@
       "kind": "island",
       "scene": "village",
       "area": "Hiroshima",
+      "prefecture": "Hiroshima",
       "lat": 34.296,
       "lng": 132.3198,
       "gem": false,
@@ -5359,6 +5458,7 @@
       "kind": "city",
       "scene": "forest",
       "area": "Wakayama",
+      "prefecture": "Wakayama",
       "lat": 33.8403,
       "lng": 135.7735,
       "gem": false,
@@ -5497,6 +5597,7 @@
       "kind": "city",
       "scene": "city",
       "area": "Kansai",
+      "prefecture": "Nara",
       "lat": 34.6851,
       "lng": 135.843,
       "gem": false,
@@ -5635,6 +5736,7 @@
       "kind": "city",
       "scene": "volcano",
       "area": "Yamanashi",
+      "prefecture": "Yamanashi",
       "lat": 35.3606,
       "lng": 138.7274,
       "gem": false,
@@ -5771,6 +5873,7 @@
       "kind": "city",
       "scene": "mountain",
       "area": "Toyama",
+      "prefecture": "Toyama",
       "lat": 36.5767,
       "lng": 137.5966,
       "gem": false,
@@ -5907,6 +6010,7 @@
       "kind": "city",
       "scene": "city",
       "area": "Ishikawa",
+      "prefecture": "Ishikawa",
       "lat": 36.5613,
       "lng": 136.6562,
       "gem": false,
@@ -6045,6 +6149,7 @@
       "kind": "city",
       "scene": "village",
       "area": "Gifu",
+      "prefecture": "Gifu",
       "lat": 36.2577,
       "lng": 136.9061,
       "gem": false,
@@ -6167,6 +6272,1708 @@
         "Snow in Ogimachi Area, Shirakawa village, Gifu.JPG",
         "Shirakawa Go At Night (198621599).jpeg"
       ]
+    }
+  ],
+  "spots": [
+    {
+      "id": "b-ishigaki-kabira-bay",
+      "destinationId": "ishigaki",
+      "type": "view",
+      "name": "Kabira Bay",
+      "jp": "川平湾",
+      "lat": 24.45007,
+      "lng": 124.14365,
+      "desc": "Turquoise bay with glass-bottom boats (no swimming)"
+    },
+    {
+      "id": "b-ishigaki-yonehara-beach",
+      "destinationId": "ishigaki",
+      "type": "beach",
+      "name": "Yonehara Beach",
+      "jp": "米原ビーチ",
+      "lat": 24.45418,
+      "lng": 124.18633,
+      "desc": "Snorkel straight from the beach; watch the currents"
+    },
+    {
+      "id": "b-ishigaki-tamatorizaki-observatory",
+      "destinationId": "ishigaki",
+      "type": "view",
+      "name": "Tamatorizaki Observatory",
+      "jp": "玉取崎展望台",
+      "lat": 24.49054,
+      "lng": 124.27887,
+      "desc": "Views over both coasts of the north"
+    },
+    {
+      "id": "b-ishigaki-hirakubozaki-lighthouse",
+      "destinationId": "ishigaki",
+      "type": "view",
+      "name": "Hirakubozaki Lighthouse",
+      "jp": "平久保崎灯台",
+      "lat": 24.61199,
+      "lng": 124.31635,
+      "desc": "Northern tip, wide ocean views"
+    },
+    {
+      "id": "b-ishigaki-ishigaki-public-market",
+      "destinationId": "ishigaki",
+      "type": "food",
+      "name": "Ishigaki Public Market",
+      "jp": "石垣市公設市場",
+      "lat": 24.3405,
+      "lng": 124.1573,
+      "desc": "Island fruit, fish and Ishigaki beef"
+    },
+    {
+      "id": "b-taketomi-kondoi-beach",
+      "destinationId": "taketomi",
+      "type": "beach",
+      "name": "Kondoi Beach",
+      "jp": "コンドイビーチ",
+      "lat": 24.3266,
+      "lng": 124.0786,
+      "desc": "Shallow, calm, very clear water"
+    },
+    {
+      "id": "b-taketomi-kaiji-beach",
+      "destinationId": "taketomi",
+      "type": "beach",
+      "name": "Kaiji Beach",
+      "jp": "カイジ浜",
+      "lat": 24.32023,
+      "lng": 124.07726,
+      "desc": "Star-sand beach (no swimming)"
+    },
+    {
+      "id": "b-taketomi-nishi-pier",
+      "destinationId": "taketomi",
+      "type": "view",
+      "name": "Nishi Pier",
+      "jp": "西桟橋",
+      "lat": 24.3328,
+      "lng": 124.0818,
+      "desc": "The island's sunset spot"
+    },
+    {
+      "id": "b-taketomi-water-buffalo-cart-ride",
+      "destinationId": "taketomi",
+      "type": "sight",
+      "name": "Water buffalo cart ride",
+      "jp": "水牛車観光",
+      "lat": 24.3301,
+      "lng": 124.0888,
+      "desc": "Slow ride through the village with sanshin songs"
+    },
+    {
+      "id": "b-iriomote-pinaisara-falls",
+      "destinationId": "iriomote",
+      "type": "nature",
+      "name": "Pinaisara Falls",
+      "jp": "ピナイサーラの滝",
+      "lat": 24.38198,
+      "lng": 123.82042,
+      "desc": "Okinawa's tallest waterfall, by kayak and jungle walk"
+    },
+    {
+      "id": "b-iriomote-urauchi-river",
+      "destinationId": "iriomote",
+      "type": "nature",
+      "name": "Urauchi River",
+      "jp": "浦内川",
+      "lat": 24.37736,
+      "lng": 123.78595,
+      "desc": "Boat up the jungle river to Mariyudu Falls"
+    },
+    {
+      "id": "b-iriomote-hoshizuna-beach",
+      "destinationId": "iriomote",
+      "type": "beach",
+      "name": "Hoshizuna Beach",
+      "jp": "星砂の浜",
+      "lat": 24.4365,
+      "lng": 123.77722,
+      "desc": "Star sand and easy snorkelling"
+    },
+    {
+      "id": "b-iriomote-yubu-island",
+      "destinationId": "iriomote",
+      "type": "sight",
+      "name": "Yubu Island",
+      "jp": "由布島",
+      "lat": 24.34431,
+      "lng": 123.93541,
+      "desc": "Cross the shallows by water buffalo cart"
+    },
+    {
+      "id": "b-kohama-ufudaki-observatory",
+      "destinationId": "kohama",
+      "type": "view",
+      "name": "Ufudaki Observatory",
+      "jp": "大岳展望台",
+      "lat": 24.34692,
+      "lng": 123.97853,
+      "desc": "360° view over the Yaeyama islands"
+    },
+    {
+      "id": "b-kohama-sugar-road",
+      "destinationId": "kohama",
+      "type": "sight",
+      "name": "Sugar Road",
+      "jp": "シュガーロード",
+      "lat": 24.33683,
+      "lng": 123.98626,
+      "desc": "Straight road through the sugar cane fields"
+    },
+    {
+      "id": "b-kohama-hosozaki",
+      "destinationId": "kohama",
+      "type": "view",
+      "name": "Hosozaki",
+      "jp": "細崎",
+      "lat": 24.33495,
+      "lng": 123.95397,
+      "desc": "Fishing port facing Iriomote, manta channel nearby"
+    },
+    {
+      "id": "b-kuroshima-nishi-no-hama",
+      "destinationId": "kuroshima",
+      "type": "beach",
+      "name": "Nishi-no-hama",
+      "jp": "西の浜",
+      "lat": 24.2449,
+      "lng": 123.9864,
+      "desc": "Quiet white beach, sea turtles come to lay eggs"
+    },
+    {
+      "id": "b-kuroshima-iko-beach",
+      "destinationId": "kuroshima",
+      "type": "beach",
+      "name": "Iko Beach",
+      "jp": "イコの浜",
+      "lat": 24.2496,
+      "lng": 124.008,
+      "desc": "Snorkelling over coral"
+    },
+    {
+      "id": "b-kuroshima-kuroshima-observatory",
+      "destinationId": "kuroshima",
+      "type": "view",
+      "name": "Kuroshima Observatory",
+      "jp": "黒島展望台",
+      "lat": 24.2392,
+      "lng": 123.9989,
+      "desc": "See the flat island and its cattle pastures"
+    },
+    {
+      "id": "b-kuroshima-kuroshima-research-institute",
+      "destinationId": "kuroshima",
+      "type": "sight",
+      "name": "Kuroshima Research Institute",
+      "jp": "黒島研究所",
+      "lat": 24.2307,
+      "lng": 124.0074,
+      "desc": "Small sea turtle research centre"
+    },
+    {
+      "id": "b-hateruma-nishihama-beach",
+      "destinationId": "hateruma",
+      "type": "beach",
+      "name": "Nishihama Beach",
+      "jp": "ニシ浜",
+      "lat": 24.06408,
+      "lng": 123.7614,
+      "desc": "'Hateruma blue' water, one of Japan's best beaches"
+    },
+    {
+      "id": "b-hateruma-takanasaki",
+      "destinationId": "hateruma",
+      "type": "view",
+      "name": "Takanasaki",
+      "jp": "高那崎",
+      "lat": 24.04993,
+      "lng": 123.80522,
+      "desc": "Japan's southernmost monument, wild cliffs"
+    },
+    {
+      "id": "b-hateruma-star-observation-tower",
+      "destinationId": "hateruma",
+      "type": "sight",
+      "name": "Star observation tower",
+      "jp": "星空観測タワー",
+      "lat": 24.0473,
+      "lng": 123.7985,
+      "desc": "Southern Cross visible in spring"
+    },
+    {
+      "id": "b-yonaguni-cape-irizaki",
+      "destinationId": "yonaguni",
+      "type": "view",
+      "name": "Cape Irizaki",
+      "jp": "西崎",
+      "lat": 24.4495,
+      "lng": 122.9339,
+      "desc": "Japan's westernmost point; Taiwan on clear days"
+    },
+    {
+      "id": "b-yonaguni-tachigami-rock",
+      "destinationId": "yonaguni",
+      "type": "view",
+      "name": "Tachigami Rock",
+      "jp": "立神岩",
+      "lat": 24.44813,
+      "lng": 123.02606,
+      "desc": "Sacred rock pillar in the sea"
+    },
+    {
+      "id": "b-yonaguni-cape-agarizaki",
+      "destinationId": "yonaguni",
+      "type": "view",
+      "name": "Cape Agarizaki",
+      "jp": "東崎",
+      "lat": 24.46164,
+      "lng": 123.04346,
+      "desc": "Grassland cliffs with Yonaguni horses"
+    },
+    {
+      "id": "b-yonaguni-underwater-ruins-dive-site",
+      "destinationId": "yonaguni",
+      "type": "sight",
+      "name": "Underwater ruins dive site",
+      "jp": "海底遺跡",
+      "lat": 24.4357,
+      "lng": 123.0108,
+      "desc": "Mysterious stone terraces; also by glass-bottom boat"
+    },
+    {
+      "id": "b-miyakojima-yonaha-maehama-beach",
+      "destinationId": "miyakojima",
+      "type": "beach",
+      "name": "Yonaha Maehama Beach",
+      "jp": "与那覇前浜",
+      "lat": 24.735,
+      "lng": 125.263,
+      "desc": "7 km of white sand"
+    },
+    {
+      "id": "b-miyakojima-higashi-hennazaki",
+      "destinationId": "miyakojima",
+      "type": "view",
+      "name": "Higashi-hennazaki",
+      "jp": "東平安名崎",
+      "lat": 24.7247,
+      "lng": 125.4673,
+      "desc": "Long cape with a lighthouse"
+    },
+    {
+      "id": "b-miyakojima-sunayama-beach",
+      "destinationId": "miyakojima",
+      "type": "beach",
+      "name": "Sunayama Beach",
+      "jp": "砂山ビーチ",
+      "lat": 24.83939,
+      "lng": 125.28056,
+      "desc": "Sand dune beach with a rock arch"
+    },
+    {
+      "id": "b-miyakojima-yoshino-beach",
+      "destinationId": "miyakojima",
+      "type": "beach",
+      "name": "Yoshino Beach",
+      "jp": "吉野海岸",
+      "lat": 24.74589,
+      "lng": 125.43268,
+      "desc": "Coral right off the beach, great for snorkelling"
+    },
+    {
+      "id": "b-miyakojima-ikema-bridge",
+      "destinationId": "miyakojima",
+      "type": "view",
+      "name": "Ikema Bridge",
+      "jp": "池間大橋",
+      "lat": 24.92011,
+      "lng": 125.26035,
+      "desc": "Drive over turquoise water to Ikema island"
+    },
+    {
+      "id": "b-irabu-irabu-bridge",
+      "destinationId": "irabu",
+      "type": "view",
+      "name": "Irabu Bridge",
+      "jp": "伊良部大橋",
+      "lat": 24.79671,
+      "lng": 125.23946,
+      "desc": "3.5 km toll-free bridge over the sea"
+    },
+    {
+      "id": "b-irabu-toori-ike",
+      "destinationId": "irabu",
+      "type": "nature",
+      "name": "Toori-ike",
+      "jp": "通り池",
+      "lat": 24.82426,
+      "lng": 125.13683,
+      "desc": "Two deep blue sinkholes joined to the sea"
+    },
+    {
+      "id": "b-irabu-sawada-beach",
+      "destinationId": "irabu",
+      "type": "beach",
+      "name": "Sawada Beach",
+      "jp": "佐和田の浜",
+      "lat": 24.84052,
+      "lng": 125.16002,
+      "desc": "Shallow sea dotted with big rocks; sunsets"
+    },
+    {
+      "id": "b-irabu-17end",
+      "destinationId": "irabu",
+      "type": "beach",
+      "name": "17END",
+      "jp": "17エンド",
+      "lat": 24.835,
+      "lng": 125.152,
+      "desc": "Unreal turquoise shallows at the end of the runway"
+    },
+    {
+      "id": "b-tarama-yaeyama-tomidai",
+      "destinationId": "tarama",
+      "type": "view",
+      "name": "Yaeyama Tomidai",
+      "jp": "八重山遠見台",
+      "lat": 24.6704,
+      "lng": 124.7068,
+      "desc": "Old lookout tower over the island"
+    },
+    {
+      "id": "b-tarama-furusato-beach",
+      "destinationId": "tarama",
+      "type": "beach",
+      "name": "Furusato Beach",
+      "jp": "ふる里海浜公園",
+      "lat": 24.672,
+      "lng": 124.702,
+      "desc": "Quiet beach by the village"
+    },
+    {
+      "id": "b-kerama-furuzamami-beach",
+      "destinationId": "kerama",
+      "type": "beach",
+      "name": "Furuzamami Beach",
+      "jp": "古座間味ビーチ",
+      "lat": 26.224,
+      "lng": 127.307,
+      "desc": "Coral and turtles off Zamami"
+    },
+    {
+      "id": "b-kerama-aharen-beach",
+      "destinationId": "kerama",
+      "type": "beach",
+      "name": "Aharen Beach",
+      "jp": "阿波連ビーチ",
+      "lat": 26.16913,
+      "lng": 127.34724,
+      "desc": "Tokashiki's main beach, very clear"
+    },
+    {
+      "id": "b-kerama-kami-no-hama-observatory",
+      "destinationId": "kerama",
+      "type": "view",
+      "name": "Kami-no-hama Observatory",
+      "jp": "神の浜展望台",
+      "lat": 26.22841,
+      "lng": 127.28306,
+      "desc": "Sunset over the Kerama islands"
+    },
+    {
+      "id": "b-kerama-nishibama-beach",
+      "destinationId": "kerama",
+      "type": "beach",
+      "name": "Nishibama Beach",
+      "jp": "北浜ビーチ",
+      "lat": 26.20143,
+      "lng": 127.28773,
+      "desc": "Aka island's long beach"
+    },
+    {
+      "id": "b-kumejima-hatenohama",
+      "destinationId": "kumejima",
+      "type": "beach",
+      "name": "Hatenohama",
+      "jp": "はての浜",
+      "lat": 26.3457,
+      "lng": 126.88539,
+      "desc": "Pure white sandbar, by boat tour"
+    },
+    {
+      "id": "b-kumejima-tatami-ishi",
+      "destinationId": "kumejima",
+      "type": "nature",
+      "name": "Tatami-ishi",
+      "jp": "畳石",
+      "lat": 26.33565,
+      "lng": 126.82529,
+      "desc": "Hexagonal rock 'tatami' on the shore"
+    },
+    {
+      "id": "b-kumejima-eef-beach",
+      "destinationId": "kumejima",
+      "type": "beach",
+      "name": "Eef Beach",
+      "jp": "イーフビーチ",
+      "lat": 26.33224,
+      "lng": 126.81083,
+      "desc": "Long calm beach by the hotels"
+    },
+    {
+      "id": "b-kumejima-hiyajo-banta",
+      "destinationId": "kumejima",
+      "type": "view",
+      "name": "Hiyajo Banta",
+      "jp": "比屋定バンタ",
+      "lat": 26.37378,
+      "lng": 126.78897,
+      "desc": "Clifftop view of the coral reef"
+    },
+    {
+      "id": "b-minnajima-minna-beach",
+      "destinationId": "minnajima",
+      "type": "beach",
+      "name": "Minna Beach",
+      "jp": "水納ビーチ",
+      "lat": 26.648,
+      "lng": 127.82,
+      "desc": "Day-trip beach 15 min by boat from Motobu"
+    },
+    {
+      "id": "b-iheya-kumaya-cave",
+      "destinationId": "iheya",
+      "type": "nature",
+      "name": "Kumaya Cave",
+      "jp": "クマヤ洞窟",
+      "lat": 27.08779,
+      "lng": 128.01416,
+      "desc": "Legendary cave of the sun goddess"
+    },
+    {
+      "id": "b-iheya-yonesaki-beach",
+      "destinationId": "iheya",
+      "type": "beach",
+      "name": "Yonesaki Beach",
+      "jp": "米崎ビーチ",
+      "lat": 27.07,
+      "lng": 127.979,
+      "desc": "Quiet beach with clear water"
+    },
+    {
+      "id": "b-iheya-izena-castle-ruins",
+      "destinationId": "iheya",
+      "type": "sight",
+      "name": "Izena Castle ruins",
+      "jp": "伊是名城跡",
+      "lat": 26.931,
+      "lng": 127.937,
+      "desc": "On Izena, the next island south"
+    },
+    {
+      "id": "b-yoron-yurigahama",
+      "destinationId": "yoron",
+      "type": "beach",
+      "name": "Yurigahama",
+      "jp": "百合ヶ浜",
+      "lat": 27.0389,
+      "lng": 128.46553,
+      "desc": "Sandbar that appears only at low tide"
+    },
+    {
+      "id": "b-yoron-ohgane-beach",
+      "destinationId": "yoron",
+      "type": "beach",
+      "name": "Ohgane Beach",
+      "jp": "大金久海岸",
+      "lat": 27.03911,
+      "lng": 128.45357,
+      "desc": "Long beach where the Yurigahama boats leave"
+    },
+    {
+      "id": "b-yoron-yoron-castle-ruins",
+      "destinationId": "yoron",
+      "type": "view",
+      "name": "Yoron Castle ruins",
+      "jp": "与論城跡",
+      "lat": 27.031,
+      "lng": 128.403,
+      "desc": "Highest point, view to Okinawa"
+    },
+    {
+      "id": "b-okinoerabu-shoryudo-cave",
+      "destinationId": "okinoerabu",
+      "type": "nature",
+      "name": "Shoryudo Cave",
+      "jp": "昇竜洞",
+      "lat": 27.36265,
+      "lng": 128.55254,
+      "desc": "Big limestone cave"
+    },
+    {
+      "id": "b-okinoerabu-fucya",
+      "destinationId": "okinoerabu",
+      "type": "view",
+      "name": "Fucya",
+      "jp": "フーチャ",
+      "lat": 27.43755,
+      "lng": 128.68707,
+      "desc": "Blowhole where waves shoot up"
+    },
+    {
+      "id": "b-okinoerabu-cape-tamina",
+      "destinationId": "okinoerabu",
+      "type": "view",
+      "name": "Cape Tamina",
+      "jp": "田皆岬",
+      "lat": 27.388,
+      "lng": 128.531,
+      "desc": "Steep white cliffs"
+    },
+    {
+      "id": "b-tokunoshima-cape-inutabu",
+      "destinationId": "tokunoshima",
+      "type": "view",
+      "name": "Cape Inutabu",
+      "jp": "犬田布岬",
+      "lat": 27.72409,
+      "lng": 128.88113,
+      "desc": "Cliffs and the Senkan Yamato memorial"
+    },
+    {
+      "id": "b-tokunoshima-mushiroze",
+      "destinationId": "tokunoshima",
+      "type": "nature",
+      "name": "Mushiroze",
+      "jp": "ムシロ瀬",
+      "lat": 27.89348,
+      "lng": 128.90115,
+      "desc": "Flat granite rocks by the sea"
+    },
+    {
+      "id": "b-amami-kuroshio-no-mori-mangrove-park",
+      "destinationId": "amami",
+      "type": "nature",
+      "name": "Kuroshio-no-mori Mangrove Park",
+      "jp": "黒潮の森マングローブパーク",
+      "lat": 28.25947,
+      "lng": 129.40819,
+      "desc": "Kayak through the mangroves"
+    },
+    {
+      "id": "b-amami-ohama-beach",
+      "destinationId": "amami",
+      "type": "beach",
+      "name": "Ohama Beach",
+      "jp": "大浜海浜公園",
+      "lat": 28.40312,
+      "lng": 129.4567,
+      "desc": "Sunset beach near Naze"
+    },
+    {
+      "id": "b-amami-kinsakubaru-forest",
+      "destinationId": "amami",
+      "type": "nature",
+      "name": "Kinsakubaru Forest",
+      "jp": "金作原原生林",
+      "lat": 28.33079,
+      "lng": 129.4564,
+      "desc": "Primeval forest with giant tree ferns (guide needed)"
+    },
+    {
+      "id": "b-amami-ayamaru-cape",
+      "destinationId": "amami",
+      "type": "view",
+      "name": "Ayamaru Cape",
+      "jp": "あやまる岬",
+      "lat": 28.47343,
+      "lng": 129.71742,
+      "desc": "Coral reef views in the north"
+    },
+    {
+      "id": "b-amami-tomori-beach",
+      "destinationId": "amami",
+      "type": "beach",
+      "name": "Tomori Beach",
+      "jp": "土盛海岸",
+      "lat": 28.46554,
+      "lng": 129.71701,
+      "desc": "'Blue Emerald' beach"
+    },
+    {
+      "id": "b-kakeroma-shodon-deigo-avenue",
+      "destinationId": "kakeroma",
+      "type": "nature",
+      "name": "Shodon Deigo Avenue",
+      "jp": "諸鈍のデイゴ並木",
+      "lat": 28.105,
+      "lng": 129.346,
+      "desc": "Coral-tree avenue by the beach, red flowers in May"
+    },
+    {
+      "id": "b-kakeroma-shodon-nagahama",
+      "destinationId": "kakeroma",
+      "type": "beach",
+      "name": "Shodon Nagahama",
+      "jp": "諸鈍長浜",
+      "lat": 28.103,
+      "lng": 129.34,
+      "desc": "Long quiet beach"
+    },
+    {
+      "id": "b-yakushima-jomon-sugi",
+      "destinationId": "yakushima",
+      "type": "nature",
+      "name": "Jomon Sugi",
+      "jp": "縄文杉",
+      "lat": 30.3591,
+      "lng": 130.5308,
+      "desc": "Ancient cedar, 10-hour round-trip hike"
+    },
+    {
+      "id": "b-yakushima-shiratani-unsuikyo",
+      "destinationId": "yakushima",
+      "type": "nature",
+      "name": "Shiratani Unsuikyo",
+      "jp": "白谷雲水峡",
+      "lat": 30.38058,
+      "lng": 130.575,
+      "desc": "Mossy 'Princess Mononoke' forest"
+    },
+    {
+      "id": "b-yakushima-yakusugi-land",
+      "destinationId": "yakushima",
+      "type": "nature",
+      "name": "Yakusugi Land",
+      "jp": "ヤクスギランド",
+      "lat": 30.30463,
+      "lng": 130.57549,
+      "desc": "Easier cedar forest walks"
+    },
+    {
+      "id": "b-yakushima-ohko-falls",
+      "destinationId": "yakushima",
+      "type": "nature",
+      "name": "Ohko Falls",
+      "jp": "大川の滝",
+      "lat": 30.29959,
+      "lng": 130.41351,
+      "desc": "88 m waterfall right by the road"
+    },
+    {
+      "id": "b-yakushima-hirauchi-kaichu-onsen",
+      "destinationId": "yakushima",
+      "type": "onsen",
+      "name": "Hirauchi Kaichu Onsen",
+      "jp": "平内海中温泉",
+      "lat": 30.23096,
+      "lng": 130.48394,
+      "desc": "Rock pool onsen, only at low tide"
+    },
+    {
+      "id": "b-yakushima-nagata-inakahama",
+      "destinationId": "yakushima",
+      "type": "beach",
+      "name": "Nagata Inakahama",
+      "jp": "永田いなか浜",
+      "lat": 30.4096,
+      "lng": 130.43537,
+      "desc": "Loggerhead turtles nest here in summer"
+    },
+    {
+      "id": "b-chichijima-miyanohama",
+      "destinationId": "chichijima",
+      "type": "beach",
+      "name": "Miyanohama",
+      "jp": "宮之浜",
+      "lat": 27.10356,
+      "lng": 142.19443,
+      "desc": "Snorkelling bay near the village"
+    },
+    {
+      "id": "b-chichijima-kominato-beach",
+      "destinationId": "chichijima",
+      "type": "beach",
+      "name": "Kominato Beach",
+      "jp": "小港海岸",
+      "lat": 27.0605,
+      "lng": 142.19535,
+      "desc": "Beautiful beach in the south"
+    },
+    {
+      "id": "b-chichijima-weather-station-observatory",
+      "destinationId": "chichijima",
+      "type": "view",
+      "name": "Weather Station Observatory",
+      "jp": "ウェザーステーション展望台",
+      "lat": 27.09547,
+      "lng": 142.18451,
+      "desc": "Sunset and whale watching (winter–spring)"
+    },
+    {
+      "id": "b-miyakejima-tairo-ike",
+      "destinationId": "miyakejima",
+      "type": "nature",
+      "name": "Tairo-ike",
+      "jp": "大路池",
+      "lat": 34.05464,
+      "lng": 139.52543,
+      "desc": "Forest lake full of birdsong"
+    },
+    {
+      "id": "b-miyakejima-volcano-trail-at-ako",
+      "destinationId": "miyakejima",
+      "type": "nature",
+      "name": "Volcano trail at Ako",
+      "jp": "火山体験遊歩道",
+      "lat": 34.07996,
+      "lng": 139.47923,
+      "desc": "Boardwalk over the 1983 lava"
+    },
+    {
+      "id": "b-mikurajima-mikurajima-port",
+      "destinationId": "mikurajima",
+      "type": "other",
+      "name": "Mikurajima Port",
+      "jp": "御蔵島港",
+      "lat": 33.89724,
+      "lng": 139.58988,
+      "desc": "Wild dolphin swim tours start here (book ahead)"
+    },
+    {
+      "id": "b-hachijojima-hachijo-fuji",
+      "destinationId": "hachijojima",
+      "type": "nature",
+      "name": "Hachijo-Fuji",
+      "jp": "八丈富士",
+      "lat": 33.137,
+      "lng": 139.765,
+      "desc": "Walk around the crater rim"
+    },
+    {
+      "id": "b-hachijojima-uramigataki-falls",
+      "destinationId": "hachijojima",
+      "type": "nature",
+      "name": "Uramigataki Falls",
+      "jp": "裏見ヶ滝",
+      "lat": 33.0651,
+      "lng": 139.81613,
+      "desc": "Walk behind the waterfall"
+    },
+    {
+      "id": "b-hachijojima-miharashi-no-yu",
+      "destinationId": "hachijojima",
+      "type": "onsen",
+      "name": "Miharashi-no-yu",
+      "jp": "みはらしの湯",
+      "lat": 33.07917,
+      "lng": 139.85107,
+      "desc": "Ocean-view open-air bath"
+    },
+    {
+      "id": "b-hachijojima-nanbara-senjojiki",
+      "destinationId": "hachijojima",
+      "type": "view",
+      "name": "Nanbara Senjojiki",
+      "jp": "南原千畳敷",
+      "lat": 33.10613,
+      "lng": 139.75417,
+      "desc": "Black lava coast, sunset spot"
+    },
+    {
+      "id": "b-shikinejima-jinata-onsen",
+      "destinationId": "shikinejima",
+      "type": "onsen",
+      "name": "Jinata Onsen",
+      "jp": "地鉈温泉",
+      "lat": 34.31788,
+      "lng": 139.21601,
+      "desc": "Free hot spring in a rock gorge by the sea"
+    },
+    {
+      "id": "b-shikinejima-tomari-beach",
+      "destinationId": "shikinejima",
+      "type": "beach",
+      "name": "Tomari Beach",
+      "jp": "泊海水浴場",
+      "lat": 34.33608,
+      "lng": 139.21188,
+      "desc": "Calm, clear cove"
+    },
+    {
+      "id": "b-shikinejima-matsugashita-miyabi-yu",
+      "destinationId": "shikinejima",
+      "type": "onsen",
+      "name": "Matsugashita Miyabi-yu",
+      "jp": "松が下雅湯",
+      "lat": 34.32059,
+      "lng": 139.21822,
+      "desc": "Free footbath-style seaside onsen"
+    },
+    {
+      "id": "b-kozushima-mt-tenjo",
+      "destinationId": "kozushima",
+      "type": "nature",
+      "name": "Mt Tenjo",
+      "jp": "天上山",
+      "lat": 34.216,
+      "lng": 139.16,
+      "desc": "Moon-like white plateau hike"
+    },
+    {
+      "id": "b-kozushima-tako-bay",
+      "destinationId": "kozushima",
+      "type": "beach",
+      "name": "Tako Bay",
+      "jp": "多幸湾",
+      "lat": 34.20284,
+      "lng": 139.16093,
+      "desc": "Cliffs, clear water and a spring"
+    },
+    {
+      "id": "b-kozushima-akasaki-promenade",
+      "destinationId": "kozushima",
+      "type": "beach",
+      "name": "Akasaki Promenade",
+      "jp": "赤崎遊歩道",
+      "lat": 34.24183,
+      "lng": 139.13784,
+      "desc": "Wooden walkway for jumping into the sea"
+    },
+    {
+      "id": "b-kozushima-maehama-beach",
+      "destinationId": "kozushima",
+      "type": "beach",
+      "name": "Maehama Beach",
+      "jp": "前浜海岸",
+      "lat": 34.208,
+      "lng": 139.133,
+      "desc": "Long beach by the village"
+    },
+    {
+      "id": "b-niijima-habushiura-beach",
+      "destinationId": "niijima",
+      "type": "beach",
+      "name": "Habushiura Beach",
+      "jp": "羽伏浦海岸",
+      "lat": 34.37617,
+      "lng": 139.27543,
+      "desc": "6 km white beach, surfing"
+    },
+    {
+      "id": "b-niijima-yunohama-onsen",
+      "destinationId": "niijima",
+      "type": "onsen",
+      "name": "Yunohama Onsen",
+      "jp": "湯の浜露天温泉",
+      "lat": 34.36411,
+      "lng": 139.2425,
+      "desc": "Free open-air baths in Greek-temple style"
+    },
+    {
+      "id": "b-tokyo-senso-ji",
+      "destinationId": "tokyo",
+      "type": "temple",
+      "name": "Senso-ji",
+      "jp": "浅草寺",
+      "lat": 35.7148,
+      "lng": 139.7967,
+      "desc": "Tokyo's oldest temple, Nakamise street"
+    },
+    {
+      "id": "b-tokyo-meiji-jingu",
+      "destinationId": "tokyo",
+      "type": "temple",
+      "name": "Meiji Jingu",
+      "jp": "明治神宮",
+      "lat": 35.6764,
+      "lng": 139.6993,
+      "desc": "Forest shrine next to Harajuku"
+    },
+    {
+      "id": "b-tokyo-shibuya-crossing",
+      "destinationId": "tokyo",
+      "type": "view",
+      "name": "Shibuya Crossing",
+      "jp": "渋谷スクランブル交差点",
+      "lat": 35.6595,
+      "lng": 139.7005,
+      "desc": "The famous crossing; Shibuya Sky above"
+    },
+    {
+      "id": "b-tokyo-tsukiji-outer-market",
+      "destinationId": "tokyo",
+      "type": "food",
+      "name": "Tsukiji Outer Market",
+      "jp": "築地場外市場",
+      "lat": 35.6655,
+      "lng": 139.7707,
+      "desc": "Breakfast sushi and street food"
+    },
+    {
+      "id": "b-tokyo-shinjuku-gyoen",
+      "destinationId": "tokyo",
+      "type": "nature",
+      "name": "Shinjuku Gyoen",
+      "jp": "新宿御苑",
+      "lat": 35.6852,
+      "lng": 139.7101,
+      "desc": "Big garden, cherry blossoms and autumn leaves"
+    },
+    {
+      "id": "b-tokyo-tokyo-skytree",
+      "destinationId": "tokyo",
+      "type": "view",
+      "name": "Tokyo Skytree",
+      "jp": "東京スカイツリー",
+      "lat": 35.7101,
+      "lng": 139.8107,
+      "desc": "634 m tower, views to Mt Fuji"
+    },
+    {
+      "id": "b-kyoto-fushimi-inari-taisha",
+      "destinationId": "kyoto",
+      "type": "temple",
+      "name": "Fushimi Inari Taisha",
+      "jp": "伏見稲荷大社",
+      "lat": 34.96752,
+      "lng": 135.77971,
+      "desc": "Thousands of red torii up the mountain"
+    },
+    {
+      "id": "b-kyoto-kiyomizu-dera",
+      "destinationId": "kyoto",
+      "type": "temple",
+      "name": "Kiyomizu-dera",
+      "jp": "清水寺",
+      "lat": 34.9949,
+      "lng": 135.785,
+      "desc": "Wooden stage over the trees"
+    },
+    {
+      "id": "b-kyoto-arashiyama-bamboo-grove",
+      "destinationId": "kyoto",
+      "type": "nature",
+      "name": "Arashiyama Bamboo Grove",
+      "jp": "嵐山竹林",
+      "lat": 35.017,
+      "lng": 135.6713,
+      "desc": "Go early to beat the crowds"
+    },
+    {
+      "id": "b-kyoto-kinkaku-ji",
+      "destinationId": "kyoto",
+      "type": "temple",
+      "name": "Kinkaku-ji",
+      "jp": "金閣寺",
+      "lat": 35.0394,
+      "lng": 135.7292,
+      "desc": "The Golden Pavilion"
+    },
+    {
+      "id": "b-kyoto-nishiki-market",
+      "destinationId": "kyoto",
+      "type": "food",
+      "name": "Nishiki Market",
+      "jp": "錦市場",
+      "lat": 35.005,
+      "lng": 135.7649,
+      "desc": "'Kyoto's kitchen', 400 m of food stalls"
+    },
+    {
+      "id": "b-kyoto-gion",
+      "destinationId": "kyoto",
+      "type": "sight",
+      "name": "Gion",
+      "jp": "祇園",
+      "lat": 35.00469,
+      "lng": 135.7784,
+      "desc": "Old teahouse streets, maiko in the evening"
+    },
+    {
+      "id": "b-osaka-osaka-castle",
+      "destinationId": "osaka",
+      "type": "sight",
+      "name": "Osaka Castle",
+      "jp": "大阪城",
+      "lat": 34.6873,
+      "lng": 135.5262,
+      "desc": "Castle park, cherry blossoms"
+    },
+    {
+      "id": "b-osaka-dotonbori",
+      "destinationId": "osaka",
+      "type": "food",
+      "name": "Dotonbori",
+      "jp": "道頓堀",
+      "lat": 34.6687,
+      "lng": 135.5013,
+      "desc": "Neon canal street, takoyaki and okonomiyaki"
+    },
+    {
+      "id": "b-osaka-kuromon-market",
+      "destinationId": "osaka",
+      "type": "food",
+      "name": "Kuromon Market",
+      "jp": "黒門市場",
+      "lat": 34.6653,
+      "lng": 135.5065,
+      "desc": "Seafood market"
+    },
+    {
+      "id": "b-osaka-shinsekai-tsutenkaku",
+      "destinationId": "osaka",
+      "type": "sight",
+      "name": "Shinsekai & Tsutenkaku",
+      "jp": "新世界・通天閣",
+      "lat": 34.6525,
+      "lng": 135.5063,
+      "desc": "Retro district, kushikatsu"
+    },
+    {
+      "id": "b-osaka-umeda-sky-building",
+      "destinationId": "osaka",
+      "type": "view",
+      "name": "Umeda Sky Building",
+      "jp": "梅田スカイビル",
+      "lat": 34.7053,
+      "lng": 135.4904,
+      "desc": "Open-air rooftop at night"
+    },
+    {
+      "id": "b-karuizawa-kumoba-pond",
+      "destinationId": "karuizawa",
+      "type": "nature",
+      "name": "Kumoba Pond",
+      "jp": "雲場池",
+      "lat": 36.354,
+      "lng": 138.626,
+      "desc": "Mirror pond, red leaves in autumn"
+    },
+    {
+      "id": "b-karuizawa-shiraito-falls",
+      "destinationId": "karuizawa",
+      "type": "nature",
+      "name": "Shiraito Falls",
+      "jp": "白糸の滝",
+      "lat": 36.41039,
+      "lng": 138.59248,
+      "desc": "Wide curtain waterfall"
+    },
+    {
+      "id": "b-karuizawa-kyu-karuizawa-ginza",
+      "destinationId": "karuizawa",
+      "type": "shop",
+      "name": "Kyu-Karuizawa Ginza",
+      "jp": "旧軽井沢銀座",
+      "lat": 36.35988,
+      "lng": 138.63685,
+      "desc": "Old main street of shops and cafés"
+    },
+    {
+      "id": "b-karuizawa-stone-church",
+      "destinationId": "karuizawa",
+      "type": "sight",
+      "name": "Stone Church",
+      "jp": "石の教会",
+      "lat": 36.35641,
+      "lng": 138.58705,
+      "desc": "Organic stone-and-glass chapel"
+    },
+    {
+      "id": "b-karuizawa-tombo-no-yu",
+      "destinationId": "karuizawa",
+      "type": "onsen",
+      "name": "Tombo-no-yu",
+      "jp": "トンボの湯",
+      "lat": 36.36278,
+      "lng": 138.58909,
+      "desc": "Forest onsen at Hoshino"
+    },
+    {
+      "id": "b-takayama-sanmachi-suji",
+      "destinationId": "takayama",
+      "type": "sight",
+      "name": "Sanmachi Suji",
+      "jp": "古い町並",
+      "lat": 36.14333,
+      "lng": 137.25851,
+      "desc": "Edo-era streets with sake breweries"
+    },
+    {
+      "id": "b-takayama-miyagawa-morning-market",
+      "destinationId": "takayama",
+      "type": "food",
+      "name": "Miyagawa Morning Market",
+      "jp": "宮川朝市",
+      "lat": 36.144,
+      "lng": 137.258,
+      "desc": "Riverside market every morning"
+    },
+    {
+      "id": "b-takayama-hida-folk-village",
+      "destinationId": "takayama",
+      "type": "sight",
+      "name": "Hida Folk Village",
+      "jp": "飛騨の里",
+      "lat": 36.133,
+      "lng": 137.237,
+      "desc": "Open-air museum of thatched farmhouses"
+    },
+    {
+      "id": "b-takayama-takayama-jinya",
+      "destinationId": "takayama",
+      "type": "sight",
+      "name": "Takayama Jinya",
+      "jp": "高山陣屋",
+      "lat": 36.1393,
+      "lng": 137.2577,
+      "desc": "Old government house"
+    },
+    {
+      "id": "b-takayama-sakurayama-hachiman-shrine",
+      "destinationId": "takayama",
+      "type": "temple",
+      "name": "Sakurayama Hachiman Shrine",
+      "jp": "桜山八幡宮",
+      "lat": 36.1505,
+      "lng": 137.2618,
+      "desc": "Home of the autumn festival floats"
+    },
+    {
+      "id": "b-suzuka-suzuka-circuit",
+      "destinationId": "suzuka",
+      "type": "sight",
+      "name": "Suzuka Circuit",
+      "jp": "鈴鹿サーキット",
+      "lat": 34.84361,
+      "lng": 136.53423,
+      "desc": "F1 track with an amusement park"
+    },
+    {
+      "id": "b-suzuka-tsubaki-grand-shrine",
+      "destinationId": "suzuka",
+      "type": "temple",
+      "name": "Tsubaki Grand Shrine",
+      "jp": "椿大神社",
+      "lat": 34.96442,
+      "lng": 136.45199,
+      "desc": "Old shrine in the forest at the foot of the mountains"
+    },
+    {
+      "id": "b-suzuka-ise-grand-shrine-naiku",
+      "destinationId": "suzuka",
+      "type": "temple",
+      "name": "Ise Grand Shrine (Naiku)",
+      "jp": "伊勢神宮 内宮",
+      "lat": 34.4551,
+      "lng": 136.7254,
+      "desc": "Japan's holiest shrine, about 1 h away"
+    },
+    {
+      "id": "b-suzuka-nabana-no-sato",
+      "destinationId": "suzuka",
+      "type": "sight",
+      "name": "Nabana no Sato",
+      "jp": "なばなの里",
+      "lat": 35.07991,
+      "lng": 136.70486,
+      "desc": "Flower park with huge winter light show"
+    },
+    {
+      "id": "b-hiroshima-peace-memorial-park-a-bomb-dome",
+      "destinationId": "hiroshima",
+      "type": "sight",
+      "name": "Peace Memorial Park & A-Bomb Dome",
+      "jp": "平和記念公園・原爆ドーム",
+      "lat": 34.3926,
+      "lng": 132.4527,
+      "desc": "Park, museum and the dome"
+    },
+    {
+      "id": "b-hiroshima-hiroshima-castle",
+      "destinationId": "hiroshima",
+      "type": "sight",
+      "name": "Hiroshima Castle",
+      "jp": "広島城",
+      "lat": 34.4027,
+      "lng": 132.4594,
+      "desc": "Rebuilt castle in a moat park"
+    },
+    {
+      "id": "b-hiroshima-shukkeien-garden",
+      "destinationId": "hiroshima",
+      "type": "nature",
+      "name": "Shukkeien Garden",
+      "jp": "縮景園",
+      "lat": 34.4004,
+      "lng": 132.4673,
+      "desc": "Classic landscape garden"
+    },
+    {
+      "id": "b-hiroshima-okonomimura",
+      "destinationId": "hiroshima",
+      "type": "food",
+      "name": "Okonomimura",
+      "jp": "お好み村",
+      "lat": 34.392,
+      "lng": 132.462,
+      "desc": "Building full of okonomiyaki counters"
+    },
+    {
+      "id": "b-miyajima-itsukushima-shrine",
+      "destinationId": "miyajima",
+      "type": "temple",
+      "name": "Itsukushima Shrine",
+      "jp": "厳島神社",
+      "lat": 34.296,
+      "lng": 132.3198,
+      "desc": "The floating torii; check the tide times"
+    },
+    {
+      "id": "b-miyajima-mount-misen",
+      "destinationId": "miyajima",
+      "type": "nature",
+      "name": "Mount Misen",
+      "jp": "弥山",
+      "lat": 34.279,
+      "lng": 132.319,
+      "desc": "Ropeway or hike, view over the Inland Sea"
+    },
+    {
+      "id": "b-miyajima-daisho-in",
+      "destinationId": "miyajima",
+      "type": "temple",
+      "name": "Daisho-in",
+      "jp": "大聖院",
+      "lat": 34.2925,
+      "lng": 132.318,
+      "desc": "Temple with hundreds of small statues"
+    },
+    {
+      "id": "b-miyajima-momijidani-park",
+      "destinationId": "miyajima",
+      "type": "nature",
+      "name": "Momijidani Park",
+      "jp": "紅葉谷公園",
+      "lat": 34.293,
+      "lng": 132.324,
+      "desc": "Maple valley, red in November"
+    },
+    {
+      "id": "b-miyajima-omotesando-street",
+      "destinationId": "miyajima",
+      "type": "food",
+      "name": "Omotesando Street",
+      "jp": "表参道商店街",
+      "lat": 34.299,
+      "lng": 132.322,
+      "desc": "Grilled oysters and momiji manju"
+    },
+    {
+      "id": "b-hakone-owakudani",
+      "destinationId": "hakone",
+      "type": "nature",
+      "name": "Owakudani",
+      "jp": "大涌谷",
+      "lat": 35.24741,
+      "lng": 139.02421,
+      "desc": "Volcanic valley, black eggs"
+    },
+    {
+      "id": "b-hakone-hakone-shrine",
+      "destinationId": "hakone",
+      "type": "temple",
+      "name": "Hakone Shrine",
+      "jp": "箱根神社",
+      "lat": 35.2047,
+      "lng": 139.0254,
+      "desc": "Red torii in Lake Ashi"
+    },
+    {
+      "id": "b-hakone-hakone-open-air-museum",
+      "destinationId": "hakone",
+      "type": "sight",
+      "name": "Hakone Open-Air Museum",
+      "jp": "彫刻の森美術館",
+      "lat": 35.2443,
+      "lng": 139.0505,
+      "desc": "Sculptures in a hillside park, foot bath"
+    },
+    {
+      "id": "b-hakone-hakone-yumoto",
+      "destinationId": "hakone",
+      "type": "onsen",
+      "name": "Hakone-Yumoto",
+      "jp": "箱根湯本温泉",
+      "lat": 35.22873,
+      "lng": 139.09467,
+      "desc": "Onsen town at the bottom of the railway"
+    },
+    {
+      "id": "b-hakone-sengokuhara-pampas-grass",
+      "destinationId": "hakone",
+      "type": "nature",
+      "name": "Sengokuhara pampas grass",
+      "jp": "仙石原すすき草原",
+      "lat": 35.2606,
+      "lng": 139.00454,
+      "desc": "Silver grass hillside in October"
+    },
+    {
+      "id": "b-matsumoto-matsumoto-castle",
+      "destinationId": "matsumoto",
+      "type": "sight",
+      "name": "Matsumoto Castle",
+      "jp": "松本城",
+      "lat": 36.2381,
+      "lng": 137.9689,
+      "desc": "Original black castle from 1594"
+    },
+    {
+      "id": "b-matsumoto-nakamachi-street",
+      "destinationId": "matsumoto",
+      "type": "shop",
+      "name": "Nakamachi Street",
+      "jp": "中町通り",
+      "lat": 36.234,
+      "lng": 137.971,
+      "desc": "White-walled storehouse street"
+    },
+    {
+      "id": "b-matsumoto-kamikochi-kappa-bridge",
+      "destinationId": "matsumoto",
+      "type": "nature",
+      "name": "Kamikochi & Kappa Bridge",
+      "jp": "上高地・河童橋",
+      "lat": 36.251,
+      "lng": 137.638,
+      "desc": "Alpine valley, open late April to mid November"
+    },
+    {
+      "id": "b-matsumoto-utsukushigahara-onsen",
+      "destinationId": "matsumoto",
+      "type": "onsen",
+      "name": "Utsukushigahara Onsen",
+      "jp": "美ヶ原温泉",
+      "lat": 36.2433,
+      "lng": 138.0153,
+      "desc": "Old onsen village above the city"
+    },
+    {
+      "id": "b-matsumoto-daio-wasabi-farm",
+      "destinationId": "matsumoto",
+      "type": "food",
+      "name": "Daio Wasabi Farm",
+      "jp": "大王わさび農場",
+      "lat": 36.33863,
+      "lng": 137.90994,
+      "desc": "Wasabi fields in clear spring water"
+    },
+    {
+      "id": "b-kumano-kumano-hongu-taisha",
+      "destinationId": "kumano",
+      "type": "temple",
+      "name": "Kumano Hongu Taisha",
+      "jp": "熊野本宮大社",
+      "lat": 33.8403,
+      "lng": 135.7735,
+      "desc": "Head shrine of the Kumano faith"
+    },
+    {
+      "id": "b-kumano-oyunohara",
+      "destinationId": "kumano",
+      "type": "temple",
+      "name": "Oyunohara",
+      "jp": "大斎原",
+      "lat": 33.836,
+      "lng": 135.772,
+      "desc": "Japan's biggest torii, in the rice fields"
+    },
+    {
+      "id": "b-kumano-nachi-falls-seiganto-ji",
+      "destinationId": "kumano",
+      "type": "temple",
+      "name": "Nachi Falls & Seiganto-ji",
+      "jp": "那智の滝・青岸渡寺",
+      "lat": 33.67251,
+      "lng": 135.889,
+      "desc": "133 m waterfall with the red pagoda"
+    },
+    {
+      "id": "b-kumano-daimon-zaka",
+      "destinationId": "kumano",
+      "type": "nature",
+      "name": "Daimon-zaka",
+      "jp": "大門坂",
+      "lat": 33.67061,
+      "lng": 135.8965,
+      "desc": "Stone steps through giant cedars"
+    },
+    {
+      "id": "b-kumano-yunomine-onsen",
+      "destinationId": "kumano",
+      "type": "onsen",
+      "name": "Yunomine Onsen",
+      "jp": "湯の峰温泉",
+      "lat": 33.82872,
+      "lng": 135.75745,
+      "desc": "Tiny Tsuboyu bath, UNESCO listed"
+    },
+    {
+      "id": "b-kumano-kawayu-onsen",
+      "destinationId": "kumano",
+      "type": "onsen",
+      "name": "Kawayu Onsen",
+      "jp": "川湯温泉",
+      "lat": 33.81284,
+      "lng": 135.77437,
+      "desc": "Dig your own bath in the river"
+    },
+    {
+      "id": "b-nara-todai-ji",
+      "destinationId": "nara",
+      "type": "temple",
+      "name": "Todai-ji",
+      "jp": "東大寺",
+      "lat": 34.689,
+      "lng": 135.8398,
+      "desc": "Giant Buddha hall"
+    },
+    {
+      "id": "b-nara-nara-park",
+      "destinationId": "nara",
+      "type": "nature",
+      "name": "Nara Park",
+      "jp": "奈良公園",
+      "lat": 34.6829,
+      "lng": 135.8546,
+      "desc": "Bowing deer everywhere"
+    },
+    {
+      "id": "b-nara-kasuga-taisha",
+      "destinationId": "nara",
+      "type": "temple",
+      "name": "Kasuga Taisha",
+      "jp": "春日大社",
+      "lat": 34.6813,
+      "lng": 135.8484,
+      "desc": "Thousands of lanterns in the forest"
+    },
+    {
+      "id": "b-nara-kofuku-ji",
+      "destinationId": "nara",
+      "type": "temple",
+      "name": "Kofuku-ji",
+      "jp": "興福寺",
+      "lat": 34.683,
+      "lng": 135.8318,
+      "desc": "Five-storied pagoda"
+    },
+    {
+      "id": "b-nara-naramachi",
+      "destinationId": "nara",
+      "type": "shop",
+      "name": "Naramachi",
+      "jp": "ならまち",
+      "lat": 34.678,
+      "lng": 135.83,
+      "desc": "Old merchant quarter, cafés and craft shops"
+    },
+    {
+      "id": "b-fuji-chureito-pagoda",
+      "destinationId": "fuji",
+      "type": "view",
+      "name": "Chureito Pagoda",
+      "jp": "忠霊塔",
+      "lat": 35.5011,
+      "lng": 138.8016,
+      "desc": "Pagoda, cherry blossoms and Fuji"
+    },
+    {
+      "id": "b-fuji-lake-kawaguchi",
+      "destinationId": "fuji",
+      "type": "nature",
+      "name": "Lake Kawaguchi",
+      "jp": "河口湖",
+      "lat": 35.51306,
+      "lng": 138.74482,
+      "desc": "Lakeside walks and Fuji views"
+    },
+    {
+      "id": "b-fuji-oishi-park",
+      "destinationId": "fuji",
+      "type": "view",
+      "name": "Oishi Park",
+      "jp": "大石公園",
+      "lat": 35.52329,
+      "lng": 138.74654,
+      "desc": "Flowers along the lake with Fuji behind"
+    },
+    {
+      "id": "b-fuji-fuji-subaru-line-5th-station",
+      "destinationId": "fuji",
+      "type": "nature",
+      "name": "Fuji Subaru Line 5th Station",
+      "jp": "富士スバルライン五合目",
+      "lat": 35.39433,
+      "lng": 138.7326,
+      "desc": "As high as you can drive (2,305 m)"
+    },
+    {
+      "id": "b-fuji-oshino-hakkai",
+      "destinationId": "fuji",
+      "type": "nature",
+      "name": "Oshino Hakkai",
+      "jp": "忍野八海",
+      "lat": 35.46,
+      "lng": 138.833,
+      "desc": "Spring-fed ponds in a small village"
+    },
+    {
+      "id": "b-tateyama-yuki-no-otani",
+      "destinationId": "tateyama",
+      "type": "view",
+      "name": "Yuki-no-Otani",
+      "jp": "雪の大谷",
+      "lat": 36.578,
+      "lng": 137.598,
+      "desc": "Snow walls up to 15 m (mid April to June)"
+    },
+    {
+      "id": "b-tateyama-mikurigaike",
+      "destinationId": "tateyama",
+      "type": "nature",
+      "name": "Mikurigaike",
+      "jp": "みくりが池",
+      "lat": 36.58057,
+      "lng": 137.5973,
+      "desc": "Crater lake at 2,400 m"
+    },
+    {
+      "id": "b-tateyama-kurobe-dam",
+      "destinationId": "tateyama",
+      "type": "sight",
+      "name": "Kurobe Dam",
+      "jp": "黒部ダム",
+      "lat": 36.5664,
+      "lng": 137.6625,
+      "desc": "Huge dam; water release late June to mid October"
+    },
+    {
+      "id": "b-tateyama-mikurigaike-onsen",
+      "destinationId": "tateyama",
+      "type": "onsen",
+      "name": "Mikurigaike Onsen",
+      "jp": "みくりが池温泉",
+      "lat": 36.58205,
+      "lng": 137.59622,
+      "desc": "Japan's highest onsen inn"
+    },
+    {
+      "id": "b-tateyama-shomyo-falls",
+      "destinationId": "tateyama",
+      "type": "nature",
+      "name": "Shomyo Falls",
+      "jp": "称名滝",
+      "lat": 36.57538,
+      "lng": 137.52354,
+      "desc": "Japan's tallest waterfall (350 m)"
+    },
+    {
+      "id": "b-kanazawa-kenroku-en",
+      "destinationId": "kanazawa",
+      "type": "nature",
+      "name": "Kenroku-en",
+      "jp": "兼六園",
+      "lat": 36.5621,
+      "lng": 136.6627,
+      "desc": "One of Japan's three great gardens"
+    },
+    {
+      "id": "b-kanazawa-higashi-chaya-district",
+      "destinationId": "kanazawa",
+      "type": "sight",
+      "name": "Higashi Chaya District",
+      "jp": "ひがし茶屋街",
+      "lat": 36.5724,
+      "lng": 136.6662,
+      "desc": "Old geisha teahouse street, gold leaf"
+    },
+    {
+      "id": "b-kanazawa-omicho-market",
+      "destinationId": "kanazawa",
+      "type": "food",
+      "name": "Omicho Market",
+      "jp": "近江町市場",
+      "lat": 36.5717,
+      "lng": 136.656,
+      "desc": "Seafood bowls and crab"
+    },
+    {
+      "id": "b-kanazawa-21st-century-museum",
+      "destinationId": "kanazawa",
+      "type": "sight",
+      "name": "21st Century Museum",
+      "jp": "金沢21世紀美術館",
+      "lat": 36.5608,
+      "lng": 136.6582,
+      "desc": "Modern art, the 'swimming pool'"
+    },
+    {
+      "id": "b-kanazawa-nagamachi-samurai-district",
+      "destinationId": "kanazawa",
+      "type": "sight",
+      "name": "Nagamachi Samurai District",
+      "jp": "長町武家屋敷",
+      "lat": 36.563,
+      "lng": 136.65,
+      "desc": "Earth-walled samurai lanes"
+    },
+    {
+      "id": "b-shirakawago-ogimachi-village",
+      "destinationId": "shirakawago",
+      "type": "sight",
+      "name": "Ogimachi village",
+      "jp": "荻町合掌造り集落",
+      "lat": 36.25411,
+      "lng": 136.90574,
+      "desc": "The thatched farmhouses"
+    },
+    {
+      "id": "b-shirakawago-shiroyama-viewpoint",
+      "destinationId": "shirakawago",
+      "type": "view",
+      "name": "Shiroyama Viewpoint",
+      "jp": "城山展望台",
+      "lat": 36.26147,
+      "lng": 136.91396,
+      "desc": "The classic view over the village"
+    },
+    {
+      "id": "b-shirakawago-wada-house",
+      "destinationId": "shirakawago",
+      "type": "sight",
+      "name": "Wada House",
+      "jp": "和田家",
+      "lat": 36.259,
+      "lng": 136.907,
+      "desc": "Biggest farmhouse you can visit"
+    },
+    {
+      "id": "b-shirakawago-shirakawa-go-no-yu",
+      "destinationId": "shirakawago",
+      "type": "onsen",
+      "name": "Shirakawa-go no Yu",
+      "jp": "白川郷の湯",
+      "lat": 36.26113,
+      "lng": 136.90631,
+      "desc": "Onsen in the village"
     }
   ]
 }

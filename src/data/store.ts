@@ -1,5 +1,5 @@
-// Our own data: status, years visited, notes and photos per place, the places we added ourselves,
-// and our trips. It is stored on our server (server/server.ts on Hertz) and shared live.
+// Our own data: status, years visited, notes and photos per destination or spot, the
+// destinations and spots we added ourselves, and our trips. It is stored on our server (server/server.ts on Hertz) and shared live.
 //
 // Three ways this can run:
 //   "shared"  The server is reachable and this phone entered the trip code.
@@ -14,7 +14,7 @@
 
 import { ApiError, api, checkServer, photoLink } from "./api";
 import { resizeImage } from "./photos";
-import type { CustomPlace, Trip, TripStop } from "../types";
+import type { OwnDestination, Spot, Trip, TripStop } from "../types";
 
 export type Status = "want" | "visited" | "";
 export type Mode = "local" | "shared" | "offline";
@@ -24,6 +24,8 @@ export interface PlaceState {
   years: number[];
   notes: string;
   coverPhotoId: string | null;
+  /** Built-in spots only: true = we hid it from the lists and the map. */
+  hidden: boolean;
 }
 
 export interface OurPhoto {
@@ -39,19 +41,21 @@ interface ServerState {
   version: number;
   states: Record<string, PlaceState>;
   photos: OurPhoto[];
-  customs: CustomPlace[];
+  destinations: OwnDestination[];
+  spots: Spot[];
   trips: Trip[];
   stops: TripStop[];
 }
 
-const EMPTY: PlaceState = { status: "", years: [], notes: "", coverPhotoId: null };
+const EMPTY: PlaceState = { status: "", years: [], notes: "", coverPhotoId: null, hidden: false };
 const CACHE_KEY = "japan-places:cache";
 const LOCAL_KEY = "japan-places:local-state";
 
 let mode: Mode = "local";
 const states = new Map<string, PlaceState>();
 let photos: OurPhoto[] = [];
-let customs: CustomPlace[] = [];
+let destinations: OwnDestination[] = [];
+let spots: Spot[] = [];
 let trips: Trip[] = [];
 let stops: TripStop[] = [];
 /** The server's data version we have; goes up with every change on the server. */
@@ -60,13 +64,15 @@ let version = 0;
 // ---------- reading ----------
 
 export const getMode = () => mode;
-export const getState = (placeId: string): PlaceState => states.get(placeId) ?? EMPTY;
+export const getState = (placeId: string): PlaceState => ({ ...EMPTY, ...states.get(placeId) });
 export const getStatus = (placeId: string): Status => getState(placeId).status;
 export const photosFor = (placeId: string) => photos.filter((p) => p.placeId === placeId);
 /** Link to one of our photos ("thumb" = small, "full" = up to 1600 px). */
 export const photoUrl = (photo: OurPhoto, size: "full" | "thumb") => photoLink(photo.id, size);
-/** The places we added ourselves. */
-export const customPlaces = (): CustomPlace[] => customs;
+/** The destinations we added ourselves. */
+export const ownDestinations = (): OwnDestination[] => destinations;
+/** The spots we added ourselves. */
+export const ownSpots = (): Spot[] => spots;
 /** Our trips, newest first. */
 export const getTrips = (): Trip[] => [...trips].sort((a, b) => b.start.localeCompare(a.start));
 export const getTrip = (id: string) => trips.find((t) => t.id === id);
@@ -164,7 +170,8 @@ async function loadShared() {
   states.clear();
   for (const [id, st] of Object.entries(s.states)) states.set(id, st);
   photos = s.photos;
-  customs = s.customs;
+  destinations = s.destinations;
+  spots = s.spots;
   trips = s.trips;
   stops = s.stops;
 }
@@ -218,7 +225,7 @@ function retryWhenOnline() {
 /** Keep a copy so the app can show our data offline (or, in local mode, as the only copy). */
 function saveCopy() {
   try {
-    const data = { states: Object.fromEntries(states), customs, trips, stops };
+    const data = { states: Object.fromEntries(states), destinations, spots, trips, stops };
     if (mode === "local") localStorage.setItem(LOCAL_KEY, JSON.stringify(data));
     else localStorage.setItem(CACHE_KEY, JSON.stringify({ ...data, photos }));
   } catch {
@@ -232,7 +239,8 @@ function loadCopy() {
     if (!copy) return;
     Object.entries(copy.states as Record<string, PlaceState>).forEach(([id, s]) => states.set(id, s));
     photos = (copy.photos ?? []).filter((p: OurPhoto) => p.id && !("path" in p)); // skip old Supabase-era entries
-    customs = copy.customs ?? [];
+    destinations = copy.destinations ?? [];
+    spots = copy.spots ?? [];
     trips = copy.trips ?? [];
     stops = copy.stops ?? [];
   } catch {
@@ -246,9 +254,11 @@ function readLocal() {
   if (saved) {
     // (an early version saved only the states, without the "states" wrapper)
     const savedStates = (saved.states ?? saved) as Record<string, Partial<PlaceState>>;
+    const fromOld = splitOldCustoms(saved.customs ?? [], savedStates, (saved.stops ?? []) as TripStop[]);
     return {
       states: savedStates,
-      customs: (saved.customs ?? []) as CustomPlace[],
+      destinations: [...((saved.destinations ?? []) as OwnDestination[]), ...fromOld.destinations],
+      spots: [...((saved.spots ?? []) as Spot[]), ...fromOld.spots],
       trips: (saved.trips ?? []) as Trip[],
       stops: (saved.stops ?? []) as TripStop[],
     };
@@ -257,14 +267,44 @@ function readLocal() {
   const old = JSON.parse(localStorage.getItem("japan-places:status") || "{}") as Record<string, Status>;
   const statesOnly: Record<string, Partial<PlaceState>> = {};
   Object.entries(old).forEach(([id, status]) => status && (statesOnly[id] = { status }));
-  return { states: statesOnly, customs: [], trips: [], stops: [] };
+  return { states: statesOnly, destinations: [], spots: [], trips: [], stops: [] };
+}
+
+/**
+ * Older versions kept everything we added in one "customs" list with a category.
+ * Cities become our destinations; everything else becomes a spot (id "c-…" → "s-…", with its
+ * notes and trip stops moved along). Without a destination, the app shows a spot under the
+ * nearest one.
+ */
+function splitOldCustoms(
+  old: Array<{ id: string; category: string; name: string; jp: string; area: string; lat: number; lng: number; desc: string }>,
+  savedStates: Record<string, unknown>,
+  savedStops: TripStop[],
+) {
+  const typeFor: Record<string, Spot["type"]> = { restaurant: "food", hotel: "stay", sight: "sight", other: "other" };
+  const result = { destinations: [] as OwnDestination[], spots: [] as Spot[] };
+  for (const c of old) {
+    if (c.category === "city") {
+      result.destinations.push({ id: c.id, kind: "custom", name: c.name, jp: c.jp, prefecture: c.area, lat: c.lat, lng: c.lng, desc: c.desc });
+      continue;
+    }
+    const id = "s-" + c.id.slice(2);
+    result.spots.push({ id, kind: "spot", builtIn: false, destinationId: "", type: typeFor[c.category] ?? "other", name: c.name, jp: c.jp, lat: c.lat, lng: c.lng, desc: c.desc });
+    if (savedStates[c.id]) {
+      savedStates[id] = savedStates[c.id];
+      delete savedStates[c.id];
+    }
+    savedStops.forEach((s) => s.placeId === c.id && (s.placeId = id));
+  }
+  return result;
 }
 
 function loadLocal() {
   try {
     const local = readLocal();
     Object.entries(local.states).forEach(([id, s]) => states.set(id, { ...EMPTY, ...s }));
-    customs = local.customs;
+    destinations = local.destinations;
+    spots = local.spots;
     trips = local.trips;
     stops = local.stops;
   } catch {
@@ -298,9 +338,13 @@ async function importLocal(): Promise<number> {
       count++;
     }
   }
-  for (const c of local.customs) {
-    if (customs.some((x) => x.id === c.id)) continue;
-    if (await api(`custom-places/${c.id}`, { method: "PUT", json: c }).catch(() => null)) count++;
+  for (const d of local.destinations) {
+    if (destinations.some((x) => x.id === d.id)) continue;
+    if (await api(`destinations/${d.id}`, { method: "PUT", json: d }).catch(() => null)) count++;
+  }
+  for (const s of local.spots) {
+    if (spots.some((x) => x.id === s.id)) continue;
+    if (await api(`spots/${s.id}`, { method: "PUT", json: s }).catch(() => null)) count++;
   }
   for (const t of local.trips) {
     if (trips.some((x) => x.id === t.id)) continue;
@@ -410,34 +454,66 @@ export async function deletePhoto(photo: OurPhoto) {
   changed();
 }
 
-// ---------- our own places ----------
+// ---------- hiding built-in spots ----------
+
+/** Hide a built-in spot we're not interested in (or show it again). */
+export function setHidden(placeId: string, hidden: boolean) {
+  return savePlace(placeId, { hidden });
+}
+
+// ---------- our own destinations and spots ----------
 
 /** Replaces the item with the same id, or adds it. */
 function upsertById<T extends { id: string }>(list: T[], item: T): T[] {
   return list.some((x) => x.id === item.id) ? list.map((x) => (x.id === item.id ? item : x)) : [...list, item];
 }
 
-/** Adds a new place or saves changes to an existing one. */
-export async function saveCustomPlace(place: CustomPlace) {
+/** Removes what we saved about a place on this phone (the server does the same). */
+function forget(placeId: string) {
+  states.delete(placeId);
+  photos = photos.filter((p) => p.placeId !== placeId);
+  stops = stops.filter((s) => s.placeId !== placeId);
+}
+
+/** Adds a new destination or saves changes to one of ours. */
+export async function saveDestination(d: OwnDestination) {
   if (mode === "offline") throw new OfflineError();
-  if (mode === "shared") await send(`custom-places/${place.id}`, "PUT", place);
-  customs = upsertById(customs, place);
+  if (mode === "shared") await send(`destinations/${d.id}`, "PUT", d);
+  destinations = upsertById(destinations, d);
   changed();
 }
 
-/** Deletes one of our places, together with its status, notes, photos and trip stops. */
-export async function deleteCustomPlace(id: string) {
+/** Deletes one of our destinations and our spots in it, with their notes, photos and trip stops. */
+export async function deleteDestination(id: string) {
   if (mode === "offline") throw new OfflineError();
-  if (mode === "shared") await send(`custom-places/${id}`, "DELETE");
-  states.delete(id);
-  customs = customs.filter((c) => c.id !== id);
-  photos = photos.filter((p) => p.placeId !== id);
-  stops = stops.filter((s) => s.placeId !== id);
+  if (mode === "shared") await send(`destinations/${id}`, "DELETE");
+  for (const s of spots.filter((s) => s.destinationId === id)) forget(s.id);
+  spots = spots.filter((s) => s.destinationId !== id);
+  forget(id);
+  destinations = destinations.filter((d) => d.id !== id);
   changed();
 }
 
-/** A new, unique id for a place we add. */
-export const newCustomId = () => "c-" + crypto.randomUUID().slice(0, 13);
+/** Adds a new spot or saves changes to one of ours. */
+export async function saveSpot(spot: Spot) {
+  if (mode === "offline") throw new OfflineError();
+  if (mode === "shared") await send(`spots/${spot.id}`, "PUT", spot);
+  spots = upsertById(spots, spot);
+  changed();
+}
+
+/** Deletes one of our spots, with its notes, photos and trip stops. */
+export async function deleteSpot(id: string) {
+  if (mode === "offline") throw new OfflineError();
+  if (mode === "shared") await send(`spots/${id}`, "DELETE");
+  forget(id);
+  spots = spots.filter((s) => s.id !== id);
+  changed();
+}
+
+/** New, unique ids for things we add. */
+export const newDestinationId = () => "c-" + crypto.randomUUID().slice(0, 13);
+export const newSpotId = () => "s-" + crypto.randomUUID().slice(0, 13);
 
 // ---------- trips ----------
 

@@ -3,6 +3,19 @@
 Our Japan islands, cities and trips: what's great to visit in which month, what we want to see,
 where we've been, our notes and photos, and a day-by-day trip planner.
 
+## How the data is organised
+
+| Level | What | Where it comes from |
+|---|---|---|
+| **Prefecture** | only a filter on the list (e.g. Okinawa, Kyoto) | `prefectures` in `public/places.json` |
+| **Destination** | the main card: city, town or island, with month ratings, temperatures, photos and seasons | 43 built in (`places`), plus our own (added in the app, no month guide) |
+| **Spot** | belongs to one destination: beach, temple, onsen, viewpoint, restaurant, hotel… | about 170 well-known ones built in (`spots`), plus our own |
+
+Destinations and spots both have want to go / visited, years, notes and our photos, and can go on
+trip days. A spot uses its destination's month rating for the "avoid" warning. Built-in spots
+can't be edited or deleted, but can be hidden (the destination page has "Show hidden spots").
+On the map, destinations show when zoomed out and spots (with type icons) when zoomed in.
+
 **Live:** https://squash-results.com/akari/japan-place/ (also on https://squash-results.com/menu/)
 
 Vite + plain TypeScript app, our own small Node server on Hertz (shared data, no login: a trip code
@@ -71,12 +84,12 @@ before upload, which also strips GPS data.
 
 | Path | What |
 |---|---|
-| `public/places.json` | the 43 built-in places: months, JMA temperatures, seasons, photos |
+| `public/places.json` | the built-in prefectures, 43 destinations (months, JMA temperatures, seasons, photos) and ~170 spots |
 | `src/main.ts` | start-up, navigation (`#/`, `#/map`, `#/trips`, `#/place/<id>` …), taps |
-| `src/data/` | `store.ts` (our data, live updates, offline copy), `api.ts` (talks to the server), `places.ts`, `photos.ts` |
-| `src/ui/` | one file per screen: `results`, `sheet` (place page), `map`, `add-place`, `trips`, `ours`, `join` |
+| `src/data/` | `store.ts` (our data, live updates, offline copy), `api.ts` (talks to the server), `places.ts` (destinations, spots, prefectures), `photos.ts` |
+| `src/ui/` | one file per screen: `results` (list), `sheet` (destination / spot page with the spots list), `map`, `add-place` (add/edit a spot or destination), `trips`, `ours`, `join` |
 | `src/styles/` | `tokens.css` (colours, light/dark), `app.css` |
-| `server/` | the API: `server.ts` (routes, trip code, live updates, photos), `db.ts` (SQLite tables, backups), `set-code.ts` |
+| `server/` | the API: `server.ts` (routes, trip code, live updates, photos), `db.ts` (SQLite tables, upgrades of older databases, backups), `set-code.ts` |
 | `scripts/` | photo, climate and icon scripts |
 | `prototype/index.html` | the original prototype (data source only) |
 

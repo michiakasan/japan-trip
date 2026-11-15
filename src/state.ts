@@ -5,7 +5,7 @@ import type { FeatureId } from "./types";
 
 export type ThemeChoice = "auto" | "light" | "dark";
 export type View = "grid" | "list";
-export type SortBy = "best" | "name" | "area" | "status";
+export type SortBy = "best" | "name" | "prefecture" | "status";
 export type TypeFilter = "all" | "island" | "city" | "gem" | "ours";
 
 export interface UiState {
@@ -15,8 +15,8 @@ export interface UiState {
   /** Selected month, 0 = January … 11 = December. */
   month: number;
   type: TypeFilter;
-  /** "" = all areas. */
-  area: string;
+  /** "" = all prefectures. */
+  prefecture: string;
   /** Places must have ALL selected features. */
   features: FeatureId[];
   query: string;
@@ -34,7 +34,7 @@ const defaults: UiState = {
   sort: "best",
   month: new Date().getMonth(), // start on the current month
   type: "all",
-  area: "",
+  prefecture: "",
   features: [],
   query: "",
   showAvoid: false,
@@ -44,6 +44,7 @@ function load(): UiState {
   // localStorage can be blocked (private mode), so always use try/catch.
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+    if (saved.sort === "area") saved.sort = "prefecture"; // renamed in the spots version
     return { ...defaults, ...saved };
   } catch {
     return { ...defaults };

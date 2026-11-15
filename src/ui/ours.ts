@@ -111,7 +111,7 @@ export function setupOursEvents(currentPlaceId: () => string | null) {
       } else if (t.dataset.our === "gallery") {
         // A Commons photo from the "Photos" strip: show it big, with its credit.
         const p = currentPlace();
-        const photo = p && p.kind !== "custom" ? p.gallery?.[Number(t.dataset.index)] : undefined;
+        const photo = p && (p.kind === "island" || p.kind === "city") ? p.gallery?.[Number(t.dataset.index)] : undefined;
         if (photo) openViewer(photo.url, commonsCredit(photo));
       }
     } catch (err) {

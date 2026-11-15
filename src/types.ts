@@ -1,5 +1,11 @@
 // Shared TypeScript types for the place data in public/places.json.
 // If you add a field to places.json, add it here too so TypeScript knows about it.
+//
+// Three levels:
+//   Prefecture   only used as a filter (each destination has a `prefecture`)
+//   Destination  the main card: a city, town or island. Built-in ones (`Place`) have month
+//                ratings, temperatures, photos and seasons; ours (`OwnDestination`) don't.
+//   Spot         belongs to one destination: a beach, temple, restaurant, onsen…
 
 /** How good a month is for visiting a place. */
 export type Rating = "great" | "ok" | "avoid";
@@ -54,7 +60,10 @@ export interface Place {
   kind: "island" | "city";
   /** Landscape type, used to draw a placeholder picture when there is no photo. */
   scene: string;
+  /** Region shown on the card, e.g. "Yaeyama" (for cities the same as the prefecture or "Kansai"…). */
   area: string;
+  /** Prefecture name in English, e.g. "Okinawa" (one of PlacesFile.prefectures). */
+  prefecture: string;
   lat: number;
   lng: number;
   /** Hidden gem: little known, even among Japanese travellers. */
@@ -76,6 +85,7 @@ export interface Place {
   galleryFiles?: string[];
 }
 
+/** A name in English + Japanese, used for areas and prefectures. */
 export interface Area {
   name: string;
   jp: string;
@@ -90,31 +100,55 @@ export interface Feature {
 /** The whole places.json file. */
 export interface PlacesFile {
   areas: Area[];
+  /** Prefectures for the filter, roughly south-west to north-east. */
+  prefectures: Area[];
   features: Feature[];
   places: Place[];
+  /** Well-known spots (in places.json they have no `kind`/`builtIn`; loadPlaces adds them). */
+  spots: Spot[];
 }
 
-// ---------- our own places (restaurants, hotels, other cities…) ----------
+// ---------- destinations we added ourselves ----------
 
-export type Category = "restaurant" | "hotel" | "city" | "sight" | "other";
-
-/** A place we added ourselves. Saved on our server (table custom_places). */
-export interface CustomPlace {
+/** A town or island we added ourselves. Saved on our server (table our_destinations). */
+export interface OwnDestination {
   id: string; // starts with "c-"
   kind: "custom";
-  category: Category;
   name: string;
   /** Japanese name (optional, can be "") */
   jp: string;
-  area: string;
+  prefecture: string;
   lat: number;
   lng: number;
   /** Short description / why we saved it */
   desc: string;
 }
 
-/** Any place in the app: a built-in island/city, or one of ours. Check `kind === "custom"` to tell them apart. */
-export type AnyPlace = Place | CustomPlace;
+/** A destination: built-in (kind "island" or "city") or ours (kind "custom"). */
+export type Destination = Place | OwnDestination;
+
+// ---------- spots ----------
+
+export type SpotType = "beach" | "temple" | "onsen" | "view" | "nature" | "sight" | "food" | "cafe" | "stay" | "shop" | "other";
+
+/** A spot inside a destination. Built-in ones come from places.json, ours from the server (id "s-…"). */
+export interface Spot {
+  id: string;
+  kind: "spot";
+  /** true = from places.json (can be hidden, not edited); false = added by us. */
+  builtIn: boolean;
+  /** Id of the destination it belongs to ("" = not set: the app uses the nearest one). */
+  destinationId: string;
+  type: SpotType;
+  name: string;
+  jp: string;
+  lat: number;
+  lng: number;
+  desc: string;
+}
+
+/** Anything with its own page: a destination or a spot. Check `kind` to tell them apart. */
+export type AnyPlace = Destination | Spot;
 
 // ---------- trip planner ----------
 

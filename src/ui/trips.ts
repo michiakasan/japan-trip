@@ -1,4 +1,4 @@
-// Trip planner: one trip per year, places added to days in order.
+// Trip planner: one trip per year, destinations and spots added to days in order.
 //
 // Screens:
 //   #/trips              list of our trips (TripsView)
@@ -11,7 +11,7 @@ import type { AnyPlace, PlacesFile, Trip, TripStop } from "../types";
 import {
   addStop, deleteTrip, getTrip, getTrips, moveStop, moveStopToDay, removeStop, saveTrip, stopsOfPlace, stopsOfTrip,
 } from "../data/store";
-import { allPlaces, findPlace } from "../data/places";
+import { allDestinations, destinationOf, findPlace, isBuiltIn, ratedDestination, spotType, spotsOf, whereLine } from "../data/places";
 import { $, esc, toast } from "./dom";
 import { MONTHS, RATING_ORDER, ratingBadge } from "./month";
 import { photoHtml } from "./placeholder";
@@ -52,15 +52,17 @@ const tripTitle = (t: Trip) => t.title || `Our ${t.start.slice(0, 4)} trip`;
 
 // ---------- warnings ----------
 
-/** If a place is rated "avoid" in the month of `day`, returns the reason; otherwise null. */
-function avoidReason(place: AnyPlace | undefined, day: string): string | null {
-  if (!place || place.kind === "custom") return null;
-  const m = place.months[monthOf(day)];
+/** If a place (or, for a spot, its destination) is rated "avoid" in the month of `day`,
+ *  returns the reason; otherwise null. */
+function avoidReason(data: PlacesFile, place: AnyPlace | undefined, day: string): string | null {
+  const rated = ratedDestination(data, place);
+  if (!rated) return null;
+  const m = rated.months[monthOf(day)];
   return m.rating === "avoid" ? m.reason : null;
 }
 
 function warningsOf(trip: Trip, data: PlacesFile) {
-  return stopsOfTrip(trip.id).filter((s) => avoidReason(findPlace(data, s.placeId), s.day)).length;
+  return stopsOfTrip(trip.id).filter((s) => avoidReason(data, findPlace(data, s.placeId), s.day)).length;
 }
 
 // ---------- the Trips tab ----------
@@ -141,12 +143,14 @@ export const closeTrip = () => (openTripId = null);
 function stopHtml(stop: TripStop, data: PlacesFile, days: string[]) {
   const place = findPlace(data, stop.placeId);
   if (!place) return ""; // a place that was deleted
-  const custom = place.kind === "custom";
   const month = monthOf(stop.day);
-  const avoid = avoidReason(place, stop.day);
-  const info = custom
-    ? `<span class="muted small">${esc(place.area)}</span>`
-    : `<span class="muted small">${esc(place.months[month].reason)}</span>`;
+  const avoid = avoidReason(data, place, stop.day);
+  const rated = ratedDestination(data, place);
+  // A spot shows its type and destination ("⛩️ Temple & shrine · Kyoto"); a destination its month note.
+  const info =
+    place.kind === "spot"
+      ? `<span class="muted small">${spotType(place.type).icon} ${esc(spotType(place.type).name)} · ${esc(destinationOf(data, place).name)}</span>`
+      : `<span class="muted small">${esc(rated ? rated.months[month].reason : whereLine(data, place).en)}</span>`;
   const options = days
     .map((d, i) => `<option value="${d}" ${d === stop.day ? "selected" : ""}>Day ${i + 1} · ${dayLabel(d).en}</option>`)
     .join("");
@@ -163,7 +167,7 @@ function stopHtml(stop: TripStop, data: PlacesFile, days: string[]) {
         <button data-trip="remove" data-stop="${stop.id}" aria-label="Remove from trip">×</button>
       </div>
     </div>
-    <div class="stop-rate">${custom ? "" : ratingBadge(place.months[month].rating)}</div>
+    <div class="stop-rate">${rated ? ratingBadge(rated.months[month].rating) : ""}</div>
   </li>`;
 }
 
@@ -184,7 +188,7 @@ export function renderTripPage(data: PlacesFile, tripId: string) {
       return `<section class="day">
         <h3>Day ${i + 1} <span class="jp">${i + 1}日目</span> <span class="day-date">${esc(label.en)} · <span class="jp">${esc(label.jp)}</span></span></h3>
         ${items ? `<ol class="stops">${items}</ol>` : ""}
-        <button class="add-stop" data-trip="add" data-day="${day}">＋ Add place</button>
+        <button class="add-stop" data-trip="add" data-day="${day}">＋ Add place or spot</button>
       </section>`;
     })
     .join("");
@@ -226,9 +230,38 @@ function openPicker(data: PlacesFile, tripId: string, day: string) {
   const month = monthOf(day);
   const dayNo = daysOf(trip).indexOf(day) + 1;
   const planned = new Map(stopsOfTrip(tripId).map((s) => [s.placeId, s.day]));
-  // Best places for this month first; our own places (no rating) after "ok".
-  const rank = (p: AnyPlace) => (p.kind === "custom" ? 1.5 : RATING_ORDER[p.months[month].rating]);
-  const places = allPlaces(data).sort((a, b) => rank(a) - rank(b) || a.name.localeCompare(b.name));
+  // Best destinations for this month first; ours (no rating) after "ok". Each destination is
+  // followed by its spots, so a whole day can be planned spot by spot.
+  const rank = (d: (typeof destinations)[number]) => (isBuiltIn(d) ? RATING_ORDER[d.months[month].rating] : 1.5);
+  const destinations = allDestinations(data).sort((a, b) => rank(a) - rank(b) || a.name.localeCompare(b.name));
+  const alreadyNote = (id: string) => {
+    const already = planned.get(id);
+    if (!already) return "";
+    const n = daysOf(trip).indexOf(already) + 1;
+    return ` · already on ${n ? `Day ${n}` : "this trip"}`;
+  };
+  const item = (p: AnyPlace, words: string, sub: string, badge: string, extraClass = "") =>
+    `<button class="picker-item${extraClass}" data-pick="${esc(p.id)}" data-words="${esc(words.toLowerCase())}">
+      ${p.kind === "spot" ? `<span class="picker-icon" aria-hidden="true">${spotType(p.type).icon}</span>` : `<span class="picker-thumb">${photoHtml(p)}</span>`}
+      <span class="picker-text"><b>${esc(p.name)}</b> <span class="jp">${esc(p.jp)}</span>
+        <span class="muted small">${esc(sub)}${alreadyNote(p.id)}</span></span>
+      ${badge}
+    </button>`;
+  const listHtml = destinations
+    .map((d) => {
+      const badge = isBuiltIn(d) ? ratingBadge(d.months[month].rating) : "";
+      const where = whereLine(data, d).en;
+      const spots = spotsOf(data, d);
+      // Searching for the destination's name also shows its spots.
+      const destWords = [d.name, d.jp, where].join(" ");
+      return (
+        item(d, destWords, where, badge) +
+        spots
+          .map((s) => item(s, [s.name, s.jp, spotType(s.type).name, destWords].join(" "), `${spotType(s.type).name} · ${d.name}`, "", " picker-item--spot"))
+          .join("")
+      );
+    })
+    .join("");
 
   const el = document.createElement("div");
   el.className = "picker";
@@ -240,22 +273,10 @@ function openPicker(data: PlacesFile, tripId: string, day: string) {
         <b>Add to Day ${dayNo} · ${esc(dayLabel(day).en)}</b>
         <button class="picker-close" aria-label="Close">×</button>
       </div>
-      <label class="search"><span class="sr-only">Search places</span>
-        <input type="search" placeholder="Search places…" autocomplete="off" /></label>
-      <p class="muted small">Sorted by how good they are in ${MONTHS[month]}.</p>
-      <div class="picker-list">${places
-        .map((p) => {
-          const already = planned.get(p.id);
-          const alreadyDay = already ? daysOf(trip).indexOf(already) + 1 : 0;
-          const words = [p.name, p.jp, p.area].join(" ").toLowerCase();
-          return `<button class="picker-item" data-pick="${esc(p.id)}" data-words="${esc(words)}">
-            <span class="picker-thumb">${photoHtml(p)}</span>
-            <span class="picker-text"><b>${esc(p.name)}</b> <span class="jp">${esc(p.jp)}</span>
-              <span class="muted small">${esc(p.area)}${already ? ` · already on ${alreadyDay ? `Day ${alreadyDay}` : "this trip"}` : ""}</span></span>
-            ${p.kind === "custom" ? "" : ratingBadge(p.months[month].rating)}
-          </button>`;
-        })
-        .join("")}</div>
+      <label class="search"><span class="sr-only">Search destinations and spots</span>
+        <input type="search" placeholder="Search: Kyoto, temple, beach…" autocomplete="off" /></label>
+      <p class="muted small">Destinations sorted by how good they are in ${MONTHS[month]}, each with its spots.</p>
+      <div class="picker-list">${listHtml}</div>
     </div>`;
   document.body.append(el);
   const input = el.querySelector<HTMLInputElement>("input")!;
@@ -274,7 +295,7 @@ function openPicker(data: PlacesFile, tripId: string, day: string) {
     try {
       await addStop(tripId, day, item.dataset.pick!);
       close();
-      const avoid = avoidReason(place, day);
+      const avoid = avoidReason(data, place, day);
       toast(avoid ? `Added, but ${MONTHS[month]} is rated "avoid": ${avoid}` : `${place?.name} added to Day ${dayNo}`);
     } catch (err) {
       toast((err as Error).message);
@@ -285,14 +306,14 @@ function openPicker(data: PlacesFile, tripId: string, day: string) {
 
 // ---------- on the place page: "In our trips" + "Add to a trip" ----------
 
-export function placeTripsHtml(place: AnyPlace): string {
+export function placeTripsHtml(place: AnyPlace, data: PlacesFile): string {
   const trips = getTrips();
   const planned = stopsOfPlace(place.id)
     .map((s) => {
       const trip = getTrip(s.tripId);
       if (!trip) return "";
       const dayNo = daysOf(trip).indexOf(s.day) + 1;
-      const avoid = avoidReason(place, s.day);
+      const avoid = avoidReason(data, place, s.day);
       return `<li><a href="#/trip/${trip.id}">${esc(tripTitle(trip))}</a> · ${dayNo ? `Day ${dayNo}, ` : ""}${esc(dayLabel(s.day).en)}
         ${avoid ? `<span class="warn-inline">⚠ "avoid" in ${MONTHS[monthOf(s.day)]}</span>` : ""}</li>`;
     })
@@ -304,7 +325,7 @@ export function placeTripsHtml(place: AnyPlace): string {
           .map(
             (t) => `<optgroup label="${esc(tripTitle(t))}">${daysOf(t)
               .map((d, i) => {
-                const avoid = avoidReason(place, d);
+                const avoid = avoidReason(data, place, d);
                 return `<option value="${t.id}|${d}">Day ${i + 1} · ${esc(dayLabel(d).en)}${avoid ? " ⚠ avoid" : ""}</option>`;
               })
               .join("")}</optgroup>`,
@@ -361,7 +382,7 @@ export function setupTripEvents(getData: () => PlacesFile) {
     const place = findPlace(getData(), decodeURIComponent(placeId));
     run(
       addStop(tripId, day, decodeURIComponent(placeId)).then(() => {
-        const avoid = avoidReason(place, day);
+        const avoid = avoidReason(getData(), place, day);
         toast(avoid ? `Added, but ${MONTHS[monthOf(day)]} is rated "avoid": ${avoid}` : "Added to the trip");
       }),
     );

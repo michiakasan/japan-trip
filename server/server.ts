@@ -18,9 +18,11 @@
 //   POST   /api/join            { code }      → sets the cookie          (no key needed)
 //   GET    /api/state                         → everything (places' status, photos list, trips…)
 //   GET    /api/events                        → live "something changed" messages (Server-Sent Events)
-//   PATCH  /api/place-state/:placeId          { status?, years?, notes?, coverPhotoId? }
-//   PUT    /api/custom-places/:id             { category, name, jp, area, lat, lng, desc }
-//   DELETE /api/custom-places/:id
+//   PATCH  /api/place-state/:placeId          { status?, years?, notes?, coverPhotoId?, hidden? }
+//   PUT    /api/destinations/:id              { name, jp, prefecture, lat, lng, desc }   (ours, id "c-…")
+//   DELETE /api/destinations/:id              (also deletes its spots)
+//   PUT    /api/spots/:id                     { destinationId, type, name, jp, lat, lng, desc }  (ours, id "s-…")
+//   DELETE /api/spots/:id
 //   PUT    /api/trips/:id                     { title, start, end }
 //   DELETE /api/trips/:id
 //   PUT    /api/stops                         [ { id, tripId, day, position, placeId }, … ]
@@ -36,7 +38,7 @@ import { createHash, randomBytes, scrypt, timingSafeEqual } from "node:crypto";
 import { existsSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { promisify } from "node:util";
-import { backup, bumpVersion, getSetting, openDatabase, readAll } from "./db.ts";
+import { SPOT_TYPES, backup, bumpVersion, getSetting, openDatabase, readAll } from "./db.ts";
 
 const PORT = Number(process.env.PORT ?? 5020);
 const DATA_DIR = process.env.DATA_DIR ?? join(process.cwd(), "data");
@@ -185,6 +187,13 @@ function deletePhoto(photoId: string) {
   deletePhotoFiles(photoId);
 }
 
+/** Removes everything we saved about a place: notes/status, photos and trip stops. */
+function forgetPlace(placeId: string) {
+  for (const row of db.prepare("SELECT id FROM photos WHERE place_id = ?").all(placeId) as Array<{ id: string }>) deletePhoto(row.id);
+  db.prepare("DELETE FROM trip_stops WHERE place_id = ?").run(placeId);
+  db.prepare("DELETE FROM place_state WHERE place_id = ?").run(placeId);
+}
+
 // ---------- the routes ----------
 
 async function handle(req: IncomingMessage, res: ServerResponse) {
@@ -247,6 +256,10 @@ async function handle(req: IncomingMessage, res: ServerResponse) {
       db.prepare("UPDATE place_state SET years = ? WHERE place_id = ?").run(JSON.stringify(years), placeId);
     }
     if ("notes" in b) db.prepare("UPDATE place_state SET notes = ? WHERE place_id = ?").run(str(b.notes, 20_000, "notes"), placeId);
+    if ("hidden" in b) {
+      if (typeof b.hidden !== "boolean") throw new HttpError(400, "Bad hidden");
+      db.prepare("UPDATE place_state SET hidden = ? WHERE place_id = ?").run(b.hidden ? 1 : 0, placeId);
+    }
     if ("coverPhotoId" in b) {
       const cover = b.coverPhotoId === null ? null : id(b.coverPhotoId, "cover");
       db.prepare("UPDATE place_state SET cover_photo_id = ? WHERE place_id = ?").run(cover, placeId);
@@ -255,28 +268,60 @@ async function handle(req: IncomingMessage, res: ServerResponse) {
     return send(res, 200, changed());
   }
 
-  if (what === "custom-places" && method === "PUT") {
+  if (what === "destinations" && method === "PUT") {
     const placeId = id(p1);
-    if (!placeId.startsWith("c-")) throw new HttpError(400, "Our place ids start with c-");
+    if (!placeId.startsWith("c-")) throw new HttpError(400, "Our destination ids start with c-");
     const b = (await readJson(req)) ?? {};
-    if (!["restaurant", "hotel", "city", "sight", "other"].includes(b.category)) throw new HttpError(400, "Bad category");
     const name = str(b.name, 120, "name").trim();
     if (!name) throw new HttpError(400, "Name is required");
     db.prepare(
-      `INSERT INTO custom_places (id, category, name, jp, area, lat, lng, descr) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-       ON CONFLICT (id) DO UPDATE SET category = excluded.category, name = excluded.name, jp = excluded.jp,
-         area = excluded.area, lat = excluded.lat, lng = excluded.lng, descr = excluded.descr`,
-    ).run(placeId, b.category, name, str(b.jp ?? "", 120, "jp"), str(b.area ?? "", 60, "area"),
+      `INSERT INTO our_destinations (id, name, jp, prefecture, lat, lng, descr) VALUES (?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT (id) DO UPDATE SET name = excluded.name, jp = excluded.jp, prefecture = excluded.prefecture,
+         lat = excluded.lat, lng = excluded.lng, descr = excluded.descr`,
+    ).run(placeId, name, str(b.jp ?? "", 120, "jp"), str(b.prefecture ?? "", 60, "prefecture"),
       num(b.lat, -90, 90, "lat"), num(b.lng, -180, 180, "lng"), str(b.desc ?? "", 500, "desc"));
     return send(res, 200, changed());
   }
 
-  if (what === "custom-places" && method === "DELETE") {
+  if (what === "destinations" && method === "DELETE") {
     const placeId = id(p1);
-    for (const row of db.prepare("SELECT id FROM photos WHERE place_id = ?").all(placeId) as Array<{ id: string }>) deletePhoto(row.id);
-    db.prepare("DELETE FROM trip_stops WHERE place_id = ?").run(placeId);
-    db.prepare("DELETE FROM place_state WHERE place_id = ?").run(placeId);
-    db.prepare("DELETE FROM custom_places WHERE id = ?").run(placeId);
+    db.exec("BEGIN");
+    try {
+      // Its spots go too (with their notes, photos and trip stops).
+      for (const row of db.prepare("SELECT id FROM our_spots WHERE destination_id = ?").all(placeId) as Array<{ id: string }>) {
+        forgetPlace(row.id);
+        db.prepare("DELETE FROM our_spots WHERE id = ?").run(row.id);
+      }
+      forgetPlace(placeId);
+      db.prepare("DELETE FROM our_destinations WHERE id = ?").run(placeId);
+      db.exec("COMMIT");
+    } catch (err) {
+      db.exec("ROLLBACK");
+      throw err;
+    }
+    return send(res, 200, changed());
+  }
+
+  if (what === "spots" && method === "PUT") {
+    const placeId = id(p1);
+    if (!placeId.startsWith("s-")) throw new HttpError(400, "Our spot ids start with s-");
+    const b = (await readJson(req)) ?? {};
+    if (!SPOT_TYPES.includes(b.type)) throw new HttpError(400, "Bad type");
+    const name = str(b.name, 120, "name").trim();
+    if (!name) throw new HttpError(400, "Name is required");
+    db.prepare(
+      `INSERT INTO our_spots (id, destination_id, type, name, jp, lat, lng, descr) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+       ON CONFLICT (id) DO UPDATE SET destination_id = excluded.destination_id, type = excluded.type, name = excluded.name,
+         jp = excluded.jp, lat = excluded.lat, lng = excluded.lng, descr = excluded.descr`,
+    ).run(placeId, b.destinationId === "" ? "" : id(b.destinationId, "destination"), b.type, name, str(b.jp ?? "", 120, "jp"),
+      num(b.lat, -90, 90, "lat"), num(b.lng, -180, 180, "lng"), str(b.desc ?? "", 500, "desc"));
+    return send(res, 200, changed());
+  }
+
+  if (what === "spots" && method === "DELETE") {
+    const placeId = id(p1);
+    forgetPlace(placeId);
+    db.prepare("DELETE FROM our_spots WHERE id = ?").run(placeId);
     return send(res, 200, changed());
   }
 

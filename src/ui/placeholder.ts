@@ -2,9 +2,10 @@
 // landscape drawn with <canvas> (sea, beach, jungle, volcano, city…), based on
 // the drawings in the old prototype.
 
-import type { AnyPlace, Category, CommonsPhoto } from "../types";
+import type { AnyPlace, CommonsPhoto, SpotType } from "../types";
 import { esc } from "./dom";
 import { coverFor } from "../data/store";
+import { spotType } from "../data/places";
 
 // ---------- drawn placeholder ----------
 
@@ -147,11 +148,37 @@ function drawScene(c: CanvasRenderingContext2D, w: number, h: number, place: Any
   }
 }
 
-/** Our own places have no "scene", so pick one from their type. */
-const CATEGORY_SCENE: Record<Category, string> = {
-  restaurant: "village", hotel: "onsen", city: "city", sight: "mountain", other: "beach",
+/** Spots and our own destinations have no "scene", so pick one from their type. */
+const SPOT_SCENE: Record<SpotType, string> = {
+  beach: "beach", temple: "village", onsen: "onsen", view: "mountain", nature: "forest", sight: "city",
+  food: "village", cafe: "village", stay: "onsen", shop: "city", other: "beach",
 };
-const sceneOf = (p: AnyPlace) => (p.kind === "custom" ? CATEGORY_SCENE[p.category] : p.scene);
+const sceneOf = (p: AnyPlace) => (p.kind === "spot" ? SPOT_SCENE[p.type] : p.kind === "custom" ? "city" : p.scene);
+
+/** The Wikimedia photo of a built-in destination (spots and our own destinations have none). */
+const commonsPhotoOf = (p: AnyPlace) => (p.kind === "island" || p.kind === "city" ? p.photo : null);
+
+/** Soft background colours per spot type: [top, bottom] of a gradient. */
+const SPOT_COLOURS: Record<SpotType, [string, string]> = {
+  beach: ["#bfe6ea", "#7cc6cf"], temple: ["#f3c9b8", "#d9826a"], onsen: ["#e9dccd", "#c7ab8f"],
+  view: ["#cfdcf0", "#93acd6"], nature: ["#cfe5c4", "#8dbb7c"], sight: ["#e6dccb", "#bfa77f"],
+  food: ["#f6d7b0", "#e0a35f"], cafe: ["#e8d6c4", "#b88f6c"], stay: ["#ddd3e8", "#a796c4"],
+  shop: ["#f2d1dc", "#d68aa3"], other: ["#e2ddd6", "#b3aa9e"],
+};
+
+/** A spot without a photo: its type's icon on a soft colour (no made-up landscape). */
+function drawSpotTile(c: CanvasRenderingContext2D, w: number, h: number, type: SpotType) {
+  const [top, bottom] = SPOT_COLOURS[type] ?? SPOT_COLOURS.other;
+  const g = c.createLinearGradient(0, 0, 0, h);
+  g.addColorStop(0, top);
+  g.addColorStop(1, bottom);
+  c.fillStyle = g;
+  c.fillRect(0, 0, w, h);
+  c.font = `${Math.round(h * 0.38)}px "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif`;
+  c.textAlign = "center";
+  c.textBaseline = "middle";
+  c.fillText(spotType(type).icon, w / 2, h / 2 + h * 0.03);
+}
 
 /** Drawing is done once per place and kept as an image URL (memory cache). */
 const drawn = new Map<string, string>();
@@ -162,7 +189,9 @@ export function placeholderUrl(place: AnyPlace): string {
     const canvas = document.createElement("canvas");
     canvas.width = 640;
     canvas.height = 480;
-    drawScene(canvas.getContext("2d")!, canvas.width, canvas.height, place);
+    const c = canvas.getContext("2d")!;
+    if (place.kind === "spot") drawSpotTile(c, canvas.width, canvas.height, place.type);
+    else drawScene(c, canvas.width, canvas.height, place);
     url = canvas.toDataURL("image/webp", 0.8);
     drawn.set(place.id, url);
   }
@@ -184,7 +213,7 @@ export function photoHtml(place: AnyPlace, size: "small" | "large" = "small", wi
       loading="${size === "large" ? "eager" : "lazy"}" decoding="async" crossorigin="anonymous" data-place="${esc(place.id)}" />`;
   }
   // 2. The Wikimedia Commons photo, 3. otherwise the drawing
-  const p = place.kind === "custom" ? null : place.photo;
+  const p = commonsPhotoOf(place);
   if (!p) {
     return `<img class="photo photo--drawn" src="${placeholderUrl(place)}" alt="Drawing of ${esc(place.name)} (no photo yet)" />`;
   }
@@ -198,7 +227,7 @@ export function photoHtml(place: AnyPlace, size: "small" | "large" = "small", wi
 
 /** Full credit with links, for the place page. */
 export function creditHtml(place: AnyPlace): string {
-  const p = place.kind === "custom" ? null : place.photo;
+  const p = commonsPhotoOf(place);
   return p ? commonsCredit(p) : "";
 }
 

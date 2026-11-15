@@ -1,8 +1,8 @@
-// The controls at the top: month picker, type chips, area, features, search,
+// The controls at the top: month picker, type chips, prefecture, features, search,
 // result count, sort and grid/list switch.
 
 import type { PlacesFile } from "../types";
-import { allAreas } from "../data/places";
+import { allPrefectures } from "../data/places";
 import { ui } from "../state";
 import { esc } from "./dom";
 import { MONTHS, monthPicker } from "./month";
@@ -12,13 +12,13 @@ const TYPES = [
   ["island", "Islands", "島"],
   ["city", "Cities", "都市"],
   ["gem", "Hidden gems", "穴場"],
-  ["ours", "Our places", "私たちの"],
+  ["ours", "Added by us", "私たちの"],
 ] as const;
 
 const SORTS = [
   ["best", "Best first"],
   ["name", "Name"],
-  ["area", "Area"],
+  ["prefecture", "Prefecture"],
   ["status", "Our status"],
 ] as const;
 
@@ -27,14 +27,14 @@ export function renderMonths(el: HTMLElement) {
   el.innerHTML = monthPicker(ui.month);
 }
 
-/** Draws the type chips, area menu and feature chips. */
+/** Draws the type chips, prefecture menu and feature chips. */
 export function renderChips(el: HTMLElement, data: PlacesFile) {
   const types = TYPES.map(
     ([id, label, jp]) =>
       `<button class="chip" data-type="${id}" aria-pressed="${ui.type === id}">${label}<span class="chip-jp jp">${jp}</span></button>`,
   ).join("");
-  const areas = allAreas(data)
-    .map((a) => `<option value="${esc(a.name)}" ${ui.area === a.name ? "selected" : ""}>${esc(a.name)} ${esc(a.jp)}</option>`)
+  const prefectures = allPrefectures(data)
+    .map((p) => `<option value="${esc(p.name)}" ${ui.prefecture === p.name ? "selected" : ""}>${esc(p.name)} ${esc(p.jp)}</option>`)
     .join("");
   const features = data.features
     .map(
@@ -45,8 +45,8 @@ export function renderChips(el: HTMLElement, data: PlacesFile) {
   const clear = ui.features.length ? `<button class="chip chip--small chip--clear" data-feature="__clear">Clear</button>` : "";
   el.innerHTML = `
     <div class="chips">${types}
-      <label class="select-chip"><span class="sr-only">Area</span>
-        <select data-area><option value="">All areas</option>${areas}</select>
+      <label class="select-chip"><span class="sr-only">Prefecture</span>
+        <select data-prefecture><option value="">All prefectures</option>${prefectures}</select>
       </label>
     </div>
     <div class="chips">${features}${clear}</div>`;

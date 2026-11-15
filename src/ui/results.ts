@@ -1,61 +1,64 @@
-// Filtering, sorting and drawing the places as a grid of cards or a compact list.
+// Filtering, sorting and drawing the destinations as a grid of cards or a compact list.
+// (Spots are not in this list: they are shown on their destination's page and on the map.)
 
-import type { AnyPlace, PlacesFile } from "../types";
+import type { Destination, PlacesFile } from "../types";
 import { ui } from "../state";
 import { getState, getStatus } from "../data/store";
-import { allAreas, allPlaces, categoryOf } from "../data/places";
+import { allDestinations, allPrefectures, isBuiltIn, spotType, spotsOf, whereLine } from "../data/places";
 import { esc } from "./dom";
 import { MONTHS, RATING_ORDER, ratingBadge, temps } from "./month";
 import { photoHtml } from "./placeholder";
 
-/** Does this place pass all the filters EXCEPT the "avoid" rule? */
-function matchesFilters(p: AnyPlace): boolean {
-  const custom = p.kind === "custom";
-  if (ui.type === "island" && p.kind !== "island") return false;
-  if (ui.type === "city" && !(p.kind === "city" || (custom && p.category === "city"))) return false;
-  if (ui.type === "gem" && (custom || !p.gem)) return false;
-  if (ui.type === "ours" && !custom) return false;
-  if (ui.area && p.area !== ui.area) return false;
-  // Every selected feature must be on the place (our own places have no feature tags).
-  if (ui.features.length && (custom || !ui.features.every((f) => p.features.includes(f)))) return false;
-  if (ui.query) {
-    const own = getState(p.id).notes;
-    const words = custom
-      ? [p.name, p.jp, p.area, p.desc, categoryOf(p.category).name, own]
-      : [p.name, p.jp, p.area, p.desc, p.access, p.months[ui.month].reason, own, ...Object.values(p.seasons), ...p.features];
-    if (!words.join(" ").toLowerCase().includes(ui.query.toLowerCase())) return false;
-  }
+/** Words a search can match for a destination, including its spots (so "bamboo" finds Kyoto). */
+function searchWords(d: Destination, data: PlacesFile): string {
+  const spots = spotsOf(data, d).flatMap((s) => [s.name, s.jp, s.desc, spotType(s.type).name, getState(s.id).notes]);
+  const own = [d.name, d.jp, d.prefecture, d.desc, getState(d.id).notes, ...spots];
+  const extra = isBuiltIn(d) ? [d.area, d.access, d.months[ui.month].reason, ...Object.values(d.seasons), ...d.features] : [];
+  return [...own, ...extra].join(" ").toLowerCase();
+}
+
+/** Does this destination pass all the filters EXCEPT the "avoid" rule? */
+function matchesFilters(d: Destination, data: PlacesFile): boolean {
+  const builtIn = isBuiltIn(d);
+  if (ui.type === "island" && d.kind !== "island") return false;
+  if (ui.type === "city" && d.kind !== "city") return false;
+  if (ui.type === "gem" && !(builtIn && d.gem)) return false;
+  if (ui.type === "ours" && builtIn) return false;
+  if (ui.prefecture && d.prefecture !== ui.prefecture) return false;
+  // Every selected feature must be on the destination (ours have no feature tags).
+  if (ui.features.length && !(builtIn && ui.features.every((f) => d.features.includes(f)))) return false;
+  if (ui.query && !searchWords(d, data).includes(ui.query.toLowerCase())) return false;
   return true;
 }
 
-/** Rating of a place in the selected month. Our own places have no rating (null). */
-const ratingOf = (p: AnyPlace) => (p.kind === "custom" ? null : p.months[ui.month].rating);
+/** Rating of a destination in the selected month. Ours have no rating (null). */
+const ratingOf = (d: Destination) => (isBuiltIn(d) ? d.months[ui.month].rating : null);
 
 const STATUS_ORDER = { want: 0, visited: 1, "": 2 } as const;
 
 /** Sort a copy of the list according to ui.sort. */
-function sortPlaces(list: AnyPlace[], data: PlacesFile): AnyPlace[] {
-  const areas = allAreas(data).map((a) => a.name);
-  const byName = (a: AnyPlace, b: AnyPlace) => a.name.localeCompare(b.name);
-  // Places without a rating (ours) go between "ok" and "avoid".
-  const rating = (p: AnyPlace) => { const r = ratingOf(p); return r ? RATING_ORDER[r] : 1.5; };
-  const compare: Record<typeof ui.sort, (a: AnyPlace, b: AnyPlace) => number> = {
+function sortDestinations(list: Destination[], data: PlacesFile): Destination[] {
+  const prefectures = allPrefectures(data).map((p) => p.name);
+  const byName = (a: Destination, b: Destination) => a.name.localeCompare(b.name);
+  // Destinations without a rating (ours) go between "ok" and "avoid".
+  const rating = (d: Destination) => { const r = ratingOf(d); return r ? RATING_ORDER[r] : 1.5; };
+  const compare: Record<typeof ui.sort, (a: Destination, b: Destination) => number> = {
     best: (a, b) => rating(a) - rating(b) || byName(a, b),
     name: byName,
-    // Areas go roughly south to north, in the order listed in places.json.
-    area: (a, b) => areas.indexOf(a.area) - areas.indexOf(b.area) || rating(a) - rating(b) || byName(a, b),
+    // Prefectures go roughly south-west to north-east, in the order listed in places.json.
+    prefecture: (a, b) => prefectures.indexOf(a.prefecture) - prefectures.indexOf(b.prefecture) || rating(a) - rating(b) || byName(a, b),
     status: (a, b) => STATUS_ORDER[getStatus(a.id)] - STATUS_ORDER[getStatus(b.id)] || rating(a) - rating(b) || byName(a, b),
   };
   return [...list].sort(compare[ui.sort]);
 }
 
-/** Works out what to show. Returns the visible places and how many "avoid" ones were hidden. */
+/** Works out what to show. Returns the visible destinations and how many "avoid" ones were hidden. */
 export function computeResults(data: PlacesFile) {
-  const matching = allPlaces(data).filter(matchesFilters);
-  const avoid = matching.filter((p) => ratingOf(p) === "avoid");
-  const visible = ui.showAvoid ? matching : matching.filter((p) => ratingOf(p) !== "avoid");
-  const great = matching.filter((p) => ratingOf(p) === "great").length;
-  return { places: sortPlaces(visible, data), hiddenAvoid: ui.showAvoid ? 0 : avoid.length, great };
+  const matching = allDestinations(data).filter((d) => matchesFilters(d, data));
+  const avoid = matching.filter((d) => ratingOf(d) === "avoid");
+  const visible = ui.showAvoid ? matching : matching.filter((d) => ratingOf(d) !== "avoid");
+  const great = matching.filter((d) => ratingOf(d) === "great").length;
+  return { places: sortDestinations(visible, data), hiddenAvoid: ui.showAvoid ? 0 : avoid.length, great };
 }
 
 function statusHtml(id: string): string {
@@ -65,46 +68,47 @@ function statusHtml(id: string): string {
   return "";
 }
 
-function jpArea(data: PlacesFile, area: string) {
-  return data.areas.find((a) => a.name === area)?.jp ?? "";
+/** Small label for our own destinations, shown where built-in ones show their rating. */
+const oursBadge = `<span class="cat-badge">私たち<span class="sr-only"> Added by us</span></span>`;
+
+/** "5 spots · 2 want" under a destination. */
+function spotsLine(d: Destination, data: PlacesFile) {
+  const spots = spotsOf(data, d);
+  if (!spots.length) return "";
+  const want = spots.filter((s) => getStatus(s.id) === "want").length;
+  return `${spots.length} spot${spots.length > 1 ? "s" : ""}${want ? ` · ${want} want` : ""}`;
 }
 
-/** Small label for our own places, shown where built-in places show their rating. */
-function categoryBadge(p: AnyPlace) {
-  if (p.kind !== "custom") return "";
-  const c = categoryOf(p.category);
-  return `<span class="cat-badge">${esc(c.jp)}<span class="sr-only"> ${esc(c.name)}</span></span>`;
-}
-
-/** One card in the grid. The whole card is a link that opens the place. */
-function cardHtml(p: AnyPlace, data: PlacesFile): string {
-  const custom = p.kind === "custom";
-  const m = custom ? null : p.months[ui.month];
-  const badge = custom ? categoryBadge(p) : ratingBadge(m!.rating);
-  const line = custom ? p.desc || categoryOf(p.category).name : m!.reason;
-  return `<a class="card${custom ? " card--ours" : ""}" href="#/place/${esc(p.id)}">
-    <div class="card-photo">${photoHtml(p, "small", true)}${badge}${!custom && p.gem ? `<span class="gem">Gem</span>` : ""}</div>
+/** One card in the grid. The whole card is a link that opens the destination. */
+function cardHtml(d: Destination, data: PlacesFile): string {
+  const builtIn = isBuiltIn(d);
+  const m = builtIn ? d.months[ui.month] : null;
+  const where = whereLine(data, d);
+  const spots = spotsLine(d, data);
+  return `<a class="card${builtIn ? "" : " card--ours"}" href="#/place/${esc(d.id)}">
+    <div class="card-photo">${photoHtml(d, "small", true)}${m ? ratingBadge(m.rating) : oursBadge}${builtIn && d.gem ? `<span class="gem">Gem</span>` : ""}</div>
     <div class="card-body">
-      <div class="names"><b class="name">${esc(p.name)}</b> <span class="jp">${esc(p.jp)}</span></div>
-      <div class="muted small">${esc(p.area)} <span class="jp">${esc(jpArea(data, p.area))}</span></div>
-      <div class="reason small">${esc(line)}</div>
-      <div class="card-foot">${custom ? `<span class="small muted">${esc(categoryOf(p.category).name)}</span>` : temps(p, m!)}${statusHtml(p.id)}</div>
+      <div class="names"><b class="name">${esc(d.name)}</b> <span class="jp">${esc(d.jp)}</span></div>
+      <div class="muted small">${esc(where.en)} <span class="jp">${esc(where.jp)}</span></div>
+      <div class="reason small">${esc(m ? m.reason : d.desc || "Added by us")}</div>
+      ${spots ? `<div class="spots-line small muted">${spots}</div>` : ""}
+      <div class="card-foot">${m && builtIn ? temps(d, m) : ""}${statusHtml(d.id)}</div>
     </div>
   </a>`;
 }
 
 /** One row in the compact list. */
-function rowHtml(p: AnyPlace): string {
-  const custom = p.kind === "custom";
-  const line = custom ? p.desc || categoryOf(p.category).name : p.months[ui.month].reason;
-  return `<a class="row" href="#/place/${esc(p.id)}">
-    <div class="row-thumb">${photoHtml(p)}</div>
+function rowHtml(d: Destination, data: PlacesFile): string {
+  const m = isBuiltIn(d) ? d.months[ui.month] : null;
+  const spots = spotsLine(d, data);
+  return `<a class="row" href="#/place/${esc(d.id)}">
+    <div class="row-thumb">${photoHtml(d)}</div>
     <div class="row-main">
-      <div class="names"><b class="name">${esc(p.name)}</b> <span class="jp">${esc(p.jp)}</span></div>
-      <div class="muted small ellipsis">${esc(p.area)} · ${esc(line)}</div>
-      ${statusHtml(p.id) || `<span class="status status--none">Not marked</span>`}
+      <div class="names"><b class="name">${esc(d.name)}</b> <span class="jp">${esc(d.jp)}</span></div>
+      <div class="muted small ellipsis">${esc(whereLine(data, d).en)} · ${esc(m ? m.reason : d.desc || "Added by us")}</div>
+      ${statusHtml(d.id) || `<span class="status status--none">Not marked</span>`}${spots ? ` <span class="small muted">· ${spots}</span>` : ""}
     </div>
-    <div class="row-rate">${custom ? categoryBadge(p) : ratingBadge(p.months[ui.month].rating)}</div>
+    <div class="row-rate">${m ? ratingBadge(m.rating) : oursBadge}</div>
   </a>`;
 }
 
@@ -112,11 +116,11 @@ export function renderResults(el: HTMLElement, data: PlacesFile) {
   const { places, hiddenAvoid } = computeResults(data);
   const items =
     ui.view === "grid"
-      ? `<div class="grid">${places.map((p) => cardHtml(p, data)).join("")}</div>`
-      : `<div class="list">${places.map((p) => rowHtml(p)).join("")}</div>`;
+      ? `<div class="grid">${places.map((d) => cardHtml(d, data)).join("")}</div>`
+      : `<div class="list">${places.map((d) => rowHtml(d, data)).join("")}</div>`;
   const empty =
     places.length === 0
-      ? `<p class="empty">${ui.type === "ours" ? `No places of our own yet. Tap <b>＋ Add</b> below.` : "No places match. Try removing a filter."}</p>`
+      ? `<p class="empty">${ui.type === "ours" ? `No destinations of our own yet. Tap <b>＋ Add</b> below.` : "Nothing matches. Try removing a filter."}</p>`
       : "";
   const more = hiddenAvoid
     ? `<button class="link-btn" data-action="show-avoid">Show ${hiddenAvoid} place${hiddenAvoid > 1 ? "s" : ""} to avoid in ${MONTHS[ui.month]}</button>`

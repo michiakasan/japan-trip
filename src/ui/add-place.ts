@@ -1,10 +1,13 @@
-// Form for adding (or editing) one of our own places: restaurant, hotel, city…
+// Form for adding (or editing) a spot or one of our own destinations.
+//   #/add              new spot (or switch to "Destination")
+//   #/add/<destId>     new spot in that destination
+//   #/edit/<id>        edit one of our spots or destinations
 // The location is picked on a small map: tap the map, search for a name, or use "my location".
 
 import L from "leaflet";
-import type { CustomPlace, PlacesFile } from "../types";
-import { CATEGORIES, allAreas } from "../data/places";
-import { newCustomId, saveCustomPlace } from "../data/store";
+import type { AnyPlace, Destination, OwnDestination, PlacesFile, Spot } from "../types";
+import { SPOT_TYPES, allDestinations, allPrefectures, distanceKm, nearestDestination } from "../data/places";
+import { newDestinationId, newSpotId, saveDestination, saveSpot } from "../data/store";
 import { $, esc, toast } from "./dom";
 import { osmTiles } from "./map";
 import { backButton, showSheet } from "./sheet";
@@ -19,36 +22,50 @@ export function destroyPicker() {
   pin = null;
 }
 
-/** Distance between two points in km (the "haversine" formula). */
-function distanceKm(aLat: number, aLng: number, bLat: number, bLng: number) {
-  const rad = Math.PI / 180;
-  const dLat = (bLat - aLat) * rad, dLng = (bLng - aLng) * rad;
-  const h = Math.sin(dLat / 2) ** 2 + Math.cos(aLat * rad) * Math.cos(bLat * rad) * Math.sin(dLng / 2) ** 2;
-  return 12742 * Math.asin(Math.sqrt(h));
-}
-
-/** Opens the form. Pass `existing` to edit one of our places. */
-export function openPlaceForm(data: PlacesFile, existing?: CustomPlace) {
+/**
+ * Opens the form.
+ * @param existing  one of our spots or destinations to edit
+ * @param destinationId  for a new spot: the destination it belongs to
+ */
+export function openPlaceForm(data: PlacesFile, existing?: Spot | OwnDestination, destinationId?: string) {
   destroyPicker();
-  const p = existing;
-  const categories = CATEGORIES.map(
-    (c, i) => `<label class="cat-option">
-      <input type="radio" name="category" value="${c.id}" ${(p ? p.category === c.id : i === 0) ? "checked" : ""} />
-      <span>${esc(c.name)} <span class="jp">${esc(c.jp)}</span></span>
+  const spot = existing?.kind === "spot" ? existing : undefined;
+  const dest = existing?.kind === "custom" ? existing : undefined;
+  /** "spot" or "destination": what we're adding. Fixed when editing. */
+  let what: "spot" | "destination" = dest ? "destination" : "spot";
+  const destinations = allDestinations(data).sort((a, b) => a.name.localeCompare(b.name));
+  const startDest = destinations.find((d) => d.id === (spot?.destinationId || destinationId));
+  /** Did we pick the destination ourselves? If not, it follows the pin (nearest destination). */
+  let destChosen = !!startDest;
+
+  const types = SPOT_TYPES.map(
+    (t, i) => `<label class="cat-option">
+      <input type="radio" name="type" value="${t.id}" ${(spot ? spot.type === t.id : i === 0) ? "checked" : ""} />
+      <span>${t.icon} ${esc(t.name)} <span class="jp">${esc(t.jp)}</span></span>
     </label>`,
   ).join("");
-  const areaOptions = allAreas(data).map((a) => `<option value="${esc(a.name)}">${esc(a.jp)}</option>`).join("");
+  const destOptions = destinations
+    .map((d) => `<option value="${esc(d.id)}" ${startDest?.id === d.id ? "selected" : ""}>${esc(d.name)} ${esc(d.jp)}</option>`)
+    .join("");
+  const prefOptions = allPrefectures(data).map((p) => `<option value="${esc(p.name)}">${esc(p.jp)}</option>`).join("");
+  const backTo = existing ? `#/place/${existing.id}` : destinationId ? `#/place/${destinationId}` : undefined;
+  const title = existing ? `Edit ${what}` : startDest ? `Add a spot in ${startDest.name}` : "Add";
 
   const sheet = $("#sheet");
   sheet.innerHTML = `
-    <div class="form-top">${backButton("Cancel", p ? `#/place/${p.id}` : undefined)}<h2>${p ? "Edit place" : "Add a place"} <span class="jp">${p ? "編集" : "追加"}</span></h2></div>
+    <div class="form-top">${backButton("Cancel", backTo)}<h2>${esc(title)} <span class="jp">${existing ? "編集" : "追加"}</span></h2></div>
     <form class="place-form sheet-body" novalidate>
+      ${existing || startDest ? "" : `
+      <div class="seg" role="radiogroup" aria-label="What to add">
+        <label><input type="radio" name="what" value="spot" checked /><span>Spot <span class="jp">スポット</span><small>beach, temple, restaurant…</small></span></label>
+        <label><input type="radio" name="what" value="destination" /><span>Destination <span class="jp">行き先</span><small>a town or island</small></span></label>
+      </div>`}
       <label class="field"><span class="field-label">Name *</span>
-        <input name="name" required maxlength="120" value="${esc(p?.name)}" placeholder="e.g. Yunangi, Hotel Patina" /></label>
+        <input name="name" required maxlength="120" value="${esc(existing?.name)}" placeholder="e.g. Yunangi, Kabira Bay" /></label>
       <label class="field"><span class="field-label">Japanese name (optional)</span>
-        <input name="jp" maxlength="120" value="${esc(p?.jp)}" placeholder="e.g. ゆうなんぎい" /></label>
+        <input name="jp" maxlength="120" value="${esc(existing?.jp)}" placeholder="e.g. ゆうなんぎい" /></label>
 
-      <fieldset class="field"><legend class="field-label">Type</legend><div class="cat-options">${categories}</div></fieldset>
+      <fieldset class="field only-spot"><legend class="field-label">Type</legend><div class="cat-options">${types}</div></fieldset>
 
       <div class="field">
         <span class="field-label">Location *</span>
@@ -60,27 +77,52 @@ export function openPlaceForm(data: PlacesFile, existing?: CustomPlace) {
         <div class="loc-results" id="locResults"></div>
         <div id="pickMap" class="pick-map" aria-label="Map: tap to set the location"></div>
         <div class="loc-row">
-          <span class="muted small" id="locText">${p ? "Drag the pin or tap the map to move it." : "Tap the map to set the pin."}</span>
+          <span class="muted small" id="locText">${existing ? "Drag the pin or tap the map to move it." : "Tap the map to set the pin."}</span>
           <button type="button" class="btn-secondary" data-form="here">Use my location</button>
         </div>
       </div>
 
-      <label class="field"><span class="field-label">Area</span>
-        <input name="area" list="areaList" maxlength="60" value="${esc(p?.area)}" placeholder="e.g. Yaeyama, Kansai, Hokkaido" />
-        <datalist id="areaList">${areaOptions}</datalist></label>
-      <label class="field"><span class="field-label">Why we saved it (optional)</span>
-        <textarea name="desc" rows="2" maxlength="500" placeholder="e.g. Best soki soba, cash only">${esc(p?.desc)}</textarea></label>
+      <label class="field only-spot"><span class="field-label">Destination *</span>
+        <select name="destination"><option value="">(the nearest one to the pin)</option>${destOptions}</select>
+        <span class="muted small" id="destHint"></span></label>
+
+      <label class="field only-dest"><span class="field-label">Prefecture</span>
+        <input name="prefecture" list="prefList" maxlength="60" value="${esc(dest?.prefecture)}" placeholder="e.g. Okinawa, Hokkaido" />
+        <datalist id="prefList">${prefOptions}</datalist></label>
+      <label class="field"><span class="field-label">Note (optional)</span>
+        <textarea name="desc" rows="2" maxlength="500" placeholder="e.g. Best soki soba, cash only">${esc(existing?.desc)}</textarea></label>
 
       <p class="form-error" id="formError" role="alert"></p>
-      <button class="btn-primary" type="submit">${p ? "Save changes" : "Add place"}</button>
+      <button class="btn-primary" type="submit">${existing ? "Save changes" : "Add"}</button>
     </form>`;
   showSheet();
 
-  // ----- the picker map -----
-  picker = L.map("pickMap").setView(p ? [p.lat, p.lng] : [34.5, 135], p ? 15 : 5);
-  osmTiles().addTo(picker);
   const form = sheet.querySelector<HTMLFormElement>("form")!;
-  const areaInput = form.elements.namedItem("area") as HTMLInputElement;
+  const destSelect = form.elements.namedItem("destination") as HTMLSelectElement;
+  const prefInput = form.elements.namedItem("prefecture") as HTMLInputElement;
+
+  /** Shows the fields for a spot or for a destination. */
+  const showFields = () => {
+    form.querySelectorAll<HTMLElement>(".only-spot").forEach((el) => (el.hidden = what !== "spot"));
+    form.querySelectorAll<HTMLElement>(".only-dest").forEach((el) => (el.hidden = what !== "destination"));
+  };
+  showFields();
+  form.querySelectorAll<HTMLInputElement>("input[name=what]").forEach((r) =>
+    r.addEventListener("change", () => {
+      what = r.value as typeof what;
+      showFields();
+    }),
+  );
+  destSelect.addEventListener("change", () => (destChosen = !!destSelect.value));
+
+  // ----- the picker map -----
+  const start: [number, number, number] = existing
+    ? [existing.lat, existing.lng, 15]
+    : startDest
+      ? [startDest.lat, startDest.lng, startDest.kind === "island" ? 12 : 13]
+      : [34.5, 135, 5];
+  picker = L.map("pickMap").setView([start[0], start[1]], start[2]);
+  osmTiles().addTo(picker);
 
   const setPin = (lat: number, lng: number, zoom?: number) => {
     if (!pin) {
@@ -90,18 +132,17 @@ export function openPlaceForm(data: PlacesFile, existing?: CustomPlace) {
     if (zoom) picker!.setView([lat, lng], zoom);
     describe();
   };
-  // Shows the coordinates, and fills in the area from the nearest built-in place if it's close.
+  /** Shows the coordinates; picks the nearest destination (spot) or fills in the prefecture (destination). */
   const describe = () => {
     const { lat, lng } = pin!.getLatLng();
     $("#locText").textContent = `Pin at ${lat.toFixed(4)}, ${lng.toFixed(4)}. Drag it to adjust.`;
-    if (!areaInput.value) {
-      const nearest = data.places
-        .map((b) => ({ b, km: distanceKm(lat, lng, b.lat, b.lng) }))
-        .sort((x, y) => x.km - y.km)[0];
-      if (nearest && nearest.km < 60) areaInput.value = nearest.b.area;
-    }
+    const near: Destination = nearestDestination(data, lat, lng);
+    const km = distanceKm(lat, lng, near.lat, near.lng);
+    if (!destChosen) destSelect.value = near.id;
+    $("#destHint").textContent = destChosen ? "" : `Nearest: ${near.name} (${Math.round(km)} km). Change it if it belongs somewhere else.`;
+    if (!prefInput.value && km < 60) prefInput.value = near.prefecture;
   };
-  if (p) setPin(p.lat, p.lng);
+  if (existing) setPin(existing.lat, existing.lng);
   picker.on("click", (e: L.LeafletMouseEvent) => setPin(e.latlng.lat, e.latlng.lng));
   // The sheet slides in with an animation; measure the map again once it has its final size.
   setTimeout(() => picker?.invalidateSize(), 300);
@@ -114,7 +155,10 @@ export function openPlaceForm(data: PlacesFile, existing?: CustomPlace) {
     box.innerHTML = `<p class="muted small">Searching…</p>`;
     try {
       // Nominatim = OpenStreetMap's free place search. Only used when we press "Find".
-      const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=5&countrycodes=jp&accept-language=en&q=${encodeURIComponent(q)}`;
+      // Results near the map's current view come first.
+      const b = picker!.getBounds();
+      const viewbox = [b.getWest(), b.getNorth(), b.getEast(), b.getSouth()].map((n) => n.toFixed(4)).join(",");
+      const url = `https://nominatim.openstreetmap.org/search?format=jsonv2&limit=5&countrycodes=jp&accept-language=en&viewbox=${viewbox}&q=${encodeURIComponent(q)}`;
       const results: Array<{ display_name: string; name: string; lat: string; lon: string }> = await (await fetch(url)).json();
       box.innerHTML = results.length
         ? results
@@ -122,9 +166,9 @@ export function openPlaceForm(data: PlacesFile, existing?: CustomPlace) {
             .join("")
         : `<p class="muted small">Nothing found. Try fewer words, or tap the map instead.</p>`;
       box.onclick = (e) => {
-        const b = (e.target as HTMLElement).closest<HTMLElement>("[data-i]");
-        if (!b) return;
-        const r = results[Number(b.dataset.i)];
+        const btn = (e.target as HTMLElement).closest<HTMLElement>("[data-i]");
+        if (!btn) return;
+        const r = results[Number(btn.dataset.i)];
         setPin(Number(r.lat), Number(r.lon), 16);
         const nameInput = form.elements.namedItem("name") as HTMLInputElement;
         if (!nameInput.value && r.name) nameInput.value = r.name;
@@ -157,16 +201,12 @@ export function openPlaceForm(data: PlacesFile, existing?: CustomPlace) {
     const f = new FormData(form);
     const name = String(f.get("name") ?? "").trim();
     const error = $("#formError");
-    if (!name) return void (error.textContent = "Please give the place a name.");
+    if (!name) return void (error.textContent = "Please give it a name.");
     if (!pin) return void (error.textContent = "Please set the location on the map.");
     const { lat, lng } = pin.getLatLng();
-    const place: CustomPlace = {
-      id: p?.id ?? newCustomId(),
-      kind: "custom",
-      category: f.get("category") as CustomPlace["category"],
+    const common = {
       name,
       jp: String(f.get("jp") ?? "").trim(),
-      area: String(f.get("area") ?? "").trim(),
       lat: Number(lat.toFixed(6)),
       lng: Number(lng.toFixed(6)),
       desc: String(f.get("desc") ?? "").trim(),
@@ -174,12 +214,27 @@ export function openPlaceForm(data: PlacesFile, existing?: CustomPlace) {
     const button = form.querySelector<HTMLButtonElement>("button[type=submit]")!;
     button.disabled = true;
     try {
-      await saveCustomPlace(place);
-      toast(p ? "Saved" : `${place.name} added`);
-      location.hash = `#/place/${place.id}`;
+      let id: string;
+      if (what === "spot") {
+        const destinationId = destSelect.value || nearestDestination(data, lat, lng).id;
+        const s: Spot = { ...common, id: spot?.id ?? newSpotId(), kind: "spot", builtIn: false, destinationId, type: f.get("type") as Spot["type"] };
+        await saveSpot(s);
+        id = s.id;
+      } else {
+        const d: OwnDestination = { ...common, id: dest?.id ?? newDestinationId(), kind: "custom", prefecture: String(f.get("prefecture") ?? "").trim() };
+        await saveDestination(d);
+        id = d.id;
+      }
+      toast(existing ? "Saved" : `${name} added`);
+      location.hash = `#/place/${id}`;
     } catch (err) {
       error.textContent = (err as Error).message || "Could not save";
       button.disabled = false;
     }
   });
+}
+
+/** Is this one of the things the form can edit (our own spot or destination)? */
+export function isEditable(p: AnyPlace | undefined): p is Spot | OwnDestination {
+  return !!p && ((p.kind === "spot" && !p.builtIn) || p.kind === "custom");
 }
