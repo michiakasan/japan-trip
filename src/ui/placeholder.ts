@@ -2,7 +2,7 @@
 // landscape drawn with <canvas> (sea, beach, jungle, volcano, city…), based on
 // the drawings in the old prototype.
 
-import type { AnyPlace, Category } from "../types";
+import type { AnyPlace, Category, CommonsPhoto } from "../types";
 import { esc } from "./dom";
 import { coverFor } from "../data/store";
 
@@ -199,7 +199,11 @@ export function photoHtml(place: AnyPlace, size: "small" | "large" = "small", wi
 /** Full credit with links, for the place page. */
 export function creditHtml(place: AnyPlace): string {
   const p = place.kind === "custom" ? null : place.photo;
-  if (!p) return "";
+  return p ? commonsCredit(p) : "";
+}
+
+/** "Photo: <author>, <licence>, via Wikimedia Commons" with links, for any Commons photo. */
+export function commonsCredit(p: CommonsPhoto): string {
   const license = p.licenseUrl ? `<a href="${esc(p.licenseUrl)}" target="_blank" rel="noopener">${esc(p.license)}</a>` : esc(p.license);
   return `Photo: <a href="${esc(p.sourcePage)}" target="_blank" rel="noopener">${esc(p.author)}</a>, ${license}, via Wikimedia Commons`;
 }

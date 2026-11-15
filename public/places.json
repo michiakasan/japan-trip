@@ -52,6 +52,22 @@
     {
       "name": "Hiroshima",
       "jp": "広島"
+    },
+    {
+      "name": "Wakayama",
+      "jp": "和歌山"
+    },
+    {
+      "name": "Yamanashi",
+      "jp": "山梨"
+    },
+    {
+      "name": "Toyama",
+      "jp": "富山"
+    },
+    {
+      "name": "Ishikawa",
+      "jp": "石川"
     }
   ],
   "features": [
@@ -89,6 +105,11 @@
       "id": "food",
       "name": "Food",
       "jp": "グルメ"
+    },
+    {
+      "id": "ryokan",
+      "name": "Ryokan stays",
+      "jp": "旅館"
     }
   ],
   "places": [
@@ -209,7 +230,36 @@
         "license": "CC BY 2.5",
         "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Kabira_Bay_Ishigaki_Island40bs3s4592.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Kabira Bay 33.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Kabira_Bay_33.jpg/1280px-Kabira_Bay_33.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Kabira_Bay_33.jpg/500px-Kabira_Bay_33.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "RitikaPahwa4444",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Kabira_Bay_33.jpg"
+        },
+        {
+          "file": "Cape Tamatori, Ishigaki.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Cape_Tamatori%2C_Ishigaki.jpg/1280px-Cape_Tamatori%2C_Ishigaki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Cape_Tamatori%2C_Ishigaki.jpg/500px-Cape_Tamatori%2C_Ishigaki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Kzaral",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Cape_Tamatori,_Ishigaki.jpg"
+        },
+        {
+          "file": "Yonehara Beach 23.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Yonehara_Beach_23.jpg/1280px-Yonehara_Beach_23.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Yonehara_Beach_23.jpg/500px-Yonehara_Beach_23.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Syced",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Yonehara_Beach_23.jpg"
+        }
+      ]
     },
     {
       "id": "taketomi",
@@ -326,7 +376,36 @@
         "license": "CC BY-SA 3.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Hoshinoya_Okinawa.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Yubu Island Okinawa Pref Japan24n4200.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Yubu_Island_Okinawa_Pref_Japan24n4200.jpg/1280px-Yubu_Island_Okinawa_Pref_Japan24n4200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Yubu_Island_Okinawa_Pref_Japan24n4200.jpg/500px-Yubu_Island_Okinawa_Pref_Japan24n4200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "663highland",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Yubu_Island_Okinawa_Pref_Japan24n4200.jpg"
+        },
+        {
+          "file": "Taketomi kondoi hama.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Taketomi_kondoi_hama.jpg/1280px-Taketomi_kondoi_hama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Taketomi_kondoi_hama.jpg/500px-Taketomi_kondoi_hama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Paipateroma",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Taketomi_kondoi_hama.jpg"
+        },
+        {
+          "file": "Nagomi tower, Taketomi island, Okinawa - Sep 3, 2011.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Nagomi_tower%2C_Taketomi_island%2C_Okinawa_-_Sep_3%2C_2011.jpg/1280px-Nagomi_tower%2C_Taketomi_island%2C_Okinawa_-_Sep_3%2C_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Nagomi_tower%2C_Taketomi_island%2C_Okinawa_-_Sep_3%2C_2011.jpg/500px-Nagomi_tower%2C_Taketomi_island%2C_Okinawa_-_Sep_3%2C_2011.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Ippei Suzuki",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Nagomi_tower,_Taketomi_island,_Okinawa_-_Sep_3,_2011.jpg"
+        }
+      ]
     },
     {
       "id": "iriomote",
@@ -444,7 +523,36 @@
         "license": "CC BY-SA 3.0",
         "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Iriomote_mangrove_2007-04-04.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Iriomote pinaisara fall.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Iriomote_pinaisara_fall.jpg/1280px-Iriomote_pinaisara_fall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Iriomote_pinaisara_fall.jpg/500px-Iriomote_pinaisara_fall.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Paipateroma",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Iriomote_pinaisara_fall.jpg"
+        },
+        {
+          "file": "Urauchi River Iriomote 2007-04-05.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Urauchi_River_Iriomote_2007-04-05.jpg/1280px-Urauchi_River_Iriomote_2007-04-05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Urauchi_River_Iriomote_2007-04-05.jpg/500px-Urauchi_River_Iriomote_2007-04-05.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Geomr",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Urauchi_River_Iriomote_2007-04-05.jpg"
+        },
+        {
+          "file": "Hoshizuna-no-hama Iriomote Island02bs3s4500.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Hoshizuna-no-hama_Iriomote_Island02bs3s4500.jpg/1280px-Hoshizuna-no-hama_Iriomote_Island02bs3s4500.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Hoshizuna-no-hama_Iriomote_Island02bs3s4500.jpg/500px-Hoshizuna-no-hama_Iriomote_Island02bs3s4500.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "663highland",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Hoshizuna-no-hama_Iriomote_Island02bs3s4500.jpg"
+        }
+      ]
     },
     {
       "id": "kohama",
@@ -561,7 +669,36 @@
         "license": "CC BY 2.0",
         "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Ishigaki_island_Taketomi_and_Kohama_2014.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Road - Kohama-jima, Okinawa.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Road_-_Kohama-jima%2C_Okinawa.jpg/1280px-Road_-_Kohama-jima%2C_Okinawa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Road_-_Kohama-jima%2C_Okinawa.jpg/500px-Road_-_Kohama-jima%2C_Okinawa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Ken FUNAKOSHI from Yokohama, Japan",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Road_-_Kohama-jima,_Okinawa.jpg"
+        },
+        {
+          "file": "KohamaSugarRoad.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/KohamaSugarRoad.jpg/1280px-KohamaSugarRoad.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/KohamaSugarRoad.jpg/500px-KohamaSugarRoad.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Torbenbrinker",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:KohamaSugarRoad.jpg"
+        },
+        {
+          "file": "KohamaMountain.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/KohamaMountain.jpg/1280px-KohamaMountain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/KohamaMountain.jpg/500px-KohamaMountain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Torbenbrinker",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:KohamaMountain.jpg"
+        }
+      ]
     },
     {
       "id": "kuroshima",
@@ -679,7 +816,36 @@
         "license": "CC BY-SA 3.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Kuroshima_beach.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Yaeyama kuroshima cattle ranch.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Yaeyama_kuroshima_cattle_ranch.jpg/1280px-Yaeyama_kuroshima_cattle_ranch.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Yaeyama_kuroshima_cattle_ranch.jpg/500px-Yaeyama_kuroshima_cattle_ranch.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Paipateroma",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Yaeyama_kuroshima_cattle_ranch.jpg"
+        },
+        {
+          "file": "Coconut Crab in Kuroshima Okinawa Prefecture.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Coconut_Crab_in_Kuroshima_Okinawa_Prefecture.jpg/1280px-Coconut_Crab_in_Kuroshima_Okinawa_Prefecture.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Coconut_Crab_in_Kuroshima_Okinawa_Prefecture.jpg/500px-Coconut_Crab_in_Kuroshima_Okinawa_Prefecture.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Kentaro Ohno",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Coconut_Crab_in_Kuroshima_Okinawa_Prefecture.jpg"
+        },
+        {
+          "file": "Yaeyama kuroshima beef cattle.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Yaeyama_kuroshima_beef_cattle.jpg/1280px-Yaeyama_kuroshima_beef_cattle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Yaeyama_kuroshima_beef_cattle.jpg/500px-Yaeyama_kuroshima_beef_cattle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Paipateroma",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Yaeyama_kuroshima_beef_cattle.jpg"
+        }
+      ]
     },
     {
       "id": "hateruma",
@@ -797,7 +963,36 @@
         "license": "CC BY-SA 3.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:HaterumaNorthCoast.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Hateruma-Southernmost-signs-in-Japan-2019.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Hateruma-Southernmost-signs-in-Japan-2019.jpg/1280px-Hateruma-Southernmost-signs-in-Japan-2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Hateruma-Southernmost-signs-in-Japan-2019.jpg/500px-Hateruma-Southernmost-signs-in-Japan-2019.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Tokyo-Good",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Hateruma-Southernmost-signs-in-Japan-2019.jpg"
+        },
+        {
+          "file": "Aerial photo of the Hateruma Island village.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Aerial_photo_of_the_Hateruma_Island_village.jpg/1280px-Aerial_photo_of_the_Hateruma_Island_village.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Aerial_photo_of_the_Hateruma_Island_village.jpg/500px-Aerial_photo_of_the_Hateruma_Island_village.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "ブルーノ・プラス",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Aerial_photo_of_the_Hateruma_Island_village.jpg"
+        },
+        {
+          "file": "Hateruma hateruma no hi 1.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Hateruma_hateruma_no_hi_1.jpg/1280px-Hateruma_hateruma_no_hi_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Hateruma_hateruma_no_hi_1.jpg/500px-Hateruma_hateruma_no_hi_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Paipateroma",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Hateruma_hateruma_no_hi_1.jpg"
+        }
+      ]
     },
     {
       "id": "yonaguni",
@@ -914,7 +1109,36 @@
         "license": "CC BY-SA 3.0",
         "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Yonaguni_irizaki.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Yonaguni.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Yonaguni.jpg/1280px-Yonaguni.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Yonaguni.jpg/500px-Yonaguni.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "sota",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Yonaguni.jpg"
+        },
+        {
+          "file": "Tachigami-iwa from Nearest Viewing Site.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Tachigami-iwa_from_Nearest_Viewing_Site.jpg/1280px-Tachigami-iwa_from_Nearest_Viewing_Site.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Tachigami-iwa_from_Nearest_Viewing_Site.jpg/500px-Tachigami-iwa_from_Nearest_Viewing_Site.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Melkov",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Tachigami-iwa_from_Nearest_Viewing_Site.jpg"
+        },
+        {
+          "file": "Irizaki from Kubura-bari shore.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Irizaki_from_Kubura-bari_shore.jpg/1280px-Irizaki_from_Kubura-bari_shore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Irizaki_from_Kubura-bari_shore.jpg/500px-Irizaki_from_Kubura-bari_shore.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Melkov",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Irizaki_from_Kubura-bari_shore.jpg"
+        }
+      ]
     },
     {
       "id": "miyakojima",
@@ -1032,7 +1256,36 @@
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Miyakojima_sky_view.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "202408 Yonaha Maehama Beach around 11 o'clock in summer (JK-DSC0765).jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/202408_Yonaha_Maehama_Beach_around_11_o%27clock_in_summer_%28JK-DSC0765%29.jpg/1280px-202408_Yonaha_Maehama_Beach_around_11_o%27clock_in_summer_%28JK-DSC0765%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/202408_Yonaha_Maehama_Beach_around_11_o%27clock_in_summer_%28JK-DSC0765%29.jpg/500px-202408_Yonaha_Maehama_Beach_around_11_o%27clock_in_summer_%28JK-DSC0765%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Junyu-K",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:202408_Yonaha_Maehama_Beach_around_11_o%27clock_in_summer_(JK-DSC0765).jpg"
+        },
+        {
+          "file": "Miyako higashi hennazaki.JPG",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Miyako_higashi_hennazaki.JPG/1280px-Miyako_higashi_hennazaki.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Miyako_higashi_hennazaki.JPG/500px-Miyako_higashi_hennazaki.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Metatron",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Miyako_higashi_hennazaki.JPG"
+        },
+        {
+          "file": "Ikema bridge in Miyako (52203264217).jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Ikema_bridge_in_Miyako_%2852203264217%29.jpg/1280px-Ikema_bridge_in_Miyako_%2852203264217%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Ikema_bridge_in_Miyako_%2852203264217%29.jpg/500px-Ikema_bridge_in_Miyako_%2852203264217%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Raita Futo from Tokyo, Japan",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Ikema_bridge_in_Miyako_(52203264217).jpg"
+        }
+      ]
     },
     {
       "id": "irabu",
@@ -1149,7 +1402,36 @@
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Miyako_irabu_ohashi_2014_1.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Irabu Bridge (52204774130).jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Irabu_Bridge_%2852204774130%29.jpg/1280px-Irabu_Bridge_%2852204774130%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Irabu_Bridge_%2852204774130%29.jpg/500px-Irabu_Bridge_%2852204774130%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Raita Futo from Tokyo, Japan",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Irabu_Bridge_(52204774130).jpg"
+        },
+        {
+          "file": "佐和田の浜.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/%E4%BD%90%E5%92%8C%E7%94%B0%E3%81%AE%E6%B5%9C.jpg/1280px-%E4%BD%90%E5%92%8C%E7%94%B0%E3%81%AE%E6%B5%9C.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/%E4%BD%90%E5%92%8C%E7%94%B0%E3%81%AE%E6%B5%9C.jpg/500px-%E4%BD%90%E5%92%8C%E7%94%B0%E3%81%AE%E6%B5%9C.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "sota",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:%E4%BD%90%E5%92%8C%E7%94%B0%E3%81%AE%E6%B5%9C.jpg"
+        },
+        {
+          "file": "Miyako irabu bridge.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Miyako_irabu_bridge.jpg/1280px-Miyako_irabu_bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Miyako_irabu_bridge.jpg/500px-Miyako_irabu_bridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Paipateroma",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Miyako_irabu_bridge.jpg"
+        }
+      ]
     },
     {
       "id": "tarama",
@@ -1267,7 +1549,36 @@
         "license": "CC BY 2.0",
         "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Tarama_Island_beach_front.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Tarama.JPG",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Tarama.JPG/1280px-Tarama.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Tarama.JPG/500px-Tarama.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Metatron",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Tarama.JPG"
+        },
+        {
+          "file": "Shiokawa udaki.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Shiokawa_udaki.jpg/1280px-Shiokawa_udaki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Shiokawa_udaki.jpg/500px-Shiokawa_udaki.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "ブルーノ・プラス",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Shiokawa_udaki.jpg"
+        },
+        {
+          "file": "Island Road Tarama Island.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Island_Road_Tarama_Island.jpg/1280px-Island_Road_Tarama_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Island_Road_Tarama_Island.jpg/500px-Island_Road_Tarama_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Kzaral",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Island_Road_Tarama_Island.jpg"
+        }
+      ]
     },
     {
       "id": "kerama",
@@ -1384,7 +1695,36 @@
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Okinawa_kerama_islands.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Furuzamami beach Okinawa Zamami.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Furuzamami_beach_Okinawa_Zamami.jpg/1280px-Furuzamami_beach_Okinawa_Zamami.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Furuzamami_beach_Okinawa_Zamami.jpg/500px-Furuzamami_beach_Okinawa_Zamami.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Hashi photo",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Furuzamami_beach_Okinawa_Zamami.jpg"
+        },
+        {
+          "file": "Tokashiku Beach On Tokashiki Island 2009 (7372).JPG",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Tokashiku_Beach_On_Tokashiki_Island_2009_%287372%29.JPG/1280px-Tokashiku_Beach_On_Tokashiki_Island_2009_%287372%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Tokashiku_Beach_On_Tokashiki_Island_2009_%287372%29.JPG/500px-Tokashiku_Beach_On_Tokashiki_Island_2009_%287372%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "TomazVajngerl",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Tokashiku_Beach_On_Tokashiki_Island_2009_(7372).JPG"
+        },
+        {
+          "file": "Kerama deer on Aka Island.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Kerama_deer_on_Aka_Island.jpg/1280px-Kerama_deer_on_Aka_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Kerama_deer_on_Aka_Island.jpg/500px-Kerama_deer_on_Aka_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "ブルーノ・プラス",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Kerama_deer_on_Aka_Island.jpg"
+        }
+      ]
     },
     {
       "id": "kumejima",
@@ -1501,7 +1841,36 @@
         "license": "CC BY 3.0",
         "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Kumejima.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Okinawa-kumejima Hatenohama Beach-xl.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Okinawa-kumejima_Hatenohama_Beach-xl.jpg/1280px-Okinawa-kumejima_Hatenohama_Beach-xl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Okinawa-kumejima_Hatenohama_Beach-xl.jpg/500px-Okinawa-kumejima_Hatenohama_Beach-xl.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Kumejima93_OKINAWA",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Okinawa-kumejima_Hatenohama_Beach-xl.jpg"
+        },
+        {
+          "file": "Hatenohama.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Hatenohama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Hatenohama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "author": "Snap55 at Japanese Wikipedia",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Hatenohama.jpg"
+        },
+        {
+          "file": "Tounnahajou-Kumejima, Okinawa（登武那覇城からみる奥武島、はての浜）DSCF6530.JPG",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Tounnahajou-Kumejima%2C_Okinawa%EF%BC%88%E7%99%BB%E6%AD%A6%E9%82%A3%E8%A6%87%E5%9F%8E%E3%81%8B%E3%82%89%E3%81%BF%E3%82%8B%E5%A5%A5%E6%AD%A6%E5%B3%B6%E3%80%81%E3%81%AF%E3%81%A6%E3%81%AE%E6%B5%9C%EF%BC%89DSCF6530.JPG/1280px-Tounnahajou-Kumejima%2C_Okinawa%EF%BC%88%E7%99%BB%E6%AD%A6%E9%82%A3%E8%A6%87%E5%9F%8E%E3%81%8B%E3%82%89%E3%81%BF%E3%82%8B%E5%A5%A5%E6%AD%A6%E5%B3%B6%E3%80%81%E3%81%AF%E3%81%A6%E3%81%AE%E6%B5%9C%EF%BC%89DSCF6530.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Tounnahajou-Kumejima%2C_Okinawa%EF%BC%88%E7%99%BB%E6%AD%A6%E9%82%A3%E8%A6%87%E5%9F%8E%E3%81%8B%E3%82%89%E3%81%BF%E3%82%8B%E5%A5%A5%E6%AD%A6%E5%B3%B6%E3%80%81%E3%81%AF%E3%81%A6%E3%81%AE%E6%B5%9C%EF%BC%89DSCF6530.JPG/500px-Tounnahajou-Kumejima%2C_Okinawa%EF%BC%88%E7%99%BB%E6%AD%A6%E9%82%A3%E8%A6%87%E5%9F%8E%E3%81%8B%E3%82%89%E3%81%BF%E3%82%8B%E5%A5%A5%E6%AD%A6%E5%B3%B6%E3%80%81%E3%81%AF%E3%81%A6%E3%81%AE%E6%B5%9C%EF%BC%89DSCF6530.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "松岡明芳",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Tounnahajou-Kumejima,_Okinawa%EF%BC%88%E7%99%BB%E6%AD%A6%E9%82%A3%E8%A6%87%E5%9F%8E%E3%81%8B%E3%82%89%E3%81%BF%E3%82%8B%E5%A5%A5%E6%AD%A6%E5%B3%B6%E3%80%81%E3%81%AF%E3%81%A6%E3%81%AE%E6%B5%9C%EF%BC%89DSCF6530.JPG"
+        }
+      ]
     },
     {
       "id": "minnajima",
@@ -1619,7 +1988,36 @@
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Minna_Island_beach.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Minna Island Motobu 202101.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Minna_Island_Motobu_202101.jpg/1280px-Minna_Island_Motobu_202101.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Minna_Island_Motobu_202101.jpg/500px-Minna_Island_Motobu_202101.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Kugel",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Minna_Island_Motobu_202101.jpg"
+        },
+        {
+          "file": "Minnajima beach, Okinawa.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Minnajima_beach%2C_Okinawa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Minnajima_beach%2C_Okinawa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "author": "Snap55 at Japanese Wikipedia",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Minnajima_beach,_Okinawa.jpg"
+        },
+        {
+          "file": "水納島の海岸 20160121 - panoramio.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/%E6%B0%B4%E7%B4%8D%E5%B3%B6%E3%81%AE%E6%B5%B7%E5%B2%B8_20160121_-_panoramio.jpg/1280px-%E6%B0%B4%E7%B4%8D%E5%B3%B6%E3%81%AE%E6%B5%B7%E5%B2%B8_20160121_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/%E6%B0%B4%E7%B4%8D%E5%B3%B6%E3%81%AE%E6%B5%B7%E5%B2%B8_20160121_-_panoramio.jpg/500px-%E6%B0%B4%E7%B4%8D%E5%B3%B6%E3%81%AE%E6%B5%B7%E5%B2%B8_20160121_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "690 Noda",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:%E6%B0%B4%E7%B4%8D%E5%B3%B6%E3%81%AE%E6%B5%B7%E5%B2%B8_20160121_-_panoramio.jpg"
+        }
+      ]
     },
     {
       "id": "iheya",
@@ -1736,7 +2134,18 @@
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Gakiya,_Iheya_Island_202211_02.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Izena Island seen from Ferry Iheya III 202211 02.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Izena_Island_seen_from_Ferry_Iheya_III_202211_02.jpg/1280px-Izena_Island_seen_from_Ferry_Iheya_III_202211_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Izena_Island_seen_from_Ferry_Iheya_III_202211_02.jpg/500px-Izena_Island_seen_from_Ferry_Iheya_III_202211_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Kugel",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Izena_Island_seen_from_Ferry_Iheya_III_202211_02.jpg"
+        }
+      ]
     },
     {
       "id": "yoron",
@@ -1854,7 +2263,36 @@
         "license": "CC BY 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:%E4%B8%8E%E8%AB%96%E5%B3%B6%E3%81%AE%E3%83%93%E3%83%BC%E3%83%81.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Yoron Island (8407010599).jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Yoron_Island_%288407010599%29.jpg/1280px-Yoron_Island_%288407010599%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Yoron_Island_%288407010599%29.jpg/500px-Yoron_Island_%288407010599%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Kzaral",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Yoron_Island_(8407010599).jpg"
+        },
+        {
+          "file": "Yoron port.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Yoron_port.jpg/1280px-Yoron_port.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Yoron_port.jpg/500px-Yoron_port.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "ブルーノ・プラス",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Yoron_port.jpg"
+        },
+        {
+          "file": "Yoron Island seen from Mount Katsuu 202607.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Yoron_Island_seen_from_Mount_Katsuu_202607.jpg/1280px-Yoron_Island_seen_from_Mount_Katsuu_202607.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Yoron_Island_seen_from_Mount_Katsuu_202607.jpg/500px-Yoron_Island_seen_from_Mount_Katsuu_202607.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Kugel",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Yoron_Island_seen_from_Mount_Katsuu_202607.jpg"
+        }
+      ]
     },
     {
       "id": "okinoerabu",
@@ -1971,7 +2409,18 @@
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Amami_okinoerabu.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Raised warehouse on Okinoerabu Island.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Raised_warehouse_on_Okinoerabu_Island.jpg/1280px-Raised_warehouse_on_Okinoerabu_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Raised_warehouse_on_Okinoerabu_Island.jpg/500px-Raised_warehouse_on_Okinoerabu_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "タクナワン",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Raised_warehouse_on_Okinoerabu_Island.jpg"
+        }
+      ]
     },
     {
       "id": "tokunoshima",
@@ -2088,7 +2537,36 @@
         "license": "CC BY-SA 3.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Tokunoshima_zenkei.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "松原闘牛場.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/%E6%9D%BE%E5%8E%9F%E9%97%98%E7%89%9B%E5%A0%B4.jpg/1280px-%E6%9D%BE%E5%8E%9F%E9%97%98%E7%89%9B%E5%A0%B4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/%E6%9D%BE%E5%8E%9F%E9%97%98%E7%89%9B%E5%A0%B4.jpg/500px-%E6%9D%BE%E5%8E%9F%E9%97%98%E7%89%9B%E5%A0%B4.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "CyberOyaji",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:%E6%9D%BE%E5%8E%9F%E9%97%98%E7%89%9B%E5%A0%B4.jpg"
+        },
+        {
+          "file": "徳之島町畦海水浴場 - Panoramio 52008539.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/%E5%BE%B3%E4%B9%8B%E5%B3%B6%E7%94%BA%E7%95%A6%E6%B5%B7%E6%B0%B4%E6%B5%B4%E5%A0%B4_-_Panoramio_52008539.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "thumb": "https://upload.wikimedia.org/wikipedia/commons/4/4f/%E5%BE%B3%E4%B9%8B%E5%B3%B6%E7%94%BA%E7%95%A6%E6%B5%B7%E6%B0%B4%E6%B5%B4%E5%A0%B4_-_Panoramio_52008539.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "author": "CyberOyaji",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:%E5%BE%B3%E4%B9%8B%E5%B3%B6%E7%94%BA%E7%95%A6%E6%B5%B7%E6%B0%B4%E6%B5%B4%E5%A0%B4_-_Panoramio_52008539.jpg"
+        },
+        {
+          "file": "Mushiroze.JPG",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Mushiroze.JPG/1280px-Mushiroze.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Mushiroze.JPG/500px-Mushiroze.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "アラツク",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Mushiroze.JPG"
+        }
+      ]
     },
     {
       "id": "amami",
@@ -2205,7 +2683,27 @@
         "license": "Public domain",
         "licenseUrl": "",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Amami-Tomori_beach_20040712.JPG"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Mangrove forest in Amami Oshima.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Mangrove_forest_in_Amami_Oshima.jpg/1280px-Mangrove_forest_in_Amami_Oshima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Mangrove_forest_in_Amami_Oshima.jpg/500px-Mangrove_forest_in_Amami_Oshima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Indiana jo",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Mangrove_forest_in_Amami_Oshima.jpg"
+        },
+        {
+          "file": "Primeval forest in Amami Oshima.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Primeval_forest_in_Amami_Oshima.jpg/1280px-Primeval_forest_in_Amami_Oshima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Primeval_forest_in_Amami_Oshima.jpg/500px-Primeval_forest_in_Amami_Oshima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Indiana jo",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Primeval_forest_in_Amami_Oshima.jpg"
+        }
+      ]
     },
     {
       "id": "kakeroma",
@@ -2323,7 +2821,36 @@
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Takakura_at_Nomiyama,_Kakeroma.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Oochon jinja.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Oochon_jinja.jpg/1280px-Oochon_jinja.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Oochon_jinja.jpg/500px-Oochon_jinja.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Suikotei",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Oochon_jinja.jpg"
+        },
+        {
+          "file": "Oochon jinja Torii.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Oochon_jinja_Torii.jpg/1280px-Oochon_jinja_Torii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Oochon_jinja_Torii.jpg/500px-Oochon_jinja_Torii.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Suikotei",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Oochon_jinja_Torii.jpg"
+        },
+        {
+          "file": "震洋艇格納豪跡.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/%E9%9C%87%E6%B4%8B%E8%89%87%E6%A0%BC%E7%B4%8D%E8%B1%AA%E8%B7%A1.jpg/1280px-%E9%9C%87%E6%B4%8B%E8%89%87%E6%A0%BC%E7%B4%8D%E8%B1%AA%E8%B7%A1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/%E9%9C%87%E6%B4%8B%E8%89%87%E6%A0%BC%E7%B4%8D%E8%B1%AA%E8%B7%A1.jpg/500px-%E9%9C%87%E6%B4%8B%E8%89%87%E6%A0%BC%E7%B4%8D%E8%B1%AA%E8%B7%A1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Kinstone",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:%E9%9C%87%E6%B4%8B%E8%89%87%E6%A0%BC%E7%B4%8D%E8%B1%AA%E8%B7%A1.jpg"
+        }
+      ]
     },
     {
       "id": "yakushima",
@@ -2441,7 +2968,36 @@
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Forest_on_Yakushima_from_Route_592.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Jomon Sugi 03.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Jomon_Sugi_03.jpg/1280px-Jomon_Sugi_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Jomon_Sugi_03.jpg/500px-Jomon_Sugi_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Σ64",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jomon_Sugi_03.jpg"
+        },
+        {
+          "file": "Shiratani Unsuikyo Ravine- Part II - ShirataniUnsuikyo342.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Shiratani_Unsuikyo_Ravine-_Part_II_-_ShirataniUnsuikyo342.jpg/1280px-Shiratani_Unsuikyo_Ravine-_Part_II_-_ShirataniUnsuikyo342.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Shiratani_Unsuikyo_Ravine-_Part_II_-_ShirataniUnsuikyo342.jpg/500px-Shiratani_Unsuikyo_Ravine-_Part_II_-_ShirataniUnsuikyo342.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "lumoplank",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Shiratani_Unsuikyo_Ravine-_Part_II_-_ShirataniUnsuikyo342.jpg"
+        },
+        {
+          "file": "Shiratani Unsuikyo Ravine- Part I - ShirataniUnsuikyo326.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Shiratani_Unsuikyo_Ravine-_Part_I_-_ShirataniUnsuikyo326.jpg/1280px-Shiratani_Unsuikyo_Ravine-_Part_I_-_ShirataniUnsuikyo326.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Shiratani_Unsuikyo_Ravine-_Part_I_-_ShirataniUnsuikyo326.jpg/500px-Shiratani_Unsuikyo_Ravine-_Part_I_-_ShirataniUnsuikyo326.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "lumoplank",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Shiratani_Unsuikyo_Ravine-_Part_I_-_ShirataniUnsuikyo326.jpg"
+        }
+      ]
     },
     {
       "id": "chichijima",
@@ -2559,7 +3115,27 @@
         "license": "CC0",
         "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Kominato_Beach_that_I_looked_at_from_the_Nakayama_Pass_in_Chichijima_Island,Ogasawara,Tokyo,Japan.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Sunset - panoramio (101).jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Sunset_-_panoramio_%28101%29.jpg/1280px-Sunset_-_panoramio_%28101%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Sunset_-_panoramio_%28101%29.jpg/500px-Sunset_-_panoramio_%28101%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "takeakisky homma",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Sunset_-_panoramio_(101).jpg"
+        },
+        {
+          "file": "Coast-Cominato1.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Coast-Cominato1.jpg/1280px-Coast-Cominato1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Coast-Cominato1.jpg/500px-Coast-Cominato1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "タクナワン",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Coast-Cominato1.jpg"
+        }
+      ]
     },
     {
       "id": "miyakejima",
@@ -2676,7 +3252,36 @@
         "license": "CC BY-SA 3.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:20140516%E4%B8%89%E5%AE%85%E5%B3%B6.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Miyake-jima Tairo Pond.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Miyake-jima_Tairo_Pond.jpg/1280px-Miyake-jima_Tairo_Pond.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Miyake-jima_Tairo_Pond.jpg/500px-Miyake-jima_Tairo_Pond.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "LT sfm",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Miyake-jima_Tairo_Pond.jpg"
+        },
+        {
+          "file": "Experience the Volcano Hiking Trail.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Experience_the_Volcano_Hiking_Trail.jpg/1280px-Experience_the_Volcano_Hiking_Trail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Experience_the_Volcano_Hiking_Trail.jpg/500px-Experience_the_Volcano_Hiking_Trail.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "LT sfm",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Experience_the_Volcano_Hiking_Trail.jpg"
+        },
+        {
+          "file": "Ako Junior High School gym.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Ako_Junior_High_School_gym.jpg/1280px-Ako_Junior_High_School_gym.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Ako_Junior_High_School_gym.jpg/500px-Ako_Junior_High_School_gym.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "LT sfm",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Ako_Junior_High_School_gym.jpg"
+        }
+      ]
     },
     {
       "id": "mikurajima",
@@ -2793,7 +3398,36 @@
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:View_of_Mikurajima_from_aircraft.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Inane Shrine on Mikurajima Island-crop.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Inane_Shrine_on_Mikurajima_Island-crop.jpg/1280px-Inane_Shrine_on_Mikurajima_Island-crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Inane_Shrine_on_Mikurajima_Island-crop.jpg/500px-Inane_Shrine_on_Mikurajima_Island-crop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "ブルーノ・プラス",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Inane_Shrine_on_Mikurajima_Island-crop.jpg"
+        },
+        {
+          "file": "Mikura-jima.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Mikura-jima.jpg/1280px-Mikura-jima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Mikura-jima.jpg/500px-Mikura-jima.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Izawa Ryu",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Mikura-jima.jpg"
+        },
+        {
+          "file": "Mikurajima view from west 20170930.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Mikurajima_view_from_west_20170930.jpg/1280px-Mikurajima_view_from_west_20170930.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Mikurajima_view_from_west_20170930.jpg/500px-Mikurajima_view_from_west_20170930.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Ka23 13",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Mikurajima_view_from_west_20170930.jpg"
+        }
+      ]
     },
     {
       "id": "hachijojima",
@@ -2911,7 +3545,27 @@
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Hachijojimaview-fromosakahill-2018-5-7.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Hachijojima freesia festival 2007-03-21.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Hachijojima_freesia_festival_2007-03-21.jpg/1280px-Hachijojima_freesia_festival_2007-03-21.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Hachijojima_freesia_festival_2007-03-21.jpg/500px-Hachijojima_freesia_festival_2007-03-21.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Geomr",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Hachijojima_freesia_festival_2007-03-21.jpg"
+        },
+        {
+          "file": "Nakanogo, Hachijo, Tokyo 100-1623, Japan - panoramio (3).jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Nakanogo%2C_Hachijo%2C_Tokyo_100-1623%2C_Japan_-_panoramio_%283%29.jpg/1280px-Nakanogo%2C_Hachijo%2C_Tokyo_100-1623%2C_Japan_-_panoramio_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Nakanogo%2C_Hachijo%2C_Tokyo_100-1623%2C_Japan_-_panoramio_%283%29.jpg/500px-Nakanogo%2C_Hachijo%2C_Tokyo_100-1623%2C_Japan_-_panoramio_%283%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Daibo Taku",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Nakanogo,_Hachijo,_Tokyo_100-1623,_Japan_-_panoramio_(3).jpg"
+        }
+      ]
     },
     {
       "id": "shikinejima",
@@ -3028,7 +3682,27 @@
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Shikine-jima_2023_Jan_29_01-11PM.jpeg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Jinata Onsen.2.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Jinata_Onsen.2.jpg/1280px-Jinata_Onsen.2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Jinata_Onsen.2.jpg/500px-Jinata_Onsen.2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Douglas P Perkins (Douglaspperkins (talk))",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Jinata_Onsen.2.jpg"
+        },
+        {
+          "file": "Shikinejima, Niijima, Tokyo 100-0511, Japan - panoramio.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Shikinejima%2C_Niijima%2C_Tokyo_100-0511%2C_Japan_-_panoramio.jpg/1280px-Shikinejima%2C_Niijima%2C_Tokyo_100-0511%2C_Japan_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Shikinejima%2C_Niijima%2C_Tokyo_100-0511%2C_Japan_-_panoramio.jpg/500px-Shikinejima%2C_Niijima%2C_Tokyo_100-0511%2C_Japan_-_panoramio.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "takeakisky homma",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Shikinejima,_Niijima,_Tokyo_100-0511,_Japan_-_panoramio.jpg"
+        }
+      ]
     },
     {
       "id": "kozushima",
@@ -3146,7 +3820,36 @@
         "license": "CC BY 2.5",
         "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Kozushima_Tako_Bay_2005.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Kozushima tenjosan.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Kozushima_tenjosan.jpg/1280px-Kozushima_tenjosan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Kozushima_tenjosan.jpg/500px-Kozushima_tenjosan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Mkill",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Kozushima_tenjosan.jpg"
+        },
+        {
+          "file": "多幸湾.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/%E5%A4%9A%E5%B9%B8%E6%B9%BE.jpg/1280px-%E5%A4%9A%E5%B9%B8%E6%B9%BE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/%E5%A4%9A%E5%B9%B8%E6%B9%BE.jpg/500px-%E5%A4%9A%E5%B9%B8%E6%B9%BE.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Sgwrk",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:%E5%A4%9A%E5%B9%B8%E6%B9%BE.jpg"
+        },
+        {
+          "file": "Kouzu island aerial shoot.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Kouzu_island_aerial_shoot.jpg/1280px-Kouzu_island_aerial_shoot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Kouzu_island_aerial_shoot.jpg/500px-Kouzu_island_aerial_shoot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "ブルーノ・プラス",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Kouzu_island_aerial_shoot.jpg"
+        }
+      ]
     },
     {
       "id": "niijima",
@@ -3263,7 +3966,36 @@
         "license": "Public domain",
         "licenseUrl": "",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Niijima_Habushiura_Beach.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Tokyo to Niijima mura Shiromama danso 20190527.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Tokyo_to_Niijima_mura_Shiromama_danso_20190527.jpg/1280px-Tokyo_to_Niijima_mura_Shiromama_danso_20190527.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/25/Tokyo_to_Niijima_mura_Shiromama_danso_20190527.jpg/500px-Tokyo_to_Niijima_mura_Shiromama_danso_20190527.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "massan4632",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Tokyo_to_Niijima_mura_Shiromama_danso_20190527.jpg"
+        },
+        {
+          "file": "Niijima island aerial shoot.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Niijima_island_aerial_shoot.jpg/1280px-Niijima_island_aerial_shoot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Niijima_island_aerial_shoot.jpg/500px-Niijima_island_aerial_shoot.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "ブルーノ・プラス",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Niijima_island_aerial_shoot.jpg"
+        },
+        {
+          "file": "Niijima 20221203 122020.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Niijima_20221203_122020.jpg/1280px-Niijima_20221203_122020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Niijima_20221203_122020.jpg/500px-Niijima_20221203_122020.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Ka23 13",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Niijima_20221203_122020.jpg"
+        }
+      ]
     },
     {
       "id": "tokyo",
@@ -3368,7 +4100,36 @@
         "license": "CC BY-SA 3.0",
         "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Skyscrapers_of_Shinjuku_2009_January.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Senso-ji Temple @ Asakusa (14019477806).jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Senso-ji_Temple_%40_Asakusa_%2814019477806%29.jpg/1280px-Senso-ji_Temple_%40_Asakusa_%2814019477806%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Senso-ji_Temple_%40_Asakusa_%2814019477806%29.jpg/500px-Senso-ji_Temple_%40_Asakusa_%2814019477806%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Guilhem Vellut from Annecy, France",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Senso-ji_Temple_@_Asakusa_(14019477806).jpg"
+        },
+        {
+          "file": "Tokyo Shibuya Scramble Crossing 2018-10-09.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Tokyo_Shibuya_Scramble_Crossing_2018-10-09.jpg/1280px-Tokyo_Shibuya_Scramble_Crossing_2018-10-09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Tokyo_Shibuya_Scramble_Crossing_2018-10-09.jpg/500px-Tokyo_Shibuya_Scramble_Crossing_2018-10-09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Benh LIEU SONG (Flickr)",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Tokyo_Shibuya_Scramble_Crossing_2018-10-09.jpg"
+        },
+        {
+          "file": "September 2024 Meiji Jingu 10.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/September_2024_Meiji_Jingu_10.jpg/1280px-September_2024_Meiji_Jingu_10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/September_2024_Meiji_Jingu_10.jpg/500px-September_2024_Meiji_Jingu_10.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Syced",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:September_2024_Meiji_Jingu_10.jpg"
+        }
+      ]
     },
     {
       "id": "kyoto",
@@ -3382,7 +4143,8 @@
       "gem": false,
       "features": [
         "culture",
-        "food"
+        "food",
+        "ryokan"
       ],
       "desc": "Temples and old streets. Go early in the morning to beat the crowds.",
       "access": "2 h 15 min by shinkansen from Tokyo",
@@ -3473,7 +4235,36 @@
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Kiyomizu-dera,_Kyoto,_November_2016_-02.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Torii path with lantern at Fushimi Inari Taisha Shrine, Kyoto, Japan.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg/1280px-Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg/500px-Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine%2C_Kyoto%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Basile Morin",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Torii_path_with_lantern_at_Fushimi_Inari_Taisha_Shrine,_Kyoto,_Japan.jpg"
+        },
+        {
+          "file": "Bamboo Forest, Arashiyama, Kyoto, Japan.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Bamboo_Forest%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg/1280px-Bamboo_Forest%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Bamboo_Forest%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg/500px-Bamboo_Forest%2C_Arashiyama%2C_Kyoto%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Basile Morin",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bamboo_Forest,_Arashiyama,_Kyoto,_Japan.jpg"
+        },
+        {
+          "file": "Water reflection of Kinkaku-ji Temple a sunny day, Kyoto, Japan.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Water_reflection_of_Kinkaku-ji_Temple_a_sunny_day%2C_Kyoto%2C_Japan.jpg/1280px-Water_reflection_of_Kinkaku-ji_Temple_a_sunny_day%2C_Kyoto%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Water_reflection_of_Kinkaku-ji_Temple_a_sunny_day%2C_Kyoto%2C_Japan.jpg/500px-Water_reflection_of_Kinkaku-ji_Temple_a_sunny_day%2C_Kyoto%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Basile Morin",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Water_reflection_of_Kinkaku-ji_Temple_a_sunny_day,_Kyoto,_Japan.jpg"
+        }
+      ]
     },
     {
       "id": "osaka",
@@ -3578,7 +4369,36 @@
         "license": "CC BY 2.5",
         "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Osaka_Castle_03bs3200.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Osaka Dotonbori Canal.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Osaka_Dotonbori_Canal.jpg/1280px-Osaka_Dotonbori_Canal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Osaka_Dotonbori_Canal.jpg/500px-Osaka_Dotonbori_Canal.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "32linesky",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Osaka_Dotonbori_Canal.jpg"
+        },
+        {
+          "file": "Osaka castle and cherry blossoms 2006.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Osaka_castle_and_cherry_blossoms_2006.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "thumb": "https://upload.wikimedia.org/wikipedia/commons/7/79/Osaka_castle_and_cherry_blossoms_2006.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "author": "Tom Purves",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Osaka_castle_and_cherry_blossoms_2006.jpg"
+        },
+        {
+          "file": "Shinsekai and Tsutenkaku Tower.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Shinsekai_and_Tsutenkaku_Tower.jpg/1280px-Shinsekai_and_Tsutenkaku_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Shinsekai_and_Tsutenkaku_Tower.jpg/500px-Shinsekai_and_Tsutenkaku_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Sakai Yayoi",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Shinsekai_and_Tsutenkaku_Tower.jpg"
+        }
+      ]
     },
     {
       "id": "karuizawa",
@@ -3684,7 +4504,36 @@
         "license": "CC0",
         "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Karuizawa_-_Karuizawa6413.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Karuizawa shiraito-no-taki03s3200.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Karuizawa_shiraito-no-taki03s3200.jpg/1280px-Karuizawa_shiraito-no-taki03s3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Karuizawa_shiraito-no-taki03s3200.jpg/500px-Karuizawa_shiraito-no-taki03s3200.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "663highland",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Karuizawa_shiraito-no-taki03s3200.jpg"
+        },
+        {
+          "file": "Old Karuizawa ginza06n3872.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Old_Karuizawa_ginza06n3872.jpg/1280px-Old_Karuizawa_ginza06n3872.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Old_Karuizawa_ginza06n3872.jpg/500px-Old_Karuizawa_ginza06n3872.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "663highland",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Old_Karuizawa_ginza06n3872.jpg"
+        },
+        {
+          "file": "Stone Church (Uchimura Kanzo Memorial Hall), Karuizawa.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Stone_Church_%28Uchimura_Kanzo_Memorial_Hall%29%2C_Karuizawa.jpg/1280px-Stone_Church_%28Uchimura_Kanzo_Memorial_Hall%29%2C_Karuizawa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Stone_Church_%28Uchimura_Kanzo_Memorial_Hall%29%2C_Karuizawa.jpg/500px-Stone_Church_%28Uchimura_Kanzo_Memorial_Hall%29%2C_Karuizawa.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Bernie Ongewe",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Stone_Church_(Uchimura_Kanzo_Memorial_Hall),_Karuizawa.jpg"
+        }
+      ]
     },
     {
       "id": "takayama",
@@ -3700,7 +4549,8 @@
         "culture",
         "food",
         "onsen",
-        "nature"
+        "nature",
+        "ryokan"
       ],
       "desc": "Mountain town with an Edo-era old quarter, morning markets, sake breweries and Hida beef.",
       "access": "About 2.5 h by Hida limited express from Nagoya",
@@ -3791,7 +4641,36 @@
         "license": "CC BY-SA 3.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Takayama%27s_Early_Winter_Welcome_(NE).jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "071124 Sanmachi Takayama Japan01s3.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/071124_Sanmachi_Takayama_Japan01s3.jpg/1280px-071124_Sanmachi_Takayama_Japan01s3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/071124_Sanmachi_Takayama_Japan01s3.jpg/500px-071124_Sanmachi_Takayama_Japan01s3.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "663highland",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:071124_Sanmachi_Takayama_Japan01s3.jpg"
+        },
+        {
+          "file": "Takayama Festival Yatai Hall in front of Sakurayama Hachiman Shrine.JPG",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Takayama_Festival_Yatai_Hall_in_front_of_Sakurayama_Hachiman_Shrine.JPG/1280px-Takayama_Festival_Yatai_Hall_in_front_of_Sakurayama_Hachiman_Shrine.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Takayama_Festival_Yatai_Hall_in_front_of_Sakurayama_Hachiman_Shrine.JPG/500px-Takayama_Festival_Yatai_Hall_in_front_of_Sakurayama_Hachiman_Shrine.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "そらみみ",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Takayama_Festival_Yatai_Hall_in_front_of_Sakurayama_Hachiman_Shrine.JPG"
+        },
+        {
+          "file": "JP-Takayama-hida-no-sato-2.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/JP-Takayama-hida-no-sato-2.jpg/1280px-JP-Takayama-hida-no-sato-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/JP-Takayama-hida-no-sato-2.jpg/500px-JP-Takayama-hida-no-sato-2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Balou46",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:JP-Takayama-hida-no-sato-2.jpg"
+        }
+      ]
     },
     {
       "id": "suzuka",
@@ -3895,7 +4774,36 @@
         "license": "CC BY 3.0",
         "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Suzuka_300km_Endurance_-_Qualifying_2010.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Suzuka Circuit Grandstands Start-Finish Straight.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Suzuka_Circuit_Grandstands_Start-Finish_Straight.jpg/1280px-Suzuka_Circuit_Grandstands_Start-Finish_Straight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/57/Suzuka_Circuit_Grandstands_Start-Finish_Straight.jpg/500px-Suzuka_Circuit_Grandstands_Start-Finish_Straight.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "BWard 1997",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Suzuka_Circuit_Grandstands_Start-Finish_Straight.jpg"
+        },
+        {
+          "file": "One scene at Super Formula Public Test at Suzuka Fan Thanksgiving Day (5).JPG",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/One_scene_at_Super_Formula_Public_Test_at_Suzuka_Fan_Thanksgiving_Day_%285%29.JPG/1280px-One_scene_at_Super_Formula_Public_Test_at_Suzuka_Fan_Thanksgiving_Day_%285%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/One_scene_at_Super_Formula_Public_Test_at_Suzuka_Fan_Thanksgiving_Day_%285%29.JPG/500px-One_scene_at_Super_Formula_Public_Test_at_Suzuka_Fan_Thanksgiving_Day_%285%29.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Tokumeigakarinoaoshima",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:One_scene_at_Super_Formula_Public_Test_at_Suzuka_Fan_Thanksgiving_Day_(5).JPG"
+        },
+        {
+          "file": "Ise Grand Shrine, Mie Prefecture; February 2015 (02).jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Ise_Grand_Shrine%2C_Mie_Prefecture%3B_February_2015_%2802%29.jpg/1280px-Ise_Grand_Shrine%2C_Mie_Prefecture%3B_February_2015_%2802%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Ise_Grand_Shrine%2C_Mie_Prefecture%3B_February_2015_%2802%29.jpg/500px-Ise_Grand_Shrine%2C_Mie_Prefecture%3B_February_2015_%2802%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "foooomio",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Ise_Grand_Shrine,_Mie_Prefecture;_February_2015_(02).jpg"
+        }
+      ]
     },
     {
       "id": "hiroshima",
@@ -4002,7 +4910,36 @@
         "license": "CC BY-SA 4.0",
         "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:Atomic_Bomb_Dome_and_Motoyaso_River,_Hiroshima,_Northwest_view_20190417_1.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Hiroshima Peace Memorial Park, 20240817 1032 4210.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Hiroshima_Peace_Memorial_Park%2C_20240817_1032_4210.jpg/1280px-Hiroshima_Peace_Memorial_Park%2C_20240817_1032_4210.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Hiroshima_Peace_Memorial_Park%2C_20240817_1032_4210.jpg/500px-Hiroshima_Peace_Memorial_Park%2C_20240817_1032_4210.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Jakub Hałun",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Hiroshima_Peace_Memorial_Park,_20240817_1032_4210.jpg"
+        },
+        {
+          "file": "Main Gate of Hiroshima Castle, 20240817 1510 4303.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Main_Gate_of_Hiroshima_Castle%2C_20240817_1510_4303.jpg/1280px-Main_Gate_of_Hiroshima_Castle%2C_20240817_1510_4303.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Main_Gate_of_Hiroshima_Castle%2C_20240817_1510_4303.jpg/500px-Main_Gate_of_Hiroshima_Castle%2C_20240817_1510_4303.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Jakub Hałun",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Main_Gate_of_Hiroshima_Castle,_20240817_1510_4303.jpg"
+        },
+        {
+          "file": "20100722 Hiroshima Shukkeien 4387.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/20100722_Hiroshima_Shukkeien_4387.jpg/1280px-20100722_Hiroshima_Shukkeien_4387.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/20100722_Hiroshima_Shukkeien_4387.jpg/500px-20100722_Hiroshima_Shukkeien_4387.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Jakub Hałun",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:20100722_Hiroshima_Shukkeien_4387.jpg"
+        }
+      ]
     },
     {
       "id": "hakone",
@@ -4018,9 +4955,10 @@
         "onsen",
         "nature",
         "hiking",
-        "culture"
+        "culture",
+        "ryokan"
       ],
-      "desc": "Onsen town in the hills near Mt Fuji: Lake Ashi boats, the Owakudani ropeway and open-air art museums.",
+      "desc": "Onsen town in the hills near Mt Fuji: Lake Ashi boats, the Owakudani ropeway and open-air art museums. Classic place for a ryokan night with a private open-air bath and kaiseki dinner.",
       "access": "About 1.5 h from Shinjuku by Romancecar",
       "months": [
         {
@@ -4099,7 +5037,7 @@
         "spring": "Cherry blossoms, then fresh green and azaleas",
         "summer": "Hydrangea train on the Hakone Tozan line",
         "autumn": "Sengokuhara pampas grass, red leaves",
-        "winter": "Clear Mt Fuji views and hot springs"
+        "winter": "Clear Mt Fuji views, and the best season for a ryokan with an open-air bath"
       },
       "photo": {
         "file": "View of Mount Fuji from Lake Ashi.jpg",
@@ -4109,7 +5047,1126 @@
         "license": "CC0",
         "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "sourcePage": "https://commons.wikimedia.org/wiki/File:View_of_Mount_Fuji_from_Lake_Ashi.jpg"
-      }
+      },
+      "gallery": [
+        {
+          "file": "Mount Myojingatake and Owakudani Station from Owakudani Valley.JPG",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Mount_Myojingatake_and_Owakudani_Station_from_Owakudani_Valley.JPG/1280px-Mount_Myojingatake_and_Owakudani_Station_from_Owakudani_Valley.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Mount_Myojingatake_and_Owakudani_Station_from_Owakudani_Valley.JPG/500px-Mount_Myojingatake_and_Owakudani_Station_from_Owakudani_Valley.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "そらみみ",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Mount_Myojingatake_and_Owakudani_Station_from_Owakudani_Valley.JPG"
+        },
+        {
+          "file": "Torii @ Hakone Shrine @ Moto-Hakone (10621570713).jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Torii_%40_Hakone_Shrine_%40_Moto-Hakone_%2810621570713%29.jpg/1280px-Torii_%40_Hakone_Shrine_%40_Moto-Hakone_%2810621570713%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Torii_%40_Hakone_Shrine_%40_Moto-Hakone_%2810621570713%29.jpg/500px-Torii_%40_Hakone_Shrine_%40_Moto-Hakone_%2810621570713%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Guilhem Vellut from Annecy, France",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Torii_@_Hakone_Shrine_@_Moto-Hakone_(10621570713).jpg"
+        },
+        {
+          "file": "Hakone tozan Railway EMU type 2000.JPG",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Hakone_tozan_Railway_EMU_type_2000.JPG/1280px-Hakone_tozan_Railway_EMU_type_2000.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Hakone_tozan_Railway_EMU_type_2000.JPG/500px-Hakone_tozan_Railway_EMU_type_2000.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "toshinori baba This photo was taken with Nikon D40x",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Hakone_tozan_Railway_EMU_type_2000.JPG"
+        }
+      ]
+    },
+    {
+      "id": "matsumoto",
+      "name": "Matsumoto",
+      "jp": "松本",
+      "kind": "city",
+      "scene": "city",
+      "area": "Nagano",
+      "lat": 36.2381,
+      "lng": 137.972,
+      "gem": false,
+      "features": [
+        "culture",
+        "nature",
+        "hiking",
+        "onsen",
+        "food"
+      ],
+      "desc": "Castle town under the Northern Alps: black Matsumoto Castle, old merchant streets, soba, and the gateway to Kamikochi.",
+      "access": "About 2.5 h by Azusa limited express from Shinjuku",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cold; the castle with snowy Alps behind",
+          "air": -0.3
+        },
+        {
+          "rating": "ok",
+          "reason": "Coldest month, clear mountain views",
+          "air": 0.6
+        },
+        {
+          "rating": "ok",
+          "reason": "Still cold, early spring",
+          "air": 4.6
+        },
+        {
+          "rating": "great",
+          "reason": "Cherry blossoms around the castle (mid April); Kamikochi opens late April",
+          "air": 10.8
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green, comfortable; avoid Golden Week",
+          "air": 16.5
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season; Kamikochi still lovely",
+          "air": 20.2
+        },
+        {
+          "rating": "ok",
+          "reason": "Rain until mid-July, then warm; Kamikochi hiking",
+          "air": 24.2
+        },
+        {
+          "rating": "great",
+          "reason": "Cooler than Tokyo; Kamikochi and Alps hiking season",
+          "air": 25.1
+        },
+        {
+          "rating": "great",
+          "reason": "Pleasant, quieter trails",
+          "air": 20.4
+        },
+        {
+          "rating": "great",
+          "reason": "Autumn leaves in Kamikochi (mid October)",
+          "air": 13.9
+        },
+        {
+          "rating": "ok",
+          "reason": "Leaves in town early November; Kamikochi closes mid November",
+          "air": 7.8
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold and quiet",
+          "air": 2.5
+        }
+      ],
+      "climate": {
+        "station": "松本 Matsumoto",
+        "stationRef": {
+          "type": "s",
+          "prec": 48,
+          "block": 47618
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": null
+      },
+      "seasons": {
+        "spring": "Cherry blossoms at Matsumoto Castle, Kamikochi opens",
+        "summer": "Kamikochi and Northern Alps hikes, cool evenings",
+        "autumn": "Red and gold leaves in Kamikochi",
+        "winter": "Snowy Alps behind the castle, onsen nearby"
+      },
+      "photo": {
+        "file": "Matsumoto Castle Keep Tower.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Matsumoto_Castle_Keep_Tower.jpg/1280px-Matsumoto_Castle_Keep_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Matsumoto_Castle_Keep_Tower.jpg/500px-Matsumoto_Castle_Keep_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Lightning toothed whale (稲妻ノ歯鯨)",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Matsumoto_Castle_Keep_Tower.jpg"
+      },
+      "gallery": [
+        {
+          "file": "150920 Kappa-bashi Kamikochi Japan01n.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/150920_Kappa-bashi_Kamikochi_Japan01n.jpg/1280px-150920_Kappa-bashi_Kamikochi_Japan01n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/150920_Kappa-bashi_Kamikochi_Japan01n.jpg/500px-150920_Kappa-bashi_Kamikochi_Japan01n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "663highland",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:150920_Kappa-bashi_Kamikochi_Japan01n.jpg"
+        },
+        {
+          "file": "Nakamachi street Matsumoto Nagano pref Japan07n.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Nakamachi_street_Matsumoto_Nagano_pref_Japan07n.jpg/1280px-Nakamachi_street_Matsumoto_Nagano_pref_Japan07n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Nakamachi_street_Matsumoto_Nagano_pref_Japan07n.jpg/500px-Nakamachi_street_Matsumoto_Nagano_pref_Japan07n.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "663highland",
+          "license": "CC BY 2.5",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Nakamachi_street_Matsumoto_Nagano_pref_Japan07n.jpg"
+        },
+        {
+          "file": "Kappa Bridge from Mount Nishihotaka.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Kappa_Bridge_from_Mount_Nishihotaka.jpg/1280px-Kappa_Bridge_from_Mount_Nishihotaka.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Kappa_Bridge_from_Mount_Nishihotaka.jpg/500px-Kappa_Bridge_from_Mount_Nishihotaka.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Alpsdake",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Kappa_Bridge_from_Mount_Nishihotaka.jpg"
+        }
+      ]
+    },
+    {
+      "id": "miyajima",
+      "name": "Miyajima",
+      "jp": "宮島",
+      "kind": "island",
+      "scene": "village",
+      "area": "Hiroshima",
+      "lat": 34.296,
+      "lng": 132.3198,
+      "gem": false,
+      "features": [
+        "culture",
+        "hiking",
+        "nature",
+        "food",
+        "ryokan"
+      ],
+      "desc": "Sacred island with Itsukushima Shrine's floating torii, friendly deer and the Mt Misen hike; stay the night when the day-trippers leave.",
+      "access": "10 min by ferry from Miyajimaguchi, about 1 h from Hiroshima",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cold and quiet; oyster season",
+          "air": 5.4
+        },
+        {
+          "rating": "ok",
+          "reason": "Oyster festival (February); cold",
+          "air": 6.2
+        },
+        {
+          "rating": "great",
+          "reason": "Mild; cherry blossoms from late March",
+          "air": 9.5
+        },
+        {
+          "rating": "great",
+          "reason": "Cherry blossoms early April, mild",
+          "air": 14.8
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green, good for Mt Misen; avoid Golden Week",
+          "air": 19.6
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season",
+          "air": 23.2
+        },
+        {
+          "rating": "ok",
+          "reason": "Hot after mid-July; Kangensai boat festival (date varies)",
+          "air": 27.2
+        },
+        {
+          "rating": "ok",
+          "reason": "Very hot and humid",
+          "air": 28.5
+        },
+        {
+          "rating": "ok",
+          "reason": "Still hot early on; typhoons",
+          "air": 24.7
+        },
+        {
+          "rating": "great",
+          "reason": "Comfortable and clear",
+          "air": 18.8
+        },
+        {
+          "rating": "great",
+          "reason": "Red maples in Momijidani (mid to late November), busiest time",
+          "air": 12.9
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold, quiet; oysters",
+          "air": 7.5
+        }
+      ],
+      "climate": {
+        "station": "広島 Hiroshima",
+        "stationRef": {
+          "type": "s",
+          "prec": 67,
+          "block": 47765
+        },
+        "airSource": "nearby",
+        "period": "1991～2020",
+        "seaSource": null
+      },
+      "seasons": {
+        "spring": "Cherry blossoms around the shrine and pagoda",
+        "summer": "Kangensai boat festival, evening torii at high tide",
+        "autumn": "Momijidani maple valley",
+        "winter": "Grilled oysters, quiet streets"
+      },
+      "photo": {
+        "file": "Miyajima Island.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Miyajima_Island.jpg/1280px-Miyajima_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Miyajima_Island.jpg/500px-Miyajima_Island.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Bernard Gagnon",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Miyajima_Island.jpg"
+      },
+      "gallery": [
+        {
+          "file": "Sika deer on Miyajima island, Japan, 20240816 1749 4103.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Sika_deer_on_Miyajima_island%2C_Japan%2C_20240816_1749_4103.jpg/1280px-Sika_deer_on_Miyajima_island%2C_Japan%2C_20240816_1749_4103.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Sika_deer_on_Miyajima_island%2C_Japan%2C_20240816_1749_4103.jpg/500px-Sika_deer_on_Miyajima_island%2C_Japan%2C_20240816_1749_4103.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Jakub Hałun",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Sika_deer_on_Miyajima_island,_Japan,_20240816_1749_4103.jpg"
+        },
+        {
+          "file": "Mount Misen shrine (Miyajima) - DSC02085.JPG",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Mount_Misen_shrine_%28Miyajima%29_-_DSC02085.JPG/1280px-Mount_Misen_shrine_%28Miyajima%29_-_DSC02085.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Mount_Misen_shrine_%28Miyajima%29_-_DSC02085.JPG/500px-Mount_Misen_shrine_%28Miyajima%29_-_DSC02085.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Daderot",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Mount_Misen_shrine_(Miyajima)_-_DSC02085.JPG"
+        },
+        {
+          "file": "Autumnal leaves and Itsukushima shrine five-storied pagoda.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Autumnal_leaves_and_Itsukushima_shrine_five-storied_pagoda.jpg/1280px-Autumnal_leaves_and_Itsukushima_shrine_five-storied_pagoda.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Autumnal_leaves_and_Itsukushima_shrine_five-storied_pagoda.jpg/500px-Autumnal_leaves_and_Itsukushima_shrine_five-storied_pagoda.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "さかおり",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Autumnal_leaves_and_Itsukushima_shrine_five-storied_pagoda.jpg"
+        }
+      ]
+    },
+    {
+      "id": "kumano",
+      "name": "Kumano Kodo",
+      "jp": "熊野古道",
+      "kind": "city",
+      "scene": "forest",
+      "area": "Wakayama",
+      "lat": 33.8403,
+      "lng": 135.7735,
+      "gem": false,
+      "features": [
+        "hiking",
+        "nature",
+        "culture",
+        "onsen",
+        "ryokan"
+      ],
+      "desc": "Ancient pilgrimage trails through cedar forest to the Kumano Grand Shrines and Nachi Falls, with onsen villages like Yunomine to sleep in.",
+      "access": "About 2 h from Osaka by express train to Kii-Tanabe, then bus",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cold but walkable; quiet trails",
+          "air": 4
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold, few walkers; plum blossoms",
+          "air": 4.8
+        },
+        {
+          "rating": "great",
+          "reason": "Cool, good walking weather",
+          "air": 8.3
+        },
+        {
+          "rating": "great",
+          "reason": "Mild, mountain cherry blossoms",
+          "air": 13.2
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green, comfortable; book inns early",
+          "air": 17.6
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season (one of Japan's wettest areas), slippery paths",
+          "air": 21.2
+        },
+        {
+          "rating": "ok",
+          "reason": "Hot, humid and rainy",
+          "air": 25
+        },
+        {
+          "rating": "avoid",
+          "reason": "Hot and humid, typhoons; hard walking",
+          "air": 25.7
+        },
+        {
+          "rating": "ok",
+          "reason": "Typhoon risk, still warm",
+          "air": 22.6
+        },
+        {
+          "rating": "great",
+          "reason": "Cool and clear walking weather",
+          "air": 17
+        },
+        {
+          "rating": "great",
+          "reason": "Autumn colours, crisp mornings",
+          "air": 11.3
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold, short days; best onsen weather",
+          "air": 6
+        }
+      ],
+      "climate": {
+        "station": "栗栖川 Kurisugawa",
+        "stationRef": {
+          "type": "a",
+          "prec": 65,
+          "block": 971
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": null
+      },
+      "seasons": {
+        "spring": "Mountain cherry blossoms along the trails",
+        "summer": "Nachi Fire Festival (14 July), river onsen",
+        "autumn": "Best walking season, autumn colours",
+        "winter": "Quiet trails, hot springs, Yunomine's Tsuboyu"
+      },
+      "photo": {
+        "file": "Kumano Kodo pilgrimage route Daimon-zaka World heritage 熊野古道 大門坂05.JPG",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Kumano_Kodo_pilgrimage_route_Daimon-zaka_World_heritage_%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93_%E5%A4%A7%E9%96%80%E5%9D%8205.JPG/1280px-Kumano_Kodo_pilgrimage_route_Daimon-zaka_World_heritage_%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93_%E5%A4%A7%E9%96%80%E5%9D%8205.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Kumano_Kodo_pilgrimage_route_Daimon-zaka_World_heritage_%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93_%E5%A4%A7%E9%96%80%E5%9D%8205.JPG/500px-Kumano_Kodo_pilgrimage_route_Daimon-zaka_World_heritage_%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93_%E5%A4%A7%E9%96%80%E5%9D%8205.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Nekosuki",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Kumano_Kodo_pilgrimage_route_Daimon-zaka_World_heritage_%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93_%E5%A4%A7%E9%96%80%E5%9D%8205.JPG"
+      },
+      "gallery": [
+        {
+          "file": "Nachikatsuura Seiganto-ji Three-Storied Pagoda & Nachi Falls 06.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Nachikatsuura_Seiganto-ji_Three-Storied_Pagoda_%26_Nachi_Falls_06.jpg/1280px-Nachikatsuura_Seiganto-ji_Three-Storied_Pagoda_%26_Nachi_Falls_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Nachikatsuura_Seiganto-ji_Three-Storied_Pagoda_%26_Nachi_Falls_06.jpg/500px-Nachikatsuura_Seiganto-ji_Three-Storied_Pagoda_%26_Nachi_Falls_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Zairon",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Nachikatsuura_Seiganto-ji_Three-Storied_Pagoda_%26_Nachi_Falls_06.jpg"
+        },
+        {
+          "file": "Kumano-hongû-taisha Shrine - Torii at Ôyunohara.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Kumano-hong%C3%BB-taisha_Shrine_-_Torii_at_%C3%94yunohara.jpg/1280px-Kumano-hong%C3%BB-taisha_Shrine_-_Torii_at_%C3%94yunohara.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Kumano-hong%C3%BB-taisha_Shrine_-_Torii_at_%C3%94yunohara.jpg/500px-Kumano-hong%C3%BB-taisha_Shrine_-_Torii_at_%C3%94yunohara.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Yanajin33",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Kumano-hong%C3%BB-taisha_Shrine_-_Torii_at_%C3%94yunohara.jpg"
+        },
+        {
+          "file": "Kumano Kodo pilgrimage route Yunomine Onsen World heritage 熊野古道 湯の峰温泉56.JPG",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Kumano_Kodo_pilgrimage_route_Yunomine_Onsen_World_heritage_%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93_%E6%B9%AF%E3%81%AE%E5%B3%B0%E6%B8%A9%E6%B3%8956.JPG/1280px-Kumano_Kodo_pilgrimage_route_Yunomine_Onsen_World_heritage_%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93_%E6%B9%AF%E3%81%AE%E5%B3%B0%E6%B8%A9%E6%B3%8956.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Kumano_Kodo_pilgrimage_route_Yunomine_Onsen_World_heritage_%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93_%E6%B9%AF%E3%81%AE%E5%B3%B0%E6%B8%A9%E6%B3%8956.JPG/500px-Kumano_Kodo_pilgrimage_route_Yunomine_Onsen_World_heritage_%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93_%E6%B9%AF%E3%81%AE%E5%B3%B0%E6%B8%A9%E6%B3%8956.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Nekosuki",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Kumano_Kodo_pilgrimage_route_Yunomine_Onsen_World_heritage_%E7%86%8A%E9%87%8E%E5%8F%A4%E9%81%93_%E6%B9%AF%E3%81%AE%E5%B3%B0%E6%B8%A9%E6%B3%8956.JPG"
+        }
+      ],
+      "photoFile": "Kumano Kodo pilgrimage route Daimon-zaka World heritage 熊野古道 大門坂05.JPG"
+    },
+    {
+      "id": "nara",
+      "name": "Nara",
+      "jp": "奈良",
+      "kind": "city",
+      "scene": "city",
+      "area": "Kansai",
+      "lat": 34.6851,
+      "lng": 135.843,
+      "gem": false,
+      "features": [
+        "culture",
+        "food",
+        "nature"
+      ],
+      "desc": "Japan's first capital: Todai-ji's giant Buddha, Kasuga Taisha's lanterns and the deer of Nara Park.",
+      "access": "About 45 min by train from Kyoto or Osaka",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cold; Wakakusa hill burning (late January)",
+          "air": 4.5
+        },
+        {
+          "rating": "ok",
+          "reason": "Coldest month; Nara Rurie-e lights",
+          "air": 5.1
+        },
+        {
+          "rating": "great",
+          "reason": "Omizutori at Todai-ji (1–14 March), cherry blossoms from late March",
+          "air": 8.5
+        },
+        {
+          "rating": "great",
+          "reason": "Cherry blossoms in Nara Park, mild",
+          "air": 14
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green, comfortable; avoid Golden Week",
+          "air": 19
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season; baby deer appear",
+          "air": 22.9
+        },
+        {
+          "rating": "avoid",
+          "reason": "Very hot and humid",
+          "air": 26.8
+        },
+        {
+          "rating": "avoid",
+          "reason": "Hottest month; Nara Tokae lantern festival in the evenings",
+          "air": 27.8
+        },
+        {
+          "rating": "ok",
+          "reason": "Still hot early on; typhoons",
+          "air": 23.8
+        },
+        {
+          "rating": "great",
+          "reason": "Comfortable; Shosoin treasures exhibition (late October)",
+          "air": 17.7
+        },
+        {
+          "rating": "great",
+          "reason": "Autumn leaves mid to late November",
+          "air": 11.8
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold; Kasuga Wakamiya On-matsuri (mid December)",
+          "air": 6.8
+        }
+      ],
+      "climate": {
+        "station": "奈良 Nara",
+        "stationRef": {
+          "type": "s",
+          "prec": 64,
+          "block": 47780
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": null
+      },
+      "seasons": {
+        "spring": "Omizutori fire ritual, cherry blossoms with deer",
+        "summer": "Nara Tokae: thousands of lanterns in the park",
+        "autumn": "Autumn leaves around Todai-ji and Isuien garden",
+        "winter": "Wakakusa Yamayaki hill burning"
+      },
+      "photo": {
+        "file": "Tōdai-ji Kon-dō.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/T%C5%8Ddai-ji_Kon-d%C5%8D.jpg/1280px-T%C5%8Ddai-ji_Kon-d%C5%8D.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/T%C5%8Ddai-ji_Kon-d%C5%8D.jpg/500px-T%C5%8Ddai-ji_Kon-d%C5%8D.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Wiiii",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:T%C5%8Ddai-ji_Kon-d%C5%8D.jpg"
+      },
+      "gallery": [
+        {
+          "file": "Two deer in Nara (15152011928).jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Two_deer_in_Nara_%2815152011928%29.jpg/1280px-Two_deer_in_Nara_%2815152011928%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/Two_deer_in_Nara_%2815152011928%29.jpg/500px-Two_deer_in_Nara_%2815152011928%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Takashi Hososhima from Tokyo, Japan",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Two_deer_in_Nara_(15152011928).jpg"
+        },
+        {
+          "file": "2008-10-11 deer near a stand selling deer cookies in Nara.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/2008-10-11_deer_near_a_stand_selling_deer_cookies_in_Nara.jpg/1280px-2008-10-11_deer_near_a_stand_selling_deer_cookies_in_Nara.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/2008-10-11_deer_near_a_stand_selling_deer_cookies_in_Nara.jpg/500px-2008-10-11_deer_near_a_stand_selling_deer_cookies_in_Nara.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "merec0",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:2008-10-11_deer_near_a_stand_selling_deer_cookies_in_Nara.jpg"
+        },
+        {
+          "file": "Stone lanterns in Kasuga-taisha-1.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Stone_lanterns_in_Kasuga-taisha-1.jpg/1280px-Stone_lanterns_in_Kasuga-taisha-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Stone_lanterns_in_Kasuga-taisha-1.jpg/500px-Stone_lanterns_in_Kasuga-taisha-1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Immanuelle",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Stone_lanterns_in_Kasuga-taisha-1.jpg"
+        }
+      ],
+      "galleryFiles": [
+        "Two deer in Nara (15152011928).jpg"
+      ]
+    },
+    {
+      "id": "fuji",
+      "name": "Mount Fuji",
+      "jp": "富士山",
+      "kind": "city",
+      "scene": "volcano",
+      "area": "Yamanashi",
+      "lat": 35.3606,
+      "lng": 138.7274,
+      "gem": false,
+      "features": [
+        "nature",
+        "hiking",
+        "onsen",
+        "ryokan"
+      ],
+      "desc": "Japan's highest mountain (3,776 m). Stay at the Fuji Five Lakes (Kawaguchiko) for views, onsen and lakeside inns, or climb it in summer.",
+      "access": "About 2 h from Shinjuku by bus or Fuji Excursion train",
+      "months": [
+        {
+          "rating": "great",
+          "reason": "Cold, but the clearest Fuji views",
+          "air": -0.4
+        },
+        {
+          "rating": "great",
+          "reason": "Cold, clear views; winter fireworks at Lake Kawaguchi",
+          "air": 0.6
+        },
+        {
+          "rating": "ok",
+          "reason": "Still cold, views often clear",
+          "air": 4.2
+        },
+        {
+          "rating": "great",
+          "reason": "Cherry blossoms with Fuji (Chureito Pagoda), mid to late April",
+          "air": 9.5
+        },
+        {
+          "rating": "great",
+          "reason": "Shibazakura pink moss fields (to late May); avoid Golden Week",
+          "air": 14.3
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season, Fuji usually hidden",
+          "air": 17.8
+        },
+        {
+          "rating": "ok",
+          "reason": "Climbing season opens (July); Fuji often hidden in haze",
+          "air": 21.9
+        },
+        {
+          "rating": "ok",
+          "reason": "Peak climbing season; crowds and haze",
+          "air": 22.5
+        },
+        {
+          "rating": "ok",
+          "reason": "Climbing ends around 10 September; typhoons",
+          "air": 18.7
+        },
+        {
+          "rating": "great",
+          "reason": "Clearer views, first snow cap",
+          "air": 13
+        },
+        {
+          "rating": "great",
+          "reason": "Autumn leaves at Lake Kawaguchi, snow-capped Fuji",
+          "air": 7.5
+        },
+        {
+          "rating": "great",
+          "reason": "Crisp clear views, 'Diamond Fuji' at Lake Yamanaka",
+          "air": 2.3
+        }
+      ],
+      "climate": {
+        "station": "河口湖 Kawaguchiko",
+        "stationRef": {
+          "type": "s",
+          "prec": 49,
+          "block": 47640
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": null
+      },
+      "seasons": {
+        "spring": "Cherry blossoms at Chureito Pagoda, Shibazakura festival",
+        "summer": "Climb to the summit for sunrise (July to early September)",
+        "autumn": "Red maple corridor at Lake Kawaguchi",
+        "winter": "Clearest views of the snow-capped peak, onsen with Fuji view"
+      },
+      "photo": {
+        "file": "View of Mount Fuji from Ōwakudani 20211202.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/View_of_Mount_Fuji_from_%C5%8Cwakudani_20211202.jpg/1280px-View_of_Mount_Fuji_from_%C5%8Cwakudani_20211202.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/View_of_Mount_Fuji_from_%C5%8Cwakudani_20211202.jpg/500px-View_of_Mount_Fuji_from_%C5%8Cwakudani_20211202.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Suicasmo",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:View_of_Mount_Fuji_from_%C5%8Cwakudani_20211202.jpg"
+      },
+      "gallery": [
+        {
+          "file": "Lake Kawaguchiko Sakura Mount Fuji 4.JPG",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Lake_Kawaguchiko_Sakura_Mount_Fuji_4.JPG/1280px-Lake_Kawaguchiko_Sakura_Mount_Fuji_4.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Lake_Kawaguchiko_Sakura_Mount_Fuji_4.JPG/500px-Lake_Kawaguchiko_Sakura_Mount_Fuji_4.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Midori",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Lake_Kawaguchiko_Sakura_Mount_Fuji_4.JPG"
+        },
+        {
+          "file": "Fuji Shibazakura Festival Pink Moss Phlox - Ed Stuurman.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Fuji_Shibazakura_Festival_Pink_Moss_Phlox_-_Ed_Stuurman.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "thumb": "https://upload.wikimedia.org/wikipedia/commons/8/81/Fuji_Shibazakura_Festival_Pink_Moss_Phlox_-_Ed_Stuurman.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "author": "Ed Stuurman",
+          "license": "CC BY 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Fuji_Shibazakura_Festival_Pink_Moss_Phlox_-_Ed_Stuurman.jpg"
+        },
+        {
+          "file": "Summit crater of Mount Fuji - July 2010.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Summit_crater_of_Mount_Fuji_-_July_2010.jpg/1280px-Summit_crater_of_Mount_Fuji_-_July_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Summit_crater_of_Mount_Fuji_-_July_2010.jpg/500px-Summit_crater_of_Mount_Fuji_-_July_2010.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Shift",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Summit_crater_of_Mount_Fuji_-_July_2010.jpg"
+        }
+      ]
+    },
+    {
+      "id": "tateyama",
+      "name": "Tateyama Kurobe Alpine Route",
+      "jp": "立山黒部アルペンルート",
+      "kind": "city",
+      "scene": "mountain",
+      "area": "Toyama",
+      "lat": 36.5767,
+      "lng": 137.5966,
+      "gem": false,
+      "features": [
+        "nature",
+        "hiking",
+        "onsen"
+      ],
+      "desc": "A day crossing the Northern Alps by cable car, bus, ropeway and trolley bus: the spring snow corridor, Murodo's alpine lakes and the giant Kurobe Dam.",
+      "access": "Start from Tateyama station (1 h from Toyama) or Shinano-Omachi (Nagano side). Open mid April to 30 November",
+      "months": [
+        {
+          "rating": "avoid",
+          "reason": "Route closed for winter",
+          "air": -2.8
+        },
+        {
+          "rating": "avoid",
+          "reason": "Route closed for winter",
+          "air": -2.3
+        },
+        {
+          "rating": "avoid",
+          "reason": "Route closed for winter",
+          "air": 1.6
+        },
+        {
+          "rating": "great",
+          "reason": "Opens mid April: snow corridor up to 15 m high. Murodo is near 0°C",
+          "air": 8
+        },
+        {
+          "rating": "great",
+          "reason": "Snow corridor, clear skies; still snowy at the top",
+          "air": 14
+        },
+        {
+          "rating": "ok",
+          "reason": "Snow corridor ends late June; rainy season below",
+          "air": 17.9
+        },
+        {
+          "rating": "great",
+          "reason": "Alpine flowers, ptarmigan, hiking around Mikurigaike (about 12°C colder at the top)",
+          "air": 21.6
+        },
+        {
+          "rating": "great",
+          "reason": "Cool alpine hiking; Kurobe Dam water release",
+          "air": 22.4
+        },
+        {
+          "rating": "great",
+          "reason": "Autumn colours start at Murodo in late September",
+          "air": 18.1
+        },
+        {
+          "rating": "great",
+          "reason": "Autumn colours move down the mountain; first snow at the top",
+          "air": 11.8
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold, snow at the top; closes 30 November",
+          "air": 5.8
+        },
+        {
+          "rating": "avoid",
+          "reason": "Route closed for winter",
+          "air": 0.2
+        }
+      ],
+      "climate": {
+        "station": "大町 Omachi",
+        "stationRef": {
+          "type": "a",
+          "prec": 48,
+          "block": 399
+        },
+        "airSource": "nearby",
+        "period": "1991～2020",
+        "seaSource": null
+      },
+      "seasons": {
+        "spring": "Yuki-no-Otani snow corridor (mid April to June)",
+        "summer": "Alpine flowers and hikes around Murodo and Mikurigaike",
+        "autumn": "Red and gold slopes, Kurobe Dam",
+        "winter": "Closed (December to mid April)"
+      },
+      "photo": {
+        "file": "Tateyama Murodo Sanso and Mikurigaike.JPG",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Tateyama_Murodo_Sanso_and_Mikurigaike.JPG/1280px-Tateyama_Murodo_Sanso_and_Mikurigaike.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Tateyama_Murodo_Sanso_and_Mikurigaike.JPG/500px-Tateyama_Murodo_Sanso_and_Mikurigaike.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "Alpsdake",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Tateyama_Murodo_Sanso_and_Mikurigaike.JPG"
+      },
+      "gallery": [
+        {
+          "file": "Kurobe dam with onlookers.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Kurobe_dam_with_onlookers.jpg/1280px-Kurobe_dam_with_onlookers.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Kurobe_dam_with_onlookers.jpg/500px-Kurobe_dam_with_onlookers.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "elminium",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Kurobe_dam_with_onlookers.jpg"
+        },
+        {
+          "file": "20 Tateyama from Mikurigaike 1998-7-17.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/20_Tateyama_from_Mikurigaike_1998-7-17.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "thumb": "https://upload.wikimedia.org/wikipedia/commons/f/f0/20_Tateyama_from_Mikurigaike_1998-7-17.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "author": "Alpsdake",
+          "license": "Public domain",
+          "licenseUrl": "",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:20_Tateyama_from_Mikurigaike_1998-7-17.jpg"
+        },
+        {
+          "file": "Tateyama-ropeway-2018-09-09.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Tateyama-ropeway-2018-09-09.jpg/1280px-Tateyama-ropeway-2018-09-09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Tateyama-ropeway-2018-09-09.jpg/500px-Tateyama-ropeway-2018-09-09.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "TRJN",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Tateyama-ropeway-2018-09-09.jpg"
+        }
+      ],
+      "photoFile": "Tateyama Murodo Sanso and Mikurigaike.JPG"
+    },
+    {
+      "id": "kanazawa",
+      "name": "Kanazawa",
+      "jp": "金沢",
+      "kind": "city",
+      "scene": "city",
+      "area": "Ishikawa",
+      "lat": 36.5613,
+      "lng": 136.6562,
+      "gem": false,
+      "features": [
+        "culture",
+        "food"
+      ],
+      "desc": "Samurai and geisha districts, Kenroku-en garden, Omicho fish market and modern art at the 21st Century Museum.",
+      "access": "About 2.5 h by Hokuriku shinkansen from Tokyo",
+      "months": [
+        {
+          "rating": "ok",
+          "reason": "Cold and snowy; snow ropes (yukitsuri) in Kenroku-en",
+          "air": 4
+        },
+        {
+          "rating": "ok",
+          "reason": "Grey skies and snow; crab season",
+          "air": 4.2
+        },
+        {
+          "rating": "ok",
+          "reason": "Cool; plum blossoms in Kenroku-en",
+          "air": 7.3
+        },
+        {
+          "rating": "great",
+          "reason": "Cherry blossoms at Kenroku-en and the castle (early April)",
+          "air": 12.6
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green, comfortable; avoid Golden Week",
+          "air": 17.7
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season; Hyakumangoku festival (early June)",
+          "air": 21.6
+        },
+        {
+          "rating": "ok",
+          "reason": "Hot and humid after mid-July",
+          "air": 25.8
+        },
+        {
+          "rating": "ok",
+          "reason": "Hot and humid",
+          "air": 27.3
+        },
+        {
+          "rating": "ok",
+          "reason": "Still warm; typhoons",
+          "air": 23.2
+        },
+        {
+          "rating": "great",
+          "reason": "Comfortable and clear",
+          "air": 17.6
+        },
+        {
+          "rating": "great",
+          "reason": "Autumn leaves; snow crab season opens (6 November)",
+          "air": 11.9
+        },
+        {
+          "rating": "ok",
+          "reason": "Cold, rain or snow; crab and winter seafood",
+          "air": 6.8
+        }
+      ],
+      "climate": {
+        "station": "金沢 Kanazawa",
+        "stationRef": {
+          "type": "s",
+          "prec": 56,
+          "block": 47605
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": null
+      },
+      "seasons": {
+        "spring": "Cherry blossoms at Kenroku-en and Kanazawa Castle",
+        "summer": "Hyakumangoku festival, evening walks in Higashi Chaya",
+        "autumn": "Autumn leaves in Kenroku-en, snow crab season",
+        "winter": "Yukitsuri snow ropes, winter seafood at Omicho"
+      },
+      "photo": {
+        "file": "Niji-bashi and Kotoji Toro, Kenroku-en 20120905130513.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Niji-bashi_and_Kotoji_Toro%2C_Kenroku-en_20120905130513.jpg/1280px-Niji-bashi_and_Kotoji_Toro%2C_Kenroku-en_20120905130513.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Niji-bashi_and_Kotoji_Toro%2C_Kenroku-en_20120905130513.jpg/500px-Niji-bashi_and_Kotoji_Toro%2C_Kenroku-en_20120905130513.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "shiro524",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Niji-bashi_and_Kotoji_Toro,_Kenroku-en_20120905130513.jpg"
+      },
+      "gallery": [
+        {
+          "file": "Kenrokuen in winter 01.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Kenrokuen_in_winter_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "thumb": "https://upload.wikimedia.org/wikipedia/commons/9/90/Kenrokuen_in_winter_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "author": "yosi.nakao from Japan.",
+          "license": "CC BY-SA 2.1 jp",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.1/jp/deed.en",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Kenrokuen_in_winter_01.jpg"
+        },
+        {
+          "file": "Higashi Chaya district, Kanazawa (3810704024).jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Higashi_Chaya_district%2C_Kanazawa_%283810704024%29.jpg/1280px-Higashi_Chaya_district%2C_Kanazawa_%283810704024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Higashi_Chaya_district%2C_Kanazawa_%283810704024%29.jpg/500px-Higashi_Chaya_district%2C_Kanazawa_%283810704024%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Andrea Schaffer from Sydney, Australia",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Higashi_Chaya_district,_Kanazawa_(3810704024).jpg"
+        },
+        {
+          "file": "Omicho covered market western entrance, Kanazawa, 2016.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Omicho_covered_market_western_entrance%2C_Kanazawa%2C_2016.jpg/1280px-Omicho_covered_market_western_entrance%2C_Kanazawa%2C_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Omicho_covered_market_western_entrance%2C_Kanazawa%2C_2016.jpg/500px-Omicho_covered_market_western_entrance%2C_Kanazawa%2C_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "DimiTalen",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Omicho_covered_market_western_entrance,_Kanazawa,_2016.jpg"
+        }
+      ],
+      "photoFile": "Niji-bashi and Kotoji Toro, Kenroku-en 20120905130513.jpg",
+      "galleryFiles": [
+        "Kenrokuen in winter 01.jpg"
+      ]
+    },
+    {
+      "id": "shirakawago",
+      "name": "Shirakawa-go",
+      "jp": "白川郷",
+      "kind": "city",
+      "scene": "village",
+      "area": "Gifu",
+      "lat": 36.2577,
+      "lng": 136.9061,
+      "gem": false,
+      "features": [
+        "culture",
+        "nature",
+        "ryokan"
+      ],
+      "desc": "UNESCO village of steep thatched gassho-zukuri farmhouses in a mountain valley; sleep in one as a farmhouse inn.",
+      "access": "About 50 min by bus from Takayama, 1 h 15 min from Kanazawa",
+      "months": [
+        {
+          "rating": "great",
+          "reason": "Deep snow on the thatched roofs; light-up on some evenings (book ahead)",
+          "air": -1
+        },
+        {
+          "rating": "great",
+          "reason": "Snowy village, light-up on some evenings",
+          "air": -0.8
+        },
+        {
+          "rating": "ok",
+          "reason": "Snow melting, slushy paths",
+          "air": 2.5
+        },
+        {
+          "rating": "ok",
+          "reason": "Late cherry blossoms (late April), snow mostly gone",
+          "air": 8.8
+        },
+        {
+          "rating": "great",
+          "reason": "Fresh green, rice paddies filled with water",
+          "air": 14.9
+        },
+        {
+          "rating": "ok",
+          "reason": "Rainy season",
+          "air": 19
+        },
+        {
+          "rating": "ok",
+          "reason": "Green rice fields; warm and humid",
+          "air": 22.7
+        },
+        {
+          "rating": "ok",
+          "reason": "Green and busy",
+          "air": 23.6
+        },
+        {
+          "rating": "great",
+          "reason": "Golden rice fields, harvest",
+          "air": 19.4
+        },
+        {
+          "rating": "great",
+          "reason": "Autumn colours late October; fire-hose drill (end of October)",
+          "air": 13.2
+        },
+        {
+          "rating": "ok",
+          "reason": "Last autumn leaves, cold",
+          "air": 7.1
+        },
+        {
+          "rating": "ok",
+          "reason": "First snow, quiet",
+          "air": 1.7
+        }
+      ],
+      "climate": {
+        "station": "白川 Shirakawa",
+        "stationRef": {
+          "type": "a",
+          "prec": 52,
+          "block": 1306
+        },
+        "airSource": "jma",
+        "period": "1991～2020",
+        "seaSource": null
+      },
+      "seasons": {
+        "spring": "Late cherry blossoms, flooded rice paddies",
+        "summer": "Green valley, rice fields around the farmhouses",
+        "autumn": "Golden rice and red leaves, Doburoku festival (mid October)",
+        "winter": "Snow-covered roofs and the evening light-up"
+      },
+      "photo": {
+        "file": "Ogi Shirakawa-gō, Gifu, Japan.jpg",
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Ogi_Shirakawa-g%C5%8D%2C_Gifu%2C_Japan.jpg/1280px-Ogi_Shirakawa-g%C5%8D%2C_Gifu%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Ogi_Shirakawa-g%C5%8D%2C_Gifu%2C_Japan.jpg/500px-Ogi_Shirakawa-g%C5%8D%2C_Gifu%2C_Japan.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "author": "663highland",
+        "license": "CC BY 2.5",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Ogi_Shirakawa-g%C5%8D,_Gifu,_Japan.jpg"
+      },
+      "gallery": [
+        {
+          "file": "Shirakawa Go At Night (198621599).jpeg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Shirakawa_Go_At_Night_%28198621599%29.jpeg/1280px-Shirakawa_Go_At_Night_%28198621599%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Shirakawa_Go_At_Night_%28198621599%29.jpeg/500px-Shirakawa_Go_At_Night_%28198621599%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "Yoshiyuki Ito",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Shirakawa_Go_At_Night_(198621599).jpeg"
+        },
+        {
+          "file": "Shirakawa-go - Shirakawa156.jpg",
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Shirakawa-go_-_Shirakawa156.jpg/1280px-Shirakawa-go_-_Shirakawa156.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Shirakawa-go_-_Shirakawa156.jpg/500px-Shirakawa-go_-_Shirakawa156.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "author": "lumoplank",
+          "license": "CC0",
+          "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Shirakawa-go_-_Shirakawa156.jpg"
+        }
+      ],
+      "galleryFiles": [
+        "Snow in Ogimachi Area, Shirakawa village, Gifu.JPG",
+        "Shirakawa Go At Night (198621599).jpeg"
+      ]
     }
   ]
 }

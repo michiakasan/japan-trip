@@ -5,7 +5,7 @@
 export type Rating = "great" | "ok" | "avoid";
 
 /** Feature tags used by the feature filter. */
-export type FeatureId = "beach" | "snorkel" | "nature" | "hiking" | "onsen" | "culture" | "food";
+export type FeatureId = "beach" | "snorkel" | "nature" | "hiking" | "onsen" | "culture" | "food" | "ryokan";
 
 /** One month in a place's "best time to go" strip. Index 0 = January. */
 export interface MonthInfo {
@@ -70,6 +70,10 @@ export interface Place {
   photo: CommonsPhoto | null;
   /** Optional: a Commons file name we picked ourselves; the photo script uses it first. */
   photoFile?: string;
+  /** More Commons photos for the place page (the photo script finds up to 3). */
+  gallery?: CommonsPhoto[];
+  /** Optional: Commons file names we picked ourselves for the gallery (tried first). */
+  galleryFiles?: string[];
 }
 
 export interface Area {

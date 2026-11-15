@@ -10,6 +10,13 @@
 // (e.g. "File:Kabira Bay 2.jpg" → "Kabira Bay 2.jpg") into that place's "photoFile"
 // in places.json, and run:  npm run photos -- --only <id>
 //
+// It also finds 3 more photos per place for the "Photos" strip on the place page ("gallery"):
+//   npm run photos -- --gallery                → only places that have no gallery yet
+//   npm run photos -- --gallery --force        → redo every gallery
+//   npm run photos -- --gallery --only kyoto   → redo just these galleries
+// Don't like a gallery photo? Add its file name to NOT_FOR_GALLERY below, or pin your own
+// choices in that place's "galleryFiles" in places.json, then rerun with --only <id>.
+//
 // Only these licences are accepted: CC BY, CC BY-SA, CC0 and public domain.
 
 import fs from "node:fs";
@@ -58,6 +65,14 @@ const SEARCH: Record<string, string> = {
   suzuka: "Suzuka Circuit",
   hiroshima: "Itsukushima torii Miyajima",
   hakone: "Lake Ashi Hakone torii Fuji",
+  matsumoto: "Matsumoto Castle",
+  miyajima: "Itsukushima Shrine torii",
+  kumano: "Kumano Kodo Nakahechi",
+  nara: "Todai-ji Daibutsuden",
+  fuji: "Mount Fuji Chureito Pagoda",
+  tateyama: "Tateyama snow corridor Murodo",
+  kanazawa: "Kenrokuen Kotojitoro",
+  shirakawago: "Shirakawa-go gassho village",
 };
 
 // English Wikipedia article for each place (its main image is tried first).
@@ -71,7 +86,106 @@ const WIKI: Record<string, string> = {
   shikinejima: "Shikine-jima", kozushima: "Kōzu-shima", niijima: "Nii-jima", tokyo: "Tokyo", kyoto: "Kyoto",
   osaka: "Osaka", karuizawa: "Karuizawa, Nagano", takayama: "Takayama, Gifu",
   suzuka: "Suzuka Circuit", hiroshima: "Hiroshima", hakone: "Hakone",
+  matsumoto: "Matsumoto Castle", miyajima: "Itsukushima", kumano: "Kumano Kodō", nara: "Nara (city)", fuji: "Mount Fuji",
+  tateyama: "Tateyama Kurobe Alpine Route", kanazawa: "Kanazawa", shirakawago: "Shirakawa-gō",
 };
+
+/** How many extra photos each place gets. */
+const GALLERY_SIZE = 3;
+
+/** For the gallery: one search per theme, so the photos show different things. */
+const GALLERY_SEARCH: Record<string, string[]> = {
+  ishigaki: ["Kabira Bay", "Ishigaki Tamatorizaki", "Ishigaki Yonehara beach"],
+  taketomi: ["Taketomi water buffalo cart", "Kondoi beach Taketomi", "Taketomi Nagomi tower"],
+  iriomote: ["Iriomote Pinaisara falls", "Iriomote Urauchi river", "Iriomote Hoshizuna beach"],
+  kohama: ["Kohama Okinawa sugar cane", "Kohama island Okinawa sea", "Kohama island beach"],
+  kuroshima: ["Kuroshima Okinawa cattle", "Kuroshima Okinawa pier", "Kuroshima Okinawa"],
+  hateruma: ["Nishihama beach Hateruma", "Hateruma southernmost", "Hateruma island"],
+  yonaguni: ["Yonaguni horse", "Yonaguni Tachigami rock", "Yonaguni cape Irizaki"],
+  miyakojima: ["Yonaha Maehama beach", "Higashi-hennazaki", "Ikema bridge Miyako"],
+  irabu: ["Irabu bridge", "Shimoji island Toorike", "Sawada beach Irabu"],
+  tarama: ["Tarama island", "Tarama Okinawa beach", "Tarama Okinawa"],
+  kerama: ["Zamami island beach", "Tokashiki island beach", "Aka island Kerama"],
+  kumejima: ["Hatenohama Kumejima", "Kumejima Tatami-ishi", "Kumejima Eef beach"],
+  minnajima: ["Minna Island Motobu", "Minnajima", "Minna island beach"],
+  iheya: ["Iheya island", "Izena island", "Iheya Okinawa"],
+  yoron: ["Yurigahama Yoron", "Yoron island beach", "Yoronjima"],
+  okinoerabu: ["Okinoerabu Fucya", "Okinoerabu island", "Okinoerabu beach"],
+  tokunoshima: ["Tokunoshima Inutabu", "Tokunoshima bullfighting", "Tokunoshima beach"],
+  amami: ["Amami Oshima mangrove", "Amami Oshima Ohama beach", "Amami Oshima forest"],
+  kakeroma: ["Kakeroma island", "Kakeromajima", "Kakeroma Amami"],
+  yakushima: ["Jomon Sugi", "Shiratani Unsuikyo", "Yakushima Ohko falls"],
+  chichijima: ["Chichijima Miyanohama", "Chichijima Kominato beach", "Ogasawara Chichijima sunset"],
+  miyakejima: ["Miyakejima Tairo pond", "Miyakejima lava", "Miyake-jima coast"],
+  mikurajima: ["Mikurajima dolphins", "Mikurajima island", "Mikura-jima"],
+  hachijojima: ["Hachijo-Fuji", "Hachijojima Nanbara lava", "Hachijojima onsen"],
+  shikinejima: ["Shikinejima Jinata onsen", "Shikinejima Tomari beach", "Shikine-jima"],
+  kozushima: ["Kozushima Tenjosan", "Kozushima Tako bay", "Kozu-shima"],
+  niijima: ["Habushiura beach", "Niijima Yunohama onsen", "Nii-jima"],
+  tokyo: ["Senso-ji Asakusa", "Shibuya crossing", "Meiji Jingu"],
+  kyoto: ["Fushimi Inari torii", "Arashiyama bamboo grove", "Kinkaku-ji"],
+  osaka: ["Dotonbori", "Osaka Castle cherry blossoms", "Shinsekai Tsutenkaku"],
+  karuizawa: ["Shiraito falls Karuizawa", "Kyu-Karuizawa Ginza", "Karuizawa Stone Church"],
+  takayama: ["Takayama Sanmachi", "Takayama Festival yatai", "Hida Folk Village"],
+  suzuka: ["Suzuka Circuit grandstand", "Suzuka Circuit Formula One", "Ise Grand Shrine"],
+  hiroshima: ["Hiroshima Peace Memorial Park", "Hiroshima Castle", "Shukkeien garden"],
+  hakone: ["Owakudani", "Hakone Shrine torii", "Hakone Tozan railway"],
+  matsumoto: ["Kamikochi Kappa bridge", "Nakamachi Matsumoto", "Matsumoto Castle cherry blossoms"],
+  miyajima: ["Miyajima deer", "Mount Misen Miyajima", "Itsukushima five-storied pagoda"],
+  kumano: ["Nachi waterfall pagoda", "Kumano Hongu Taisha Oyunohara torii", "Yunomine onsen"],
+  nara: ["Nara Park deer", "Kasuga Taisha lanterns", "Kofuku-ji pagoda"],
+  fuji: ["Lake Kawaguchi Mount Fuji", "Fuji Shibazakura", "Mount Fuji summit crater"],
+  tateyama: ["Kurobe Dam", "Mikurigaike Tateyama", "Tateyama ropeway"],
+  kanazawa: ["Higashi Chaya Kanazawa", "Omicho market Kanazawa", "21st Century Museum Kanazawa"],
+  shirakawago: ["Shirakawa-go winter light-up", "Ogimachi Shirakawa autumn", "Gassho-zukuri interior"],
+};
+
+/** Gallery photos we looked at and didn't want (wrong place, ugly, duplicate view…). */
+const NOT_FOR_GALLERY = new Set<string>([
+  "Friendship and Health Square at Iheya Island 202603 01.jpg",
+  "Iheya Clinic 202603.jpg",
+  "Wadomari port Okinoerabu Island Kagoshima JAPAN.jpg",
+  "沖永良部島 (897425348).jpg",
+  "Michinoeki Amamioshima Sumiyo.jpg",
+  "Ogasawara Islands, Tokyo, Japan.jpg",
+  "男湯 厠 2017 (32817272036).jpg",
+  "Niijima village Shikinejima branch.jpg",
+  "Snow in Ogimachi Area, Shirakawa village, Gifu.JPG",
+  "Shikasenbei.jpg",
+  "Kappa Bridge Monument at Kamikōchi, Morinaga & Co.,Ltd. Gifts (2).jpg",
+  "Shika senbei 2017.jpg",
+  "Higashi Chaya district, Kanazawa (3809893551).jpg",
+  "Takayama festival Yatai Kaikan No,1.JPG",
+  "Gassho-zukuri farmhouse-03.jpg",
+  "Interior of cafe at Shirakawa-go in Gifu, Japan (213).jpg",
+  "Taketomi Island, Kondoi Beach 360-degree.jpg",
+  "Japan, Iriomote island- Urauchi river 2017 2.jpg",
+  "Kohama Island, Coral Beach 360-degree.jpg",
+  "Irabu ohashi monument.jpg",
+  "Tarama Airport Aerial photograph 2022.jpg",
+  "多良間島全景.jpg",
+  "Friendship and Health Square at Iheya Island 202603 02.jpg",
+  "Iheya branch office of the JA Okinawa 202603.jpg",
+  "Pumice from the 13 August 2021 explosive eruption of Fukutoku-Okanoba Volcano (Bonin Islands, western Pacific Ocean) 4.jpg",
+  "2021-04-09 Yoronjima-seito 与論島製糖（株）DJI Mini2-0023.jpg",
+  "Wadomari port Okinoerabu Island Kagoshima.jpg",
+  "Okinoerabu Island faintly seen from Mount Kuba at Iheya Island 202603 03.jpg",
+  "Okinoerabu Island seen from Mount Katsuu 202607.jpg",
+  "Mangrove Park by countermeasures COVID-19(attention sign board).jpg",
+  "Kakeroma Bus at Ikenma Port 20180430.jpg",
+  "Shinyo at Kakeromajima.jpg",
+  "Kakeroma Bus at Seso Port 20180430.jpg",
+  "Ogasawara Village Bus Kominato Kaigan Bus Stop.jpg",
+  "霧の縄文杉 (Jomon Sugi) 26 May, 2013 - panoramio.jpg",
+  "Nakanogo Onsen Bunsekisyo.jpg",
+  "Shikine-jima aerial.jpg",
+  "Meiji Jingu Stadium aerial view.jpg",
+  "Kyu-Karuizawa Main Street, Vintage Photos2.jpg",
+  "Suzuka circuit ino station 2026.jpg",
+]);
+
+/** Gallery file names that are rarely a nice travel photo (signs, buses, aerial shots…). */
+const GALLERY_BAD_NAME = /360|aerial|airport|bus\b|bus stop|office|station|stadium|vintage|pumice|sign|monument|senbei|toilet|clinic/i;
 
 /** File names that are almost never a nice landscape photo. */
 const BAD_NAME = /map|locator|location|landsat|satellite|\biss\d|_iss|nasa|flag|emblem|logo|seal|symbol|diagram|chart|coat.of.arms|montage|collage|banner/i;
@@ -190,6 +304,73 @@ async function findPhoto(place: Place & { photoFile?: string }): Promise<Commons
   return null;
 }
 
+/** Gets file info for many names (the API takes at most 50 per request). */
+async function fileInfoMany(names: string[]): Promise<Map<string, ImageInfo>> {
+  const byName = new Map<string, ImageInfo>();
+  for (let i = 0; i < names.length; i += 50) {
+    for (const page of await fileInfo(names.slice(i, i + 50))) byName.set(page.title.replace(/^File:/, ""), page);
+  }
+  return byName;
+}
+
+/** "Kabira Bay 2.jpg" and "Kabira_Bay_3.JPG" are probably the same view: compare without digits. */
+const stem = (name: string) => name.toLowerCase().replace(/\.[a-z]+$/, "").replace(/[\d_\s()-]+/g, " ").trim();
+
+/** Up to GALLERY_SIZE more photos, different from the main photo and from each other. */
+async function findGallery(place: Place): Promise<CommonsPhoto[]> {
+  const pinned = [...(place.galleryFiles ?? [])]; // our own picks first
+
+  // One search per theme: the first good photo of each theme is taken first.
+  const themes: string[][] = [];
+  for (const words of GALLERY_SEARCH[place.id] ?? []) {
+    const search = await api("commons.wikimedia.org", {
+      action: "query", list: "search", srnamespace: "6", srlimit: "12", srsearch: `${words} filetype:bitmap`,
+    });
+    themes.push((search.query?.search ?? []).map((hit: { title: string }) => hit.title));
+  }
+
+  // Fallbacks if the themes don't give enough: pictures used in the English Wikipedia article
+  // (chosen by editors, so usually on topic) and a general search.
+  const names: string[] = [];
+  // Pictures used in the English Wikipedia article (chosen by editors, so usually on topic).
+  const wiki = await api("en.wikipedia.org", {
+    action: "query", prop: "images", imlimit: "60", titles: WIKI[place.id] ?? place.name, redirects: "1",
+  });
+  for (const img of wiki.query?.pages?.[0]?.images ?? []) names.push(img.title);
+
+  // Plus a Commons search (the same words as for the main photo, and just the name).
+  for (const words of new Set([SEARCH[place.id] ?? place.name, `${place.name} ${place.kind === "island" ? "island" : "Japan"}`])) {
+    const search = await api("commons.wikimedia.org", {
+      action: "query", list: "search", srnamespace: "6", srlimit: "25", srsearch: `${words} filetype:bitmap`,
+    });
+    for (const hit of search.query?.search ?? []) names.push(hit.title);
+  }
+
+  const clean = (t: string) => t.replace(/^File:/, "").replace(/_/g, " ");
+  const all = [...new Set([...pinned, ...themes.flat(), ...names].map(clean))];
+  const byName = await fileInfoMany(all);
+  const picked: CommonsPhoto[] = [];
+  const seen = new Set(place.photo ? [stem(place.photo.file)] : []);
+  /** Takes the first usable photo from a list of names; returns true if it found one. */
+  const takeFirst = (list: string[]) => {
+    for (const name of list.map(clean)) {
+      if (picked.length >= GALLERY_SIZE) return false;
+      if (name === place.photo?.file || NOT_FOR_GALLERY.has(name) || GALLERY_BAD_NAME.test(name) || seen.has(stem(name))) continue;
+      const page = byName.get(name);
+      const result = page ? judge(page) : "missing";
+      if (typeof result === "string") continue;
+      picked.push(result);
+      seen.add(stem(name));
+      return true;
+    }
+    return false;
+  };
+  for (const name of pinned) takeFirst([name]); // every pinned photo
+  for (const theme of themes) takeFirst(theme); // one per theme
+  while (picked.length < GALLERY_SIZE && takeFirst(all)); // fill up with whatever is left
+  return picked;
+}
+
 async function main() {
   const args = process.argv.slice(2);
   const force = args.includes("--force");
@@ -197,6 +378,21 @@ async function main() {
   const only = onlyArg ? (onlyArg.includes("=") ? onlyArg.split("=")[1] : args[args.indexOf(onlyArg) + 1]).split(",") : null;
 
   const data: PlacesFile = JSON.parse(fs.readFileSync(FILE, "utf8"));
+
+  if (args.includes("--gallery")) {
+    for (const place of data.places) {
+      if (only ? !only.includes(place.id) : place.gallery?.length && !force) continue;
+      try {
+        place.gallery = await findGallery(place);
+        console.log(`✓ ${place.name.padEnd(16)} ${place.gallery.length} photo(s): ${place.gallery.map((g) => g.file).join(" | ")}`);
+      } catch (err) {
+        console.error(`✗ ${place.name}: ${(err as Error).message}`);
+      }
+      fs.writeFileSync(FILE, JSON.stringify(data, null, 2) + "\n");
+    }
+    return;
+  }
+
   let found = 0, missing = 0;
   for (const place of data.places) {
     if (only ? !only.includes(place.id) : place.photo && !force) continue;

@@ -8,6 +8,8 @@ import {
   type Status,
 } from "../data/store";
 import { $, esc, toast } from "./dom";
+import { commonsCredit } from "./placeholder";
+import { currentPlace } from "./sheet";
 
 /** The HTML for the section. */
 export function oursHtml(place: AnyPlace): string {
@@ -106,6 +108,11 @@ export function setupOursEvents(currentPlaceId: () => string | null) {
       } else if (t.dataset.our === "view") {
         const photo = photosFor(placeId).find((p) => p.id === t.dataset.photo);
         if (photo) openViewer(photoUrl(photo, "full"));
+      } else if (t.dataset.our === "gallery") {
+        // A Commons photo from the "Photos" strip: show it big, with its credit.
+        const p = currentPlace();
+        const photo = p && p.kind !== "custom" ? p.gallery?.[Number(t.dataset.index)] : undefined;
+        if (photo) openViewer(photo.url, commonsCredit(photo));
       }
     } catch (err) {
       showError(err);
@@ -177,13 +184,18 @@ export function setupOursEvents(currentPlaceId: () => string | null) {
 
 // ---------- full-screen photo viewer ----------
 
-function openViewer(url: string) {
+/** Shows a photo full screen; tap anywhere to close. `caption` is optional HTML (e.g. a credit). */
+export function openViewer(url: string, caption = "") {
   const viewer = document.createElement("div");
   viewer.className = "viewer";
   viewer.setAttribute("role", "dialog");
   viewer.setAttribute("aria-label", "Photo");
-  viewer.innerHTML = `<img src="${esc(url)}" alt="" crossorigin="anonymous" /><button class="viewer-close" aria-label="Close">×</button>`;
-  viewer.addEventListener("click", () => viewer.remove()); // tap anywhere to close
+  viewer.innerHTML = `<img src="${esc(url)}" alt="" crossorigin="anonymous" /><button class="viewer-close" aria-label="Close">×</button>` +
+    (caption ? `<p class="viewer-caption">${caption}</p>` : "");
+  // Tap anywhere to close (but a tap on the credit link opens the link instead).
+  viewer.addEventListener("click", (e) => {
+    if (!(e.target as HTMLElement).closest("a")) viewer.remove();
+  });
   document.body.append(viewer);
   viewer.querySelector("button")!.focus();
 }

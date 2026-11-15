@@ -26,6 +26,7 @@ let backHref = "#/";
 
 /** Id of the place that is open right now (or null). */
 export const currentPlaceId = () => current?.id ?? null;
+export const currentPlace = () => current;
 export const setBackHref = (href: string) => (backHref = href);
 export const getBackHref = () => backHref;
 
@@ -77,11 +78,7 @@ export function selectSheetMonth(i: number, data: PlacesFile) {
 function builtInSections(p: Place, data: PlacesFile) {
   const source =
     `Air: JMA climate normals ${esc(p.climate.period ?? "")}, station ${esc(p.climate.station)}` +
-    (p.climate.airSource === "nearby"
-      ? p.kind === "island"
-        ? " (on a neighbouring island, so approximate)"
-        : " (a nearby town, so approximate)"
-      : "") +
+    (p.climate.airSource === "nearby" ? " (a nearby station, so approximate)" : "") +
     (p.climate.seaSource ? ". Sea temperatures are rough estimates." : ".");
   return {
     top: `<section class="panel">
@@ -98,6 +95,7 @@ function builtInSections(p: Place, data: PlacesFile) {
           ).join("")}
         </div>
       </section>
+      ${galleryHtml(p)}
       <section>
         <h3>About <span class="jp">概要</span></h3>
         <p>${esc(p.desc)}</p>
@@ -107,6 +105,24 @@ function builtInSections(p: Place, data: PlacesFile) {
       <p class="source small muted">${source}${p.photo ? `<br>${creditHtml(p)}` : ""}</p>`,
     subtitle: p.features.map((id) => data.features.find((f) => f.id === id)?.name ?? id).join(" · "),
   };
+}
+
+/** "Photos" strip: more Commons photos of the place, swipe sideways, tap to see one big. */
+function galleryHtml(p: Place) {
+  if (!p.gallery?.length) return "";
+  return `<section>
+      <h3>Photos <span class="jp">写真</span></h3>
+      <div class="gallery">
+        ${p.gallery
+          .map(
+            (g, i) => `<button class="gallery-item" data-our="gallery" data-index="${i}" aria-label="View photo ${i + 1}">
+              <img src="${esc(g.thumb)}" alt="${esc(p.name)}, photo ${i + 1}" loading="lazy" decoding="async"
+                crossorigin="anonymous" title="${esc(`Photo: ${g.author} · ${g.license}`)}" />
+            </button>`,
+          )
+          .join("")}
+      </div>
+    </section>`;
 }
 
 /** Re-draw the open sheet (e.g. after the status changes). */

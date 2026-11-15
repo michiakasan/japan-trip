@@ -17,6 +17,7 @@ npm run deploy          # build the app and upload it to squash-results.com/akar
 npm run deploy:server   # upload server/*.ts to Hertz and restart the API
 npm run hertz:set-code  # set or change the trip code on Hertz (asks for it, never stored in plain text)
 npm run photos          # find Wikimedia photos for places without one (--force / --only id1,id2)
+npm run photos -- --gallery  # find 3 extra photos per place for the "Photos" strip
 npm run climate         # re-download JMA climate normals into places.json
 npm run icons           # redraw the app icons (needs Python + Pillow)
 ```
@@ -70,7 +71,7 @@ before upload, which also strips GPS data.
 
 | Path | What |
 |---|---|
-| `public/places.json` | the 35 built-in places: months, JMA temperatures, seasons, photos |
+| `public/places.json` | the 43 built-in places: months, JMA temperatures, seasons, photos |
 | `src/main.ts` | start-up, navigation (`#/`, `#/map`, `#/trips`, `#/place/<id>` …), taps |
 | `src/data/` | `store.ts` (our data, live updates, offline copy), `api.ts` (talks to the server), `places.ts`, `photos.ts` |
 | `src/ui/` | one file per screen: `results`, `sheet` (place page), `map`, `add-place`, `trips`, `ours`, `join` |
